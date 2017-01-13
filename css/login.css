@@ -1,0 +1,32 @@
+#loginField{
+	background-color: white;
+	position: absolute;
+	margin: auto;
+	width: 550px;
+	height: 300px;
+	top: -300px;
+	bottom: 0;
+	right: 0;
+	left: 0;
+text-align: center;
+box-shadow: 10px 10px 30px 15px #888888;
+
+border-radius: 13px 13px 13px 13px;
+-moz-border-radius: 13px 13px 13px 13px;
+-webkit-border-radius: 13px 13px 13px 13px;
+border: 1px solid;
+
+
+
+	
+}
+#loginbild{
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+.loginbtn{
+
+}
+body{
+	background-color: #BEBEBE
+}

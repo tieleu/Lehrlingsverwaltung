@@ -1,0 +1,39 @@
+
+#header{
+	height: 10%;
+	width: 100%;
+	color: skyblue;
+background-color:#A9A9A9 ;
+
+
+}
+ 
+#leitspuch{
+color:white;
+margin-top: -30px; 
+margin-bottom: 10px;
+margin-right: 250px;
+
+}
+#footer{
+height: 10%;
+width: 100%;
+background-color:#E1E1E1;
+position: fixed;
+bottom: 0;
+z-index: -10;
+
+}
+a{
+
+	font-size: 22px;
+}
+body{
+	height: 100%;
+	width: 100%;
+	background-color: #BEBEBE;
+
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+

@@ -1,0 +1,109 @@
+
+<html>
+<?php
+	session_start();	
+	$cookieName = $_SESSION['login_user'];
+	$nameOfUser = $_GET['user'];
+
+	 if($nameOfUser == $cookieName && isset($_SESSION['login_user'])){ 
+
+
+	$servername = "172.16.44.5";
+$username = "lehrling";
+$password = "sec1.01";
+
+$conn =mysql_connect($servername, $username, $password)
+	or die("Fehler im System");
+	mysql_select_db("Lehrverwaltung");
+
+ ?>
+	 
+
+<head>
+	
+	<meta name="description" content="Free Web tutorials">
+	<meta name="author" content="Hege Refsnes">
+	
+
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-min.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+
+	<link rel="shortcut icon" href="../favicon.ico">
+	<link rel="stylesheet" type="text/css" href="animation/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="animation/css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="animation/css/component.css" />
+	<link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+	<title>Lehrlingsverwaltung - Home</title>
+</head>
+<body>
+	<div class="container demo-1">
+		<div class="content">
+			<div id="large-header" class="large-header">
+<div class="indexlogo">
+					<img src="image/tie-logo.png">
+				</div>
+				<div  align="right" class="indexlogo">
+					<h3 id="leitspuch">LIFE IS A DIGITAL PROCESS</h3>
+				</div>
+
+				<nav class="navbar navbar-inverse">
+					<div class="container-fluid">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="#">Home</a></li>
+							<li class="dropdown">
+				       	<a class="dropdown-toggle" data-toggle="dropdown" href="#">Aufgaben<span class="caret"></span></a>
+				        <ul class="dropdown-menu">
+
+				         <li><a href="subsites/aufgaben.php?user=<?php echo $nameOfUser ?>">Übersicht</a></li>
+				         
+
+
+
+				          <li><a href="subsites/aufgabenErteilen.php?user=<?php echo $nameOfUser ?>">Erteilen</a></li>
+				          <li><a href="subsites/zurPruefung.php?user=<?php echo $nameOfUser ?>">Prüfen</a></li> 
+				        </ul>
+				      </li>
+							<li><a href="subsites/uebungen.php?user=<?php echo $nameOfUser ?>">Übungen</a></li>
+							<li><a href="subsites/ferien.php?user=<?php echo $nameOfUser ?>">Ferien</a></li> 
+							<li><a href="subsites/notendossier.php?user=<?php echo $nameOfUser ?>">Notendossier</a></li>  
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="subsites/einstellungen.php?user=<?php echo $nameOfUser ?>"><span class="glyphicon glyphicon-wrench"></span> Einstellungen</a></li>
+							<li><a href="logout.php?user=<?php echo $nameOfUser ?>"><span class="glyphicon glyphicon-log-out"></span> logout</a></li>
+						</ul>
+					</div>
+				</nav>
+
+				<canvas id="demo-canvas"></canvas>
+				<h1 class="main-title">Welcome <span class="thin">User</span></h1>
+			</div>
+			<script src="animation/js/TweenLite.min.js"></script>
+			<script src="animation/js/EasePack.min.js"></script>
+			<script src="animation/js/rAF.js"></script>
+			<script src="animation/js/demo-1.js"></script>
+		</div>
+	</div>
+</body>
+
+<?php 
+
+	}else {
+		 echo "access denied! Please log in";
+
+		 sleep(3);
+		header("Location:login.html");
+		 session_destroy();
+
+	}
+
+?>
+</html>
+
+
