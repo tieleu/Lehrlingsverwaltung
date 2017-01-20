@@ -28,7 +28,7 @@ $conn =mysql_connect($servername, $username, $password)
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.css">
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-min.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 
 	<link rel="shortcut icon" href="../favicon.ico">
