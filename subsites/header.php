@@ -31,7 +31,7 @@ mysql_query("SET NAMES 'utf8'",$conn);
 	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap-theme.css">
-	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap-min.css">
+	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/index.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
