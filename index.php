@@ -70,7 +70,7 @@ $conn =mysql_connect($servername, $username, $password)
 				        </ul>
 				      </li>
 							<li><a href="subsites/uebungen.php?user=<?php echo $nameOfUser ?>">Übungen</a></li>
-							<li><a href="subsites/ferien.php?user=<?php echo $nameOfUser ?>">Ferien</a></li> 
+							<li><a href="subsites/zeiterfassung.php?user=<?php echo $nameOfUser ?>">Zeiterfassung</a></li> 
 							<li><a href="subsites/notendossier.php?user=<?php echo $nameOfUser ?>">Notendossier</a></li>  
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
