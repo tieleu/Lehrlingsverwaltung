@@ -21,7 +21,7 @@ $nameOfUser = $_GET['user'];
 <body>
 	<div id="input_container">
 		<input type="date" id="date_input" class="inputandsubmitbtn">
-		<input type="radio" name="morning" value="morning"> Morgen
+		<input type="radio" name="morning" value="morning"> Morgen <br/>
   		<input type="radio" name="afternoon" value="afternoon">Nachmittag
 		<input type="time" id="starttime_input" class="inputandsubmitbtn">
 		<input type="time" id="endtime_input" class="inputandsubmitbtn">
