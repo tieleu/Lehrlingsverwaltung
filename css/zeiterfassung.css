@@ -1,9 +1,9 @@
 #uebersicht{
-    height: 50em;
-    width: 50em;
+    height: 35em;
+    width: 35em;
     background: red;
     float: right;
-    margin-right: 10%;
+    margin-right: 5%;
     margin-top: 5%;
 }
 #input_container{
