@@ -3,7 +3,9 @@
     width: 50px;
     background: red;
     float: right;
+    margin-right: 10%;
 }
 #input_container{
     float: left;
+    margin-left: 10%;
 }
