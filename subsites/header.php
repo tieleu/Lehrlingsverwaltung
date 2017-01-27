@@ -64,7 +64,7 @@ mysql_query("SET NAMES 'utf8'",$conn);
 				        </ul>
 				      </li>
 							<li><a href="uebungen.php?user=<?php echo $nameOfUser ?>">Übungen</a></li>
-							<li><a href="ferien.php?user=<?php echo $nameOfUser ?>">Ferien</a></li> 
+							<li><a href="zeiterfassung.php?user=<?php echo $nameOfUser ?>">Zeiterfassung</a></li> 
 							<li><a href="notendossier.php?user=<?php echo $nameOfUser ?>">Notendossier</a></li>  
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
