@@ -20,10 +20,10 @@ $nameOfUser = $_GET['user'];
 </head>
 <body>
 	<div id="input_container">
-		<input type="date" id="date_input">
-		<input type="time" id="starttime_input">
-		<input type="time" id="endtime_input">
-		<button id="savetime">Save</button>
+		<input type="date" id="date_input" class="inputandsubmitbtn">
+		<input type="time" id="starttime_input" class="inputandsubmitbtn">
+		<input type="time" id="endtime_input" class="inputandsubmitbtn">
+		<button id="savetime" class="inputandsubmitbtn">Save</button>
 	</div>
 	<div id="uebersicht"></div>
 
