@@ -4,3 +4,6 @@
     background: red;
     float: right;
 }
+#input_container{
+    float: left;
+}
