@@ -4,8 +4,10 @@
     background: red;
     float: right;
     margin-right: 10%;
+    margin-top: 5%;
 }
 #input_container{
     float: left;
     margin-left: 10%;
+    margin-top: 5%;
 }
