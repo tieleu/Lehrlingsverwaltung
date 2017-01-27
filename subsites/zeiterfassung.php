@@ -19,11 +19,13 @@ $nameOfUser = $_GET['user'];
 
 </head>
 <body>
-<input type="date" id="date_input">
-<input type="time" id="starttime_input">
-<input type="time" id="endtime_input">
-<button id="savetime">Save</button>
-<div id="uebersicht"></div>
+	<div id="input_container">
+		<input type="date" id="date_input">
+		<input type="time" id="starttime_input">
+		<input type="time" id="endtime_input">
+		<button id="savetime">Save</button>
+	</div>
+	<div id="uebersicht"></div>
 
 
 </body>
