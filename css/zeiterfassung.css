@@ -14,3 +14,12 @@
 .inputandsubmitbtn{
     height: 40px;
 }
+#date_input{
+    width: 300px;
+}
+#starttime_input{
+    width: 200px;
+}
+#endtime_input{
+    width: 200px;
+}
