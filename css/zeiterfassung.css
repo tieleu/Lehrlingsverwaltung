@@ -8,11 +8,13 @@
 }
 #input_container{
     float: left;
-    margin-left: 10%;
+    margin-left: 5%;
     margin-top: 5%;
+
 }
 .inputandsubmitbtn{
     height: 40px;
+    margin-right: 10px;
 }
 #date_input{
     width: 300px;
