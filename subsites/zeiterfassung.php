@@ -19,6 +19,22 @@ $nameOfUser = $_GET['user'];
 
 </head>
 <body>
+   <table class="table table-hover">
+      <tr>
+    <th>Datum:</th>
+    <th>Erreichte Zeit</th>
+    <th>Sollzeit</th>
+    <th>Differenz</th>
+  </tr>
+		<div id="zeile">
+			<tr id="zeile">
+			    <td><input type="text" class="form-control" placeholder="Datum" readonly></td>
+			    <td><input type="text" class="form-control" placeholder="erreichte Zeit" readonly></td>
+			    <td><input type="text" class="form-control" placeholder="Sollzeit" readonly></td>
+			    <td><input type="text" class="form-control" placeholder="Differenz Zeit" readonly></td>
+			</tr>
+		</div>
+	</table>
 	<div id="input_container">
 		Datum
 		<input type="date" id="date_input" class="inputandsubmitbtn">
@@ -28,26 +44,6 @@ $nameOfUser = $_GET['user'];
 		<input type="time" id="endtime_input" class="inputandsubmitbtn">
 		<button id="savetime" class="inputandsubmitbtn">Save</button>
 	</div>
-
-
-   <table class="table table-hover">
-      <tr>
-    <th>Datum:</th>
-    <th>Erreichte Zeit</th>
-    <th>Sollzeit</th>
-    <th>Differenz</th>
-  </tr>
-<div id="uebersicht">
-		<div id="zeile">
-			<tr id="zeile">
-			    <td><input type="text" class="form-control" placeholder="Datum" readonly></td>
-			    <td><input type="text" class="form-control" placeholder="erreichte Zeit" readonly></td>
-			    <td><input type="text" class="form-control" placeholder="Sollzeit" readonly></td>
-			    <td><input type="text" class="form-control" placeholder="Differenz Zeit" readonly></td>
-			</tr>
-		</div>
-		</div>
-	</table>
 
 </body>
 <?php  
