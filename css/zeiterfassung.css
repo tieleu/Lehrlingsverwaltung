@@ -6,10 +6,6 @@ body{
     min-height: 300px;
     background-color: white;
     width: 80%;
-    color: white;
-    float: right;
-    margin-right: 5%;
-    margin-top: 5%;
 }
 #input_container{
     height: 300px;
