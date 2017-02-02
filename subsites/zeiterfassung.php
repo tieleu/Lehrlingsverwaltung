@@ -39,7 +39,6 @@ $nameOfUser = $_GET['user'];
   </tr>
 		<div id="zeile">
 			<tr id="zeile">
-			1
 			    <td><input type="text" class="form-control" placeholder="Datum" readonly></td>
 			    <td><input type="text" class="form-control" placeholder="erreichte Zeit" readonly></td>
 			    <td><input type="text" class="form-control" placeholder="Sollzeit" readonly></td>
