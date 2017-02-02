@@ -4,8 +4,8 @@ body{
 }
 
 #uebersicht{
-    min-height: 40%;
-    max-height: 70%;
+    min-height: 500px;
+    max-height: 800px;
     width: 80%;
     background-color: #F5F5F5;
     
