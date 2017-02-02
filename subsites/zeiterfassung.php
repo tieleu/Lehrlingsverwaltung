@@ -19,7 +19,7 @@ $nameOfUser = $_GET['user'];
 
 </head>
 <body>
-<div>
+<div id="uebersicht">
    <table class="table table-hover">
       <tr>
     <th>Datum:</th>
@@ -37,7 +37,7 @@ $nameOfUser = $_GET['user'];
 
 		</div>
 	</table>
-<div id="uebersicht">
+</div>
 	<div id="input_container">
 		Datum
 		<input type="date" id="date_input" class="inputandsubmitbtn">
