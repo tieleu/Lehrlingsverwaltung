@@ -29,6 +29,7 @@ $nameOfUser = $_GET['user'];
 		<button id="savetime" class="inputandsubmitbtn">Save</button>
 	</div>
 
+<div id="uebersicht">
    <table class="table table-hover">
 		<div id="zeile">
 			<tr id="zeile">
@@ -39,6 +40,7 @@ $nameOfUser = $_GET['user'];
 			</tr>
 		</div>
 	</table>
+</div>
 </body>
 <?php  
 
