@@ -20,22 +20,23 @@ $nameOfUser = $_GET['user'];
 </head>
 <body>
 	<div id="input_container">
-		<p>Datum</p>
+		Datum
 		<input type="date" id="date_input" class="inputandsubmitbtn">
-		<p>von:</p>
+		von:
 		<input type="time" id="starttime_input" class="inputandsubmitbtn">
-		<p>bis:</p>
+		bis:
 		<input type="time" id="endtime_input" class="inputandsubmitbtn">
 		<button id="savetime" class="inputandsubmitbtn">Save</button>
 	</div>
 
-<div id="uebersicht">
+<div id="zeile">
 <tr id="zeile">
     <td><input type="text" class="form-control" placeholder="Datum" readonly></td>
     <td><input type="text" class="form-control" placeholder="erreichte Zeit" readonly></td>
     <td><input type="text" class="form-control" placeholder="Sollzeit" readonly></td>
     <td><input type="text" class="form-control" placeholder="Differenz Zeit" readonly></td>
 </tr>
+    <td><input type="text" class="form-control" placeholder="Gesamtdifferenz" readonly></td>
 </div>
 
 </body>
