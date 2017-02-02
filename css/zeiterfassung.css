@@ -1,23 +1,29 @@
 body{
-
     width: 100%;
 }
+
 #uebersicht{
     min-height: 300px;
     width: 80%;
-background-color: #F5F5F5;
+    background-color: #F5F5F5;
+    
     top:0;
     bottom: 0;
     left: 0;
     right: 0;
-
     margin: auto;
 }
+
 #input_container{
-    height: 300px;
-    float: left;
+    min-height: 300px;
     margin-left: 5%;
     margin-top: 5%;
+
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 
 }
 .inputandsubmitbtn{
