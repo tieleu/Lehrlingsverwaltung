@@ -31,6 +31,12 @@ $nameOfUser = $_GET['user'];
 
 <div id="uebersicht">
    <table class="table table-hover">
+      <tr>
+    <th>Datum:</th>
+    <th>Erreichte Zeit</th>
+    <th>Sollzeit</th>
+    <th>Differenz</th>
+  </tr>
 		<div id="zeile">
 			<tr id="zeile">
 			    <td><input type="text" class="form-control" placeholder="Datum" readonly></td>
