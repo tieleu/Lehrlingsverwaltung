@@ -19,7 +19,7 @@ $nameOfUser = $_GET['user'];
 
 </head>
 <body>
-<div id="uebersicht">
+<div align="center" id="uebersicht">
    <table class="table table-hover">
       <tr>
     <th>Datum:</th>
