@@ -25,8 +25,16 @@ $nameOfUser = $_GET['user'];
 		<input type="time" id="endtime_input" class="inputandsubmitbtn">
 		<button id="savetime" class="inputandsubmitbtn">Save</button>
 	</div>
-	<div id="uebersicht"></div>
+	<div id="uebersicht">
 
+<tr id="zeile">
+    <td><input type="text" class="form-control" placeholder="Datum" readonly></td>
+    <td><input type="text" class="form-control" placeholder="erreichte Zeit" readonly></td>
+    <td><input type="text" class="form-control" placeholder="Sollzeit" readonly></td>
+    <td><input type="text" class="form-control" placeholder="Differenz Zeit" readonly></td>
+    <td><a href="<?php  echo $row-> Link ?>">zur Übung</a></td>
+</tr>
+</div>
 
 </body>
 <?php  
