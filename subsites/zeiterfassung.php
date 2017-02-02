@@ -22,7 +22,7 @@ $nameOfUser = $_GET['user'];
 <div align="center" id="uebersicht">
    <table class="table table-hover">
       <tr>
-    <th>Datum:</th>
+    <th>Datum</th>
     <th>Erreichte Zeit</th>
     <th>Sollzeit</th>
     <th>Differenz</th>
@@ -38,16 +38,22 @@ $nameOfUser = $_GET['user'];
 		</div>
 	</table>
 </div>
-	<div id="input_container">
-		Datum
-		<input type="date" id="date_input" class="inputandsubmitbtn">
-		von:
-		<input type="time" id="starttime_input" class="inputandsubmitbtn">
-		bis:
-		<input type="time" id="endtime_input" class="inputandsubmitbtn">
-		<button id="savetime" class="inputandsubmitbtn">Save</button>
-	</div>
 
+<div id="input_container">
+   <table>
+      <tr>
+	    <th>Datum</th>
+    	<th>von</th>
+    	<th>bis</th>
+   	</tr>
+	<tr>
+	   <td><input type="date" id="date_input" class="inputandsubmitbtn"></td>
+	   <td><input type="time" id="starttime_input" class="inputandsubmitbtn"></td>
+	    <td><input type="time" id="endtime_input" class="inputandsubmitbtn"></td>
+	    <td><button id="savetime" class="inputandsubmitbtn">Save</button></td>
+	</tr>
+	</table>
+</div>
 </body>
 <?php  
 
