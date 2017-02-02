@@ -5512,8 +5512,8 @@ button.list-group-item-dringend.active:focus {
 .panel > .table caption,
 .panel > .table-responsive > .table caption,
 .panel > .panel-collapse > .table caption {
-  /*padding-right: 15px;
-  padding-left: 15px;*/
+  padding-right: 15px;
+  padding-left: 15px;
 }
 .panel > .table:first-child,
 .panel > .table-responsive:first-child > .table:first-child {

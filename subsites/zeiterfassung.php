@@ -13,10 +13,6 @@ $nameOfUser = $_GET['user'];
 		include("header.php");
 	 ?>
 	<title>Lehrverwaltung - Lehrplan</title>
-
-
-
-
 </head>
 <body>
 <div id="uebersicht">
@@ -34,11 +30,9 @@ $nameOfUser = $_GET['user'];
 			    <td><input type="text" class="form-control" placeholder="Sollzeit" readonly></td>
 			    <td><input type="text" class="form-control" placeholder="Differenz Zeit" readonly></td>
 			</tr>
-
 		</div>
 	</table>
 </div>
-
 	<div align="center" id="input_container">
 	   <table>
 	      <tr>
@@ -54,10 +48,8 @@ $nameOfUser = $_GET['user'];
 		</tr>
 		</table>
 	</div>
-
 </body>
 <?php  
-
 }else {	
 	echo "access denied! Please log in";
 }
