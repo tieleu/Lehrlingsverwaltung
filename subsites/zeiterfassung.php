@@ -28,7 +28,7 @@ $nameOfUser = $_GET['user'];
 		<input type="time" id="endtime_input" class="inputandsubmitbtn">
 		<button id="savetime" class="inputandsubmitbtn">Save</button>
 	</div>
-
+   <table class="table table-hover">
 <div id="zeile">
 <tr id="zeile">
     <td><input type="text" class="form-control" placeholder="Datum" readonly></td>
@@ -38,6 +38,8 @@ $nameOfUser = $_GET['user'];
 </tr>
     <td><input type="text" class="form-control" placeholder="Gesamtdifferenz" readonly></td>
 </div>
+</table>
+
 
 </body>
 <?php  
