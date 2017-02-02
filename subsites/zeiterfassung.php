@@ -39,7 +39,7 @@ $nameOfUser = $_GET['user'];
 	</table>
 </div>
 
-	<div id="input_container">
+	<div align="center" id="input_container">
 	   <table>
 	      <tr>
 		    <th>Datum</th>
