@@ -19,6 +19,7 @@ $nameOfUser = $_GET['user'];
 
 </head>
 <body>
+<div>
    <table class="table table-hover">
       <tr>
     <th>Datum:</th>
@@ -33,8 +34,10 @@ $nameOfUser = $_GET['user'];
 			    <td><input type="text" class="form-control" placeholder="Sollzeit" readonly></td>
 			    <td><input type="text" class="form-control" placeholder="Differenz Zeit" readonly></td>
 			</tr>
+
 		</div>
 	</table>
+<div id="uebersicht">
 	<div id="input_container">
 		Datum
 		<input type="date" id="date_input" class="inputandsubmitbtn">

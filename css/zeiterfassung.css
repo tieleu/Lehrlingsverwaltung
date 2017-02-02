@@ -1,7 +1,11 @@
+body{
+
+    width: 100%;
+}
 #uebersicht{
-    height: 300px;
+    min-height: 300px;
     background-color: white;
-    width: 500px;
+    width: 80%;
     color: white;
     float: right;
     margin-right: 5%;
