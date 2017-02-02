@@ -37,22 +37,23 @@ $nameOfUser = $_GET['user'];
 
 		</div>
 	</table>
-</div>
 
-<div id="input_container">
-   <table>
-      <tr>
-	    <th>Datum</th>
-    	<th>von</th>
-    	<th>bis</th>
-   	</tr>
-	<tr>
-	   <td><input type="date" id="date_input" class="inputandsubmitbtn"></td>
-	   <td><input type="time" id="starttime_input" class="inputandsubmitbtn"></td>
-	    <td><input type="time" id="endtime_input" class="inputandsubmitbtn"></td>
-	    <td><button id="savetime" class="inputandsubmitbtn">Save</button></td>
-	</tr>
-	</table>
+
+	<div id="input_container">
+	   <table>
+	      <tr>
+		    <th>Datum</th>
+	    	<th>von</th>
+	    	<th>bis</th>
+	   	</tr>
+		<tr>
+		   <td><input type="date" id="date_input" class="inputandsubmitbtn"></td>
+		   <td><input type="time" id="starttime_input" class="inputandsubmitbtn"></td>
+		    <td><input type="time" id="endtime_input" class="inputandsubmitbtn"></td>
+		    <td><button id="savetime" class="inputandsubmitbtn">Save</button></td>
+		</tr>
+		</table>
+	</div>
 </div>
 </body>
 <?php  
