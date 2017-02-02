@@ -36,7 +36,7 @@ $nameOfUser = $_GET['user'];
     <th>Erreichte Zeit</th>
     <th>Sollzeit</th>
     <th>Differenz</th>
-  </tr>
+  </tr>1
 		<div id="zeile">
 			<tr id="zeile">
 			    <td><input type="text" class="form-control" placeholder="Datum" readonly></td>
