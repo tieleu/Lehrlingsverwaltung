@@ -20,7 +20,7 @@ $nameOfUser = $_GET['user'];
 </head>
 <body>
 <div id="uebersicht">
-   <table class="table table-hover">
+   <table class="table">
       <tr>
     <th>Datum</th>
     <th>Erreichte Zeit</th>
