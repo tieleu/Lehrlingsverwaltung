@@ -43,6 +43,64 @@ body{
 #radio{
     display: inline;
 }
-#savetime{
-    width: 60px;
+
+/* ---------------------------------------------------------------*/
+
+.inputandsubmitbtn {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+  width: 30%;
+}
+.inputandsubmitbtn:focus,
+.inputandsubmitbtn.focus {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+}
+.inputandsubmitbtn:hover {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.inputandsubmitbtn:active,
+.inputandsubmitbtn.active,
+.open > .dropdown-toggle.inputandsubmitbtn {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.inputandsubmitbtn:active:hover,
+.inputandsubmitbtn.active:hover,
+.open > .dropdown-toggle.inputandsubmitbtn:hover,
+.inputandsubmitbtn:active:focus,
+.inputandsubmitbtn.active:focus,
+.open > .dropdown-toggle.inputandsubmitbtn:focus,
+.inputandsubmitbtn:active.focus,
+.inputandsubmitbtn.active.focus,
+.open > .dropdown-toggle.inputandsubmitbtn.focus {
+  color: #333;
+  background-color: #d4d4d4;
+  border-color: #8c8c8c;
+}
+.inputandsubmitbtn:active,
+.inputandsubmitbtn.active,
+.open > .dropdown-toggle.inputandsubmitbtn {
+  background-image: none;
+}
+.inputandsubmitbtn.disabled:hover,
+.inputandsubmitbtn[disabled]:hover,
+fieldset[disabled] .inputandsubmitbtn:hover,
+.inputandsubmitbtn.disabled:focus,
+.inputandsubmitbtn[disabled]:focus,
+fieldset[disabled] .inputandsubmitbtn:focus,
+.inputandsubmitbtn.disabled.focus,
+.inputandsubmitbtn[disabled].focus,
+fieldset[disabled] .inputandsubmitbtn.focus {
+  background-color: #fff;
+  border-color: #ccc;
+}
+.inputandsubmitbtn .badge {
+  color: #fff;
+  background-color: #333;
 }
