@@ -44,7 +44,7 @@ $nameOfUser = $_GET['user'];
 		   <td><input type="date" id="date_input" class="inputandsubmitbtn form-control"></td>
 		   <td><input type="time" id="starttime_input" class="inputandsubmitbtn form-control"></td>
 		    <td><input type="time" id="endtime_input" class="inputandsubmitbtn form-control"></td>
-		    <td><button id="savetime" class="inputandsubmitbtn btn">Save test2</button></td>
+		    <td><button id="savetime" class="inputandsubmitbtn btn">Save test</button></td>
 		</tr>
 		</table>
 	</div>
