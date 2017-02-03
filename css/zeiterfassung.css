@@ -42,3 +42,6 @@ body{
 #radio{
     display: inline;
 }
+#savetime{
+    width: 60px;
+}
