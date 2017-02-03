@@ -13,12 +13,9 @@ $nameOfUser = $_GET['user'];
 		include("header.php");
 	 ?>
 	<title>Lehrverwaltung - Lehrplan</title>
-
-
-
-
 </head>
 <body>
+
 	<div id="input_container">
 		<input type="date" id="date_input" class="inputandsubmitbtn">
 		<form id="radio">
@@ -28,13 +25,43 @@ $nameOfUser = $_GET['user'];
 		<input type="time" id="starttime_input" class="inputandsubmitbtn">
 		<input type="time" id="endtime_input" class="inputandsubmitbtn">
 		<button id="savetime" class="inputandsubmitbtn btn btn-default">Save</button>
+
+<div id="uebersicht">
+   <table class="table">
+      <tr>
+    <th>Datum</th>
+    <th>Erreichte Zeit</th>
+    <th>Sollzeit</th>
+    <th>Differenz</th>
+  </tr>
+		<div id="zeile">
+			<tr id="zeile">
+			    <td><input type="text" class="form-control" placeholder="Datum" readonly></td>
+			    <td><input type="text" class="form-control" placeholder="erreichte Zeit" readonly></td>
+			    <td><input type="text" class="form-control" placeholder="Sollzeit" readonly></td>
+			    <td><input type="text" class="form-control" placeholder="Differenz Zeit" readonly></td>
+			</tr>
+		</div>
+	</table>
+</div>
+	<div align="center" id="input_container">
+	   <table>
+	      <tr>
+		    <th>Datum</th>
+	    	<th>von</th>
+	    	<th>bis</th>
+	   	</tr>
+		<tr>
+		   <td><input type="date" id="date_input" class="inputandsubmitbtn"></td>
+		   <td><input type="time" id="starttime_input" class="inputandsubmitbtn"></td>
+		    <td><input type="time" id="endtime_input" class="inputandsubmitbtn"></td>
+		    <td><button id="savetime" class="inputandsubmitbtn">Save</button></td>
+		</tr>
+		</table>
+
 	</div>
-	<div id="uebersicht"></div>
-
-
 </body>
 <?php  
-
 }else {	
 	echo "access denied! Please log in";
 }

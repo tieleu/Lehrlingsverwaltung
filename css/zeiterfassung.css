@@ -1,16 +1,29 @@
-#uebersicht{
-    height: 20em;
-    width: 20em;
-    background: red;
-    float: right;
-    margin-right: 5%;
-    margin-top: 5%;
+body{
+    width: 100%;
+    height: 100%;
 }
+
+#uebersicht{
+    min-height: 600px;
+    max-height: 900px;
+    width: 80%;
+    background-color: #F5F5F5;
+    
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
 #input_container{
-    height: 300px;
-    float: left;
-    margin-left: 5%;
-    margin-top: 5%;
+    min-height: 300px;
+
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 
 }
 .inputandsubmitbtn{
