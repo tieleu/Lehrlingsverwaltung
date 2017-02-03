@@ -52,6 +52,7 @@ $nameOfUser = $_GET['user'];
 <?php  
 }else {	
 	echo "access denied! Please log in";
+	header("Location: login.html");
 }
 ?>
 </html>
