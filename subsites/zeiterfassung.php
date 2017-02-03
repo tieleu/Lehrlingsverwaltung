@@ -15,17 +15,6 @@ $nameOfUser = $_GET['user'];
 	<title>Lehrverwaltung - Lehrplan</title>
 </head>
 <body>
-
-	<div id="input_container">
-		<input type="date" id="date_input" class="inputandsubmitbtn">
-		<form id="radio">
-		<input type="radio" name="morning" value="morning"> Morgen <br>
-  		<input type="radio" name="afternoon" value="afternoon">Nachmittag
-  		</form>
-		<input type="time" id="starttime_input" class="inputandsubmitbtn">
-		<input type="time" id="endtime_input" class="inputandsubmitbtn">
-		<button id="savetime" class="inputandsubmitbtn btn btn-default">Save</button>
-
 <div id="uebersicht">
    <table class="table">
       <tr>
@@ -58,7 +47,6 @@ $nameOfUser = $_GET['user'];
 		    <td><button id="savetime" class="inputandsubmitbtn">Save</button></td>
 		</tr>
 		</table>
-
 	</div>
 </body>
 <?php  
