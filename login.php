@@ -30,7 +30,7 @@
 		} else {
 			$error = "Username or Password is invalid";
 			echo  $error;
-			header("login.html");
+			header("Location: login.html");
 			sleep(2);
 		}
 			mysql_close($connection);
