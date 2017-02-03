@@ -28,6 +28,7 @@ body{
 }
 .inputandsubmitbtn{
     height: 40px;
+    width: 60px;
     margin-right: 10px;
 }
 #date_input{
