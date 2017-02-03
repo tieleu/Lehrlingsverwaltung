@@ -27,7 +27,7 @@ $nameOfUser = $_GET['user'];
   		</form>
 		<input type="time" id="starttime_input" class="inputandsubmitbtn">
 		<input type="time" id="endtime_input" class="inputandsubmitbtn">
-		<button id="savetime" class="inputandsubmitbtn">Save</button>
+		<button id="savetime" class="inputandsubmitbtn btn btn-default">Save</button>
 	</div>
 	<div id="uebersicht"></div>
 
