@@ -1,6 +1,6 @@
 <?php
+session_start();
 include('../subsites/header.php');
-$user = $_GET['user'];
 
  	$servername = "172.16.44.5";
  	$username = "lehrling";
