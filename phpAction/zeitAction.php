@@ -35,5 +35,5 @@ echo "timeId: " . $idTime;
 
 	mysql_query("INSERT INTO User_has_zeit (User_idUser, zeit_id) VALUES ($idUser,$idTime)");
 }
-header("Location: ../subsites/zeiterfassung.php?user=$user");
+#header("Location: ../subsites/zeiterfassung.php?user=$user");
 ?>
