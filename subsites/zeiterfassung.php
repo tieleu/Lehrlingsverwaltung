@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html>
-<?php  
-session_start();
-$cookieName = $_SESSION['login_user'];
-$nameOfUser = $_GET['user'];
- if($nameOfUser == $cookieName){ 
+	<?php 
+include("header.php");
 
+ $cookieName = $_SESSION['login_user'];
+ $nameOfUser = $_GET['user'];
+ 
+ if($nameOfUser == $cookieName){ 
  ?>
 <head>
 	<link rel="stylesheet" type="text/css" href="../css/zeiterfassung.css">
 	<script type="text/javascript" href="../jquery/jquery-3.1.1.js"></script>
 	
-	<?php 
-		include("header.php");
-	 ?>
+
 	<title>Lehrverwaltung - Lehrplan</title>
 </head>
 <body>
