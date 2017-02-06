@@ -43,23 +43,16 @@ $nameOfUser = $_GET['user'];
 	    	<th>bis</th>
 	   	</tr>
 		<tr>
+		<form action="../phpAction/zeitAction.php" method="post">
 		   <td><input type="date" id="date_input" name="date_input" class="inputandsubmitbtn form-control"></td>
 		   <td><input type="time" id="starttime_input" name="starttime_input" class="inputandsubmitbtn form-control"></td>
 		    <td><input type="time" id="endtime_input" name="endtime_input" class="inputandsubmitbtn form-control"></td>
 		    <td><button id="savetime" name="savetime" class="inputandsubmitbtn btn">Save</button></td>
+		</form>
 		</tr>
 		</table>
 	</div>
-	<?php
-		if(isset($_POST['savetime'])){
-			$starttime = $_POST['starttime_input'];
-			$endtime = $_POST['endtime_input'];
-			$date = $_POST['date_input']; 
-			mysql_query("INSERT INTO zeit (zeit_morgen, zeit_nachmittag,endzeit,zeit_differenz) VALUES ('$starttime', '$endtime', 8,0 )");
-			
-
-		}
-	?>
+	
 	<script src="../js/zeiterfassung.js"></script>
 </body>
 <?php  
