@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	$(starttime_input).focus();
 	console.log($(starttime_input).is(':focus'));
+	var $test;
 
 	  $(function(){
     var intervalID;
@@ -10,6 +11,10 @@ $(document).ready(function(){
     function RepeatCall() {
       var inout = (freqSecs*1000)/2;
       $("#starttime_input").fadeIn(inout).fadeOut(inout);
+      document.cookie = $(('#starttime_input').value());
+      $test = document.cookie;
+      console.log($test);
+
     }
 
     
