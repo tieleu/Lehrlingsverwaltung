@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<?php 
-			session_start(); 
 include("header.php");
+$user = $_GET['user'];
  ?>
 <head>
 	<link rel="stylesheet" type="text/css" href="../css/zeiterfassung.css">
@@ -38,7 +38,7 @@ include("header.php");
 	    	<th>bis</th>
 	   	</tr>
 		<tr>
-		<form action="../phpAction/zeitAction.php" method="post">
+		<form action="../phpAction/zeitAction.php?user=<?php echo $user ?>" method="post">
 		   <td><input type="date" id="date_input" name="date_input" class="inputandsubmitbtn form-control"></td>
 		   <td><input type="time" id="starttime_input" name="starttime_input" class="inputandsubmitbtn form-control"></td>
 		    <td><input type="time" id="endtime_input" name="endtime_input" class="inputandsubmitbtn form-control"></td>

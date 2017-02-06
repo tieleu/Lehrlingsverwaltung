@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('../subsites/header.php');
+$user = $_GET['user'];
 
  	$servername = "172.16.44.5";
  	$username = "lehrling";
@@ -16,5 +17,5 @@ include('../subsites/header.php');
 			$date = $_POST['date_input']; 
 			mysql_query("INSERT INTO zeit (zeit_morgen, zeit_nachmittag,endzeit,zeit_differenz) VALUES ('$starttime', '$endtime', 8,0 )");
 		}
-		header("Location: ../subsites/zeiterfassung.php");
+		header("Location: ../subsites/zeiterfassung.php?user=$user");
 ?>
