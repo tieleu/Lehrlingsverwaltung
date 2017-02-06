@@ -1,4 +1,5 @@
 <?php
+include('../subsites/header.php');
 $user = $_GET['user'];
 
  	$servername = "172.16.44.5";

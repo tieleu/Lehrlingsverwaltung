@@ -2,9 +2,6 @@
 <html>
 	<?php 
 include("header.php");
- $cookieName = $_SESSION['login_user'];
- $nameOfUser = $_GET['user'];
- 
  ?>
 <head>
 	<link rel="stylesheet" type="text/css" href="../css/zeiterfassung.css">

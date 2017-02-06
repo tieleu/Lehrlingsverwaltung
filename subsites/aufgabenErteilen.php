@@ -2,7 +2,6 @@
 <head>
 	<?php 
 	include("header.php");
-	
 	?>
 	
 	<meta name="description" content="Free Web tutorials">
