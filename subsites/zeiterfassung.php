@@ -9,6 +9,7 @@ $nameOfUser = $_GET['user'];
  ?>
 <head>
 	<link rel="stylesheet" type="text/css" href="../css/zeiterfassung.css">
+	<script src="../js/zeiterfassung.js"></script>
 	<?php 
 		include("header.php");
 	 ?>
