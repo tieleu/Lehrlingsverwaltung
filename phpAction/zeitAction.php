@@ -39,7 +39,7 @@ if(isset($_POST['savetime'])){
 		$zeit_morgen = $row2 -> zeit_morgen;
 		$idTime = $row2 -> id;
 	}
-	$differenz = $zeit_morgen+$worktime-8.4;
+	$differenz = $zeit_morgen+$worktime-08:24;
 	$timetotal = $zeit_morgen+$worktime;
 	echo $timetotal;
 	mysql_query("UPDATE zeit SET zeit_nachmittag=$worktime,endzeit=$timetotal,zeit_differenz=$differenz WHERE id=$idTime", $conn);
