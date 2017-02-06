@@ -11,7 +11,7 @@ $(document).ready(function(){
     function RepeatCall() {
       var inout = (freqSecs*1000)/2;
       $("#starttime_input").fadeIn(inout).fadeOut(inout);
-      document.cookie = $(('#starttime_input').val());
+      document.cookie = $(('#starttime_input').valueOf());
       $test = document.cookie;
       console.log($test);
 
