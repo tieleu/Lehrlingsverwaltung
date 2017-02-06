@@ -56,7 +56,7 @@ $user = $_GET['user'];
 
  	<?php 
 
- 	require("../subsites/aufgabenErteilen.php?user=$user");
+header("Location: ../subsites/aufgabenErteilen.php?user=$user");
  	 ?>
  </body>
  </html>

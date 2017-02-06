@@ -37,16 +37,9 @@ $user = $_GET['user'];
 
 
 }
-   	 if($result1){
- 		echo "Successful";
- 	}
 
- 	else {
- 		echo "ERROR";
- 	}
-?>
-<?php
-require("../subsites/zurPruefung.php?user=$user");
+
+header("Location: ../subsites/zurPruefung.php?user=$user");
 
   ?>
 

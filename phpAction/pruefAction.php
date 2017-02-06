@@ -30,7 +30,8 @@ $user = $_GET['user'];
 ?>
 
 <?php
-require("../subsites/aufgaben.php?user=$user");
+
+header("Location: ../subsites/aufgaben.php?user=$user");
 
  ?>
  </body>
