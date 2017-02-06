@@ -15,5 +15,5 @@ $user = $_GET['user'];
 			$date = $_POST['date_input']; 
 			mysql_query("INSERT INTO zeit (zeit_morgen, zeit_nachmittag,endzeit,zeit_differenz) VALUES ('$starttime', '$endtime', 8,0 )");
 		}
-		header("Location: ../subsites/zeiterfassung.html");
+		header("Location: ../subsites/zeiterfassung.php");
 ?>
