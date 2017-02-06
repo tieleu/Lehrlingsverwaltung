@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
-<?php 
-session_start();
+<?php
 $cookieName = $_SESSION['login_user'];
 $nameOfUser = $_GET['user'];
 
