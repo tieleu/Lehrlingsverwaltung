@@ -3,6 +3,6 @@ $(document).ready(function(){
 	console.log($(starttime_input).is(':focus'));
 
     while ($(starttime_input).is(':focus')){
-    	console.log('active');
+    	
     }
 });
