@@ -6,6 +6,7 @@ $user = $_GET['user'];
 mysql_select_db("Lehrverwaltung");
 if(isset($_POST['savetime'])){
 	$starttime = $_POST['starttime_input'];
+	echo $starttime;
 	$endtime = $_POST['endtime_input'];
 	$date = $_POST['date_input']; 
 	$rowsuser = mysql_query("SELECT idUser FROM User WHERE username = '$user'", $conn);
