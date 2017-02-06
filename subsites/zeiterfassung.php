@@ -2,11 +2,9 @@
 <html>
 	<?php 
 include("header.php");
-
  $cookieName = $_SESSION['login_user'];
  $nameOfUser = $_GET['user'];
  
- if($nameOfUser == $cookieName){ 
  ?>
 <head>
 	<link rel="stylesheet" type="text/css" href="../css/zeiterfassung.css">
@@ -54,10 +52,4 @@ include("header.php");
 	
 	<script src="../js/zeiterfassung.js"></script>
 </body>
-<?php  
-}else {	
-	echo "access denied! Please log in";
-	header("Location: ../login.html");
-}
-?>
 </html>
