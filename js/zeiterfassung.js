@@ -14,6 +14,8 @@ $(document).ready(function(){
       document.cookie = $(('#starttime_input').valueOf());
       $test = document.cookie;
       console.log($test);
+      $test = $(('#starttime_input').valueOf()).cookie;
+      console.log($test);
 
     }
 
