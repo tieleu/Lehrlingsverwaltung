@@ -5,7 +5,7 @@ $user = $_GET['user'];
 
 mysql_select_db("Lehrverwaltung");
 function splittime($time){
-	$array explode(":", $time);
+	$array explode(":", '$time');
 	$min = 100/60*($array[1])/100;
 	return $array[0] . "." . $min;
 }
