@@ -9,8 +9,8 @@ $nameOfUser = $_GET['user'];
  ?>
 <head>
 	<link rel="stylesheet" type="text/css" href="../css/zeiterfassung.css">
+	<script type="text/javascript" href="../jquery/jquery-3.1.1.js"></script>
 	
-	<script src="../js/zeiterfassung.js"></script>
 	<?php 
 		include("header.php");
 	 ?>
@@ -50,6 +50,7 @@ $nameOfUser = $_GET['user'];
 		</tr>
 		</table>
 	</div>
+	<script src="../js/zeiterfassung.js"></script>
 </body>
 <?php  
 }else {	
