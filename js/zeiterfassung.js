@@ -11,7 +11,7 @@ $(document).ready(function(){
 	    intervalID = setInterval (RepeatCall, freqSecs*1000 );
 
 	    function RepeatCall() {
-	      document.cookie = valueOf($('#starttime_input'));
+	      document.cookie = valueOf('#starttime_input');
 	      $cookietime = document.cookie;
 	      console.log($cookietime);
 	    }
