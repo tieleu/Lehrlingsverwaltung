@@ -16,7 +16,7 @@ if(isset($_POST['savetime'])){
 	$endtime = $_POST['endtime_input'];
 	$date = $_POST['date_input']; 
 	mysql_query("INSERT INTO zeit (zeit_morgen, zeit_nachmittag,endzeit,zeit_differenz) VALUES ('$starttime', '$endtime', 8,0 )", $conn);
-	$rowstime = mysql_query("SELECT MAX(id) FROM zeit", $conn);
+	$rowstime = mysql_query("SELECT MAX(id) AS id FROM zeit", $conn);
 
 		while($row1 = mysql_fetch_object($rowstime)){
 		$idTime = $row1 -> id;
