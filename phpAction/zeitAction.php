@@ -36,7 +36,7 @@ echo $user;
 echo "userId: " . $idUser;
 
 
-	mysql_query("INSERT INTO User_has_zeit (User_idUser, zeit_id) VALUES (" . $idUser . "," . $idTime . ")");
+	mysql_query("INSERT INTO User_has_zeit (User_idUser, zeit_id) VALUES ($idUser,$idTime)", $conn);
 }
 #header("Location: ../subsites/zeiterfassung.php?user=$user");
 ?>
