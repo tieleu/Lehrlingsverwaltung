@@ -45,5 +45,5 @@ if(isset($_POST['savetime'])){
 
 }
 }
-	header("Location: ../subsites/zeiterfassung.php?user=$user");
+	#header("Location: ../subsites/zeiterfassung.php?user=$user");
 ?>
