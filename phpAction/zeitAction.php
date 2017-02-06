@@ -15,22 +15,25 @@ if(isset($_POST['savetime'])){
 	$starttime = $_POST['starttime_input'];
 	$endtime = $_POST['endtime_input'];
 	$date = $_POST['date_input']; 
-	mysql_query("INSERT INTO zeit (zeit_morgen, zeit_nachmittag,endzeit,zeit_differenz) VALUES ('$starttime', '$endtime', 8,0 )", $conn);
-	$rowstime = mysql_query("SELECT MAX(id) AS id FROM zeit", $conn);
-
-	
-
 	$rowsuser = mysql_query("SELECT idUser FROM User WHERE username = '$user'", $conn);
-
-	echo $user; 
-
 	$idUser = 0;
-	$idTime = 0;
-
 	while($row = mysql_fetch_object($rowsuser)){
 		$idUser = $row -> idUser;
 	}
 	echo "userId: " . $idUser;
+	$worktime = $endtime - $starttime;
+	echo $worktime;
+
+	mysql_query("INSERT INTO zeit (zeit_morgen, zeit_nachmittag,endzeit,zeit_differenz, date) VALUES ('$starttime', '$endtime', 8,0, '$date' )", $conn);
+	$rowstime = mysql_query("SELECT MAX(id) AS id FROM zeit", $conn);
+
+	
+
+
+	echo $user; 
+
+	$idTime = 0;
+
 
 	while($row1 = mysql_fetch_object($rowstime)){
 		$idTime = $row1 -> id;
