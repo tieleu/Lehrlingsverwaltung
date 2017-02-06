@@ -19,7 +19,7 @@
 			?>
 			<form action="" method="post">
 				<select id="select" name="select" onchange="this.form.submit()" style="width: 170px; height: 35px;">
-			<option selected="selected">Auswahl</option>
+			<option disabled hidden selected="selected">Auswahl</option>
 					<?php
 
 					$selectOption = $_POST['select'];
