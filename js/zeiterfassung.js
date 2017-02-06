@@ -2,7 +2,7 @@ $(document).ready(function(){
 	$(starttime_input).focus();
 	console.log($(starttime_input).is(':focus'));
 
-    while ($(starttime_input).is(':active')){
+    while ($(starttime_input).is(':focus')){
     	console.log('active');
     }
 });
