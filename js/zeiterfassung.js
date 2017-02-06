@@ -1,8 +1,5 @@
 $(document).ready(function(){
-    $(starttime_input).focus(function(){
-    	$(this).hide();
-    });
-    while ($(starttime_input).active()){
+    while ($(starttime_input).onfocus()){
     	console.log('active');
     }
 });
