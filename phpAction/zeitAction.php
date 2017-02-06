@@ -7,7 +7,6 @@ mysql_select_db("Lehrverwaltung");
 function splittime($time){
 	$array explode(":", '$time');
 	$min = 100/60*($array[1])/100;
-	echo $min;
 	return $array[0] . "." . $min;
 }
 if(isset($_POST['savetime'])){
