@@ -21,7 +21,7 @@ if(isset($_POST['savetime'])){
 		$idUser = $row -> idUser;
 	}
 	echo "userId: " . $idUser;
-	$worktime = splittime($endtime - $starttime);
+	$worktime = splittime($endtime) - splittime($starttime);
 	echo $worktime;
 	
 
