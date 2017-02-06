@@ -21,7 +21,8 @@ if(isset($_POST['savetime'])){
 
 	$rowstime = mysql_num_rows($timeId);
 	$rowsuser = mysql_num_rows($userId);
-
+	$idUser = 0;
+	$idTime = 0;
 	while($row = mysql_fetch_object($rowsuser)){
 		$idUser = $row -> idUser;
 	}
