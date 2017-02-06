@@ -4,6 +4,11 @@ include('../subsites/header.php');
 $user = $_GET['user'];
 
 mysql_select_db("Lehrverwaltung");
+function splittime($time){
+	$array explode(":", $time);
+	$min = 100/60*($array[1])/100;
+	return $array[0] . "." . $min;
+}
 if(isset($_POST['savetime'])){
 	$starttime = $_POST['starttime_input'];
 	echo $starttime;
@@ -16,9 +21,9 @@ if(isset($_POST['savetime'])){
 		$idUser = $row -> idUser;
 	}
 	echo "userId: " . $idUser;
-	$worktime = $endtime - $starttime;
+	$worktime = splittime($endtime - $starttime);
 	echo $worktime;
-	$worktMorningSaved;
+	
 
 	$check = mysql_query("SELECT User_has_zeit.User_idUser, User_has_zeit.zeit_id, zeit.date, zeit.id, zeit.zeit_morgen From User_has_zeit JOIN zeit ON User_has_zeit.zeit_id=zeit.id WHERE zeit.date='$date' AND User_has_zeit.User_idUser=$idUser;");
 	if(mysql_num_rows($check)!=1){
@@ -40,7 +45,7 @@ if(isset($_POST['savetime'])){
 		$zeit_morgen = $row2 -> zeit_morgen;
 		$idTime = $row2 -> id;
 	}
-	$differenz = $zeit_morgen+$worktime-8.4;
+	$differenz = $zeit_morgen+splittime($worktime)-8.4;
 	$timetotal = $zeit_morgen+$worktime;
 	
 	mysql_query("UPDATE zeit SET zeit_nachmittag=$worktime,endzeit=$timetotal,zeit_differenz=$differenz WHERE id=$idTime", $conn);
