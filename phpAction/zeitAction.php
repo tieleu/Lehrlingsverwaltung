@@ -30,7 +30,7 @@ if(isset($_POST['savetime'])){
 		$idTime = $row1 -> id;
 	}
 
-	mysql_query("INSERT INTO User_has_zeit (User_idUser, zeit_id) VALUES ($idUser,$idTime)")
+	mysql_query("INSERT INTO User_has_zeit (User_idUser, zeit_id) VALUES ($idUser,$idTime)");
 }
 header("Location: ../subsites/zeiterfassung.php?user=$user");
 ?>
