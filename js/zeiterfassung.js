@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    while ($(starttime_input).onfocus()){
+    while ($(starttime_input).is(':focus')){
     	console.log('active');
     }
 });
