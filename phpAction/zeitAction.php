@@ -5,6 +5,15 @@ $user = $_GET['user'];
 
 mysql_select_db("Lehrverwaltung");
 
+function zeitZuDez($time){
+	$floatTime = str_replace(':', '.', $time);
+	$min = substr($floatTime, 3);
+	$stund = substr($floatTime, 0,2);
+	$dezmin = 100/60*$min/100;
+	$dezZeit = $stund+$dezmin;
+	return $dezZeit;
+}
+
 if(isset($_POST['savetime'])){
 	$starttime = $_POST['starttime_input'];
 	echo $starttime;
@@ -17,7 +26,7 @@ if(isset($_POST['savetime'])){
 		$idUser = $row -> idUser;
 	}
 	echo "userId: " . $idUser;
-	$worktime = $endtime -$starttime;
+	$worktime = zeitZuDez($endtime) - zeitZuDez($starttime);
 	echo $worktime;
 	
 
@@ -41,6 +50,9 @@ if(isset($_POST['savetime'])){
 		$zeit_morgen = $row2 -> zeit_morgen;
 		$idTime = $row2 -> id;
 	}
+	$zeit_morgen = zeitZuDez($zeit_morgen);
+	$worktime = zeitZuDez($worktime);
+
 	$differenz = $zeit_morgen+$worktime-8.4;
 	$timetotal = $zeit_morgen+$worktime;
 	
