@@ -1,5 +1,5 @@
 <?php
 if (isset($_POST['select'])) {
-	echo "ok";
+	echo $_POST['select'];
 }
 ?>
