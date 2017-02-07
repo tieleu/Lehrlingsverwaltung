@@ -112,10 +112,10 @@ $user = $_GET['user'];
 				$differenz = minToTime($row1 -> zeit_differenz);
 				?>
 				<tr id='zeile'>
-				<td><input type='text' class='form-control' placeholder='Datum' value='$date' readonly></td>
-				<td><input type='text' class='form-control' placeholder='erreichte Zeit' value='$zeittotal' readonly></td>
+				<td><input type='text' class='form-control' placeholder='Datum' value='<?php echo $date ?>' readonly></td>
+				<td><input type='text' class='form-control' placeholder='erreichte Zeit' value='<?php echo $zeittotal ?>' readonly></td>
 				<td><input type='text' class='form-control' placeholder='Sollzeit' value='8:24 h' readonly></td>
-				<td><input type='text' class='form-control' placeholder='Differenz Zeit' value='$differenz' readonly></td>
+				<td><input type='text' class='form-control' placeholder='Differenz Zeit' value='<?php echo $differenz ?>' readonly></td>
 				</tr>
 				<?php } ?>
 
