@@ -73,7 +73,7 @@ $user = $_GET['user'];
 	</div>  -->
 				<div class="panel-heading">
 			<?php
-			$ausgabe = "SELECT vorname, username from User where status = 'lehrling'";
+			$ausgabe = "SELECT vorname, username, idUser from User where status = 'lehrling'";
 			$ergebniss = mysql_query($ausgabe);
 			?>
 			<form action="../phpAction/zeitUebersichtAction.php?user=<?php echo $user ?>" method="post">
@@ -85,17 +85,18 @@ $user = $_GET['user'];
 					
 					while ($row = mysql_fetch_object($ergebniss)) {
 						$vorname = $row -> vorname;
+						$idUser = $row -> idUser;
 						
 						if($vorname == $selectOption){
 							?>
 							<div class="panel-heading">
-								<option selected="selected"><?php echo  $vorname  ?></option>
+								<option selected="selected" value="<?php echo $idUser ?>"><?php echo  $vorname  ?></option>
 							</div>
 							<?php
 						} else {
 							?>	
 							<div class="panel-heading">
-								<option><?php echo  $vorname  ?></option>
+								<option value="<?php echo $idUser ?>"><?php echo  $vorname  ?></option>
 							</div>
 							<?php } ?>
 
