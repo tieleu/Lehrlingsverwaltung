@@ -15,7 +15,7 @@ $user = $_GET['user'];
 				<div class="panel-heading">
 			
 			<form action="" method="post">
-				<select id="select" name="select" onchange="this.form.submit()" style="width: 170px; height: 35px;">
+				<select id="select" name="select" style="width: 170px; height: 35px;">
 			<option value="1">Ruben</option>
 			<option value="2">Luca</option>
 			<option value="3">Jan</option>
