@@ -109,6 +109,7 @@ $user = $_GET['user'];
 				if (isset($_POST['select'])) {
 					$chosenUser = $_POST['select'];
 					$getContent = mysql_query("SELECT User_has_zeit.User_idUser, zeit.date, zeit.endzeit, zeit.zeit_differenz FROM User_has_zeit JOIN zeit ON User_has_zeit.zeit_id=zeit.id WHERE User_has_zeit.User_idUser=$chosenUser", $conn);
+					echo $chosenUser;
 					while($row1 = mysql_fetch_object($getContent)){
 						$date = $row1 -> date;
 						$zeittotal = minToTime($row1 -> endzeit);
