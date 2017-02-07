@@ -50,6 +50,8 @@ $user = $_GET['user'];
 				<table class="table">
 					<tr>
 						    <th>Datum</th>
+							<th>Zeit Morgen</th>
+							<th>Zeit Nachmittag</th>
 						    <th>Erreichte Zeit</th>
 						    <th>Sollzeit</th>
 							<th>Differenz</th>
@@ -77,17 +79,22 @@ $user = $_GET['user'];
 						$userID = $row -> idUser;
 					}
 					$ausgabe = "SELECT User_has_zeit.User_idUser, zeit.date, zeit.endzeit, zeit.zeit_differenz FROM User_has_zeit JOIN zeit ON User_has_zeit.zeit_id=zeit.id WHERE User_has_zeit.User_idUser=$userID ORDER BY zeit.date";
+					$exactAbfrage = mysql_query("SELECT User_has_zeit.User_idUser, zeit.date, zeit.endzeit, zeit.zeit_differenz, Zeit_exact.exact_morgen, Zeit_exact.exact_nachmittag FROM User_has_zeit, Zeit_exact, zeit GROUP BY User_has_zeit.User_idUser AND zeit.id AND Zeit_exact.zeit_idfs WHERE User_has_zeit.User_idUser=$userID ORDER BY zeit.date;");
 					$ergebniss = mysql_query($ausgabe);
 
-					while ($row = mysql_fetch_object($ergebniss)) {
+					while ($row = mysql_fetch_object($exactAbfrage)) {
 						$date = $row-> date;
 						$endzeit = minToTime($row -> endzeit);
 						$differenz = minToTime($row -> zeit_differenz);
+						$exactMorgen = $row -> Zeit_exact.exact_morgen;
+						$exactNachmittag = $row -> Zeit_exact.exact_nachmittag;
 						?>
 						
 				
 						<tr id="zeile">
 							<td><input type='text' class='form-control' placeholder='Datum' value="<?php echo $date; ?>" readonly></td>
+							<td><input type='text' class='form-control' placeholder='morgen' value="<?php echo $exactMorgen; ?>" readonly></td>
+							<td><input type='text' class='form-control' placeholder='nachmittag' value="<?php echo $exactNachmittag; ?>" readonly></td>
 							<td><input type='text' class='form-control' placeholder='erreichte Zeit' value="<?php echo $endzeit; ?>" readonly></td>
 							<td><input type='text' class='form-control' placeholder='Sollzeit' value='8:24 h' readonly></td>
 							<td><input type='text' class='form-control' placeholder='Differenz Zeit' value="<?php echo $differenz; ?>" readonly></td>						
