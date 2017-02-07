@@ -37,7 +37,6 @@ if(isset($_POST['savetime'])){
 	echo "timeId: " . $idTime;
 	mysql_query("INSERT INTO User_has_zeit (User_idUser, zeit_id) VALUES ($idUser,$idTime)", $conn);
 }else{
-	$zeit_morgen;
 	while($row2 = mysql_fetch_object($check)){
 		$zeit_morgen = $row2 -> zeit_morgen;
 		$idTime = $row2 -> id;
