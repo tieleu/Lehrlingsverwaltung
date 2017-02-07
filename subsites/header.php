@@ -65,7 +65,7 @@ mysql_query("SET NAMES 'utf8'",$conn);
 				      </li>
 							<li><a href="uebungen.php?user=<?php echo $nameOfUser ?>">Übungen</a></li>
 							<?php 
-							if($nameOfUser==tiefri){
+							if($user==tiefri){
 							echo "<li><a href='zeitUebersicht.php?user=<?php echo $nameOfUser ?>'>Zeiterfassung Übersicht</a></li>";	
 							}else{
 							echo "<li><a href='zeiterfassung.php?user=<?php echo $nameOfUser ?>'>Zeiterfassung</a></li>";
