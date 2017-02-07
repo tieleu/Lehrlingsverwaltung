@@ -51,7 +51,7 @@
 
 				<div class="form-group">
 					<label for="meeting">zu erledigen bis: </label>
-					<input required="true" name="erledigenBis" class="form-control" id="meeting" type="date" value="2016-08-01"/>
+					<input required="true" name="erledigenBis" class="form-control" id="meeting" type="date" value="<?php echo date('Y-m-d');?>"/>
 				</div>
 				<?php
 				$ausgabe = "select name, idUebung from Uebung";
