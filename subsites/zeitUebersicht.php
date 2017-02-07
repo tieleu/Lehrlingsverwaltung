@@ -19,29 +19,8 @@ $user = $_GET['user'];
 			?>
 			<form action="" method="post">
 				<select id="select" name="select" onchange="this.form.submit()" style="width: 170px; height: 35px;">
-			<option disabled hidden selected="selected">Auswahl</option>
-					<?php
-
-					$selectOption = $_POST['select'];
-					
-					while ($row = mysql_fetch_object($ergebniss)) {
-						$vorname = $row -> vorname;
-						$idUser = $row -> idUser;
-						
-						if($vorname == $selectOption){
-							?>
-							<div class="panel-heading">
-								<option selected="selected" value="<?php echo $idUser ?>"><?php echo  $vorname  ?></option>
-							</div>
-							<?php
-						} else {
-							?>	
-							<div class="panel-heading">
-								<option value="<?php echo $idUser ?>"><?php echo  $vorname  ?></option>
-							</div>
-							<?php } ?>
-
-							<?php } ?>
+			<option value="1">Ruben</option>
+			<option value="2">Luca</option>
 
 						</select>
 					</form>					
