@@ -15,7 +15,7 @@ $user = $_GET['user'];
 				<div class="panel-heading">
 			
 			<form action="" method="post">
-				<select id="select" name="select" style="width: 170px; height: 35px;">
+				<select id="select" name="select" onchange="this.form.submit()" style="width: 170px; height: 35px;">
 			<option value="1">Ruben</option>
 			<option value="2">Luca</option>
 			<option value="3">Jan</option>
@@ -34,6 +34,7 @@ $user = $_GET['user'];
 		<?php
 				if(isset($_POST['select'])){
 					$idofChosen = $_POST['select'];
+					echo $idofChosen;
 					$getContent = mysql_query("SELECT User_has_zeit.User_idUser, zeit.date, zeit.endzeit, zeit.zeit_differenz FROM User_has_zeit JOIN zeit ON User_has_zeit.zeit_id=zeit.id WHERE User_has_zeit.User_idUser=$idofChosen", $conn);
 			while($row1 = mysql_fetch_object($getContent)){
 				$date = $row1 -> date;
