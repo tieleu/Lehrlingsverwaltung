@@ -34,29 +34,29 @@ if(isset($_POST['savetime'])){
 	if(mysql_num_rows($check)!=1){
 
 
-	mysql_query("INSERT INTO zeit (zeit_morgen, date) VALUES ('$worktime', '$date' )", $conn);
-	$rowstime = mysql_query("SELECT MAX(id) AS id FROM zeit", $conn);
-	echo $user; 
-	
+		mysql_query("INSERT INTO zeit (zeit_morgen, date) VALUES ('$worktime', '$date' )", $conn);
+		$rowstime = mysql_query("SELECT MAX(id) AS id FROM zeit", $conn);
+		echo $user; 
+		
 
 
-	while($row1 = mysql_fetch_object($rowstime)){
-		$idTime = $row1 -> id;
+		while($row1 = mysql_fetch_object($rowstime)){
+			$idTime = $row1 -> id;
+		}
+		echo "timeId: " . $idTime;
+		mysql_query("INSERT INTO User_has_zeit (User_idUser, zeit_id) VALUES ($idUser,$idTime)", $conn);
+	}else{
+		while($row2 = mysql_fetch_object($check)){
+			$zeit_morgen = $row2 -> zeit_morgen;
+			$idTime = $row2 -> id;
+		}
+
+		$differenz = $zeit_morgen+$worktime-504;
+		$timetotal = $zeit_morgen+$worktime;
+		
+		mysql_query("UPDATE zeit SET zeit_nachmittag=$worktime,endzeit=$timetotal,zeit_differenz=$differenz WHERE id=$idTime", $conn);
+
 	}
-	echo "timeId: " . $idTime;
-	mysql_query("INSERT INTO User_has_zeit (User_idUser, zeit_id) VALUES ($idUser,$idTime)", $conn);
-}else{
-	while($row2 = mysql_fetch_object($check)){
-		$zeit_morgen = $row2 -> zeit_morgen;
-		$idTime = $row2 -> id;
-	}
-
-	$differenz = $zeit_morgen+$worktime-504;
-	$timetotal = $zeit_morgen+$worktime;
-	
-	mysql_query("UPDATE zeit SET zeit_nachmittag=$worktime,endzeit=$timetotal,zeit_differenz=$differenz WHERE id=$idTime", $conn);
-
 }
-}
-	#header("Location: ../subsites/zeiterfassung.php?user=$user");
+header("Location: ../subsites/zeiterfassung.php?user=$user");
 ?>
