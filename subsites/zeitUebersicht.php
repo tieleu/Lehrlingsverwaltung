@@ -76,7 +76,7 @@ $user = $_GET['user'];
 					while($row = mysql_fetch_object($ergebnisOfUserID)){
 						$userID = $row -> idUser;
 					}
-					$ausgabe = "SELECT User_has_zeit.User_idUser, zeit.date, zeit.endzeit, zeit.zeit_differenz FROM User_has_zeit JOIN zeit ON User_has_zeit.zeit_id=zeit.id WHERE User_has_zeit.User_idUser=$userID";
+					$ausgabe = "SELECT User_has_zeit.User_idUser, zeit.date, zeit.endzeit, zeit.zeit_differenz FROM User_has_zeit JOIN zeit ON User_has_zeit.zeit_id=zeit.id WHERE User_has_zeit.User_idUser=$userID ORDER BY zeit.datum";
 					$ergebniss = mysql_query($ausgabe);
 
 					while ($row = mysql_fetch_object($ergebniss)) {
