@@ -25,6 +25,12 @@ $user = $_GET['user'];
 			function minToTime($time){
 				$rest = $time%60;
 				$hours = ($time-$rest)/60;
+				if($hours<10){
+					$hours = 0 . $hours;
+				}
+				if($rest<10){
+					$rest = 0 . $rest;
+				}
 				return $hours . ":" . $rest;
 			} 
 			$idUser;
