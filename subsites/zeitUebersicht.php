@@ -102,8 +102,17 @@ $user = $_GET['user'];
 							<?php } ?>
 
 						</select>
-					</form>
+					</form>					
 				</div>
+				<?php
+				$getContent = mysql_query("SELECT User_has_zeit.User_idUser, zeit.date, zeit.endzeit, zeit.zeit_differenz FROM User_has_zeit JOIN zeit ON User_has_zeit.zeit_id=zeit.id WHERE User_has_zeit.User_idUser=$selectOption", $conn);
+			while($row1 = mysql_fetch_object($getContent)){
+				$date = $row1 -> date;
+				$zeittotal = minToTime($row1 -> endzeit);
+				$differenz = minToTime($row1 -> zeit_differenz);
+				echo "<tr id='zeile'><td><input type='text' class='form-control' placeholder='Datum' value='$date' readonly></td><td><input type='text' class='form-control' placeholder='erreichte Zeit' value='$zeittotal' readonly></td><td><input type='text' class='form-control' placeholder='Sollzeit' value='8:24 h' readonly></td><td><input type='text' class='form-control' placeholder='Differenz Zeit' value='$differenz' readonly></td></tr>";
+				}
+				?>
 
 	
 	<script src="../js/zeiterfassung.js"></script>
