@@ -66,11 +66,17 @@ mysql_query("SET NAMES 'utf8'",$conn);
 							<li><a href="uebungen.php?user=<?php echo $nameOfUser ?>">Übungen</a></li>
 							<?php 
 							if($nameOfUser=="tiefri"){
-							echo "<li><a href='zeitUebersicht.php?user=<?php echo $nameOfUser ?>'>Zeiterfassung Übersicht</a></li>";	
+								?>
+
+							<li><a href="subsites/zeitUebersicht.php?user=<?php echo $nameOfUser ?>">Zeiterfassung Übersicht</a></li>;	
+							<?php
 							}else{
-							echo "<li><a href='zeiterfassung.php?user=<?php echo $nameOfUser ?>'>Zeiterfassung</a></li>";
-							}
 							?>
+							
+							 <li><a href="subsites/zeiterfassung.php?user=<?php echo $nameOfUser ?>">Zeiterfassung</a></li>;
+							<?php
+							}
+							?> 
 							<li><a href="notendossier.php?user=<?php echo $nameOfUser ?>">Notendossier</a></li>  
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
