@@ -12,7 +12,7 @@ $user = $_GET['user'];
 	<title>Lehrverwaltung - Zeit Übersicht</title>
 </head>
 <body>
-	<div class="panel panel-default">
+	<div class="panel panel-default" id="uebersicht_container">
 		<div class="panel-heading">
 			<?php
 			$ausgabe = "SELECT vorname, username from User where status = 'lehrling'";
