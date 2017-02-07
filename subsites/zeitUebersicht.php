@@ -54,8 +54,8 @@ $user = $_GET['user'];
 		</div>
 	</table>
 </div>
-	<!-- <div align="center" id="input_container">
-	   <table>
+	<!--  <div align="center" id="input_container">
+	  <table>
 	      <tr>
 		    <th>Datum</th>
 	    	<th>von</th>
@@ -70,7 +70,41 @@ $user = $_GET['user'];
 		</form>
 		</tr>
 		</table>
-	</div> -->
+	</div>  -->
+				<div class="panel-heading">
+			<?php
+			$ausgabe = "SELECT vorname, username from User where status = 'lehrling'";
+			$ergebniss = mysql_query($ausgabe);
+			?>
+			<form action="" method="post">
+				<select id="select" name="select" onchange="this.form.submit()" style="width: 170px; height: 35px;">
+			<option disabled hidden selected="selected">Auswahl</option>
+					<?php
+
+					$selectOption = $_POST['select'];
+					
+					while ($row = mysql_fetch_object($ergebniss)) {
+						$vorname = $row -> vorname;
+						
+						if($vorname == $selectOption){
+							?>
+							<div class="panel-heading">
+								<option selected="selected"><?php echo  $vorname  ?></option>
+							</div>
+							<?php
+						} else {
+							?>	
+							<div class="panel-heading">
+								<option><?php echo  $vorname  ?></option>
+							</div>
+							<?php } ?>
+
+							<?php } ?>
+
+						</select>
+					</form>
+				</div>
+
 	
 	<script src="../js/zeiterfassung.js"></script>
 </body>
