@@ -69,7 +69,7 @@ $user = $_GET['user'];
 					while ($row = mysql_fetch_object($ergebniss)) {
 						$date = $row-> date;
 						$endzeit = $row -> endzeit;
-						$differenz = $row -> differenz;
+						$differenz = $row -> zeit_differenz;
 						?>
 						
 				
