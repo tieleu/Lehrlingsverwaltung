@@ -5,14 +5,14 @@ include("header.php");
 $user = $_GET['user'];
 ?>
 <head>
-	<link rel="stylesheet" type="text/css" href="../css/zeiterfassung.css">
+	<link rel="stylesheet" type="text/css" href="../css/zeitUebersicht.css">
 	<script type="text/javascript" href="../jquery/jquery-3.1.1.js"></script>
 	
 
 	<title>Lehrverwaltung - Lehrplan</title>
 </head>
 <body>
-	
+
 
 	<div id="uebersicht">
 
@@ -87,7 +87,7 @@ $user = $_GET['user'];
 
 
 	</div>
-	
+
 
 	
 	<script src="../js/zeiterfassung.js"></script>
