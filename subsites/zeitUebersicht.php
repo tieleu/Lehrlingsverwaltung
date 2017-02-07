@@ -56,6 +56,19 @@ $user = $_GET['user'];
 					  </tr>
 
 					<?php
+
+					function minToTime($time){
+						$rest = $time%60;
+						$hours = ($time-$rest)/60;
+						if($hours<10){
+							$hours = 0 . $hours;
+						}
+						if($rest<10){
+							$rest = 0 . $rest;
+						}
+						return $hours . ":" . $rest;
+					}
+
 					$getUserID ="SELECT idUser from User where vorname='$selectOption'";
 					$ergebnisOfUserID = mysql_query($getUserID);	
 
@@ -68,8 +81,8 @@ $user = $_GET['user'];
 
 					while ($row = mysql_fetch_object($ergebniss)) {
 						$date = $row-> date;
-						$endzeit = $row -> endzeit;
-						$differenz = $row -> zeit_differenz;
+						$endzeit = minToTime($row -> endzeit);
+						$differenz = minToTime($row -> zeit_differenz);
 						?>
 						
 				
