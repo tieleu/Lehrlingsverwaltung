@@ -3,17 +3,16 @@ body{
     height: 100%;
 }
 
-#uebersicht{
-    
-    height: 600px;
+#uebersicht{  
+    max-height: 600px;
     width: 80%;
-    background-color: #F5F5F5;
-    
+    background-color: #F5F5F5;   
     top:0;
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
+    overflow: scroll;
 }
 
 #input_container{
