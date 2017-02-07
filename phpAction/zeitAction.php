@@ -8,9 +8,9 @@ mysql_select_db("Lehrverwaltung");
 function zeitZuDez($time){
 	$floatTime = str_replace(':', '.', $time);
 	$min = substr($floatTime, 3);
-	$stund = substr($floatTime, 0,2);
+	$stund = substr($floatTime, 0,2)*60;
 	$dezmin = 100/60*$min/100;
-	$dezZeit = $stund+round($dezmin, 1);
+	$dezZeit = $stund+$min;
 	return $dezZeit;
 }
 
