@@ -10,7 +10,7 @@ function zeitZuDez($time){
 	$min = substr($floatTime, 3);
 	$stund = substr($floatTime, 0,2);
 	$dezmin = 100/60*$min/100;
-	$dezZeit = $stund+$dezmin;
+	$dezZeit = $stund+round($dezmin, 2);
 	return $dezZeit;
 }
 
