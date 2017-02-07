@@ -73,7 +73,7 @@ $conn =mysql_connect($servername, $username, $password)
 							<?php 
 							if($nameOfUser=="tiefri"){
 							echo "<li><a href='subsites/zeitUebersicht.php?user=<?php echo $nameOfUser ?>'>Zeiterfassung Übersicht</a></li>";	
-							}else{
+							}else if($nameOfUser=="tiepre"){
 							echo "<li><a href='subsites/zeiterfassung.php?user=<?php echo $nameOfUser ?>'>Zeiterfassung</a></li>";
 							}
 							?> 
