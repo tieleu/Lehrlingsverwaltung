@@ -58,32 +58,10 @@ $user = $_GET['user'];
 				}
 				
 			?>
-			<tr id='zeile'>
-			<td><input type='text' class='form-control' placeholder='Datum' value='$date' readonly></td>
-			<td><input type='text' class='form-control' placeholder='erreichte Zeit' value='$zeittotal' readonly></td>
-			<td><input type='text' class='form-control' placeholder='Sollzeit' value='8:24 h' readonly></td>
-			<td><input type='text' class='form-control' placeholder='Differenz Zeit' value='$differenz' readonly></td>
-			</tr>
+			
 		</div>
 	</table>
 </div>
-	<!--  <div align="center" id="input_container">
-	  <table>
-	      <tr>
-		    <th>Datum</th>
-	    	<th>von</th>
-	    	<th>bis</th>
-	   	</tr>
-		<tr>
-		<form action="../phpAction/zeitAction.php?user=<?php echo $user ?>" method="post">
-		   <td><input type="date" id="date_input" name="date_input" class="inputandsubmitbtn form-control" value="<?php echo date('Y-m-d');?>"></td>
-		   <td><input type="time" id="starttime_input" name="starttime_input" class="inputandsubmitbtn form-control"></td>
-		    <td><input type="time" id="endtime_input" name="endtime_input" class="inputandsubmitbtn form-control"></td>
-		    <td><button id="savetime" name="savetime" class="inputandsubmitbtn btn">Save</button></td>
-		</form>
-		</tr>
-		</table>
-	</div>  -->
 				<div class="panel-heading">
 			<?php
 			$ausgabe = "SELECT vorname, username, idUser from User where status = 'lehrling'";
@@ -118,6 +96,23 @@ $user = $_GET['user'];
 						</select>
 					</form>					
 				</div>
+	<!--  <div align="center" id="input_container">
+	  <table>
+	      <tr>
+		    <th>Datum</th>
+	    	<th>von</th>
+	    	<th>bis</th>
+	   	</tr>
+		<tr>
+		<form action="../phpAction/zeitAction.php?user=<?php echo $user ?>" method="post">
+		   <td><input type="date" id="date_input" name="date_input" class="inputandsubmitbtn form-control" value="<?php echo date('Y-m-d');?>"></td>
+		   <td><input type="time" id="starttime_input" name="starttime_input" class="inputandsubmitbtn form-control"></td>
+		    <td><input type="time" id="endtime_input" name="endtime_input" class="inputandsubmitbtn form-control"></td>
+		    <td><button id="savetime" name="savetime" class="inputandsubmitbtn btn">Save</button></td>
+		</form>
+		</tr>
+		</table>
+	</div>  -->
 				
 
 	
