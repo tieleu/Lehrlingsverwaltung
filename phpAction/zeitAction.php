@@ -50,7 +50,6 @@ if(isset($_POST['savetime'])){
 		$zeit_morgen = $row2 -> zeit_morgen;
 		$idTime = $row2 -> id;
 	}
-	$worktime = zeitZuDez($worktime);
 
 	$differenz = $zeit_morgen+$worktime-504;
 	$timetotal = $zeit_morgen+$worktime;
