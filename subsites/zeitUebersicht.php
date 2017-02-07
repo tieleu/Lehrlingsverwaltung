@@ -90,6 +90,6 @@ $user = $_GET['user'];
 
 
 	
-	<script src="../js/zeiterfassung.js"></script>
+	<script src="../js/zeitUebersicht.js"></script>
 </body>
 </html>
