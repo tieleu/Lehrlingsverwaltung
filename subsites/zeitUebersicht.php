@@ -76,7 +76,7 @@ $user = $_GET['user'];
 			$ausgabe = "SELECT vorname, username, idUser from User where status = 'lehrling'";
 			$ergebniss = mysql_query($ausgabe);
 			?>
-			<form action="../phpAction/zeitUebersichtAction.php?user=<?php echo $user ?>" method="post">
+			<form action="" method="post">
 				<select id="select" name="select" onchange="this.form.submit()" style="width: 170px; height: 35px;">
 			<option disabled hidden selected="selected">Auswahl</option>
 					<?php
@@ -105,6 +105,11 @@ $user = $_GET['user'];
 						</select>
 					</form>					
 				</div>
+				<?php
+if (isset($_POST['select'])) {
+	echo $_POST['select'];
+}
+?>
 				
 
 	
