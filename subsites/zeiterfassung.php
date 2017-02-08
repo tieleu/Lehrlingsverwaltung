@@ -29,7 +29,7 @@ $user = $_GET['user'];
 						if($hours<-9){
 							$hours = $hours/-1;
 						}else if($hours<0){
-							$hours = $hours/-1;
+							$hours = 0 . $hours/-1;
 						}else if($hours<10){
 							$hours = 0 . $hours;
 						}
