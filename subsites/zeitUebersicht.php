@@ -79,7 +79,7 @@ $user = $_GET['user'];
 						$userID = $row -> idUser;
 					}
 					$ausgabe = "SELECT User_has_zeit.User_idUser, zeit.date, zeit.endzeit, zeit.zeit_differenz FROM User_has_zeit JOIN zeit ON User_has_zeit.zeit_id=zeit.id WHERE User_has_zeit.User_idUser=$userID ORDER BY zeit.date";
-					$exactAbfrage = mysql_query("SELECT User_has_zeit.User_idUser, zeit.date, zeit.endzeit, zeit.zeit_differenz, Zeit_exact.exact_morgen, Zeit_exact.exact_nachmittag FROM User_has_zeit, Zeit_exact, zeit  WHERE User_has_zeit.User_idUser=$userID GROUP BY User_has_zeit.User_idUser AND zeit.id AND Zeit_exact.zeit_idfs ORDER BY zeit.date;");
+					$exactAbfrage = mysql_query("SELECT User_has_zeit.*, zeit.*, Zeit_exact.* FROM (User_has_zeit INNER JOIN zeit ON User_has_zeit.zeit_id=zeit.id) INNER JOIN Zeit_exact ON User_has_zeit.exact_id=Zeit_exact.idExact;");
 					$ergebniss = mysql_query($ausgabe);
 
 					while ($row = mysql_fetch_object($exactAbfrage)) {
