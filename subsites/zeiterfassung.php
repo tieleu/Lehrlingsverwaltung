@@ -39,7 +39,7 @@ $user = $_GET['user'];
 						}
 						return $hours . ":" . $rest;
 					}
-					 
+
 			$idUser;
 			$getId = mysql_query("SELECT idUser FROM User WHERE username = '$user'", $conn);
 			while($row = mysql_fetch_object($getId)){
@@ -53,6 +53,12 @@ $user = $_GET['user'];
 				echo "<tr id='zeile'><td><input type='text' class='form-control' placeholder='Datum' value='$date' readonly></td><td><input type='text' class='form-control' placeholder='erreichte Zeit' value='$zeittotal' readonly></td><td><input type='text' class='form-control' placeholder='Sollzeit' value='8:24 h' readonly></td><td><input type='text' class='form-control' placeholder='Differenz Zeit' value='$differenz' readonly></td></tr>";
 			}
 			?>
+			<tr id='zeile'>
+			<td><input type='text' class='form-control' readonly style="display: none;"></td>
+			<td><label class="form-control">Total:</label></td>
+			<td><input type='text' class='form-control' readonly></td>
+			<td><input type='text' class='form-control' readonly></td>
+			</tr>
 		</div>
 	</table>
 </div>
