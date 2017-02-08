@@ -26,7 +26,9 @@ $user = $_GET['user'];
 			function minToTime($time){
 						$rest = $time%60;
 						$hours = ($time-$rest)/60;
-						if($hours<10){
+						if($hours<0){
+							$hours = "-". ($hours/-1);
+						}else if($hours<10){
 							$hours = 0 . $hours;
 						}
 						if($rest<(-9)){
