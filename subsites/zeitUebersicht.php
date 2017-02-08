@@ -20,7 +20,7 @@ $user = $_GET['user'];
 			?>
 			<form action="" method="post">
 				<select id="select" name="select" onchange="this.form.submit()" style="width: 170px; height: 35px;">
-			<option disabled hidden selected="selected">Auswahl</option>
+					<option disabled hidden selected="selected">Auswahl</option>
 					<?php
 
 					$selectOption = $_POST['select'];
@@ -49,13 +49,13 @@ $user = $_GET['user'];
 
 				<table class="table">
 					<tr>
-						    <th>Datum</th>
-							<th>Zeit Morgen</th>
-							<th>Zeit Nachmittag</th>
-						    <th>Erreichte Zeit</th>
-						    <th>Sollzeit</th>
-							<th>Differenz</th>
-					  </tr>
+						<th>Datum</th>
+						<th>Zeit Morgen</th>
+						<th>Zeit Nachmittag</th>
+						<th>Erreichte Zeit</th>
+						<th>Sollzeit</th>
+						<th>Differenz</th>
+					</tr>
 
 					<?php
 
@@ -84,10 +84,7 @@ $user = $_GET['user'];
 					while($row = mysql_fetch_object($ergebnisOfUserID)){
 						$userID = $row -> idUser;
 					}
-					$ausgabe = "SELECT User_has_zeit.User_idUser, zeit.date, zeit.endzeit, zeit.zeit_differenz FROM User_has_zeit JOIN zeit ON User_has_zeit.zeit_id=zeit.id WHERE User_has_zeit.User_idUser=$userID ORDER BY zeit.date";
 					$exactAbfrage = mysql_query("SELECT User_has_zeit.*, zeit.*, Zeit_exact.* FROM (User_has_zeit INNER JOIN zeit ON User_has_zeit.zeit_id=zeit.id) INNER JOIN Zeit_exact ON User_has_zeit.exact_id=Zeit_exact.idExact WHERE User_has_zeit.User_idUser=$userID;");
-					$ergebniss = mysql_query($ausgabe);
-
 					while ($row = mysql_fetch_object($exactAbfrage)) {
 						$date = $row-> date;
 						$endzeit = minToTime($row -> endzeit);
@@ -96,7 +93,7 @@ $user = $_GET['user'];
 						$exactNachmittag = $row -> exact_nachmittag;
 						?>
 						
-				
+
 						<tr id="zeile">
 							<td><input type='text' class='form-control' placeholder='Datum' value="<?php echo $date; ?>" readonly></td>
 							<td><input type='text' class='form-control' placeholder='morgen' value="<?php echo $exactMorgen; ?>" readonly></td>
@@ -105,13 +102,13 @@ $user = $_GET['user'];
 							<td><input type='text' class='form-control' placeholder='Sollzeit' value='8:24 h' readonly></td>
 							<td><input type='text' class='form-control' placeholder='Differenz Zeit' value="<?php echo $differenz; ?>" readonly></td>						
 						</tr>
-								<?php }?>
-							</table>
-						</div>
+						<?php }?>
+					</table>
+				</div>
 
 
 
-	
-	<script src="../js/zeitUebersicht.js"></script>
-</body>
-</html>
+
+				<script src="../js/zeitUebersicht.js"></script>
+			</body>
+			</html>
