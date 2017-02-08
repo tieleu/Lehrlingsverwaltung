@@ -60,7 +60,7 @@ $user = $_GET['user'];
 			<td><label class="form-control">Total:</label></td>
 			<td><input type='text' class='form-control' value="<?php echo minToTime($erreichtTotal); ?>" readonly></td>
 			<td><input type='text' class='form-control' value="<?php echo  minToTime($sollTotal); ?>" readonly></td>
-			<td><input type='text' class='form-control' value="<?php echo minToTime($sollTotal-$erreichtTotal); ?>" readonly></td>
+			<td><input type='text' class='form-control' value="<?php echo minToTime($erreichtTotal-$sollTotal); ?>" readonly></td>
 			</tr>
 		</div>
 	</table>
