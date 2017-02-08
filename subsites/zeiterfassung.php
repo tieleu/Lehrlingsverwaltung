@@ -22,6 +22,7 @@ $user = $_GET['user'];
   </tr>
 		<div id="zeile">
 			<?php
+			$erreichtTotal = 0;
 			function minToTime($time){
 						$rest = $time%60;
 						$hours = ($time-$rest)/60;
@@ -47,17 +48,19 @@ $user = $_GET['user'];
 			}
 			$getContent = mysql_query("SELECT User_has_zeit.User_idUser, zeit.date, zeit.endzeit, zeit.zeit_differenz FROM User_has_zeit JOIN zeit ON User_has_zeit.zeit_id=zeit.id WHERE User_has_zeit.User_idUser=$idUser ORDER BY zeit.date", $conn);
 			while($row1 = mysql_fetch_object($getContent)){
+				$erreichtTotal += $row1 -> endzeit;
 				$date = $row1 -> date;
 				$zeittotal = minToTime($row1 -> endzeit);
 				$differenz = minToTime($row1 -> zeit_differenz);
 				echo "<tr id='zeile'><td><input type='text' class='form-control' placeholder='Datum' value='$date' readonly></td><td><input type='text' class='form-control' placeholder='erreichte Zeit' value='$zeittotal' readonly></td><td><input type='text' class='form-control' placeholder='Sollzeit' value='8:24 h' readonly></td><td><input type='text' class='form-control' placeholder='Differenz Zeit' value='$differenz' readonly></td></tr>";
 			}
+			$sollTotal = mysql_num_rows($getContent)*504;
 			?>
 			<tr id='zeile'>
 			<td><label class="form-control">Total:</label></td>
-			<td><input type='text' class='form-control' readonly></td>
-			<td><input type='text' class='form-control' readonly></td>
-			<td><input type='text' class='form-control' readonly></td>
+			<td><input type='text' class='form-control' value="<?php echo minToTime($erreichtTotal); ?>" readonly></td>
+			<td><input type='text' class='form-control' value="<?php echo  minToTime($sollTotal); ?>" readonly></td>
+			<td><input type='text' class='form-control' value="<?php echo minToTime($sollTotal-$erreichtTotal); ?>" readonly></td>
 			</tr>
 		</div>
 	</table>
