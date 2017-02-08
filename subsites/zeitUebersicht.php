@@ -86,8 +86,8 @@ $user = $_GET['user'];
 						$date = $row-> date;
 						$endzeit = minToTime($row -> endzeit);
 						$differenz = minToTime($row -> zeit_differenz);
-						$exactMorgen = $row -> Zeit_exact.exact_morgen;
-						$exactNachmittag = $row -> Zeit_exact.exact_nachmittag;
+						$exactMorgen = $row -> exact_morgen;
+						$exactNachmittag = $row -> exact_nachmittag;
 						?>
 						
 				
