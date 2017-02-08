@@ -55,7 +55,7 @@ $user = $_GET['user'];
 			?>
 			<tr id='zeile'>
 			<td><input type='text' class='form-control' readonly style="display: none;"></td>
-			<td><label class="form-control">Total:</label></td>
+			<td><label>Total:</label></td>
 			<td><input type='text' class='form-control' readonly></td>
 			<td><input type='text' class='form-control' readonly></td>
 			</tr>
