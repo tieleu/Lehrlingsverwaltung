@@ -34,20 +34,23 @@ if(isset($_POST['savetime'])){
 	if(mysql_num_rows($check)!=1){
 
 
+		$morningExact = "Von ".$starttime." bis ".$endtime;
 		mysql_query("INSERT INTO zeit (zeit_morgen, date) VALUES ('$worktime', '$date' )", $conn);
+		mysql_query("INSERT INTO Zeit_exact (exact_morgen, exact_date) VALUES ('$morningExact', '$date')", $conn);
+		$rowexact = mysql_query("SELECT MAX(idExact) AS idExact FROM Zeit_exact", $conn);
 		$rowstime = mysql_query("SELECT MAX(id) AS id FROM zeit", $conn);
 		echo $user; 
-
-
+		$idExact;
+		while($row = mysql_fetch_object($rowexact)){
+			$idExact = $row -> idExact;
+		}
 
 
 		while($row1 = mysql_fetch_object($rowstime)){
 			$idTime = $row1 -> id;
 		}
 		echo "timeId: " . $idTime;
-		$morningExact = "Von ".$starttime." bis ".$endtime;
-		mysql_query("INSERT INTO User_has_zeit (User_idUser, zeit_id) VALUES ($idUser,$idTime)", $conn);
-		mysql_query("INSERT INTO Zeit_exact (exact_morgen, zeit_idfs) VALUES ('$morningExact', $idTime)", $conn);
+		mysql_query("INSERT INTO User_has_zeit (User_idUser, zeit_id, exact_id) VALUES ($idUser,$idTime, $idExact)", $conn);
 	}else{
 		while($row2 = mysql_fetch_object($check)){
 			$zeit_morgen = $row2 -> zeit_morgen;
@@ -58,7 +61,12 @@ if(isset($_POST['savetime'])){
 		$timetotal = $zeit_morgen+$worktime;
 		$namiExact = "Von ".$starttime." bis ".$endtime;
 		mysql_query("UPDATE zeit SET zeit_nachmittag=$worktime,endzeit=$timetotal,zeit_differenz=$differenz WHERE id=$idTime", $conn);
-		mysql_query("UPDATE Zeit_exact SET exact_nachmittag='$namiExact' WHERE zeit_idfs=$idTime", $conn);
+		$getExactId = mysql_query("SELECT exact_id FROM User_has_zeit WHERE zeit_id=$idTime");
+		$exactID;
+		while($row = mysql_fetch_object($getExactId)){
+			$exactID = $row -> exact_id;
+		}
+		mysql_query("UPDATE Zeit_exact SET exact_nachmittag='$namiExact' WHERE idExact=$exactID", $conn);
 
 	}
 }
