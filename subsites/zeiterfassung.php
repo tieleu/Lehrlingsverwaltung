@@ -27,7 +27,7 @@ $user = $_GET['user'];
 						$rest = $time%60;
 						$hours = ($time-$rest)/60;
 						if($hours<0){
-							$hours = "-". ($hours/-1);
+							$hours = $hours/-1;
 						}else if($hours<10){
 							$hours = 0 . $hours;
 						}
