@@ -23,16 +23,23 @@ $user = $_GET['user'];
 		<div id="zeile">
 			<?php
 			function minToTime($time){
-				$rest = $time%60;
-				$hours = ($time-$rest)/60;
-				if($hours<10){
-					$hours = 0 . $hours;
-				}
-				if($rest<10){
-					$rest = 0 . $rest;
-				}
-				return $hours . ":" . $rest;
-			} 
+						$rest = $time%60;
+						$hours = ($time-$rest)/60;
+						if($hours<10){
+							$hours = 0 . $hours;
+						}
+						if($rest<(-9)){
+							$rest = $rest/-1;
+							$hours = "-".$hours;
+						}else if($rest<0){
+							$rest = 0 . ($rest/(-1));
+							$hours = "-".$hours;
+						}else if($rest<10){
+							$rest = 0 . $rest;
+						}
+						return $hours . ":" . $rest;
+					}
+					 
 			$idUser;
 			$getId = mysql_query("SELECT idUser FROM User WHERE username = '$user'", $conn);
 			while($row = mysql_fetch_object($getId)){
