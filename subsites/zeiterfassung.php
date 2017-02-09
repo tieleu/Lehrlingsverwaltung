@@ -61,10 +61,8 @@ $user = $_GET['user'];
 			$sollTotal = mysql_num_rows($getContent)*504;
 			?>
 			<tr id='zeile'>
-			<td><label class="form-control">Total:</label></td>
-			<td><input type='text' class='form-control' value="<?php echo minToTime($erreichtTotal); ?>" readonly></td>
-			<td><input type='text' class='form-control' value="<?php echo  minToTime($sollTotal); ?>" readonly></td>
-			<td><input type='text' class='form-control' value="<?php echo minToTime($erreichtTotal-$sollTotal); ?>" readonly></td>
+			<td colspan="3"></td>
+			<td><label class="form-control"><?php echo "Total: " . minToTime($erreichtTotal-$sollTotal); ?></label></td>
 			</tr>
 		</div>
 	</table>
