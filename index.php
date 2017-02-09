@@ -93,7 +93,7 @@ $conn =mysql_connect($servername, $username, $password)
 				</nav>
 
 				<canvas id="demo-canvas"></canvas>
-				<h1 class="main-title">Welcome <span class="thin">User</span></h1>
+				<h1 class="main-title">Welcome <span class="thin"><?php echo $nameOfUser ?></span></h1>
 			</div>
 			<script src="animation/js/TweenLite.min.js"></script>
 			<script src="animation/js/EasePack.min.js"></script>

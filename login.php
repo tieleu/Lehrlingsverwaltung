@@ -22,7 +22,7 @@
 		if ($rows == 1) {
 	
 			$_SESSION['login_user']=$username; 
-			setcookie('username', $username);
+			setcookie('username', $username,time() + (10 * 365 * 24 * 60 * 60));
 		echo "fail";
 
 			header("location:index.php?user=$username"); 
