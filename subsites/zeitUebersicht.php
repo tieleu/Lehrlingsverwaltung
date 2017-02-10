@@ -104,7 +104,7 @@ $user = $_GET['user'];
 							<td><input type='text' class='form-control' placeholder='Differenz Zeit' value="<?php echo $differenz; ?>" readonly></td>						
 						</tr>
 						<?php }
-						$sollTotal = mysql_num_rows($getContent)*504;
+						$sollTotal = mysql_num_rows($exactAbfrage)*504;
 						?>
 						<tr id='zeile'>
 						<td colspan="5"></td>
