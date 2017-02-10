@@ -104,7 +104,7 @@ $user = $_GET['user'];
 						</tr>
 						<?php }?>
 						<tr id='zeile'>
-							<td colspan="3"></td>
+						<td colspan="5"></td>
 							<td><label class="form-control"><?php echo "Total: " . minToTime($erreichtTotal-$sollTotal); ?></label></td>
 						</tr>
 					</table>
