@@ -58,7 +58,7 @@ $user = $_GET['user'];
 					</tr>
 
 					<?php
-
+					$erreichtTotal = 0;
 					function minToTime($time){
 						$rest = $time%60;
 						$hours = ($time-$rest)/60;
@@ -86,6 +86,7 @@ $user = $_GET['user'];
 					}
 					$exactAbfrage = mysql_query("SELECT User_has_zeit.*, zeit.*, Zeit_exact.* FROM (User_has_zeit INNER JOIN zeit ON User_has_zeit.zeit_id=zeit.id) INNER JOIN Zeit_exact ON User_has_zeit.exact_id=Zeit_exact.idExact WHERE User_has_zeit.User_idUser=$userID ORDER BY zeit.date;");
 					while ($row = mysql_fetch_object($exactAbfrage)) {
+						$erreichtTotal += $row1 -> endzeit;
 						$date = $row-> date;
 						$endzeit = minToTime($row -> endzeit);
 						$differenz = minToTime($row -> zeit_differenz);
@@ -102,7 +103,9 @@ $user = $_GET['user'];
 							<td><input type='text' class='form-control' placeholder='Sollzeit' value='8:24 h' readonly></td>
 							<td><input type='text' class='form-control' placeholder='Differenz Zeit' value="<?php echo $differenz; ?>" readonly></td>						
 						</tr>
-						<?php }?>
+						<?php }
+						$sollTotal = mysql_num_rows($getContent)*504;
+						?>
 						<tr id='zeile'>
 						<td colspan="5"></td>
 							<td><label class="form-control"><?php echo "Total: " . minToTime($erreichtTotal-$sollTotal); ?></label></td>
