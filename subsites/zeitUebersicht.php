@@ -103,6 +103,10 @@ $user = $_GET['user'];
 							<td><input type='text' class='form-control' placeholder='Differenz Zeit' value="<?php echo $differenz; ?>" readonly></td>						
 						</tr>
 						<?php }?>
+						<tr id='zeile'>
+							<td colspan="3"></td>
+							<td><label class="form-control"><?php echo "Total: " . minToTime($erreichtTotal-$sollTotal); ?></label></td>
+						</tr>
 					</table>
 				</div>
 
