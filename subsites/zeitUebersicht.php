@@ -86,7 +86,7 @@ $user = $_GET['user'];
 					}
 					$exactAbfrage = mysql_query("SELECT User_has_zeit.*, zeit.*, Zeit_exact.* FROM (User_has_zeit INNER JOIN zeit ON User_has_zeit.zeit_id=zeit.id) INNER JOIN Zeit_exact ON User_has_zeit.exact_id=Zeit_exact.idExact WHERE User_has_zeit.User_idUser=$userID ORDER BY zeit.date;");
 					while ($row = mysql_fetch_object($exactAbfrage)) {
-						$erreichtTotal += $row1 -> endzeit;
+						$erreichtTotal += $row -> endzeit;
 						$date = $row-> date;
 						$endzeit = minToTime($row -> endzeit);
 						$differenz = minToTime($row -> zeit_differenz);
