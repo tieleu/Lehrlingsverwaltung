@@ -39,7 +39,7 @@
 				<tbody>
 					<tr>
 						<td>
-							<select name="schulfachselect">
+							<select class="input_content" name="schulfachselect">
 								<?php
 								$faecher = mysql_query("SELECT * FROM Schulfach");
 								while ($row = mysql_fetch_object($faecher)) {
@@ -50,8 +50,8 @@
 								<?php } ?>
 							</select>	
 						</td>
-						<td><input type="number" name="grade" placeholder="6" min="1" max="6" style="width: 50px;"></td>
-						<td><button name="savetest" id="Eingabe">save</button></td>
+						<td><input class="input_content" type="number" name="grade" placeholder="6" min="1" max="6" style="width: 50px;"></td>
+						<td><button class="input_content" name="savetest" id="Eingabe">save</button></td>
 					</tr>
 				</tbody>
 			</table>

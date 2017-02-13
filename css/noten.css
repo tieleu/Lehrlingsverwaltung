@@ -5,6 +5,9 @@ h1{
 hr{
 	border: 1px solid #DDDDDD;
 }
+.input_content{
+	margin-right: 10px;
+}
 
 #uebersicht{  
     max-height: 600px;
