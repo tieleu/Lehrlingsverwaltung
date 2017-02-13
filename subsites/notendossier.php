@@ -83,10 +83,15 @@
   		</div>
   		<form action="" method="post">
   		<select name="schulfachselect">
-  			<option value="math">Mathematik</option>
-  			<option value="deutsch">Deutsch</option>
-  			<option value="'e','m'">englisch</option>
-  			<option value="f">franz</option>
+  			<?php
+  				$faecher = mysql_query("SELECT * FROM Schulfach");
+  				while ($row = mysql_fetch_object($faecher)) {
+  					$fach = $row -> Name;
+  					$id = $row -> idSchulfach;
+  				
+  			?>
+  			<option value="<?php echo $id; ?>"><?php echo $fach; ?></option>
+  			<?php}?>
   		</select>
   		<button name="savetest">save</button>
   		</form>
