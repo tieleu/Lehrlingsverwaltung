@@ -23,6 +23,7 @@
 <body>
 	<div id="uebersicht">
 		<h1>Notendossier</h1>
+		<hr>
 
 		</div>
 		<div id="input_container">
