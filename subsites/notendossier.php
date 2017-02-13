@@ -37,6 +37,7 @@
 			<br>
 
 		</div>
+		</div>
 		<div id="input_container">
 			<form action="" method="post">
 				<select name="schulfachselect">
@@ -58,7 +59,6 @@
 					echo $test;
 				}
 				?>
-			</div>
 		</div>
 		<footer id="footer">
 		</footer>
