@@ -81,19 +81,7 @@
 			</div>
   			<br>
   		</div>
-  		<select name="schulfachselect" multiple>
-  			<option value="math">Mathematik</option>
-  			<option value="deutsch">Deutsch</option>
-  		</select>
-  		<form action="" method="post">
-  		<button name="savetest">save</button>
-  		</form>
-  		<?php
-  		if (isset($_POST['savetest'])) {
-  			$test = $_POST['schulfachselect'];
-  			echo $test;
-  		}
-  		?>
+  		
 	<footer id="footer">
 </footer>
 
