@@ -3,8 +3,7 @@ h1{
 
 }
 hr{
-	color: #DDDDDD;
-	size: 2px;
+	border: 2px solid #DDDDDD;
 }
 
 #uebersicht{  
