@@ -25,48 +25,47 @@
 		<h1>Notendossier</h1>
 		<hr>
 
-		</div>
-		<div align="center" id="input_container">
-			<form action="" method="post">
+	</div>
+	<div align="center" id="input_container">
+		<form action="" method="post">
 			<table>
-			<thead>
-				<tr>
-					<th>Schulfack</th>
-					<th>Note</th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>
-				<select name="schulfachselect">
-					<?php
-					$faecher = mysql_query("SELECT * FROM Schulfach");
-					while ($row = mysql_fetch_object($faecher)) {
-						$fach = $row -> Name;
-						$id = $row -> idSchulfach;
-
-						?>
-						<option value="<?php echo $id; ?>"><?php echo $fach; ?></option>
-						<?php } ?>
-					</select>	
-					</td>
-					<td><input type="number" name="grade" placeholder="6" min="1" max="6" style="width: 50px;"></td>
-					<td><button name="savetest" id="Eingabe">save</button></td>
-				</tr>
-			</tbody>
+				<thead>
+					<tr>
+						<th>Schulfack</th>
+						<th>Note</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<select name="schulfachselect">
+								<?php
+								$faecher = mysql_query("SELECT * FROM Schulfach");
+								while ($row = mysql_fetch_object($faecher)) {
+								$fach = $row -> Name;
+								$id = $row -> idSchulfach;
+								?>
+								<option value="<?php echo $id; ?>"><?php echo $fach; ?></option>
+								<?php } ?>
+							</select>	
+						</td>
+						<td><input type="number" name="grade" placeholder="6" min="1" max="6" style="width: 50px;"></td>
+						<td><button name="savetest" id="Eingabe">save</button></td>
+					</tr>
+				</tbody>
 			</table>
-				</form>
-				<?php
-				if (isset($_POST['savetest'])) {
-					$test = $_POST['schulfachselect'];
-					echo $test;
-				}
-				?>
-		</div>
-		<footer id="footer">
-		</footer>
+		</form>
+			<?php
+			if (isset($_POST['savetest'])) {
+				$test = $_POST['schulfachselect'];
+				echo $test;
+			}
+			?>
+	</div>
+	<footer id="footer">
+	</footer>
 
 
-	</body>
-	</html>
+</body>
+</html>
