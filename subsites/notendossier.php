@@ -26,7 +26,7 @@
 		<hr>
 
 		</div>
-		<div id="input_container">
+		<div align="center" id="input_container">
 			<form action="" method="post">
 			<table>
 			<thead>
