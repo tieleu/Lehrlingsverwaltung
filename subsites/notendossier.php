@@ -4,6 +4,12 @@
 	<?php 
 	include("header.php");
 	$user = $_GET['user'];
+
+	$idUser;
+	$getId = mysql_query("SELECT idUser FROM User WHERE username = '$user'", $conn);
+	while($row = mysql_fetch_object($getId)){
+		$idUser = $row -> idUser;
+	}
 	?>
 	<link rel="stylesheet" type="text/css" href="../css/noten.css">
 	<script type="text/javascript" href="../jquery/jquery-3.1.1.js"></script>
@@ -17,6 +23,36 @@
 	<div id="uebersicht">
 		<h1>Notendossier</h1>
 		<hr>
+		<table class="table" id="modul">
+			<thead>
+				<tr>
+					<th colspan="2">Modul-Unterricht</th>
+				</tr>
+				<tr>
+					<th>Fach</th>
+					<th>Noten</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php
+				#Die IDs der Fächer in denen ein bestimmter Nutzer noten gespeichert hat holen.
+					$getfaecher = mysql_query("SELECT * FROM Noten JOIN Schulfach ON Noten.Schulfach_idSchulfach=Schulfach.idSchulfach WHERE User_idUser=$idUser GROUP BY idSchulfach");
+					while($row = mysql_fetch_object($getfaecher)){
+						$schulfachID = $row -> idSchulfach;
+						$fachname = $row -> Name;
+						echo "<tr><td><input type='text' value='$fachname' readonly></td><td>";
+						#Die Schulnoten der einzelnen fächer holen
+						$getNoten = mysql_query("SELECT * FROM Noten JOIN Schulfach ON Noten.Schulfach_idSchulfach=Schulfach.idSchulfach WHERE User_idUser=$idUser AND idSchulfach=$schulfachID ORDER BY idSchulfach");
+						while($row1 = mysql_fetch_object($getNoten)){
+							$note = $row1 -> note;
+							echo "<input type='number' value='$note' readonly>";
+						}
+						echo "</td></tr>";
+					}
+
+				?>
+			</tbody>
+		</table>
 
 	</div>
 	<div align="center" id="input_container">
@@ -52,7 +88,9 @@
 			<?php
 			if (isset($_POST['savenote'])) {
 				$auswahl = $_POST['schulfachselect'];
-				echo $test;
+				$note = $_POST['grade'];
+				mysql_query("INSERT INTO Noten (note,Schulfach_idSchulfach,User_idUser) VALUES ($note,$auswahl,$idUser)");
+				
 			}
 			?>
 	</div>
