@@ -3,36 +3,34 @@
 	font-weight: bold;
 
 }
-#container1{
 
-	background-color: #BEBEBE;
-	box-shadow: 10px 10px 5px #888888;
-	max-height: 500px;
-	overflow: scroll;
-	overflow-x: hidden;
+#uebersicht{  
+    max-height: 600px;
+    width: 80%;
+    background-color: #F5F5F5;   
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow-y: scroll;
 }
 
-#container2{
+#input_container{
+    min-height: 130px;
+    width: 80%;
+    background: #F5F5F5;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-bottom: 200px;
 
-	background-color: #BEBEBE;
-	box-shadow: 10px 10px 5px #888888;
-	max-height: 500px;
-	overflow: scroll;
-	overflow-x: hidden;
+
 }
 
-#btn0, #btn1, #btn2, #btn3, #btn4, #btn5, #btn6, #btn7, #btn8, #btn9, #btn10, #btn11, #btn12, #btn13, #btn14, #btn15, #btn16, #btn17, #btn18, #btn19{
-	border: none;
-	color: black;
-}
-
-#btn0:hover, #btn1:hover, #btn2:hover, #btn3:hover, #btn4:hover, #btn5:hover, #btn6:hover, #btn7:hover, #btn8:hover, #btn9:hover, #btn10:hover, #btn11:hover, #btn12:hover, #btn13:hover, #btn14:hover, #btn15:hover, #btn16:hover, #btn17:hover, #btn18:hover, #btn19:hover{
-	border: none;
-	color: black;
-	box-shadow: 2px 2px black;
-}
-
-#Eingabe, #Eingabe1{
+#Eingabe{
 	margin-left: 50px;
 	border: solid 5px #DDDDDD;
 	border-radius: 3px;
@@ -41,7 +39,7 @@
 	font-weight: bolder;
 }
 
-#Eingabe:hover, #Eingabe1:hover{
+#Eingabe:hover{
 	margin-left: 50px;
 }
 
@@ -55,63 +53,7 @@
 	
 }
 
-label {
-	font-size: 18px;
-}
-
-input {
-	width: 170px;
-}
-#notenSchnitt, #notenSchnitt1{
-	float: right;
-	margin-right: 50px;
-}
-#schulfach, #modulfach{
-	padding-bottom: 30px;
-	margin-left: 25px;
-}
-
-.textfeld{
-	width: 40px;
-	margin-left: 10px;
-	
-}
-.schulfachInp{
-	margin-right: 30px;
-}
-#saveSchulNoten, #saveSchulNotenMod{
-	margin-top: 20px;
-	float: right;
-	border: none;
-	border-radius: 3px;
-	font-weight: bolder;
-}
-
-
-/* ------------------------------------------------------------------ 
-	Accordion
-*/
-
-div.accordion {
-    background-color: #BEBEBE;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-}
-
-
-
 div.panel {
     background-color: #BEBEBE;
 }
 
-div.panel.show {
-    display: block;
-}
-/*-------------------------------------------------*/
