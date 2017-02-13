@@ -34,17 +34,9 @@
 					<li role="presentation"><a href="#">Lehrjahr4 Sem.1</a></li>
 					<li role="presentation"><a href="#">Lehrjahr4 Sem.2</a></li>
 				</ul>
-
-				<br>
 				<br>
 
-				
- 				<div id="schulfach"><br>
- 				
 				</div>
-
-				</div>
-    		</div>
   		<form action="" method="post">
   		<select name="schulfachselect">
   			<?php
@@ -65,6 +57,7 @@
   			echo $test;
   		}
   		?>
+    		</div>
 	<footer id="footer">
 </footer>
 
