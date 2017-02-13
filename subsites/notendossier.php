@@ -31,7 +31,7 @@
 			<table width="50%">
 				<thead>
 					<tr>
-						<th>Schulfack</th>
+						<th>Schulfach</th>
 						<th>Note</th>
 						<th></th>
 					</tr>
