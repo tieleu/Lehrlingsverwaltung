@@ -20,6 +20,12 @@ hr{
     margin: auto;
     overflow-y: scroll;
 }
+#input_note{
+	width: 80px;
+}
+#selectfach{
+	width: 250px;
+}
 
 #input_container{
     min-height: 130px;
