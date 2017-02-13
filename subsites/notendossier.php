@@ -91,7 +91,7 @@
   				
   			?>
   			<option value="<?php echo $id; ?>"><?php echo $fach; ?></option>
-  			<?php}?>
+  			<?php } ?>
   		</select>
   		<button name="savetest">save</button>
   		</form>
