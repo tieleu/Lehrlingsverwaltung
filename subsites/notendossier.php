@@ -28,7 +28,17 @@
 		</div>
 		<div id="input_container">
 			<form action="" method="post">
-			<label for="schulfachselect">Schulfach</label>
+			<table>
+			<thead>
+				<tr>
+					<th>Schulfack</th>
+					<th>Note</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
 				<select name="schulfachselect">
 					<?php
 					$faecher = mysql_query("SELECT * FROM Schulfach");
@@ -39,8 +49,13 @@
 						?>
 						<option value="<?php echo $id; ?>"><?php echo $fach; ?></option>
 						<?php } ?>
-					</select><label for="grade">Note</label><input type="number" name="grade" placeholder="6" min="1" max="6" style="width: 50px;">
-					<button name="savetest" id="Eingabe">save</button>
+					</select>	
+					</td>
+					<td><input type="number" name="grade" placeholder="6" min="1" max="6" style="width: 50px;"></td>
+					<td><button name="savetest" id="Eingabe">save</button></td>
+				</tr>
+			</tbody>
+			</table>
 				</form>
 				<?php
 				if (isset($_POST['savetest'])) {
