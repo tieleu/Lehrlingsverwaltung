@@ -92,7 +92,7 @@
   			?>
   			<option value="<?php echo $id; ?>"><?php echo $fach; ?></option>
   			<?php } ?>
-  		</select><label for="grade">Note:</label><input type="number" name="grade" placeholder="6">
+  		</select><label for="grade">Note:</label><input type="number" name="grade" placeholder="6" min="1" max="6">
   		<button name="savetest">save</button>
   		</form>
   		<?php
