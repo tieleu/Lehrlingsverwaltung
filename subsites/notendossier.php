@@ -26,15 +26,27 @@
 		</div>
 		    <div class="panel" id="scroll">
 				<ul class="nav nav-tabs">
-					<li role="presentation"><a href="#">Lehrjahr1 Sem.1</a></li>
-					<li role="presentation"><a href="#">Lehrjahr1 Sem.2</a></li>
-					<li role="presentation"><a href="#">Lehrjahr2 Sem.1</a></li>
-					<li role="presentation"><a href="#">Lehrjahr2 Sem.2</a></li>
-					<li role="presentation"><a href="#">Lehrjahr3 Sem.1</a></li>
-					<li role="presentation"><a href="#">Lehrjahr3 Sem.2</a></li>
-					<li role="presentation"><a href="#">Lehrjahr4 Sem.1</a></li>
-					<li role="presentation"><a href="#">Lehrjahr4 Sem.2</a></li>
+					<li role="presentation"><a href="#1">Lehrjahr1 Sem.1</a></li>
+					<li role="presentation"><a href="#2">Lehrjahr1 Sem.2</a></li>
+					<li role="presentation"><a href="#3">Lehrjahr2 Sem.1</a></li>
+					<li role="presentation"><a href="#4">Lehrjahr2 Sem.2</a></li>
+					<li role="presentation"><a href="#5">Lehrjahr3 Sem.1</a></li>
+					<li role="presentation"><a href="#6">Lehrjahr3 Sem.2</a></li>
+					<li role="presentation"><a href="#7">Lehrjahr4 Sem.1</a></li>
+					<li role="presentation"><a href="#8">Lehrjahr4 Sem.2</a></li>
 				</ul>
+
+				<div class="tab-content ">
+					<div class="tab-pane active" id="1">
+						<h3>Standard tab panel created on bootstrap using nav-tabs</h3>
+					</div>
+					<div class="tab-pane" id="2">
+						<h3>Notice the gap between the content and tab after applying a background color</h3>
+					</div>
+					<div class="tab-pane" id="3">
+						<h3>add clearfix to tab-content (see the css)</h3>
+					</div>
+				</div>
 				<br>
 				<br>
 
