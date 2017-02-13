@@ -81,7 +81,7 @@
 			</div>
   			<br>
   		</div>
-  		<select name="schulfachselect" multiple>
+  		<select name="schulfachselect">
   			<option value="math">Mathematik</option>
   			<option value="deutsch">Deutsch</option>
   			<option value="e">englisch</option>
