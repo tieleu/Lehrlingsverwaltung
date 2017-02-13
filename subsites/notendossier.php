@@ -39,7 +39,7 @@
 				<tbody>
 					<tr>
 						<td>
-							<select class="input_content form-control" name="schulfachselect">
+							<select class="form-control input_content" name="schulfachselect">
 								<?php
 								$faecher = mysql_query("SELECT * FROM Schulfach");
 								while ($row = mysql_fetch_object($faecher)) {
