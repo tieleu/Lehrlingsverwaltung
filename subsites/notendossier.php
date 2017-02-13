@@ -28,7 +28,7 @@
 	</div>
 	<div align="center" id="input_container">
 		<form action="" method="post">
-			<table width="50%">
+			<table id="inputtable" width="50%">
 				<thead>
 					<tr>
 						<th>Schulfach</th>

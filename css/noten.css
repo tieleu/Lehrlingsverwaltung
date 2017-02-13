@@ -20,11 +20,14 @@ hr{
     margin: auto;
     overflow-y: scroll;
 }
+#inputtable > tr > td{
+	padding-right: 10px;
+}
 #input_note{
-	width: 90%;
+	width: 100%;
 }
 #selectfach{
-	width: 90%;
+	width: 100%;
 }
 
 #input_container{
