@@ -3,14 +3,7 @@
 <head>
 	<?php 
 	include("header.php");
-	$servername = "172.16.44.5";
-	$username = "lehrling";
-	$password = "sec1.01";
-
-	$conn = mysql_connect($servername, $username, $password)
-	or die("Fehler im System");
-	mysql_select_db("Lehrverwaltung");
-	$select ="SELECT * from Noten where User_idUser=1";
+	$user = $_GET['user'];
 	?>
 	<link rel="stylesheet" type="text/css" href="../css/noten.css">
 	<script type="text/javascript" href="../jquery/jquery-3.1.1.js"></script>
@@ -51,14 +44,14 @@
 							</select>	
 						</td>
 						<td><input class="inputandsubmitbtn form-control" id="input_note" type="number" name="grade" placeholder="6" min="1" max="6"></td>
-						<td><button class="inputandsubmitbtn btn" name="savetest" id="Eingabe">save</button></td>
+						<td><button class="inputandsubmitbtn btn" name="savenote" id="Eingabe">save</button></td>
 					</tr>
 				</tbody>
 			</table>
 		</form>
 			<?php
-			if (isset($_POST['savetest'])) {
-				$test = $_POST['schulfachselect'];
+			if (isset($_POST['savenote'])) {
+				$auswahl = $_POST['schulfachselect'];
 				echo $test;
 			}
 			?>
