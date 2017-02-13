@@ -7,7 +7,7 @@
 	$username = "lehrling";
 	$password = "sec1.01";
 
-	$conn =mysql_connect($servername, $username, $password)
+	$conn = mysql_connect($servername, $username, $password)
 		or die("Fehler im System");
 		mysql_select_db("Lehrverwaltung");
 	$select ="SELECT * from Noten where User_idUser=1";
@@ -81,6 +81,19 @@
 			</div>
   			<br>
   		</div>
+  		<select name="schulfachselect" multiple>
+  			<option value="math">Mathematik</option>
+  			<option value="deutsch">Deutsch</option>
+  		</select>
+  		<form action="" method="post">
+  		<button name="savetest">save</button>
+  		</form>
+  		<?php
+  		if (isset($_POST['savetest'])) {
+  			$test = $_POST['schulfachselect'];
+  			echo $test;
+  		}
+  		?>
 	<footer id="footer">
 </footer>
 
