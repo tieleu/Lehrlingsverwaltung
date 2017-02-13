@@ -2,7 +2,10 @@ h1{
 	text-align: center;
 
 }
-hr{color: #DDDDDD;}
+hr{
+	color: #DDDDDD;
+	size: 2px;
+}
 
 #uebersicht{  
     max-height: 600px;
