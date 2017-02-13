@@ -22,8 +22,7 @@
 </head>
 <body>
 	<div id="container1">
-		<div id="heading" class="accordion"><h1>Schul-Unterricht  <i class="fa fa-caret-square-o-down" aria-hidden="true"></i></h1>
-		</div>
+		<h1>Notendossier</h1>
 		    <div class="panel" id="scroll">
 				<ul class="nav nav-tabs">
 					<li role="presentation"><a href="#">Lehrjahr1 Sem.1</a></li>
@@ -47,40 +46,7 @@
 				</div>
 
 				</div>
-
-
-   
     		</div>
-		</div>
-
-	</div>
-	<br>
-	<div id="container2">
-		<div id="heading" class="accordion">	<h1>Modul-Unterricht  <i class="fa fa-caret-square-o-down" aria-hidden="true"></i></h1>
-		</div>
-		    <div class="panel">
-				<ul class="nav nav-tabs">
-					<li role="presentation"><a href="#">Lehrjahr1 Sem.1</a></li>
-					<li role="presentation"><a href="#">Lehrjahr1 Sem.2</a></li>
-					<li role="presentation"><a href="#">Lehrjahr2 Sem.1</a></li>
-					<li role="presentation"><a href="#">Lehrjahr2 Sem.2</a></li>
-					<li role="presentation"><a href="#">Lehrjahr3 Sem.1</a></li>
-					<li role="presentation"><a href="#">Lehrjahr3 Sem.2</a></li>
-					<li role="presentation"><a href="#">Lehrjahr4 Sem.1</a></li>
-					<li role="presentation"><a href="#">Lehrjahr4 Sem.2</a></li>
-					<button id="lapButton" type="button" style="width: 95px; height: 50px;">LAP Stand</button>
-				</ul>
-				<br>
-				<br>
-
-				<button id="Eingabe1">Eingabe</button>
-
-				<div id="modulfach"><br>
-				</div>
-
-			</div>
-  			<br>
-  		</div>
   		<form action="" method="post">
   		<select name="schulfachselect">
   			<?php
