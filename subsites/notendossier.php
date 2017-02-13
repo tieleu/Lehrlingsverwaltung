@@ -85,7 +85,7 @@
   		<select name="schulfachselect">
   			<option value="math">Mathematik</option>
   			<option value="deutsch">Deutsch</option>
-  			<option value="e">englisch</option>
+  			<option value="'e','m'">englisch</option>
   			<option value="f">franz</option>
   		</select>
   		<button name="savetest">save</button>
