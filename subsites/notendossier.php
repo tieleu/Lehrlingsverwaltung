@@ -23,20 +23,7 @@
 <body>
 	<div id="uebersicht">
 		<h1>Notendossier</h1>
-		<div class="panel" id="scroll">
-			<ul class="nav nav-tabs">
-				<li role="presentation"><a href="#">Lehrjahr1 Sem.1</a></li>
-				<li role="presentation"><a href="#">Lehrjahr1 Sem.2</a></li>
-				<li role="presentation"><a href="#">Lehrjahr2 Sem.1</a></li>
-				<li role="presentation"><a href="#">Lehrjahr2 Sem.2</a></li>
-				<li role="presentation"><a href="#">Lehrjahr3 Sem.1</a></li>
-				<li role="presentation"><a href="#">Lehrjahr3 Sem.2</a></li>
-				<li role="presentation"><a href="#">Lehrjahr4 Sem.1</a></li>
-				<li role="presentation"><a href="#">Lehrjahr4 Sem.2</a></li>
-			</ul>
-			<br>
 
-		</div>
 		</div>
 		<div id="input_container">
 			<form action="" method="post">
