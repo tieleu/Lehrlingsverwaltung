@@ -50,7 +50,7 @@
 								<?php } ?>
 							</select>	
 						</td>
-						<td><input class="form-control" type="number" name="grade" placeholder="6" min="1" max="6" style="width: 50px;"></td>
+						<td><input class="form-control" type="number" name="grade" placeholder="6" min="1" max="6"></td>
 						<td><button class="btn" name="savetest" id="Eingabe">save</button></td>
 					</tr>
 				</tbody>
