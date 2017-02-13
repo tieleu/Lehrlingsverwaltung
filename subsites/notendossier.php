@@ -38,8 +38,6 @@
 				<br>
 				<br>
 
-
-		 <button id="Eingabe">Eingabe</button>
 				
  				<div id="schulfach"><br>
  				
@@ -59,7 +57,7 @@
   			<option value="<?php echo $id; ?>"><?php echo $fach; ?></option>
   			<?php } ?>
   		</select><label for="grade">Note:</label><input type="number" name="grade" placeholder="6" min="1" max="6" style="width: 50px;">
-  		<button name="savetest">save</button>
+  		<button name="savetest" id="Eingabe">save</button>
   		</form>
   		<?php
   		if (isset($_POST['savetest'])) {
