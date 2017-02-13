@@ -25,6 +25,7 @@ hr{
 }
 #selectfach{
 	width: 250px;
+	margin-right: -50px;
 }
 
 #input_container{
