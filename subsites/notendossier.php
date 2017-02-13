@@ -12,9 +12,9 @@
 		mysql_select_db("Lehrverwaltung");
 	$select ="SELECT * from Noten where User_idUser=1";
 	?>
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.css">
+	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap-theme.css">
 	<link rel="stylesheet" type="text/css" href="../css/noten.css">
 	<script type="text/javascript" href="../jquery/jquery-3.1.1.js"></script>
 	<script  type="text/javascript" src="../js/notendossier.js" defer></script>
