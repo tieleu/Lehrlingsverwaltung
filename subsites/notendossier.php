@@ -81,13 +81,13 @@
 			</div>
   			<br>
   		</div>
+  		<form action="" method="post">
   		<select name="schulfachselect">
   			<option value="math">Mathematik</option>
   			<option value="deutsch">Deutsch</option>
   			<option value="e">englisch</option>
   			<option value="f">franz</option>
   		</select>
-  		<form action="" method="post">
   		<button name="savetest">save</button>
   		</form>
   		<?php
