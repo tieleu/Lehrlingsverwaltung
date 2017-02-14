@@ -23,7 +23,7 @@
 	<div id="uebersicht">
 		<h1>Notendossier</h1>
 		<hr>
-		<table class="table" id="modul">
+		<table class="table" id="modul" style="display: inline-block;">
 			<thead>
 				<tr>
 					<th colspan="2">Modul-Unterricht</th>
@@ -38,6 +38,38 @@
 				#Die IDs der Fächer in denen ein bestimmter Nutzer noten gespeichert hat holen.
 					$getfaecher = mysql_query("SELECT * FROM Noten JOIN Schulfach ON Noten.Schulfach_idSchulfach=Schulfach.idSchulfach WHERE User_idUser=$idUser GROUP BY idSchulfach");
 					while($row = mysql_fetch_object($getfaecher)){
+						$schulfachID = $row -> idSchulfach;
+						$fachname = $row -> Name;
+						echo "<tr><td><input class='fach-ausgabe' type='text' value='$fachname' readonly></td><td>";
+						#Die Schulnoten der einzelnen fächer holen
+						$getNoten = mysql_query("SELECT * FROM Noten JOIN Schulfach ON Noten.Schulfach_idSchulfach=Schulfach.idSchulfach WHERE User_idUser=$idUser AND idSchulfach=$schulfachID ORDER BY idSchulfach");
+						$numOfGrades = 100/mysql_num_rows($getNoten)-1 . "%";
+						while($row1 = mysql_fetch_object($getNoten)){
+							$note = $row1 -> note;
+							?><input class='noten-ausgabe' type='number' style='width: <?php echo $numOfGrades; ?>;' value='<?php echo $note; ?>' readonly><?php
+						}
+						echo "</td></tr>";
+					}
+
+				?>
+			</tbody>
+		</table>
+
+		<table class="table" id="schul" style="display: inline-block;">
+			<thead>
+				<tr>
+					<th colspan="2">Schul-Unterricht</th>
+				</tr>
+				<tr>
+					<th>Fach</th>
+					<th>Noten</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php
+				#Die IDs der Fächer in denen ein bestimmter Nutzer noten gespeichert hat holen.
+					$getschulfaecher = mysql_query("SELECT * FROM Noten JOIN Schulfach ON Noten.Schulfach_idSchulfach=Schulfach.idSchulfach WHERE User_idUser=$idUser AND modulOderSchule='m' GROUP BY idSchulfach");
+					while($row = mysql_fetch_object($getschulfaecher)){
 						$schulfachID = $row -> idSchulfach;
 						$fachname = $row -> Name;
 						echo "<tr><td><input class='fach-ausgabe' type='text' value='$fachname' readonly></td><td>";
