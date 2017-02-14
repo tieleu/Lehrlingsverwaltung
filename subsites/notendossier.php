@@ -44,6 +44,7 @@
 						#Die Schulnoten der einzelnen fächer holen
 						$getNoten = mysql_query("SELECT * FROM Noten JOIN Schulfach ON Noten.Schulfach_idSchulfach=Schulfach.idSchulfach WHERE User_idUser=$idUser AND idSchulfach=$schulfachID ORDER BY idSchulfach");
 						$numOfGrades = 100/mysql_num_rows($getNoten)."%";
+						echo $numOfGrades;
 						while($row1 = mysql_fetch_object($getNoten)){
 							$note = $row1 -> note;
 							echo "<input class='noten-ausgabe' type='number' width='$numOfGrades' value='$note' readonly>";
