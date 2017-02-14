@@ -29,7 +29,7 @@
 					<th colspan="2">Modul-Unterricht</th>
 				</tr>
 				<tr>
-					<th>Fach</th>
+					<th width="200px">Fach</th>
 					<th>Noten</th>
 				</tr>
 			</thead>
@@ -61,7 +61,7 @@
 					<th colspan="2">Schul-Unterricht</th>
 				</tr>
 				<tr>
-					<th>Fach</th>
+					<th width="200px">Fach</th>
 					<th>Noten</th>
 				</tr>
 			</thead>
