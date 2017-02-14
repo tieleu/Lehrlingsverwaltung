@@ -71,7 +71,7 @@
 				<tr>
 					<th width="200px">Fach</th>
 					<th>Noten</th>
-					<th>Schnitt</th>
+					<th width="200px">Schnitt</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -108,9 +108,9 @@
 			<table id="inputtable" width="50%">
 				<thead>
 					<tr>
-						<th>Schulfach</th>
+						<th width="200px">Schulfach</th>
 						<th>Note</th>
-						<th></th>
+						<th width="200px"></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -139,7 +139,6 @@
 				$note = $_POST['grade'];
 				echo $note;
 				mysql_query("INSERT INTO Noten (note,Schulfach_idSchulfach,User_idUser) VALUES ($note,$auswahl,$idUser)");
-				header('Location:notendossier.php');
 				}
 			?>
 	</div>
