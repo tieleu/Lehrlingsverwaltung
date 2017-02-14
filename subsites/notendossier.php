@@ -36,7 +36,7 @@
 			<tbody>
 				<?php
 				#Die IDs der Fächer in denen ein bestimmter Nutzer noten gespeichert hat holen.
-					$getfaecher = mysql_query("SELECT * FROM Noten JOIN Schulfach ON Noten.Schulfach_idSchulfach=Schulfach.idSchulfach WHERE User_idUser=$idUser AND modulOderSchule='s' GROUP BY idSchulfach");
+					$getfaecher = mysql_query("SELECT * FROM Noten JOIN Schulfach ON Noten.Schulfach_idSchulfach=Schulfach.idSchulfach WHERE User_idUser=$idUser AND modulOderSchule='m' GROUP BY idSchulfach");
 					while($row = mysql_fetch_object($getfaecher)){
 						$schulfachID = $row -> idSchulfach;
 						$fachname = $row -> Name;
