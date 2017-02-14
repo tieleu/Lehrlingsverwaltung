@@ -23,7 +23,7 @@
 	<div id="uebersicht">
 		<h1>Notendossier</h1>
 		<hr>
-		<table class="table" id="modul" style="display: inline-block; width: 40%;">
+		<table class="table" id="modul">
 			<thead>
 				<tr>
 					<th colspan="2">Modul-Unterricht</th>
@@ -55,7 +55,7 @@
 			</tbody>
 		</table>
 
-		<table class="table" id="schul" style="display: inline-block; width: 40%;">
+		<table class="table" id="schul">
 			<thead>
 				<tr>
 					<th colspan="2">Schul-Unterricht</th>
