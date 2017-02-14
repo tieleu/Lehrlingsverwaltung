@@ -45,7 +45,7 @@
 						$getNoten = mysql_query("SELECT * FROM Noten JOIN Schulfach ON Noten.Schulfach_idSchulfach=Schulfach.idSchulfach WHERE User_idUser=$idUser AND idSchulfach=$schulfachID ORDER BY idSchulfach");
 						while($row1 = mysql_fetch_object($getNoten)){
 							$note = $row1 -> note;
-							echo "<input class='form-control' type='number' value='$note' readonly>";
+							echo "<input class='form-control' type='number' value='$note' width="auto" readonly>";
 						}
 						echo "</td></tr>";
 					}
