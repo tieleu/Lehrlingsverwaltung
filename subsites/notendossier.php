@@ -20,6 +20,13 @@
 
 </head>
 <body>
+			<?php
+			if (isset($_POST['savenote'])) {
+				$auswahl = $_POST['schulfachselect'];
+				$note = $_POST['grade'];
+				mysql_query("INSERT INTO Noten (note,Schulfach_idSchulfach,User_idUser) VALUES ($note,$auswahl,$idUser)");
+				}
+			?>
 	<div id="uebersicht">
 		<h1>Notendossier</h1>
 		<hr>
@@ -133,13 +140,6 @@
 				</tbody>
 			</table>
 		</form>
-			<?php
-			if (isset($_POST['savenote'])) {
-				$auswahl = $_POST['schulfachselect'];
-				$note = $_POST['grade'];
-				mysql_query("INSERT INTO Noten (note,Schulfach_idSchulfach,User_idUser) VALUES ($note,$auswahl,$idUser)");
-				}
-			?>
 	</div>
 	<footer id="footer">
 	</footer>
