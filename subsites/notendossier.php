@@ -31,7 +31,7 @@
 				<tr>
 					<th width="200px">Fach</th>
 					<th>Noten</th>
-					<th>Schnitt</th>
+					<th width="200px">Schnitt</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -108,9 +108,9 @@
 			<table id="inputtable" width="50%">
 				<thead>
 					<tr>
-						<th width="200px">Schulfach</th>
+						<th>Schulfach</th>
 						<th>Note</th>
-						<th width="200px"></th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
