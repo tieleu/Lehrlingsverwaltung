@@ -53,9 +53,7 @@
 						}
 						$notenSchnitt = round($allGrades/mysql_num_rows($getNoten), 2);
 						$notenSchnitt = round($notenSchnitt/0.25);
-						echo $notenSchnitt;
 						$notenSchnitt = $notenSchnitt*0.25;
-						echo $notenSchnitt;
 
 						echo "</td><td><input class='noten-ausgabe' type='number' value='$notenSchnitt' readonly></td></tr>";
 					}
@@ -93,6 +91,8 @@
 							?><input class='noten-ausgabe' type='number' style='width: <?php echo $numOfGradesschool; ?>;' value='<?php echo $noteschule; ?>' readonly><?php
 						}
 						$notenSchnittS = round($allSGrades/mysql_num_rows($getschulNoten), 2);
+						$notenSchnittS = round($notenSchnittS/0.25);
+						$notenSchnittS = $notenSchnittS*0.25;
 						echo "</td><td><input class='noten-ausgabe' type='number' value='$notenSchnittS' readonly></td></tr>";
 					}
 
