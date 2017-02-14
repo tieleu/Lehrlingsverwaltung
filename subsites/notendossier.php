@@ -38,7 +38,7 @@
 				<tr>
 					<th width="200px">Fach</th>
 					<th>Noten</th>
-					<th width="100px">Schnitt</th>
+					<th width="200px">Schnitt</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -78,7 +78,7 @@
 				<tr>
 					<th width="200px">Fach</th>
 					<th>Noten</th>
-					<th width="100px">Schnitt</th>
+					<th width="200px">Schnitt</th>
 				</tr>
 			</thead>
 			<tbody>
