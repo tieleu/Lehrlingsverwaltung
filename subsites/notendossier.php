@@ -74,11 +74,11 @@
 						$fachname = $row -> Name;
 						echo "<tr><td><input class='fach-ausgabe' type='text' value='$fachname' readonly></td><td>";
 						#Die Schulnoten der einzelnen fächer holen
-						$getNoten = mysql_query("SELECT * FROM Noten JOIN Schulfach ON Noten.Schulfach_idSchulfach=Schulfach.idSchulfach WHERE User_idUser=$idUser AND idSchulfach=$schulfachID ORDER BY idSchulfach");
-						$numOfGrades = 100/mysql_num_rows($getNoten)-1 . "%";
-						while($row1 = mysql_fetch_object($getNoten)){
-							$note = $row1 -> note;
-							?><input class='noten-ausgabe' type='number' style='width: <?php echo $numOfGrades; ?>;' value='<?php echo $note; ?>' readonly><?php
+						$getschulNoten = mysql_query("SELECT * FROM Noten JOIN Schulfach ON Noten.Schulfach_idSchulfach=Schulfach.idSchulfach WHERE User_idUser=$idUser AND idSchulfach=$schulfachID ORDER BY idSchulfach");
+						$numOfGradesschool = 100/mysql_num_rows($getschulNoten)-1 . "%";
+						while($row1 = mysql_fetch_object($getschulNoten)){
+							$noteschule = $row1 -> note;
+							?><input class='noten-ausgabe' type='number' style='width: <?php echo $numOfGradesschool; ?>;' value='<?php echo $noteschule; ?>' readonly><?php
 						}
 						echo "</td></tr>";
 					}
