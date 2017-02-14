@@ -60,7 +60,7 @@ div.panel {
 
 .fach-ausgabe, .noten-ausgabe{
   margin-right: 5px;
-  background-color: grey;
+  background-color: #ccc;
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 6px 12px;
