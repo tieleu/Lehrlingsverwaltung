@@ -51,6 +51,7 @@
 							$allGrades += $note;
 							?><input class='noten-ausgabe' type='number' style='width: <?php echo $numOfGrades; ?>;' value='<?php echo $note; ?>' readonly><?php
 						}
+						#auf viertel runden
 						$notenSchnitt = round($allGrades/mysql_num_rows($getNoten), 2);
 						$notenSchnitt = round($notenSchnitt/0.25);
 						$notenSchnitt = $notenSchnitt*0.25;
@@ -90,6 +91,7 @@
 							$allSGrades += $noteschule;
 							?><input class='noten-ausgabe' type='number' style='width: <?php echo $numOfGradesschool; ?>;' value='<?php echo $noteschule; ?>' readonly><?php
 						}
+						#auf viertel runden
 						$notenSchnittS = round($allSGrades/mysql_num_rows($getschulNoten), 2);
 						$notenSchnittS = round($notenSchnittS/0.25);
 						$notenSchnittS = $notenSchnittS*0.25;
