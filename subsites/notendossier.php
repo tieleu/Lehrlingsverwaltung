@@ -137,7 +137,6 @@
 			if (isset($_POST['savenote'])) {
 				$auswahl = $_POST['schulfachselect'];
 				$note = $_POST['grade'];
-				echo $note;
 				mysql_query("INSERT INTO Noten (note,Schulfach_idSchulfach,User_idUser) VALUES ($note,$auswahl,$idUser)");
 				}
 			?>
