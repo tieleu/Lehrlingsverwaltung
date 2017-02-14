@@ -59,7 +59,7 @@ div.panel {
 }
 
 .fach-ausgabe, .noten-ausgabe{
-  margin-right: 5px;
+  margin: auto;
   background-color: #ccc;
   border: 1px solid #ccc;
   border-radius: 4px;
