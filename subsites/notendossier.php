@@ -139,8 +139,8 @@
 				$note = $_POST['grade'];
 				echo $note;
 				mysql_query("INSERT INTO Noten (note,Schulfach_idSchulfach,User_idUser) VALUES ($note,$auswahl,$idUser)");
-				
-			}
+				header('Location:notendossier.php');
+				}
 			?>
 	</div>
 	<footer id="footer">
