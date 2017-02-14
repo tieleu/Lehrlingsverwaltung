@@ -51,7 +51,7 @@
 							$allGrades += $note;
 							?><input class='noten-ausgabe' type='number' style='width: <?php echo $numOfGrades; ?>;' value='<?php echo $note; ?>' readonly><?php
 						}
-						$notenSchnitt = round($allGrades/mysql_num_rows($getNoten), 2);
+						$notenSchnitt = round(round(($allGrades/mysql_num_rows($getNoten))/25)*25, 2);
 						echo "</td><td><input class='noten-ausgabe' type='number' value='$notenSchnitt'></td></tr>";
 					}
 
