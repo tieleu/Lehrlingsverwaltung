@@ -40,12 +40,12 @@
 					while($row = mysql_fetch_object($getfaecher)){
 						$schulfachID = $row -> idSchulfach;
 						$fachname = $row -> Name;
-						echo "<tr><td><input class='myown-form-control' type='text' value='$fachname' readonly></td><td>";
+						echo "<tr><td><input class='form-control' type='text' value='$fachname' readonly></td><td>";
 						#Die Schulnoten der einzelnen fächer holen
 						$getNoten = mysql_query("SELECT * FROM Noten JOIN Schulfach ON Noten.Schulfach_idSchulfach=Schulfach.idSchulfach WHERE User_idUser=$idUser AND idSchulfach=$schulfachID ORDER BY idSchulfach");
 						while($row1 = mysql_fetch_object($getNoten)){
 							$note = $row1 -> note;
-							echo "<input class='myown-form-control' type='number' value='$note' readonly>";
+							echo "<input class='form-control' type='number' value='$note' readonly>";
 						}
 						echo "</td></tr>";
 					}
