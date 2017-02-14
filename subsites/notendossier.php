@@ -26,11 +26,12 @@
 		<table class="table" id="modul">
 			<thead>
 				<tr>
-					<th colspan="2">Modul-Unterricht</th>
+					<th colspan="3">Modul-Unterricht</th>
 				</tr>
 				<tr>
 					<th width="200px">Fach</th>
 					<th>Noten</th>
+					<th>Schnitt</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -44,11 +45,14 @@
 						#Die Schulnoten der einzelnen fächer holen
 						$getNoten = mysql_query("SELECT * FROM Noten JOIN Schulfach ON Noten.Schulfach_idSchulfach=Schulfach.idSchulfach WHERE User_idUser=$idUser AND idSchulfach=$schulfachID ORDER BY idSchulfach");
 						$numOfGrades = 100/mysql_num_rows($getNoten)-1 . "%";
+						$allGrades;
 						while($row1 = mysql_fetch_object($getNoten)){
 							$note = $row1 -> note;
+							$allGrades += $note;
 							?><input class='noten-ausgabe' type='number' style='width: <?php echo $numOfGrades; ?>;' value='<?php echo $note; ?>' readonly><?php
 						}
-						echo "</td></tr>";
+						$notenSchnitt = $allGrades/mysql_num_rows($getNoten);
+						echo "</td><td><input class='noten-ausgabe' type='number' value='$notenSchnitt'></td></tr>";
 					}
 
 				?>
@@ -58,11 +62,12 @@
 		<table class="table" id="schul">
 			<thead>
 				<tr>
-					<th colspan="2">Schul-Unterricht</th>
+					<th colspan="3">Schul-Unterricht</th>
 				</tr>
 				<tr>
 					<th width="200px">Fach</th>
 					<th>Noten</th>
+					<th>Schnitt</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -76,11 +81,14 @@
 						#Die Schulnoten der einzelnen fächer holen
 						$getschulNoten = mysql_query("SELECT * FROM Noten JOIN Schulfach ON Noten.Schulfach_idSchulfach=Schulfach.idSchulfach WHERE User_idUser=$idUser AND idSchulfach=$schulfachID ORDER BY idSchulfach");
 						$numOfGradesschool = 100/mysql_num_rows($getschulNoten)-1 . "%";
+						$allSGrades;
 						while($row1 = mysql_fetch_object($getschulNoten)){
 							$noteschule = $row1 -> note;
+							$allSGrades += $noteschule;
 							?><input class='noten-ausgabe' type='number' style='width: <?php echo $numOfGradesschool; ?>;' value='<?php echo $noteschule; ?>' readonly><?php
 						}
-						echo "</td></tr>";
+						$notenSchnittS = $allSGrades/mysql_num_rows($getschulNoten);
+						echo "</td><td><input class='noten-ausgabe' type='number' value='$notenSchnittS'></td></tr>";
 					}
 
 				?>
