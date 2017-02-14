@@ -134,7 +134,7 @@
 								<?php } ?>
 							</select>	
 						</td>
-						<td><input class="inputandsubmitbtn form-control" id="input_note" type="number" step="0.05" name="grade" placeholder="6" min="1" max="6"></td>
+						<td><input class="inputandsubmitbtn form-control" id="input_note" type="number" step="0.05" name="grade" placeholder="note" min="1" max="6"></td>
 						<td><button class="inputandsubmitbtn btn" name="savenote" id="Eingabe">save</button></td>
 					</tr>
 				</tbody>
