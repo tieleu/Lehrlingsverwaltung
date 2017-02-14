@@ -23,9 +23,7 @@ hr{
 #inputtable > tbody > tr > td{
 	padding-right: 10px;
 }
-th{
-  text-align: center;
-}
+
 #input_note{
 	width: 100%;
 }
