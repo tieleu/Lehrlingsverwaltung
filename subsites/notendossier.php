@@ -47,7 +47,7 @@
 						echo $numOfGrades;
 						while($row1 = mysql_fetch_object($getNoten)){
 							$note = $row1 -> note;
-							?><input class='noten-ausgabe' type='number' width='<?php echo $numOfGrades ?>' value='<?php echo $note ?>' readonly><?php
+							?><input class='noten-ausgabe' type='number' style='width: <?php echo $numOfGrades; ?>;' value='<?php echo $note; ?>' readonly><?php
 						}
 						echo "</td></tr>";
 					}
