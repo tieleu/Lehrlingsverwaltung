@@ -76,7 +76,7 @@ $user = $_GET['user'];
 	   	</tr>
 		<tr>
 		<form action="../phpAction/zeitAction.php?user=<?php echo $user ?>" method="post">
-		   <td><input type="date" id="date_input" name="date_input" class="inputandsubmitbtn form-control" value="<?php echo date('Y-m-d');?>"></td>
+		   <td><input type="date" id="date_input" name="date_input" class="inputandsubmitbtn form-control" value="<?php echo date('Y-m-d');?>" readonly></td>
 		   <td><input type="time" id="starttime_input" name="starttime_input" class="inputandsubmitbtn form-control"></td>
 		    <td><input type="time" id="endtime_input" name="endtime_input" class="inputandsubmitbtn form-control"></td>
 		    <td><button id="savetime" name="savetime" class="inputandsubmitbtn btn">Save</button></td>
