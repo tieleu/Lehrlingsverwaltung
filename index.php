@@ -97,7 +97,6 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 	}else {		 
 		echo "access denied! Please log in";
 
-		 sleep(3);
 		header("Location:login.html");
 		 session_destroy();
 
