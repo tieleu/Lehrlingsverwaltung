@@ -3,7 +3,7 @@
 <?php 
 include("../db/db_connection.php");
   session_start();
-
+$nameOfUser = $_GET['user']; 	
 if($_SESSION['eingeloggt']== true)  && $nameOfUser == $_SESSION['login_user']){ 
  ?>
 <head>	
