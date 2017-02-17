@@ -4,6 +4,7 @@
 
 	if (empty($_POST['username']) || empty($_POST['password'])) {
 		$error = "Username or Password is invalid";	
+			echo "thas: " . $_username;
 	}
 	else{
 	    
@@ -12,7 +13,7 @@
 
 	    $_username = mysql_real_escape_string($_POST["username"]); 
 	    $_passwort = mysql_real_escape_string($_POST["passwort"]); 
-	echo "thas: " . $_username;
+
 
 		require("db/db_connection.php");
 		$query = mysql_query("select username, passwort from User where passwort='$password' AND username='$username'");
