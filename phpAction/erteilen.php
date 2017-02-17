@@ -42,17 +42,18 @@ $user = $_GET['user'];
  		$query = "INSERT INTO Aufgaben (prioritaet, uebung, komentar, erledigt_bis, User_idUser, Uebung_idUebung) 
  		VALUES ('$Prioritaet','$uebungen','$comment' ,'$erledigenBis','$idUser','$idUebung')";
 
+ 		setcookie("erteilen_Status", "SUCCESSFUL:\nAufgabe erfolgereich erteilt!");
 
 	$result=mysql_query($query);
  		}
  		 if($result){
  		echo "Successful";
- 		setcookie("erteilen_Status", "SUCCESSFUL: Aufgabe erfolgereich erteilt!");
+ 		setcookie("erteilen_Status", "SUCCESSFUL:\nAufgabe erfolgereich erteilt!");
  	}
 
  	else {
  		echo "ERROR";
- 		setcookie("erteilen_Status", "ERROR: Aufgabe erteilen Fehlgeschlagen!");
+ 		setcookie("erteilen_Status", "ERROR:\nAufgabe erteilen Fehlgeschlagen!");
  	}
  	?>
 
