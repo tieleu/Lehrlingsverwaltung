@@ -5,6 +5,7 @@
 	session_cache_limiter(3600);
 
 	$cookieName = $_SESSION['login_user'];
+	$_SESSION['login_user'] == true
 	$nameOfUser = $_GET['user'];
 
 	 if($nameOfUser == $cookieName && $_SESSION['login_user'] == true){ 
