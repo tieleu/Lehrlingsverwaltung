@@ -1,5 +1,5 @@
 <?php
-		session_start(); 
+	
 	$error='';
 	if (empty($_POST['username']) || empty($_POST['password'])) {
 		$error = "Username or Password is invalid";	
