@@ -1,4 +1,4 @@
-alert(getCookie("ertielenStatus"));
+alert(getCookie("erteilenStatus"));
 
 
 function getCookie(cname) {
