@@ -1,13 +1,17 @@
-function reqListener () {
-      console.log(this.responseText);
+console.log(getCookie("passwordCheck"));
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
     }
-
-    var oReq = new XMLHttpRequest(); //New request object
-    oReq.onload = function() {
-        //This is where you handle what to do with the response.
-        //The actual data is found on this.responseText
-        alert(this.responseText); //Will alert: 42
-    };
-    oReq.open("get", "login.php", true);
-
-    oReq.send();
+    return "";
+}
