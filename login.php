@@ -23,12 +23,13 @@ else{
 	if ($rows == 1) {
 		$_SESSION['login_user']=$username; 
 		$_SESSION['eingeloggt'] = true;
+		setcookie("passwortCheck", true);
 		header("location:index.php?user=$username"); 
 
 	} else {
 		$error = "Username or Password is invalid";
 		$_SESSION['eingeloggt'] = false;
-		setcookie("test", "testwert");
+		setcookie("passwortCheck", false);
 		header("Location: login.html");
 	}
 }
