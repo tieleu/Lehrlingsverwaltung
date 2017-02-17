@@ -23,6 +23,7 @@ else{
 	if ($rows == 1) {
 		$_SESSION['login_user']=$username; 
 		$_SESSION['eingeloggt'] = true;
+		$_SESSION['test'] = "test";
 		header("location:index.php?user=$username"); 
 
 	} else {
