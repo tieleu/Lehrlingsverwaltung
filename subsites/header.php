@@ -3,7 +3,7 @@
 <?php 
   session_start();
   session_cache_limiter(3600);
-  require("db/db_connection.php");
+  include("../db/db_connection.php");
 $nameOfUser = $_GET['user']; 	
  $sessionUser =$_SESSION['login_user'];
 
@@ -17,6 +17,7 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 
  	<link rel="stylesheet" type="text/css" href="../font/css/font-awesome.min.css">
  	<link rel="stylesheet" type="text/css" href="../font/css/font-awesome.css">
+
 <link rel="stylesheet" type="text/css" href="../font/scss/_larger.scss">
 
 	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap-theme.min.css">
@@ -27,8 +28,6 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 </head>
