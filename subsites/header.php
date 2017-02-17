@@ -4,7 +4,7 @@
 include("../db/db_connection.php");
   session_start();
 
-if($_SESSION['eingeloggt']== true){ 
+if($_SESSION['eingeloggt']== true)  && $nameOfUser == $_SESSION['login_user']){ 
  ?>
 <head>	
 	<meta name="description" content="Free Web tutorials">
