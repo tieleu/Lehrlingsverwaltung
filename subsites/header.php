@@ -3,12 +3,10 @@
 <?php 
 include("../db/db_connection.php");
   session_start();
+
 if($_SESSION['eingeloggt']== true){ 
-
  ?>
-
-<head>
-	
+<head>	
 	<meta name="description" content="Free Web tutorials">
 	<meta name="author" content="Hege Refsnes">
 
