@@ -4,7 +4,7 @@
 	 include("../db/db_connection.php");
    session_start();
 	$nameOfUser = $_GET['user'];
- $sessionUser =$_SESSION['login_user']
+ $sessionUser =$_SESSION['login_user'];
 if($_SESSION['eingeloggt']== true)  && $nameOfUser == $sessionUser){ 
  ?>
 	 
