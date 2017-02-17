@@ -1,4 +1,4 @@
-if(getCookie("passwortCheck")==false){
+if(getCookie("passwortCheck")=="false"){
     prompt("test");
 }
 
