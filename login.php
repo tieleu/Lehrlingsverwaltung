@@ -25,7 +25,7 @@
 			header("location:index.php?user=$username"); 
 
 		} else {
-			echo "thas: " . $_username;
+			echo "thas: " . $_POST["username"];
 			echo "Username or Password is invalid";
 			$_SESSION['eingeloggt'] = false;
 		#	header("Location: login.html");
