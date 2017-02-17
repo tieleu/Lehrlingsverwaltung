@@ -1,4 +1,5 @@
 <?php
+session_set_cookie_params(3600*24,"/");
 session_start();
 session_cache_limiter(3600);
 require("db/db_connection.php");

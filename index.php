@@ -1,6 +1,7 @@
 
 <html>
-<?php	
+<?php
+session_set_cookie_params(3600*24,"/");	
 session_start();
 session_cache_limiter(3600);
 include("db/db_connection.php");
