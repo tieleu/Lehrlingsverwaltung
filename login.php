@@ -1,5 +1,6 @@
 <?php
-	    session_cache_limiter(3600);
+	      session_start();
+  session_cache_limiter(3600);
 	if (empty($_POST['username']) || empty($_POST['password'])) {
 		$error = "Username or Password is invalid";	
 	}
