@@ -1,5 +1,5 @@
 if(getCookie("passwortCheck")=="false"){
-    prompt("test");
+    alert("Password or username invalid, please try again!");
 }
 
 function getCookie(cname) {
