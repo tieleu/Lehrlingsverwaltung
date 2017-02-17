@@ -8,7 +8,7 @@
 	#$_SESSION['login_user'] = true;
 
 	$nameOfUser = $_GET['user'];
-
+echo  $_SESSION['login_user'] == true;
 	 if($nameOfUser == $cookieName && $_SESSION['login_user'] == false){ 
 
 	 
@@ -114,7 +114,7 @@ $conn =mysql_connect($servername, $username, $password)
 		echo "access denied! Please log in";
 
 		 sleep(3);
-		header("Location:login.html");
+	#	header("Location:login.html");
 		 session_destroy();
 
 	}
