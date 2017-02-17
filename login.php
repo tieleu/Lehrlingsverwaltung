@@ -27,7 +27,7 @@
 
 		} else {
 			$error = "Username or Password is invalid";
-			echo  $error;
+			$_SESSION['eingeloggt'] = false;
 			header("Location: login.html");
 		}
 			mysql_close($connection);
