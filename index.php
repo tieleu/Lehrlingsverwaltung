@@ -5,7 +5,7 @@
 	$cookieName = $_SESSION['login_user'];
 	$nameOfUser = $_GET['user'];
 
-	 if($nameOfUser == $cookieName && isset($_SESSION['login_user'])){ 
+	# if($nameOfUser == $cookieName && isset($_SESSION['login_user'])){ 
 
 
 	$servername = "172.16.44.5";
@@ -105,14 +105,14 @@ $conn =mysql_connect($servername, $username, $password)
 
 <?php 
 
-	}else {
+#	}else {
 		 echo "access denied! Please log in";
 
 		 sleep(3);
-		header("Location:login.html");
+#		header("Location:login.html");
 		 session_destroy();
 
-	}
+#	}
 
 ?>
 </html>
