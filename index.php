@@ -1,23 +1,12 @@
 
 <html>
 <?php	
+	 include("../db/db_connection.php");
    session_start();
-	$cookieName = $_SESSION['login_user'];
-	$nameOfUser = $_GET['user'];
-
 	 if($_SESSION['eingeloggt'] == true){ 
-
-	$servername = "172.16.44.5";
-$username = "lehrling";
-$password = "sec1.01";
-
-$conn =mysql_connect($servername, $username, $password)
-	or die("Fehler im System");
-	mysql_select_db("Lehrverwaltung");
-
+	$nameOfUser = $_GET['user'];
  ?>
 	 
-
 <head>
 	
 	<meta name="description" content="Free Web tutorials">
