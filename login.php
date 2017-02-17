@@ -16,7 +16,7 @@
 
 
 		require("db/db_connection.php");
-		$query = mysql_query("select username, passwort from User where passwort='$password' AND username='$username'");
+		$query = mysql_query("select username, passwort from User where passwort='$password' AND username='$username'",$conn);
 		$rows = mysql_num_rows($query);
 
 		if ($rows == 1) {
@@ -25,7 +25,6 @@
 			header("location:index.php?user=$username"); 
 
 		} else {
-			echo "thas: " . $_POST["username"];
 			echo "Username or Password is invalid";
 			$_SESSION['eingeloggt'] = false;
 		#	header("Location: login.html");
