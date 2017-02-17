@@ -8,6 +8,6 @@ function reqListener () {
         //The actual data is found on this.responseText
         alert(this.responseText); //Will alert: 42
     };
-    oReq.open("get", "login.php");
+    oReq.open("get", "login.php", true);
 
     oReq.send();
