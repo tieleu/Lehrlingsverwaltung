@@ -23,6 +23,7 @@
 	
 			$_SESSION['login_user']=$username; 
 			setcookie('username', $username,time() + (10 * 365 * 24 * 60 * 60));
+			 session_id(time() + (10 * 365 * 24 * 60 * 60));
 		echo "fail";
 
 			header("location:index.php?user=$username"); 
