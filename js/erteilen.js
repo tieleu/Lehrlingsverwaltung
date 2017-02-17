@@ -16,3 +16,4 @@ function getCookie(cname) {
     }
     return "";
 }
+document.cookie = "erteilenStatus=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/lehrlingsverwaltung;";
