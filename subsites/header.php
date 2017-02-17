@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?php 
+  session_start();
 include("../db/db_connection.php");
 $nameOfUser = $_GET['user']; 	
  $sessionUser =$_SESSION['login_user'];
