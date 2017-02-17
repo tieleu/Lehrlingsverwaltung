@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?php 
-#$cookieName = $_SESSION['login_user'];
+  session_start();
 $nameOfUser = $_GET['user'];
 
  if($_SESSION['eingeloggt']== true){ 
