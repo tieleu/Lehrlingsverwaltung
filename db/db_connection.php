@@ -1,5 +1,6 @@
 <?php  
 
+$nameOfUser = $_GET['user']; 	
 $servername = "172.16.44.5";
 $username = "lehrling";
 $password = "sec1.01";
