@@ -5,7 +5,7 @@
    session_start();
 	$nameOfUser = $_GET['user'];
  $sessionUser =$_SESSION['login_user'];
-if($_SESSION['eingeloggt']== true)  && $nameOfUser == $sessionUser){ 
+if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){ 
  ?>
 	 
 <head>
