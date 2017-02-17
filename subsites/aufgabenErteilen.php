@@ -8,6 +8,7 @@
 	<meta name="author" content="Hege Refsnes">
 
 	<link rel="stylesheet" type="text/css" href="../css/aufgabe_erteilen.css">
+	<script type="text/javascript" src="../js/erteilen.js"></script>
 
 	<title>Lehrlingsverwaltung - Aufgabe Erteilen</title>
 </head>
