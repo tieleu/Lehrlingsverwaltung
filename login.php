@@ -27,6 +27,5 @@
 			$_SESSION['eingeloggt'] = false;
 			header("Location: login.html");
 		}
-			mysql_close($conn);
 	}
 ?>
