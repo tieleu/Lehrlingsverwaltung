@@ -3,7 +3,7 @@
 <?php 
   session_start();
   session_cache_limiter(3600);
-require("../db/db_connection.php");
+include("../db/db_connection.php");
 $nameOfUser = $_GET['user']; 	
  $sessionUser =$_SESSION['login_user'];
 
