@@ -1,4 +1,4 @@
-alert(getCookie("passwortCheck"));
+alert(getCookie("ertielenStatus"));
 
 
 function getCookie(cname) {
