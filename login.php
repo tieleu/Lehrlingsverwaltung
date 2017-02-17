@@ -1,6 +1,5 @@
 <?php
 session_set_cookie_params(3600*24,"/");
-setcookie("test", "testwert");
 session_start();
 session_cache_limiter(3600);
 require("db/db_connection.php");
@@ -29,6 +28,7 @@ else{
 	} else {
 		$error = "Username or Password is invalid";
 		$_SESSION['eingeloggt'] = false;
+		setcookie("test", "testwert");
 		header("Location: login.html");
 	}
 }
