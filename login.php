@@ -10,8 +10,10 @@
 	    $_username = mysql_real_escape_string($_POST["username"]); 
 	    $_passwort = mysql_real_escape_string($_POST["passwort"]); 
 	
+echo  $_username;
+
 		require("db/db_connection.php");
-		$query = mysql_query("select username, passwort from User where passwort='$password' AND username='$username'", $conn);
+		$query = mysql_query("select username, passwort from User where passwort='$password' AND username='$username'");
 		$rows = mysql_num_rows($query);
 echo $rows;
 		if ($rows == 1) {
