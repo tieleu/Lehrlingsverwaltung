@@ -47,12 +47,12 @@ $user = $_GET['user'];
  		}
  		 if($result){
  		echo "Successful";
- 		setcookie("erteilen_Status", "SUCCESSFUL:\nAufgabe erfolgereich erteilt!");
+ 		setcookie("erteilen_Status", "SUCCESSFUL: Aufgabe erfolgereich erteilt!");
  	}
 
  	else {
  		echo "ERROR";
- 		setcookie("erteilen_Status", "ERROR:\nAufgabe erteilen Fehlgeschlagen!");
+ 		setcookie("erteilen_Status", "ERROR: Aufgabe erteilen Fehlgeschlagen!");
  	}
  	?>
 
