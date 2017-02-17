@@ -14,12 +14,11 @@
 	    $_username = mysql_real_escape_string($_POST["username"]); 
 	    $_passwort = mysql_real_escape_string($_POST["passwort"]); 
 
-
 		require("db/db_connection.php");
 		$query = mysql_query("select username, passwort from User where passwort='$password' AND username='$username'",$conn);
 		$rows = mysql_num_rows($query);
 
-		if ($rows == 0) {
+		if ($rows == 1) {
 			$_SESSION['login_user']=$username; 
          	$_SESSION['eingeloggt'] = true;
 			header("location:index.php?user=$username"); 
@@ -27,7 +26,7 @@
 		} else {
 			echo "Username or Password is invalid";
 			$_SESSION['eingeloggt'] = false;
-		#	header("Location: login.html");
+			header("Location: login.html");
 		}
 	}
 ?>
