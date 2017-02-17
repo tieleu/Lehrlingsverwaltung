@@ -5,7 +5,7 @@
 		$error = "Username or Password is invalid";	
 	}
 	else{
-		include("../db/db_connection.php");
+		include("db/db_connection.php");
 		$query = mysql_query("select username, passwort from User where passwort='$password' AND username='$username'");
 		$rows = mysql_num_rows($query);
 
