@@ -1,4 +1,4 @@
-console.log(getCookie("passwordCheck"));
+console.log(getCookie("passwortCheck"));
 
 function getCookie(cname) {
     var name = cname + "=";
