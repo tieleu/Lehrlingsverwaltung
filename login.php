@@ -19,7 +19,7 @@
 		$query = mysql_query("select username, passwort from User where passwort='$password' AND username='$username'",$conn);
 		$rows = mysql_num_rows($query);
 
-		if ($rows == 1) {
+		if ($rows == 0) {
 			$_SESSION['login_user']=$username; 
          	$_SESSION['eingeloggt'] = true;
 			header("location:index.php?user=$username"); 
