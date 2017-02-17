@@ -5,7 +5,7 @@ session_cache_limiter(3600);
 require("db/db_connection.php");
 if (empty($_POST['username']) || empty($_POST['password'])) {
 	$error = "Username or Password is invalid";
-	echo json_encode(42);	
+	echo json_encode($error);	
 }
 else{
 
