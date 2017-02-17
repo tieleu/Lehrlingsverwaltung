@@ -6,8 +6,7 @@
 	}
 	else{
 		include("../db/db_connection.php");
-		$db = mysql_select_db("Lehrverwaltung", $connection);
-		$query = mysql_query("select username, passwort from User where passwort='$password' AND username='$username'", $connection);
+		$query = mysql_query("select username, passwort from User where passwort='$password' AND username='$username'");
 		$rows = mysql_num_rows($query);
 
 		if ($rows == 1) {
