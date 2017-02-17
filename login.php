@@ -1,5 +1,6 @@
 <?php
 session_set_cookie_params(3600*24,"/");
+setcookie("test", "testwert");
 session_start();
 session_cache_limiter(3600);
 require("db/db_connection.php");
@@ -23,7 +24,6 @@ else{
 	if ($rows == 1) {
 		$_SESSION['login_user']=$username; 
 		$_SESSION['eingeloggt'] = true;
-		$_SESSION['test'] = "test";
 		header("location:index.php?user=$username"); 
 
 	} else {
