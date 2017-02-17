@@ -1,4 +1,4 @@
-if(getCookie("erteilenStatus")!=null){
+if(getCookie("erteilenStatus")!=""){
 alert(getCookie("erteilenStatus"));
 }
 
