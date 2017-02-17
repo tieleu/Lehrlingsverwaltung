@@ -1,17 +1,10 @@
 
 <html>
-<?php
-	session_start(); 
-	session_cache_limiter(3600);
-
+<?php	
 	$cookieName = $_SESSION['login_user'];
-	#$_SESSION['login_user'] = true;
-
 	$nameOfUser = $_GET['user'];
-echo  $_SESSION['login_user'] == true;
-	 if($nameOfUser == $cookieName && $_SESSION['login_user'] == false){ 
 
-	 
+	 if($_SESSION['eingeloggt'] == true){ 
 
 	$servername = "172.16.44.5";
 $username = "lehrling";
@@ -114,7 +107,7 @@ $conn =mysql_connect($servername, $username, $password)
 		echo "access denied! Please log in";
 
 		 sleep(3);
-	#	header("Location:login.html");
+		header("Location:login.html");
 		 session_destroy();
 
 	}

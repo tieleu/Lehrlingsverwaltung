@@ -1,6 +1,6 @@
 <?php
-	
-	$error='';
+	    session_start();		
+	    session_cache_limiter(3600);
 	if (empty($_POST['username']) || empty($_POST['password'])) {
 		$error = "Username or Password is invalid";	
 	}
@@ -19,9 +19,9 @@
 
 		$rows = mysql_num_rows($query);
 		if ($rows == 1) {
-	
 			$_SESSION['login_user']=$username; 
-			setcookie('username', $username,time() + (10 * 365 * 24 * 60 * 60));
+         	$_SESSION['eingeloggt'] = true;
+			#setcookie('username', $username,time() + (10 * 365 * 24 * 60 * 60));
 			header("location:index.php?user=$username"); 
 
 

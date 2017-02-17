@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <?php 
-$cookieName = $_SESSION['login_user'];
+#$cookieName = $_SESSION['login_user'];
 $nameOfUser = $_GET['user'];
 
- if($nameOfUser == $cookieName && isset($_SESSION['login_user'])){ 
+ if($_SESSION['eingeloggt']== true){ 
 $servername = "172.16.44.5";
 $username = "lehrling";
 $password = "sec1.01";
