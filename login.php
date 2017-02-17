@@ -1,5 +1,4 @@
 <?php
-     ini_set('session.cookie_lifetime',365 * 24 * 60 * 60);
 		session_start(); 
 	$error='';
 	if (empty($_POST['username']) || empty($_POST['password'])) {
@@ -23,9 +22,8 @@
 	
 			$_SESSION['login_user']=$username; 
 			setcookie('username', $username,time() + (10 * 365 * 24 * 60 * 60));
-		echo "fail";
-
 			header("location:index.php?user=$username"); 
+
 
 		} else {
 			$error = "Username or Password is invalid";
