@@ -1,5 +1,6 @@
+if(getCookie("erteilenStatus")!=null){
 alert(getCookie("erteilenStatus"));
-
+}
 
 function getCookie(cname) {
     var name = cname + "=";
