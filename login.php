@@ -14,7 +14,6 @@
 	    $_username = mysql_real_escape_string($_POST["username"]); 
 	    $_passwort = mysql_real_escape_string($_POST["passwort"]); 
 
-		require("db/db_connection.php");
 $servername = "172.16.44.5";
 $username = "lehrling";
 $password = "sec1.01";
