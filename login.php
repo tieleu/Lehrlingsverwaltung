@@ -5,6 +5,7 @@ session_cache_limiter(3600);
 require("db/db_connection.php");
 if (empty($_POST['username']) || empty($_POST['password'])) {
 	$error = "Username or Password is invalid";
+		echo json_encode("error");
 }
 else{
 
@@ -25,7 +26,6 @@ else{
 		header("location:index.php?user=$username"); 
 
 	} else {
-		echo json_encode("error");
 		$error = "Username or Password is invalid";
 		$_SESSION['eingeloggt'] = false;
 		header("Location: login.html");
