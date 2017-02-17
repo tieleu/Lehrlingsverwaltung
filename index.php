@@ -5,6 +5,7 @@
    session_start();
    
 	 if($_SESSION['eingeloggt'] == true){ 
+	$nameOfUser = $_GET['user'];
  ?>
 	 
 <head>
