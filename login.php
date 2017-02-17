@@ -28,7 +28,7 @@ else{
 		$error = "Username or Password is invalid";
 		$_SESSION['eingeloggt'] = false;
 		header("Location: login.html");
-		echo json_encode($error);	
+		echo json_encode("error");	
 	}
 }
 ?>
