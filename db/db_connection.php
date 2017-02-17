@@ -4,7 +4,7 @@ $username = "lehrling";
 $password = "sec1.01";
 
 $conn =mysql_connect($servername, $username, $password)
-	or die("Fehler im System");
+or die("Fehler im System");
 
 mysql_select_db("Lehrverwaltung");
 ?>

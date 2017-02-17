@@ -1,101 +1,101 @@
 <!DOCTYPE html>
 <html>
 <?php 
-  session_start();
-  session_cache_limiter(3600);
-  include("../db/db_connection.php");
+session_start();
+session_cache_limiter(3600);
+include("../db/db_connection.php");
 $nameOfUser = $_GET['user']; 	
- $sessionUser =$_SESSION['login_user'];
+$sessionUser =$_SESSION['login_user'];
 
 if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){ 
- ?>
-<head>	
-	<meta name="description" content="Free Web tutorials">
-	<meta name="author" content="Hege Refsnes">
+	?>
+	<head>	
+		<meta name="description" content="Free Web tutorials">
+		<meta name="author" content="Hege Refsnes">
 
 
 
- 	<link rel="stylesheet" type="text/css" href="../font/css/font-awesome.min.css">
- 	<link rel="stylesheet" type="text/css" href="../font/css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="../font/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="../font/css/font-awesome.css">
 
-<link rel="stylesheet" type="text/css" href="../font/scss/_larger.scss">
+		<link rel="stylesheet" type="text/css" href="../font/scss/_larger.scss">
 
-	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap-theme.css">
-	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../css/index.css">
+		<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap-theme.css">
+		<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/index.css">
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-</head>
-<body >
-<div id="header">
-<div class="indexlogo">
+	</head>
+	<body >
+		<div id="header">
+			<div class="indexlogo">
 
-			<img src="../image/tie-logo.png">
-				</div>
+				<img src="../image/tie-logo.png">
+			</div>
 
-				<div align="right" class="indexlogo">
-					<h3 id="leitspuch">LIFE IS A DIGITAL PROCESS</h3>
-				</div>
-				<nav class="navbar navbar-inverse">
-					<div class="container-fluid">
-						<ul class="nav navbar-nav">
-							<li><a href="../index.php?user=<?php echo $nameOfUser ?>">Home</a></li>
-							<li class="dropdown">
-				       	<a class="dropdown-toggle" data-toggle="dropdown" href="#">Aufgaben<span class="caret"></span></a>
-				        <ul class="dropdown-menu">
-				          <li><a href="aufgaben.php?user=<?php echo $nameOfUser ?>">Übersicht</a></li>
-				          <li><a href="aufgabenErteilen.php?user=<?php echo $nameOfUser ?>">Erteilen</a></li>
-				          <li><a href="zurPruefung.php?user=<?php echo $nameOfUser ?>">Prüfen</a></li> 
-				        </ul>
-				      </li>
-							<li><a href="uebungen.php?user=<?php echo $nameOfUser ?>">Übungen</a></li>
-							<?php 
-							if($nameOfUser=="tiefri"){
-								?>
+			<div align="right" class="indexlogo">
+				<h3 id="leitspuch">LIFE IS A DIGITAL PROCESS</h3>
+			</div>
+			<nav class="navbar navbar-inverse">
+				<div class="container-fluid">
+					<ul class="nav navbar-nav">
+						<li><a href="../index.php?user=<?php echo $nameOfUser ?>">Home</a></li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Aufgaben<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="aufgaben.php?user=<?php echo $nameOfUser ?>">Übersicht</a></li>
+								<li><a href="aufgabenErteilen.php?user=<?php echo $nameOfUser ?>">Erteilen</a></li>
+								<li><a href="zurPruefung.php?user=<?php echo $nameOfUser ?>">Prüfen</a></li> 
+							</ul>
+						</li>
+						<li><a href="uebungen.php?user=<?php echo $nameOfUser ?>">Übungen</a></li>
+						<?php 
+						if($nameOfUser=="tiefri"){
+							?>
 
 							<li><a href="zeitUebersicht.php?user=<?php echo $nameOfUser ?>">Zeiterfassung Übersicht</a></li>	
 							<?php
-							}else{
+						}else{
 							?>
 							
-							 <li><a href="zeiterfassung.php?user=<?php echo $nameOfUser ?>">Zeiterfassung</a></li>
+							<li><a href="zeiterfassung.php?user=<?php echo $nameOfUser ?>">Zeiterfassung</a></li>
 							<?php
-							}
-							?> 
-							<li><a href="notendossier.php?user=<?php echo $nameOfUser ?>">Notendossier</a></li>  
-						</ul>
-						<ul class="nav navbar-nav navbar-right">
-							<li><a href="#"><span class="glyphicon glyphicon-wrench"></span> Einstellungen</a></li>
-							<li><a href="../logout.php?user=<?php echo $nameOfUser ?>"><span class="glyphicon glyphicon-log-out"></span> logout</a></li>
-						</ul>
-					</div>
-				</nav>
-</div>
+						}
+						?> 
+						<li><a href="notendossier.php?user=<?php echo $nameOfUser ?>">Notendossier</a></li>  
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#"><span class="glyphicon glyphicon-wrench"></span> Einstellungen</a></li>
+						<li><a href="../logout.php?user=<?php echo $nameOfUser ?>"><span class="glyphicon glyphicon-log-out"></span> logout</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
 
-<footer id="footer">
-</footer>
-</body>
+		<footer id="footer">
+		</footer>
+	</body>
 
-<script type="text/javascript"> 
-    $(window).bind('beforeunload', function() { 
-            window.location="../logout.php?user=<?php echo $nameOfUser?>"; 
-        } 
-    );
-</script>
+	<script type="text/javascript"> 
+		$(window).bind('beforeunload', function() { 
+			window.location="../logout.php?user=<?php echo $nameOfUser?>"; 
+		} 
+		);
+	</script>
 
-<?php  
+	<?php  
 
 }else {	
 	echo "access denied! Please log in";
-		sleep(3);
+	sleep(3);
 	header("Location:../login.html");
 	session_destroy();
 
 }
- ?>
+?>
 </html>
