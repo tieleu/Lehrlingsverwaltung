@@ -4,7 +4,7 @@
 
 	if (empty($_POST['username']) || empty($_POST['password'])) {
 		$error = "Username or Password is invalid";	
-			echo "thas: " . $_username;
+
 	}
 	else{
 	    
@@ -25,6 +25,7 @@
 			header("location:index.php?user=$username"); 
 
 		} else {
+			echo "thas: " . $_username;
 			echo "Username or Password is invalid";
 			$_SESSION['eingeloggt'] = false;
 		#	header("Location: login.html");
