@@ -1,12 +1,15 @@
 
 <html>
 <?php
-	#session_start(); 
+	session_start(); 
+	session_cache_limiter(3600);
+
 	$cookieName = $_SESSION['login_user'];
 	$nameOfUser = $_GET['user'];
 
-	# if($nameOfUser == $cookieName && isset($_SESSION['login_user'])){ 
+	 if($nameOfUser == $cookieName && $_SESSION['login_user'] == true){ 
 
+	 
 
 	$servername = "172.16.44.5";
 $username = "lehrling";
@@ -105,14 +108,14 @@ $conn =mysql_connect($servername, $username, $password)
 
 <?php 
 
-#	}else {
-		 echo "access denied! Please log in";
+	}else {		 
+		echo "access denied! Please log in";
 
 		 sleep(3);
-#		header("Location:login.html");
+		header("Location:login.html");
 		 session_destroy();
 
-#	}
+	}
 
 ?>
 </html>

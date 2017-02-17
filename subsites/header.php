@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <?php 
-    ini_set('session.cookie_lifetime',365 * 24 * 60 * 60);
-		session_start(); 
 $cookieName = $_SESSION['login_user'];
 $nameOfUser = $_GET['user'];
 
