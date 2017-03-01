@@ -84,6 +84,10 @@ $user = $_GET['user'];
 		</tr>
 		</table>
 	</div>
+	<!-- test des timestampts -->
+	<div>
+		<form action="../phpAction/zeitAction.php?user=<?php echo $user ?>" method="post"><button id="savetimestamp" name="timestamp" class="inputandsubmitbtn btn">TIME</button></form>
+	</div>
 	
 	<script src="../js/zeiterfassung.js"></script>
 </body>
