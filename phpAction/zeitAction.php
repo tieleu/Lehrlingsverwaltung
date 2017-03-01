@@ -5,7 +5,7 @@ $user = $_GET['user'];
 
 mysql_select_db("Lehrverwaltung");
 
-function zeitZuDez($time){
+/*function zeitZuDez($time){
 	$floatTime = str_replace(':', '.', $time);
 	$min = substr($floatTime, 3);
 	$stund = substr($floatTime, 0,2)*60;
@@ -18,13 +18,13 @@ if(isset($_POST['savetime'])){
 	$starttime = $_POST['starttime_input'];
 	echo $starttime;
 	$endtime = $_POST['endtime_input'];
-	$date = $_POST['date_input']; 
+	$date = $_POST['date_input']; */
 	$rowsuser = mysql_query("SELECT idUser FROM User WHERE username = '$user'", $conn);
 	$idUser = 0;
-	$idTime = 0;
+	#$idTime = 0;
 	while($row = mysql_fetch_object($rowsuser)){
 		$idUser = $row -> idUser;
-	}
+	}/*
 	echo "userId: " . $idUser;
 	$worktime = zeitZuDez($endtime) - zeitZuDez($starttime);
 	echo $worktime;
@@ -69,6 +69,12 @@ if(isset($_POST['savetime'])){
 		mysql_query("UPDATE Zeit_exact SET exact_nachmittag='$namiExact' WHERE idExact=$exactID", $conn);
 
 	}
-}
+}*/
+
+
+mysql_query("INSERT INTO newTime (user_id) VALUES ($idUser)");
+
+
+
 header("Location: ../subsites/zeiterfassung.php?user=$user");
 ?>
