@@ -95,25 +95,8 @@ function minToTime($time){
 	</table>
 </div>
 	<div align="center" id="input_container">
-	   <table>
-	      <tr>
-		    <th>Datum</th>
-	    	<th>von</th>
-	    	<th>bis</th>
-	   	</tr>
-		<tr>
-		<form action="../phpAction/zeitAction.php?user=<?php echo $user ?>" method="post">
-		   <td><input type="date" id="date_input" name="date_input" class="inputandsubmitbtn form-control" value="<?php echo date('Y-m-d');?>" readonly></td>
-		   <td><input type="time" id="starttime_input" name="starttime_input" class="inputandsubmitbtn form-control"></td>
-		    <td><input type="time" id="endtime_input" name="endtime_input" class="inputandsubmitbtn form-control"></td>
-		    <td><button id="savetime" name="savetime" class="inputandsubmitbtn btn">Save</button></td>
-		</form>
-		</tr>
-		</table>
-	</div>
-	<!-- test des timestampts -->
-	<div>
 		<form action="../phpAction/zeitAction.php?user=<?php echo $user ?>" method="post"><button id="savetimestamp" name="timestamp" class="inputandsubmitbtn btn">TIME</button></form>
+	   
 	</div>
 	
 	<script src="../js/zeiterfassung.js"></script>
