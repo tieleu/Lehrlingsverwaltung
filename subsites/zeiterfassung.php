@@ -7,6 +7,7 @@ $user = $_GET['user'];
 <head>
 	<link rel="stylesheet" type="text/css" href="../css/zeiterfassung.css">
 	<script type="text/javascript" href="../jquery/jquery-3.1.1.js"></script>
+	<script src="../js/zeiterfassung.js"></script>
 	
 
 	<title>Lehrverwaltung - Lehrplan</title>
@@ -101,6 +102,5 @@ function minToTime($time){
 	   
 	</div>
 	
-	<script src="../js/zeiterfassung.js"></script>
 </body>
 </html>
