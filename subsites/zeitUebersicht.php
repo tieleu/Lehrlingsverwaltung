@@ -3,6 +3,7 @@
 <?php 
 include("header.php");
 $user = $_GET['user'];
+setcookie("id", "");
 ?>
 <head>
 	<link rel="stylesheet" type="text/css" href="../css/zeitUebersicht.css">
