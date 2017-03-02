@@ -15,6 +15,6 @@ function getCookie(cname) {
 }
 if(getCookie("timer")!="" && getCookie("timer")!=null){
 	console.log("notnull");
-	var timerbutton = document.getElementById("#savetimestamp");
+	var timerbutton = document.getElementById("savetimestamp");
 	timerbutton.innerHTML = getCookie("timer");
 }
