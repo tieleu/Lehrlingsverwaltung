@@ -21,10 +21,10 @@ if(getCookie("timer")!="" && getCookie("timer")!=null){
 	console.log(timerbutton);
 	if(getCookie("timer")==="red"){
 	timerbutton.innerHTML = "Stop Timer";
-	timerbutton.style.background("red");		
+	timerbutton.style.background = "red";		
 	}else{
 	timerbutton.innerHTML = "Start Timer";		
-	timerbutton.style("background-color=green;");
+	timerbutton.style.background = "green";
 	}
 }
 	
