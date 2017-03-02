@@ -139,6 +139,21 @@ function minToTime($time){
 		echo "<td><input class='form-control' type='text' value='".minToTime($timetotal-500)." h' readonly></td></tr>";
 
 }
+$selectAll = mysql_query("SELECT id, user_id, date_format(zeit, '%H:%i') AS zeit, date_format(zeit, '%Y-%m-%d') AS datum FROM zeit ORDER BY zeit");
+$timetotalAll = "";
+$counterAll = 0;
+while ($row = mysql_fetch_object($selectAll)) {
+		$counterAll++;
+		$zeit = $row -> zeit;
+if(mysql_num_rows($selectAll)%2===0){
+		if($counterAll%2===0){
+			$timetotalAll+=zeitZuDez($zeit);
+		}else{
+			$timetotal-=zeitZuDez($zeit);
+		}}
+	}
+
+echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form-control' value='Total: ".minToTime($timetotalAll-mysql_num_rows($selectAll)*500)." h' readonly></td></tr>";
 
 	?>
 		</div>
