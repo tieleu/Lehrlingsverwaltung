@@ -18,7 +18,7 @@ $user = $_GET['user'];
     <th>Datum</th>
     <th>Uhrzeiten</th>
     <th>Erreichte Zeit</th>
-	<td>Differenz</td>
+	<th>Differenz</th>
   </tr>
 		<div id="zeile">
 <?php
