@@ -141,6 +141,19 @@ function minToTime($time){
 	?>
 		</div>
 	</table>
+	<div align="center">
+		<table>
+			<tr>
+				<th>Datum</th>
+				<th>Startzeit</th>
+				<th>Endzeit</th>
+				<th><th>
+			</tr>
+			<tr>
+				<td><input type="datetime" name="dt" value="" placeholder="dt"></td>
+			</tr>
+		</table>
+	</div>
 </div>
 
 
