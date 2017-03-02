@@ -24,7 +24,7 @@ if(getCookie("timer")!="" && getCookie("timer")!=null){
 	timerbutton.style.background("red");		
 	}else{
 	timerbutton.innerHTML = "Start Timer";		
-	timerbutton.style.background("green");
+	timerbutton.style("background-color=green;");
 	}
 }
 	
