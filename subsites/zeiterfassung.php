@@ -120,7 +120,7 @@ if(mysql_num_rows($selectAll)%2===0){
 		}}
 	}
 
-echo "<tr><td></td><td></td><td></td><td></td><td>".minToTime($timetotalAll-mysql_num_rows($selectAll)*500)."</td></tr>";
+echo "<tr><td></td><td></td><td></td><td></td><td>Total: ".minToTime($timetotalAll-mysql_num_rows($selectAll)*500)." h</td></tr>";
 
 	?>
 		</div>
