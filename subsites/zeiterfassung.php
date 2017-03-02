@@ -21,6 +21,16 @@ $user = $_GET['user'];
   </tr>
 		<div id="zeile">
 <?php
+
+function zeitZuDez($time){
+	$floatTime = str_replace(':', '.', $time);
+	$min = substr($floatTime, 3);
+	$stund = substr($floatTime, 0,2)*60;
+	$dezmin = 100/60*$min/100;
+	$dezZeit = $stund+$min;
+	return $dezZeit;
+}
+
 	$getdates = mysql_query("SELECT date_format(zeit, '%Y-%m-%d') as date FROM newTime GROUP BY date_format(zeit, '%Y-%m-%d')");
 	while($rowgetdates = mysql_fetch_object($getdates)){
 
