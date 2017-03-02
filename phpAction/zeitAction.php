@@ -72,7 +72,7 @@ if(isset($_POST['savetime'])){
 }*/
 
 
-mysql_query("INSERT INTO newTime (user_id) VALUES ($idUser)");
+mysql_query("INSERT INTO zeit (user_id) VALUES ($idUser)");
 
 
 
