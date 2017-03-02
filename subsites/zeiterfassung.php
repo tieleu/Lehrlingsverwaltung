@@ -16,8 +16,9 @@ $user = $_GET['user'];
    <table class="table">
       <tr>
     <th>Datum</th>
-    <th>zeiten</th>
+    <th>Uhrzeiten</th>
     <th>Erreichte Zeit</th>
+	<td>Differenz</td>
   </tr>
 		<div id="zeile">
 <?php
@@ -87,6 +88,7 @@ function minToTime($time){
 	}
 	echo "</td><td><input class='form-control' type='text'  value='";
 		echo minToTime($timetotal)." h' readonly></td></tr>";
+		echo "<td><input class='form-control' type='text' value='".minToTime(zeitZuDez($timetotal)-504)." h' readonly>";
 
 }
 
