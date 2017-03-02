@@ -73,6 +73,10 @@ if(isset($_POST['savetime'])){
 
 
 mysql_query("INSERT INTO zeit (user_id) VALUES ($idUser)");
+$check = mysql_query("SELECT * FROM zeit WHERE zeit>='$date' AND zeit<'$dateplus' AND user_id=3");
+if(mysql_num_rows($check)>0){
+	setcookie("testtimestamp","more than one entry");
+}
 
 
 
