@@ -23,9 +23,9 @@ $user = $_GET['user'];
 <?php
 	$getdates = mysql_query("SELECT date_format(zeit, '%Y-%m-%d') as date FROM newTime GROUP BY date_format(zeit, '%Y-%m-%d')");
 	while($rowgetdates = mysql_fetch_object($getdates)){
-		$zeiten = "";
+
 		$date = $rowgetdates -> date;
-		echo "<tr><td><input type='text' class='form-control' placeholder='Datum' value='$date' readonly></td>";
+		echo "<tr><td>".$date."</td><td>";
 		#echo strtotime($date)->modify('+1 day');
 		$dateplus = date('Y-m-d', strtotime($date . ' +1 day'));
 
@@ -44,15 +44,14 @@ $user = $_GET['user'];
 		#echo $id."|".$user_id."|".$datum."|".$zeit."<br>";
 		if($counter%2===0){
 			$timetotal+=zeitZuDez($zeit);
-			$zeiten = $zeiten.$zeit."|";
+			echo $zeit."|";
 		}else{
 			$timetotal-=zeitZuDez($zeit);
-			$zeiten = $zeiten.$zeit." bis ";
+			echo $zeit." bis ";
 		}
 	}
-	echo "<td><input type='text' class='form-control' placeholder='zeiten' value='$zeiten' readonly></td><td>";
-		$totallabel = minToTime($timetotal)." timetotal</td></tr>";
-		echo "<input type='text' class='form-control' placeholder='totaltime' value='$totallabel' readonly>";
+	echo "</td><td>";
+		echo minToTime($timetotal)." timetotal</td></tr>";
 
 }
 
