@@ -65,7 +65,6 @@ function minToTime($time){
 	$select = mysql_query("SELECT id, user_id, date_format(zeit, '%H:%i') AS zeit, date_format(zeit, '%Y-%m-%d') AS datum FROM zeit WHERE zeit>='$date' AND zeit<'$dateplus' AND user_id=3");
 
 	while ($row = mysql_fetch_object($select)) {
-		$zeiten = "";
 		$counter++;
 		#echo $counter."   ";
 		$id = $row -> id;
@@ -77,11 +76,14 @@ function minToTime($time){
 		if($counter%2===0){
 			$timetotal+=zeitZuDez($zeit);
 			$zeiten = $zeiten.$zeit;
+			echo $zeiten."' readonly>";
+
 		}else{
 			$timetotal-=zeitZuDez($zeit);
+			$zeiten = "";
 			$zeiten = $zeit." bis ";
+			echo "<input type='text' class='form-control' value='";
 		}}
-		echo "<input type='text' class='form-control' value='$zeiten' readonly>";
 	}
 	echo "</td><td><input class='form-control' type='text'  value='";
 		echo minToTime($timetotal)." timetotal' readonly></td></tr>";
