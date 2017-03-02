@@ -19,7 +19,11 @@ function getCookie(cname) {
 if(getCookie("timer")!="" && getCookie("timer")!=null){
 	var timerbutton = document.getElementById("savetimestamp");
 	console.log(timerbutton);
-	timerbutton.innerHTML = getCookie("timer");
+	if(getCookie("timer")==="red"){
+	timerbutton.innerHTML = "Stop Timer";		
+	}else{
+	timerbutton.innerHTML = "Start Timer";		
+	}
 }
 	
 })
