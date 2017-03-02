@@ -30,6 +30,27 @@ function zeitZuDez($time){
 	$dezZeit = $stund+$min;
 	return $dezZeit;
 }
+function minToTime($time){
+						$rest = $time%60;
+						$hours = ($time-$rest)/60;
+						if($hours<-9){
+							$hours = $hours/-1;
+						}else if($hours<0){
+							$hours = 0 . $hours/-1;
+						}else if($hours<10){
+							$hours = 0 . $hours;
+						}
+						if($rest<(-9)){
+							$rest = $rest/-1;
+							$hours = "-".$hours;
+						}else if($rest<0){
+							$rest = 0 . ($rest/(-1));
+							$hours = "-".$hours;
+						}else if($rest<10){
+							$rest = 0 . $rest;
+						}
+						return $hours . ":" . $rest;
+					}
 
 	$getdates = mysql_query("SELECT date_format(zeit, '%Y-%m-%d') as date FROM newTime GROUP BY date_format(zeit, '%Y-%m-%d')");
 	while($rowgetdates = mysql_fetch_object($getdates)){
