@@ -7,7 +7,7 @@ $user = $_GET['user'];
 <head>
 	<link rel="stylesheet" type="text/css" href="../css/zeiterfassung.css">
 	<script type="text/javascript" href="../jquery/jquery-3.1.1.js"></script>
-	<script src="../js/zeiterfassung.js"></script>
+	<script type="text/javascript" src="../js/zeiterfassung.js"></script>
 	
 
 	<title>Lehrverwaltung - Lehrplan</title>
