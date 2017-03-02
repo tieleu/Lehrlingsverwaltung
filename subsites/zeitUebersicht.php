@@ -99,7 +99,7 @@ function minToTime($time){
 						return $hours . ":" . $rest;
 					}
 
-	$getdates = mysql_query("SELECT date_format(zeit, '%Y-%m-%d') as date FROM zeit WHERE id=$userID GROUP BY date_format(zeit, '%Y-%m-%d')");
+	$getdates = mysql_query("SELECT date_format(zeit, '%Y-%m-%d') as date FROM zeit WHERE user_id=$userID GROUP BY date_format(zeit, '%Y-%m-%d')");
 	while($rowgetdates = mysql_fetch_object($getdates)){
 
 		$date = $rowgetdates -> date;
