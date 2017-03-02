@@ -75,14 +75,7 @@ if(isset($_POST['savetime'])){
 mysql_query("INSERT INTO zeit (user_id) VALUES ($idUser)");
 $date = date("Y-m-d");
 $dateplus = date('Y-m-d', strtotime($date . ' +1 day'));
-$check = mysql_query("SELECT * FROM zeit WHERE zeit>='$date' AND zeit<'$dateplus' AND user_id=$idUser");
-if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
-	if(mysql_num_rows($check)%2===0){
-		setcookie("timer","green", time() + (3600*12 ), "/");
-	}else{
-		setcookie("timer", "red", time() + (3600*12), "/");
-	}
-}
+
 
 
 
