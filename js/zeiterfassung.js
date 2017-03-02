@@ -1,3 +1,4 @@
+	var timerbutton = document.getElementById("savetimestamp");
 function getCookie(cname) {
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
@@ -14,8 +15,6 @@ function getCookie(cname) {
     return "";
 }
 if(getCookie("timer")!="" && getCookie("timer")!=null){
-	console.log("notnull");
-	var timerbutton = document.getElementById("savetimestamp");
 	console.log(timerbutton);
 	timerbutton.innerHTML = getCookie("timer");
 }
