@@ -84,7 +84,7 @@ function minToTime($time){
 			$timetotal-=zeitZuDez($zeit);
 			$zeiten = "";
 			$zeiten = $zeit." bis ";
-			echo "<input type='text' class='form-control' value='";
+			echo "<input type='text' class='form-control inputzeiten' value='";
 		}}
 	}
 	echo "</td><td><input class='form-control' type='text'  value='";

@@ -36,6 +36,10 @@ body{
     background-color: #BEBEBE;
     border-color: #ccc;
 }
+.inputzeiten{
+  margin-right: 2px;
+  margin-left: 2px;
+}
 #date_input{
     width: 200px;
 }
