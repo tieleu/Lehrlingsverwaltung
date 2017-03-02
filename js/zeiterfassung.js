@@ -18,7 +18,6 @@ function getCookie(cname) {
 }
 if(getCookie("timer")!="" && getCookie("timer")!=null){
 	var timerbutton = document.getElementById("savetimestamp");
-	console.log(timerbutton);
 	if(getCookie("timer")==="red"){
 	timerbutton.innerHTML = "Stop Timer";
 	timerbutton.style.background = "#E53427";		
