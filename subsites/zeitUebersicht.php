@@ -147,7 +147,6 @@ function minToTime($time){
 				<th>Datum</th>
 				<th>Startzeit</th>
 				<th>Endzeit</th>
-				<th>Benutzer<th>
 				<th><th>
 			</tr>
 			<tr>
