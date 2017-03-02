@@ -150,7 +150,7 @@ function minToTime($time){
 				<th><th>
 			</tr>
 			<tr>
-				<td><input type="date" name="date" value="<?php date('Y-m-d');?>" placeholder=""></td>
+				<td><input class="form-control" type="date" name="date" value="<?php date('Y-m-d');?>" placeholder=""></td>
 			</tr>
 		</table>
 	</div>
