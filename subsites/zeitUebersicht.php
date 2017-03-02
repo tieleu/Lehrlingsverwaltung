@@ -144,7 +144,7 @@ function minToTime($time){
 		</div>
 	</table>
 	<div align="center">
-		<table>
+		<table style="margin-bottom: 10px;">
 			<tr>
 				<th>Datum</th>
 				<th>Startzeit</th>
