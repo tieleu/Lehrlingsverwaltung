@@ -1,5 +1,6 @@
 <?php
-if (isset($_POST['select'])) {
-	echo $_POST['select'];
-}
+include('../subsites/header.php');
+$user = $_GET['user'];
+
+echo $userID;
 ?>
