@@ -155,7 +155,7 @@ function minToTime($time){
 				<td><input class="form-control" type="date" name="date" value="<?php date('Y-m-d');?>" placeholder=""></td>
 				<td><input class="form-control" type="time" name="starttime" value="" placeholder=""></td>
 				<td><input class="form-control" type="time" name="endtime" value="" placeholder=""></td>
-				<td><button id="savetime" class="inputandsubmitbtn btn" onclick="<?php setcookie("id", $userID) ?>" name="savetime">SAVE</button></td>
+				<td><button id="savetime" class="inputandsubmitbtn btn" onclick="<?php setcookie("id", $userID, time() + 600, "/") ?>" name="savetime">SAVE</button></td>
 				</form>
 			</tr>
 		</table>
