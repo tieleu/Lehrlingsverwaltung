@@ -56,7 +56,7 @@ function minToTime($time){
 	while($rowgetdates = mysql_fetch_object($getdates)){
 
 		$date = $rowgetdates -> date;
-		echo "<tr><td>"."<input class='form-control' type='text' name='date' value='$date' placeholder='date' readonly>"."</td><td><input width='100%' type='text' value='";
+		echo "<tr><td>"."<input class='form-control' type='text' name='date' value='$date' placeholder='date' readonly>"."</td><td><input class='form-control' type='text' value='";
 		#echo strtotime($date)->modify('+1 day');
 		$dateplus = date('Y-m-d', strtotime($date . ' +1 day'));
 
@@ -82,8 +82,8 @@ function minToTime($time){
 			echo $zeit." bis ";
 		}}
 	}
-	echo "' readonly></td><td>";
-		echo minToTime($timetotal)." timetotal</td></tr>";
+	echo "' readonly></td><td><input type='text class='form-control' value='";
+		echo minToTime($timetotal)." timetotal' readonly></td></tr>";
 
 }
 
