@@ -86,7 +86,7 @@ function minToTime($time){
 		}}
 	}
 	echo "</td><td><input class='form-control' type='text'  value='";
-		echo minToTime($timetotal)." timetotal' readonly></td></tr>";
+		echo minToTime($timetotal)." h' readonly></td></tr>";
 
 }
 
