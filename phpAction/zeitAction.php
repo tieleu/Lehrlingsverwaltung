@@ -18,13 +18,13 @@ if(isset($_POST['savetime'])){
 	$starttime = $_POST['starttime_input'];
 	echo $starttime;
 	$endtime = $_POST['endtime_input'];
-	$date = $_POST['date_input']; */
+	$date = $_POST['date_input']; 
 	$rowsuser = mysql_query("SELECT idUser FROM User WHERE username = '$user'", $conn);
 	$idUser = 0;
 	#$idTime = 0;
 	while($row = mysql_fetch_object($rowsuser)){
 		$idUser = $row -> idUser;
-	}/*
+	}
 	echo "userId: " . $idUser;
 	$worktime = zeitZuDez($endtime) - zeitZuDez($starttime);
 	echo $worktime;
