@@ -152,7 +152,7 @@ function minToTime($time){
 			</tr>
 			<tr>
 				<form action="../phpAction/zeitUebersichtAction.php?user=<?php echo $user ?>" method="post">
-				<td><input class="form-control" type="date" name="date" value="<?php date('Y-m-d');?>" placeholder=""></td>
+				<td><input class="form-control" type="date" name="date" value="<?php date('d.m.Y');?>" placeholder=""></td>
 				<td><input class="form-control" type="time" name="time" value="" placeholder=""></td>
 				<td><button id="savetime" class="inputandsubmitbtn btn" name="savetime">SAVE</button><input type="number" name="id" value="<?php echo $userID;?>" placeholder="" hidden></td>
 				</form>
