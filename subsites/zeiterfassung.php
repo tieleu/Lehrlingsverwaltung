@@ -106,7 +106,7 @@ function minToTime($time){
 
 }
 
-$selectAll = mysql_query("SELECT id, user_id, date_format(zeit, '%H:%i') AS zeit, date_format(zeit, '%Y-%m-%d') AS datum FROM zeit WHERE id=$idUser ORDER BY zeit");
+$selectAll = mysql_query("SELECT id, user_id, date_format(zeit, '%H:%i') AS zeit, date_format(zeit, '%Y-%m-%d') AS datum FROM zeit WHERE user_id=$idUser ORDER BY zeit");
 $timetotalAll = "";
 $counterAll = 0;
 while ($row = mysql_fetch_object($selectAll)) {

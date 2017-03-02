@@ -139,7 +139,7 @@ function minToTime($time){
 		echo "<td><input class='form-control' type='text' value='".minToTime($timetotal-500)." h' readonly></td></tr>";
 
 }
-$selectAll = mysql_query("SELECT id, user_id, date_format(zeit, '%H:%i') AS zeit, date_format(zeit, '%Y-%m-%d') AS datum FROM zeit WHERE id=$userID ORDER BY zeit");
+$selectAll = mysql_query("SELECT id, user_id, date_format(zeit, '%H:%i') AS zeit, date_format(zeit, '%Y-%m-%d') AS datum FROM zeit WHERE user_id=$userID ORDER BY zeit");
 $timetotalAll = "";
 $counterAll = 0;
 while ($row = mysql_fetch_object($selectAll)) {
