@@ -56,7 +56,7 @@ function minToTime($time){
 	while($rowgetdates = mysql_fetch_object($getdates)){
 
 		$date = $rowgetdates -> date;
-		echo "<tr><td>"."<input class='form-control' type='text' name='date' value='$date' placeholder='date' readonly>"."</td><td><input class='form-control' type='text' value='";
+		echo "<tr><td>"."<input class='form-control' type='text' name='date' value='$date' placeholder='date' readonly>"."</td><td>";
 		#echo strtotime($date)->modify('+1 day');
 		$dateplus = date('Y-m-d', strtotime($date . ' +1 day'));
 
@@ -65,7 +65,7 @@ function minToTime($time){
 	$select = mysql_query("SELECT id, user_id, date_format(zeit, '%H:%i') AS zeit, date_format(zeit, '%Y-%m-%d') AS datum FROM zeit WHERE zeit>='$date' AND zeit<'$dateplus' AND user_id=3");
 
 	while ($row = mysql_fetch_object($select)) {
-
+		$zeiten = "";
 		$counter++;
 		#echo $counter."   ";
 		$id = $row -> id;
@@ -76,13 +76,14 @@ function minToTime($time){
 		if(mysql_num_rows($select)%2===0){
 		if($counter%2===0){
 			$timetotal+=zeitZuDez($zeit);
-			echo $zeit."|";
+			$zeiten = $zeiten.$zeit;
 		}else{
 			$timetotal-=zeitZuDez($zeit);
-			echo $zeit." bis ";
+			$zeiten = $zeit." bis ";
 		}}
+		echo "<input type='text' class='form-control' value='$zeiten' readonly>";
 	}
-	echo "' readonly></td><td><input class='form-control' type='text'  value='";
+	echo "</td><td><input class='form-control' type='text'  value='";
 		echo minToTime($timetotal)." timetotal' readonly></td></tr>";
 
 }
