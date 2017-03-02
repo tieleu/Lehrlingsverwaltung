@@ -25,7 +25,7 @@ $user = $_GET['user'];
 	while($rowgetdates = mysql_fetch_object($getdates)){
 
 		$date = $rowgetdates -> date;
-		echo "<tr><td><input type='text' class='form-control' placeholder='Datum' value='$date' readonly></td><td><input type='text' class='form-control' placeholder='totaltime' value='";
+		echo "<tr><td><input type='text' class='form-control' placeholder='Datum' value='$date' readonly></td><td>";
 		#echo strtotime($date)->modify('+1 day');
 		$dateplus = date('Y-m-d', strtotime($date . ' +1 day'));
 
@@ -50,7 +50,7 @@ $user = $_GET['user'];
 			echo $zeit." bis ";
 		}
 	}
-	echo "' readonly></td><td>";
+	echo "</td><td>";
 		$totallabel = minToTime($timetotal)." timetotal</td></tr>";
 		echo "<input type='text' class='form-control' placeholder='totaltime' value='$totallabel' readonly>";
 
