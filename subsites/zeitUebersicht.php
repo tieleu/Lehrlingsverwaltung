@@ -47,19 +47,37 @@ $user = $_GET['user'];
 					</form>
 				</div>
 
-				<table class="table">
-					<tr>
-						<th>Datum</th>
-						<th>Zeit Morgen</th>
-						<th>Zeit Nachmittag</th>
-						<th>Erreichte Zeit</th>
-						<th>Sollzeit</th>
-						<th>Differenz</th>
-					</tr>
+				<div id="uebersicht">
+   <table class="table">
+      <tr>
+    <th>Datum</th>
+    <th>Uhrzeiten</th>
+    <th>Erreichte Zeit</th>
+	<th>Differenz</th>
+  </tr>
+		<div id="zeile">
 
-					<?php
-					$erreichtTotal = 0;
-					function minToTime($time){
+				<?php
+
+
+$getUserID ="SELECT idUser from User where vorname='$selectOption'";
+					$ergebnisOfUserID = mysql_query($getUserID);	
+
+					$userID =0;
+					while($row = mysql_fetch_object($ergebnisOfUserID)){
+						$userID = $row -> idUser;
+					}
+
+
+function zeitZuDez($time){
+	$floatTime = str_replace(':', '.', $time);
+	$min = substr($floatTime, 3);
+	$stund = substr($floatTime, 0,2)*60;
+	$dezmin = 100/60*$min/100;
+	$dezZeit = $stund+$min;
+	return $dezZeit;
+}
+function minToTime($time){
 						$rest = $time%60;
 						$hours = ($time-$rest)/60;
 						if($hours<-9){
@@ -81,41 +99,49 @@ $user = $_GET['user'];
 						return $hours . ":" . $rest;
 					}
 
-					$getUserID ="SELECT idUser from User where vorname='$selectOption'";
-					$ergebnisOfUserID = mysql_query($getUserID);	
+	$getdates = mysql_query("SELECT date_format(zeit, '%Y-%m-%d') as date FROM zeit GROUP BY date_format(zeit, '%Y-%m-%d')");
+	while($rowgetdates = mysql_fetch_object($getdates)){
 
-					$userID =0;
-					while($row = mysql_fetch_object($ergebnisOfUserID)){
-						$userID = $row -> idUser;
-					}
-					$exactAbfrage = mysql_query("SELECT User_has_zeit.*, zeit.*, Zeit_exact.* FROM (User_has_zeit INNER JOIN zeit ON User_has_zeit.zeit_id=zeit.id) INNER JOIN Zeit_exact ON User_has_zeit.exact_id=Zeit_exact.idExact WHERE User_has_zeit.User_idUser=$userID ORDER BY zeit.date;");
-					while ($row = mysql_fetch_object($exactAbfrage)) {
-						$erreichtTotal += $row -> endzeit;
-						$date = $row-> date;
-						$endzeit = minToTime($row -> endzeit);
-						$differenz = minToTime($row -> zeit_differenz);
-						$exactMorgen = $row -> exact_morgen;
-						$exactNachmittag = $row -> exact_nachmittag;
-						?>
-						
+		$date = $rowgetdates -> date;
+		echo "<tr><td>"."<input class='form-control' type='text' name='date' value='$date' placeholder='date' readonly>"."</td><td style='display:flex;'>";
+		#echo strtotime($date)->modify('+1 day');
+		$dateplus = date('Y-m-d', strtotime($date . ' +1 day'));
 
-						<tr id="zeile">
-							<td><input type='text' class='form-control' placeholder='Datum' value="<?php echo $date; ?>" readonly></td>
-							<td><input type='text' class='form-control' placeholder='morgen' value="<?php echo $exactMorgen; ?>" readonly></td>
-							<td><input type='text' class='form-control' placeholder='nachmittag' value="<?php echo $exactNachmittag; ?>" readonly></td>
-							<td><input type='text' class='form-control' placeholder='erreichte Zeit' value="<?php echo $endzeit; ?>" readonly></td>
-							<td><input type='text' class='form-control' placeholder='Sollzeit' value='8:24 h' readonly></td>
-							<td><input type='text' class='form-control' placeholder='Differenz Zeit' value="<?php echo $differenz; ?>" readonly></td>						
-						</tr>
-						<?php }
-						$sollTotal = mysql_num_rows($exactAbfrage)*504;
-						?>
-						<tr id='zeile'>
-						<td colspan="5"></td>
-							<td><label class="form-control"><?php echo "Total: " . minToTime($erreichtTotal-$sollTotal); ?></label></td>
-						</tr>
-					</table>
-				</div>
+	$timetotal=0;
+	$counter=0;
+	$select = mysql_query("SELECT id, user_id, date_format(zeit, '%H:%i') AS zeit, date_format(zeit, '%Y-%m-%d') AS datum FROM zeit WHERE zeit>='$date' AND zeit<'$dateplus' AND user_id=$userID");
+
+	while ($row = mysql_fetch_object($select)) {
+		$counter++;
+		#echo $counter."   ";
+		$id = $row -> id;
+		$user_id = $row -> user_id;
+		$datum = $row -> datum;
+		$zeit = $row -> zeit;
+		#echo $id."|".$user_id."|".$datum."|".$zeit."<br>";
+		if(mysql_num_rows($select)%2===0){
+		if($counter%2===0){
+			$timetotal+=zeitZuDez($zeit);
+			$zeiten = $zeiten.$zeit;
+			echo $zeiten."' readonly>";
+
+		}else{
+			$timetotal-=zeitZuDez($zeit);
+			$zeiten = "";
+			$zeiten = $zeit." bis ";
+			echo "<input type='text' class='form-control' value='";
+		}}
+	}
+	echo "</td><td><input class='form-control' type='text'  value='";
+		echo minToTime($timetotal)." h' readonly></td>";
+		echo "<td><input class='form-control' type='text' value='".minToTime($timetotal-504)." h' readonly></td></tr>";
+
+}
+
+	?>
+		</div>
+	</table>
+</div>
 
 
 
