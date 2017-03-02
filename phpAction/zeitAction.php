@@ -73,10 +73,5 @@ if(isset($_POST['savetime'])){
 
 
 mysql_query("INSERT INTO zeit (user_id) VALUES ($idUser)");
-
-
-
-
-
 header("Location: ../subsites/zeiterfassung.php?user=$user");
 ?>
