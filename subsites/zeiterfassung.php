@@ -56,7 +56,7 @@ function minToTime($time){
 	while($rowgetdates = mysql_fetch_object($getdates)){
 
 		$date = $rowgetdates -> date;
-		echo "<tr><td>"."<input type='text' name='date' value='$date' placeholder='date' readonly>"."</td><td><input width='auto' type='text' value='";
+		echo "<tr><td>"."<input type='text' name='date' value='$date' placeholder='date' readonly>"."</td><td><input width='100%' type='text' value='";
 		#echo strtotime($date)->modify('+1 day');
 		$dateplus = date('Y-m-d', strtotime($date . ' +1 day'));
 
