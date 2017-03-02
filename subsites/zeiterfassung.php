@@ -52,7 +52,7 @@ $user = $_GET['user'];
 	}
 	echo "' readonly></td><td>";
 		$totallabel = minToTime($timetotal)." timetotal</td></tr>";
-		echo "<input type='text' class='form-control' placeholder='totaltime' value='$totallabel' readonly>"
+		echo "<input type='text' class='form-control' placeholder='totaltime' value='$totallabel' readonly>";
 
 }
 
