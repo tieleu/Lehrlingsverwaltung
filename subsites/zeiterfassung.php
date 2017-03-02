@@ -73,13 +73,14 @@ function minToTime($time){
 		$datum = $row -> datum;
 		$zeit = $row -> zeit;
 		#echo $id."|".$user_id."|".$datum."|".$zeit."<br>";
+		if(mysql_num_rows($select)%2===0){
 		if($counter%2===0){
 			$timetotal+=zeitZuDez($zeit);
 			echo $zeit."|";
 		}else{
 			$timetotal-=zeitZuDez($zeit);
 			echo $zeit." bis ";
-		}
+		}}
 	}
 	echo "</td><td>";
 		echo minToTime($timetotal)." timetotal</td></tr>";
