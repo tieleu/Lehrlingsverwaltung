@@ -95,7 +95,7 @@ function minToTime($time){
 	</table>
 </div>
 	<div align="center" id="input_container">
-		<form action="../phpAction/zeitAction.php?user=<?php echo $user ?>" method="post"><button id="savetimestamp" name="timestamp" class="inputandsubmitbtn btn">TIME</button></form>
+		<form action="../phpAction/zeitAction.php?user=<?php echo $user ?>" method="post"><button id="savetimestamp" name="timestamp" class="inputandsubmitbtn btn">TIMER</button></form>
 	   
 	</div>
 	
