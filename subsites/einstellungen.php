@@ -21,7 +21,7 @@ $user = $_GET['user'];
             <label for="old" class="form-group form-inline">Altes Passwort <input class="form-control inputPW" type="password" name="old" value="" placeholder="altes Passwort" required="true"></label>
             <label for="new1" class="form-group form-inline">Neues Passwort <input class="form-control inputPW" type="password" name="new1" value="" placeholder="neues Passwort" required="true"></label>
             <label for="new2" class="form-group form-inline">Passwort bestätigen <input class="form-control inputPW" type="password" name="new2" value="" placeholder="Passwort bestätigen" required="true">
-            <button id="chpwButton" name="chpwButton" class="btn">Passwort ändern</button></label>
+            <button id="chpwButton" name="chpwButton" class="btn">Passwort ändern</button></label><br>
         </div>
         </form>
     </div>
