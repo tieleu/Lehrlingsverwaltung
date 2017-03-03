@@ -31,7 +31,8 @@ $user = $_GET['user'];
         <label for="vorname" class="form-group form-inline labelforPW">Vorname <input class="form-control inputPW" type="text" name="vorname" value="" placeholder="Max" required="true"></label>
         <label for="nachname" class="form-group form-inline labelforPW">Nachname <input class="form-control inputPW" type="text" name="nachname" value="" placeholder="Muster" required="true"></label>
         <label for="benutzername" class="form-group form-inline labelforPW">Benutzername <input class="form-control inputPW" type="text" name="benutzername" value="" placeholder="tiemus" required="true"></label>
-        <select  class="form-control">
+        <label for="status" class="form-group form-inline labelforPW">Status </label>
+        <select  class="form-control" name="status">
             <option selected>select Status</option>
             <option value="lehrling">Lehrling</option>
             <option value="lehrmeister">Lehrmeister</option>
