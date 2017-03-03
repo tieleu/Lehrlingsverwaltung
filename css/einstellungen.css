@@ -25,6 +25,9 @@
 	align-items: stretch;
 
 }
+#createUser{
+	display: flex;
+}
 #userOptions, #userDelete, #uebungCreate, #uebungDelete, #createUser{
 	background-color: white;
 	position: relative;
