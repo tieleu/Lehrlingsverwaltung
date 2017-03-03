@@ -33,7 +33,7 @@ $user = $_GET['user'];
         <label for="benutzername" class="form-group form-inline labelforPW">Benutzername <input class="form-control inputPW" type="text" name="benutzername" value="" placeholder="tiemus" required="true"></label>
         <div id="selectwrapper">
         <label for="status" class="form-group form-inline labelforPW">Status </label>
-        <select  class="form-control" name="status">
+        <select  class="form-control labelforPW" name="status">
             <option selected>select Status</option>
             <option value="lehrling">Lehrling</option>
             <option value="lehrmeister">Lehrmeister</option>
