@@ -17,9 +17,9 @@
     <div id="userOptions">
     	<form action="../phpAction/changePasswordAction.php?user=<?php echo $nameOfUser ?>" method="post">
         <div id="passwortChange">
-            <label for="old">Altes Passwort <input type="password" name="old" value="" placeholder="altes Passwort"></label>
-            <label for="new1">Neues Passwort <input type="password" name="new1" value="" placeholder="neues Passwort"></label>
-            <label>Passwort bestätigen <input type="password" name="new2" value="" placeholder="Passwort bestätigen"></label>
+            <label for="old">Altes Passwort </label><input type="password" name="old" value="" placeholder="altes Passwort">
+            <label for="new1">Neues Passwort </label><input type="password" name="new1" value="" placeholder="neues Passwort">
+            <label>Passwort bestätigen </label><input type="password" name="new2" value="" placeholder="Passwort bestätigen">
         </div>
         </form>
     </div>
