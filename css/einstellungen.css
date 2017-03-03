@@ -4,7 +4,13 @@
 .inputPW{
 	width: 200px;
 }
+#chpwButton{
+	position: absolute;
+	left: 300px;
+	top: 100px;
+}
 #passwortChange{
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
