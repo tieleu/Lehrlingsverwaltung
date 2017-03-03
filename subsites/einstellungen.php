@@ -32,10 +32,12 @@ $user = $_GET['user'];
         <label for="nachname" class="form-group form-inline">Nachname <input class="form-control inputPW" type="text" name="nachname" value="" placeholder="Muster" required="true"></label>
         <label for="benutzername" class="form-group form-inline">Benutzername <input class="form-control inputPW" type="text" name="benutzername" value="" placeholder="tiemus" required="true"></label>
         <select>
-            <option selected>select Status</option>
+            <option class="custom-select" selected>select Status</option>
             <option value="lehrling">Lehrling</option>
             <option value="lehrmeister">Lehrmeister</option>
         </select>
+        <label for="new1" class="form-group form-inline">Neues Passwort <input class="form-control inputPW" type="password" name="new1" value="" placeholder="neues Passwort" required="true"></label>
+            <label for="new2" class="form-group form-inline">Passwort bestätigen <input class="form-control inputPW" type="password" name="new2" value="" placeholder="Passwort bestätigen" required="true"></label>
 
     </div>
 
