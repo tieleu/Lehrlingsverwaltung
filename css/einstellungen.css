@@ -1,5 +1,5 @@
 .labelforPW{
-	display: inline;
+	max-width: 20%;
 }
 #passwortChange{
 	display: flex;
