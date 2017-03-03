@@ -76,7 +76,7 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 						<li><a href="notendossier.php?user=<?php echo $nameOfUser ?>">Notendossier</a></li>  
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="settings.php?user=<?php echo $nameOfUser ?>"><span class="glyphicon glyphicon-wrench"></span> Einstellungen</a></li>
+						<li><a href="einstellungen.php?user=<?php echo $nameOfUser ?>"><span class="glyphicon glyphicon-wrench"></span> Einstellungen</a></li>
 						<li><a href="../logout.php?user=<?php echo $nameOfUser ?>"><span class="glyphicon glyphicon-log-out"></span> logout</a></li>
 					</ul>
 				</div>
