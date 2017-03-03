@@ -20,7 +20,7 @@
 	align-items: stretch;
 
 }
-#userOptions{
+#userOptions, #userDelete, #uebungCreate, #uebungDelete, #createUser{
 	background-color: white;
 	min-width: 400px;
 	max-width: 100px;
@@ -29,31 +29,5 @@
 	margin: auto;
 	padding: 10px;
 }
-#userDelete{
-	background-color: white;
-	min-width: 400px;
-	max-width: 100px;
-	/*float: left;*/
-	box-shadow: 10px 10px 5px #888888;
-	margin: auto;
-	padding: 10px;
-}
-#uebungCreate{
-	background-color: white;
-	min-width: 400px;
-	max-width: 100px;
-	/*float: left;*/
-	box-shadow: 10px 10px 5px #888888;
-	margin: auto;
-	padding: 10px;
-}
-#uebungDelete{
-	background-color: white;
-	min-width: 400px;
-	max-width: 100px;
-	/*float: left;*/
-	box-shadow: 10px 10px 5px #888888;
-	margin: auto;
-	padding: 10px;
-}
+
     	
