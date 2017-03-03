@@ -4,7 +4,7 @@
 .inputPW{
 	width: 200px;
 	margin-left: auto;
-	position: relative;
+	position: absolute;
 	right: 0;
 }
 #wrappSettings{
