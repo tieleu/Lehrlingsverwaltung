@@ -8,7 +8,7 @@ $user = $_GET['user'];
 
      <link rel="stylesheet" type="text/css" href="../css/einstellungen.css">
      <script type="text/javascript" href="../jquery/jquery-3.1.1.js"></script>
-     <script type="text/javascript" src="../js/einstellungen.js"></script>
+     <script type="text/javascript" href="../js/einstellungen.js"></script>
 
     	<title>Lehrverwaltung - Einstellungen</title>
     	

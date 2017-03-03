@@ -10,9 +10,9 @@ $passwort ="";
 if($_POST['new1']===$_POST['new2']){
 	$passwort = hash("sha256", $_POST['new1']);
 	mysql_query("INSERT INTO User (name, vorname, username, passwort, status) VALUES ('$nachname', '$vorname', '$username', '$passwort', '$status')");
-	setcookie("createUser", "create User SUCCESSFUL!", time() + 60, "/");
+	setcookie("createUser", 1, time() + 60, "/");
 }else{
-	setcookie("createUser", "create User FAILED! \r\n ERROR!", time() + 60, "/");
+	setcookie("createUser", 0, time() + 60, "/");
 }
 header("Location: ../subsites/einstellungen.php?user=$user");
 
