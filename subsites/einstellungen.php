@@ -1,11 +1,11 @@
  <!DOCTYPE html>
-    <html>
+<html>
+    <?php 
+include("header.php");
+$user = $_GET['user'];
+?>
     <head>
-        <?php 
-            include("header.php");
-         ?>
-   
-  
+
      <link rel="stylesheet" type="text/css" href="../css/einstellungen.css">
      <script type="text/javascript" href="../jquery/jquery-3.1.1.js"></script>
 
@@ -13,13 +13,14 @@
     	
     </head>
     <body>
-    
+
     <div id="userOptions">
     	<form action="../phpAction/changePasswordAction.php?user=<?php echo $nameOfUser ?>" method="post">
         <div id="passwortChange">
             <label for="old" class="labelforPW">Altes Passwort <input class="form-control inputPW" type="password" name="old" value="" placeholder="altes Passwort"></label>
             <label for="new1" class="labelforPW">Neues Passwort <input class="form-control inputPW" type="password" name="new1" value="" placeholder="neues Passwort"></label>
-            <label for="new2" class="labelforPW">Passwort bestätigen <input class="form-control inputPW" type="password" name="new2" value="" placeholder="Passwort bestätigen"></label>
+            <label for="new2" class="labelforPW">Passwort bestätigen <input class="form-control inputPW" type="password" name="new2" value="" placeholder="Passwort bestätigen">
+            <button id="chpwButton" name="chpwButton" class="btn">Passwort ändern</button></label>
         </div>
         </form>
     </div>
