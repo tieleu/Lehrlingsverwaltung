@@ -14,9 +14,9 @@ $(document).ready(function(){
     }
     return "";
 }
-if(getCookie('createUser')===1){
+if(getCookie('createUser')){
 	alert("create User SUCCESSFUL!");
-}else if (getCookie('createUser')===0) {
+}else if (!getCookie('createUser')) {
 	alert("create User FAILED! \r\n ERROR!");
 }
 
