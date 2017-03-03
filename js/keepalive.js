@@ -1,0 +1,1 @@
+setInterval(function(){$.post('../phpAction/refresh_session.php');},600000);
