@@ -9,6 +9,7 @@ $user = $_GET['user'];
 	<title>Lehrlingsverwaltung - Einstellungen</title>
 </head>
 <body>
+<a href="../index.php?user=<?php echo $nameOfUser ?>">
 
 </body>
 </html>
