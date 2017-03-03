@@ -1,6 +1,9 @@
 .labelforPW{
 	max-width: 20%;
 }
+.inputPW{
+	max-width: 50%;
+}
 #passwortChange{
 	display: flex;
 	flex-direction: column;
