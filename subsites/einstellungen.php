@@ -30,7 +30,7 @@ $user = $_GET['user'];
         
     </div>
 
-    <div id="userDelete">
+    <!--<div id="userDelete">
     	
     </div>
 
@@ -40,7 +40,7 @@ $user = $_GET['user'];
 
 	<div id="uebungDelete">
     	
-    </div>
+    </div>-->
 </div>
 
     </body>
