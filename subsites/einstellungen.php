@@ -19,8 +19,8 @@ $user = $_GET['user'];
         <div id="passwortChange">
             <h2 align="center">Passwort ändern</h2>
             <label for="old" class="form-group form-inline labelforPW">Altes Passwort <input class="form-control inputPW" type="password" name="old" value="" placeholder="altes Passwort" required="true"></label>
-            <label for="new1" class="form-group form-inline">Neues Passwort <input class="form-control inputPW" type="password" name="new1" value="" placeholder="neues Passwort" required="true"></label>
-            <label for="new2" class="form-group form-inline">Passwort bestätigen <input class="form-control inputPW" type="password" name="new2" value="" placeholder="Passwort bestätigen" required="true">
+            <label for="new1" class="form-group form-inline labelforPW">Neues Passwort <input class="form-control inputPW" type="password" name="new1" value="" placeholder="neues Passwort" required="true"></label>
+            <label for="new2" class="form-group form-inline labelforPW">Passwort bestätigen <input class="form-control inputPW" type="password" name="new2" value="" placeholder="Passwort bestätigen" required="true">
             <button id="chpwButton" name="chpwButton" class="btn">Passwort ändern</button></label><br><br>
         </div>
         </form>
@@ -28,16 +28,16 @@ $user = $_GET['user'];
 
     <div id="createUser">
         <h2>Benutzer erstellen</h2>
-        <label for="vorname" class="form-group form-inline">Vorname <input class="form-control inputPW" type="text" name="vorname" value="" placeholder="Max" required="true"></label>
-        <label for="nachname" class="form-group form-inline">Nachname <input class="form-control inputPW" type="text" name="nachname" value="" placeholder="Muster" required="true"></label>
-        <label for="benutzername" class="form-group form-inline">Benutzername <input class="form-control inputPW" type="text" name="benutzername" value="" placeholder="tiemus" required="true"></label>
+        <label for="vorname" class="form-group form-inline labelforPW">Vorname <input class="form-control inputPW" type="text" name="vorname" value="" placeholder="Max" required="true"></label>
+        <label for="nachname" class="form-group form-inline labelforPW">Nachname <input class="form-control inputPW" type="text" name="nachname" value="" placeholder="Muster" required="true"></label>
+        <label for="benutzername" class="form-group form-inline labelforPW">Benutzername <input class="form-control inputPW" type="text" name="benutzername" value="" placeholder="tiemus" required="true"></label>
         <select  class="form-control">
             <option selected>select Status</option>
             <option value="lehrling">Lehrling</option>
             <option value="lehrmeister">Lehrmeister</option>
         </select>
-        <label for="new1" class="form-group form-inline">Neues Passwort <input class="form-control inputPW" type="password" name="new1" value="" placeholder="neues Passwort" required="true"></label>
-            <label for="new2" class="form-group form-inline">Passwort bestätigen <input class="form-control inputPW" type="password" name="new2" value="" placeholder="Passwort bestätigen" required="true"></label>
+        <label for="new1" class="form-group form-inline labelforPW">Neues Passwort <input class="form-control inputPW" type="password" name="new1" value="" placeholder="neues Passwort" required="true"></label>
+            <label for="new2" class="form-group form-inline labelforPW">Passwort bestätigen <input class="form-control inputPW" type="password" name="new2" value="" placeholder="Passwort bestätigen" required="true"></label>
 
     </div>
 
