@@ -7,6 +7,7 @@
 #wrappSettings{
 	display: flex;
 	justify-content: space-around;
+	max-width: 100%;
 }
 #chpwButton{
 	position: absolute;
