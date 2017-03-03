@@ -14,7 +14,7 @@ $(document).ready(function(){
     }
     return "";
 }
-if(getCookie('createUser')){
+if(getCookie('createUser')===true){
 	alert("create User SUCCESSFUL!");
 }else if (getCookie('createUser')==="error") {
 	alert("create User FAILED! \r\n ERROR!");
