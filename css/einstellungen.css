@@ -4,10 +4,11 @@
 }
 .inputPW{
 	max-width: 50%;
+	align-self: flex-end;
 }
 #passwortChange{
 	display: flex;
-	align-items: flex-end;
+	align-items: flex-start;
 	flex-direction: column;
 }
 #userOptions{
