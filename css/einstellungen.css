@@ -10,7 +10,7 @@
 	display: flex;
 	align-items: flex-start;
 	flex-direction: column;
-	flex-wrap: nowrap;
+	flex-wrap: wrap;
 }
 #userOptions{
 	background-color: white;
