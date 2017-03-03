@@ -19,8 +19,8 @@ $user = $_GET['user'];
         <div id="passwortChange">
             <h2 align="center">Passwort ändern</h2>
             <label for="old" class="form-group form-inline">Altes Passwort <input class="form-control inputPW" type="password" name="old" value="" placeholder="altes Passwort" required="true"></label>
-            <label for="new1" class="labelforPW">Neues Passwort <input class="form-control inputPW" type="password" name="new1" value="" placeholder="neues Passwort" required="true"></label>
-            <label for="new2" class="labelforPW">Passwort bestätigen <input class="form-control inputPW" type="password" name="new2" value="" placeholder="Passwort bestätigen" required="true">
+            <label for="new1" class="form-group form-inline">Neues Passwort <input class="form-control inputPW" type="password" name="new1" value="" placeholder="neues Passwort" required="true"></label>
+            <label for="new2" class="form-group form-inline">Passwort bestätigen <input class="form-control inputPW" type="password" name="new2" value="" placeholder="Passwort bestätigen" required="true">
             <button id="chpwButton" name="chpwButton" class="btn">Passwort ändern</button></label>
         </div>
         </form>
@@ -28,7 +28,8 @@ $user = $_GET['user'];
 
     <div id="createUser">
         <h2>Benutzer erstellen</h2>
-        <label for="Vorname" class="labelforPW">Altes Passwort <input class="form-control inputPW" type="password" name="old" value="" placeholder="altes Passwort" required="true"></label>
+        <label for="vorname" class="form-group form-inline">Vorname <input class="form-control inputPW" type="text" name="vorname" value="" placeholder="Max" required="true"></label>
+        <label for="nachname" class="form-group form-inline">Nachname <input class="form-control inputPW" type="text" name="nachname" value="" placeholder="Muster" required="true"></label>
 
     </div>
 
