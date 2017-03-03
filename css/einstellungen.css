@@ -5,6 +5,7 @@
 	float: left;
 	margin-left: 23%;
 	box-shadow: 10px 10px 5px #888888;
+	align: center;
 }
 #userDelete{
 	background-color: white;
