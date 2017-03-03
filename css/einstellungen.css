@@ -7,7 +7,7 @@
 #chpwButton{
 	position: absolute;
 	left: 210px;
-	top: 50%;
+	bottom: 0;
 }
 #passwortChange{
 	position: relative;
