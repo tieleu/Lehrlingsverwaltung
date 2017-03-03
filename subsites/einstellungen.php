@@ -15,7 +15,11 @@
     <a href="../index.php?user=<?php echo $nameOfUser ?>">home</a>
 
     <div id="userOptions">
-    	
+    	<form action="../phpAction/changePasswordAction.php?user=<?php echo $nameOfUser ?>" method="post">
+        <div id="passwortChange">
+            <label><input type="password" name="old" value="" placeholder="altes Passwort"></label>
+        </div>
+        </form>
     </div>
 
     <div id="userDelete">
