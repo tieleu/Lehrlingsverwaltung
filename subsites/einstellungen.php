@@ -13,8 +13,7 @@
     	
     </head>
     <body>
-    <a href="../index.php?user=<?php echo $nameOfUser ?>">home</a><br>
-
+    
     <div id="userOptions">
     	<form action="../phpAction/changePasswordAction.php?user=<?php echo $nameOfUser ?>" method="post">
         <div id="passwortChange">
