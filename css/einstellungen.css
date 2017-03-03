@@ -1,3 +1,7 @@
+#passwortChange{
+	display: flex;
+	align-items: column;
+}
 #userOptions{
 	background-color: white;
 	height: 40%;
