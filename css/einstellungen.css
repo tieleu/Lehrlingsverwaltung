@@ -1,5 +1,5 @@
 .labelforPW{
-	max-width: 30%;
+	width: 200px;
 }
 .inputPW{
 	width: 200px;
@@ -13,7 +13,7 @@
 #userOptions{
 	background-color: white;
 	height: 40%;
-	width: 20%;
+	width: auto;
 	/*float: left;*/
 	box-shadow: 10px 10px 5px #888888;
 	margin: auto;
