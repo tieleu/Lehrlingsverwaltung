@@ -13,7 +13,7 @@ $user = $_GET['user'];
     	
     </head>
     <body>
-
+<div id="wrappSettings">
     <div id="userOptions">
     	<form action="../phpAction/changePasswordAction.php?user=<?php echo $nameOfUser ?>" method="post">
         <div id="passwortChange">
@@ -36,6 +36,7 @@ $user = $_GET['user'];
 	<div id="uebungDelete">
     	
     </div>
+</div>
 
     </body>
     </html>   
