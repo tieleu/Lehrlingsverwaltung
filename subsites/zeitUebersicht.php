@@ -167,9 +167,9 @@ echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form
 			</tr>
 			<tr>
 				<form action="../phpAction/zeitUebersichtAction.php?user=<?php echo $user ?>" method="post">
-				<td><input class="form-control" type="date" name="date" value="<?php date('d.m.Y');?>" placeholder=""></td>
-				<td><input class="form-control" type="time" name="time" value="" placeholder=""></td>
-				<td><button id="savetime" class="inputandsubmitbtn btn" name="savetime">SAVE</button><input type="number" name="id" value="<?php echo $userID;?>" placeholder="" hidden></td>
+				<td><input class="form-control tablecontent" type="date" name="date" value="<?php date('d.m.Y');?>" placeholder=""></td>
+				<td><input class="form-control tablecontent" type="time" name="time" value="" placeholder=""></td>
+				<td><button id="savetime" class="inputandsubmitbtn btn tablecontent" name="savetime">SAVE</button><input type="number" name="id" value="<?php echo $userID;?>" placeholder="" hidden></td>
 				</form>
 			</tr>
 		</table>
@@ -180,8 +180,8 @@ echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form
 			</tr>
 			<tr>
 				<form action="../phpAction/deleteAction.php?user=>?php echo $user ?>" method="post">
-				<td><input class="form-control" type="date" name="deleteDate" value="<?php date('d.m.Y');?>" placeholder=""></td>
-				<td><button id="delEntry" class="inputandsubmitbtn btn" name="delEntry">DELETE</button><input type="number" name="id" value="<?php echo $userID;?>" placeholder="" hidden></td>
+				<td><input class="form-control tablecontent" type="date" name="deleteDate" value="<?php date('d.m.Y');?>" placeholder=""></td>
+				<td><button id="delEntry" class="inputandsubmitbtn btn tablecontent" name="delEntry">DELETE</button><input type="number" name="id" value="<?php echo $userID;?>" placeholder="" hidden></td>
 				</form>
 			</tr>
 		</table>
