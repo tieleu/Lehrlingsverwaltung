@@ -15,7 +15,7 @@ $user = $_GET['user'];
     <body>
 <div id="wrappSettings">
     <div id="userOptions">
-    	<form action="../phpAction/changePasswordAction.php?user=<?php echo $nameOfUser ?>" method="post">
+    	<form action="../phpAction/changePasswordAction.php?user=<?php echo $user ?>" method="post">
         <div id="passwortChange">
             <h2 align="center">Passwort ändern</h2>
             <label for="old" class="form-group form-inline labelforPW">Altes Passwort <input class="form-control inputPW" type="password" name="old" value="" placeholder="altes Passwort" required="true"></label>
@@ -27,6 +27,7 @@ $user = $_GET['user'];
     </div>
 
     <div id="createUser">
+    <form action="../phpAction/createUserAction.php?user=<?php echo $user ?>" method="post">
         <h2 align="center">Benutzer erstellen</h2>
         <label for="vorname" class="form-group form-inline labelforPW">Vorname <input class="form-control inputPW" type="text" name="vorname" value="" placeholder="Max" required="true"></label>
         <label for="nachname" class="form-group form-inline labelforPW">Nachname <input class="form-control inputPW" type="text" name="nachname" value="" placeholder="Muster" required="true"></label>
@@ -42,7 +43,7 @@ $user = $_GET['user'];
         <label for="new1" class="form-group form-inline labelforPW">Neues Passwort <input class="form-control inputPW" type="password" name="new1" value="" placeholder="neues Passwort" required="true"></label>
             <label for="new2" class="form-group form-inline labelforPW">Passwort bestätigen <input class="form-control inputPW" type="password" name="new2" value="" placeholder="Passwort bestätigen" required="true"></label><br><br>
             <button id="createUserButton" name="creaUsrBtn" class="btn">Benutzer erstellen</button>
-
+            </form>
     </div>
 
     <!--<div id="userDelete">
