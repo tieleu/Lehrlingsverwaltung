@@ -14,7 +14,7 @@ else{
 	$_passwort = mysql_real_escape_string($_POST["passwort"]); 
 
 	$username=$_POST['username'];
-	$password=$_POST['password'];
+	$password=hash("sha256", $_POST['password']);
 	
 
 	$query = mysql_query("select username, passwort from User where passwort='$password' AND username='$username'", $conn);
