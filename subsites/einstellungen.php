@@ -26,6 +26,10 @@ $user = $_GET['user'];
         </form>
     </div>
 
+    <div id="createUser">
+        
+    </div>
+
     <div id="userDelete">
     	
     </div>
