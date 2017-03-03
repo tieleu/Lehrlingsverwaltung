@@ -40,7 +40,7 @@
 }
 #uebungCreate{
 	background-color: white;
-	height: 40%;
+	height: 197px;
 	min-width: 400px;
 	max-width: 100px;
 	float: right;
@@ -51,7 +51,7 @@
 }
 #uebungDelete{
 	background-color: white;
-	height: 40%;
+	height: 197px;
 	min-width: 400px;
 	max-width: 100px;
 	float: left;
