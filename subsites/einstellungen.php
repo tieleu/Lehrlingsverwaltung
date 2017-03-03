@@ -18,7 +18,7 @@ $user = $_GET['user'];
     	<form action="../phpAction/changePasswordAction.php?user=<?php echo $nameOfUser ?>" method="post">
         <div id="passwortChange">
             <h2 align="center">Passwort ändern</h2>
-            <label for="old" class="form-group form-inline">Altes Passwort </label><input class="form-control inputPW" type="password" name="old" value="" placeholder="altes Passwort" required="true">
+            <label for="old" class="form-group form-inline">Altes Passwort </label><input class="form-control inputPW" type="password" name="old" value="" placeholder="altes Passwort" required="true"><br>
             <label for="new1" class="form-group form-inline">Neues Passwort </label><input class="form-control inputPW" type="password" name="new1" value="" placeholder="neues Passwort" required="true">
             <label for="new2" class="form-group form-inline">Passwort bestätigen </label><input class="form-control inputPW" type="password" name="new2" value="" placeholder="Passwort bestätigen" required="true">
             <button id="chpwButton" name="chpwButton" class="btn">Passwort ändern</button><br><br>
