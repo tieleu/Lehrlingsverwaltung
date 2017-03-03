@@ -13,17 +13,13 @@
 	justify-content: space-around;
 	max-width: 100%;
 }
-#chpwButton{
+
+#createUserButton, #chpwButton{
 	position: absolute;
 	right: 10px;
 	bottom: 10px;
 }
-#createUserButton{
-	position: absolute;
-	right: 10px;
-	bottom: 10px;
-}
-#passwortChange, #createUser{
+#passwortChange{
 	position: relative;
 	display: flex;
 	flex-direction: column;
