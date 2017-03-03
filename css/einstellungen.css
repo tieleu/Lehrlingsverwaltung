@@ -3,9 +3,8 @@
 	height: 40%;
 	width: 80%;
 	float: left;
-	margin-left: 23%;
 	box-shadow: 10px 10px 5px #888888;
-	text-align: center;
+	margin: auto;
 }
 #userDelete{
 	background-color: white;
