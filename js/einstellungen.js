@@ -16,7 +16,7 @@ $(document).ready(function(){
 }
 if(getCookie('createUser')){
 	alert("create User SUCCESSFUL!");
-}else if (!getCookie('createUser')) {
+}else if (getCookie('createUser')==="error") {
 	alert("create User FAILED! \r\n ERROR!");
 }
 

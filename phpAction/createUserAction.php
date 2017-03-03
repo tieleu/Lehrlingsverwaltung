@@ -12,7 +12,7 @@ if($_POST['new1']===$_POST['new2']){
 	mysql_query("INSERT INTO User (name, vorname, username, passwort, status) VALUES ('$nachname', '$vorname', '$username', '$passwort', '$status')");
 	setcookie("createUser", true, time() + 60, "/");
 }else{
-	setcookie("createUser", false, time() + 60, "/");
+	setcookie("createUser", "error", time() + 60, "/");
 }
 header("Location: ../subsites/einstellungen.php?user=$user");
 
