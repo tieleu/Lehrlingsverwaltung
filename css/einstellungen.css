@@ -1,12 +1,12 @@
 .labelforPW{
 	width: 500px;
+	margin-right: 200px;
 }
 .inputPW{
 	width: 200px;
 	margin-left: auto;
 	position: absolute;
 	right: 0;
-	margin-left: 200px;
 }
 #wrappSettings{
 	display: flex;
