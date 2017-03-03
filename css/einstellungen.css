@@ -3,14 +3,12 @@
 }
 .inputPW{
 	max-width: 50%;
-	align-self: flex-end;
-	justify-content: flex-end;
 }
 #passwortChange{
 	display: flex;
-	align-items: flex-start;
+
 	flex-direction: column;
-	flex-wrap: wrap;
+
 }
 #userOptions{
 	background-color: white;
