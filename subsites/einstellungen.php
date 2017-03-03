@@ -16,12 +16,12 @@ $user = $_GET['user'];
 <div id="wrappSettings">
     <div id="userOptions">
     	<form action="../phpAction/changePasswordAction.php?user=<?php echo $nameOfUser ?>" method="post">
-        <div id="passwortChange">
+        <div id="passwortChange" class="form-inline">
             <h2 align="center">Passwort ändern</h2>
-            <label for="old" class="form-group form-inline">Altes Passwort <input class="form-control inputPW" type="password" name="old" value="" placeholder="altes Passwort" required="true"></label>
-            <label for="new1" class="form-group form-inline">Neues Passwort <input class="form-control inputPW" type="password" name="new1" value="" placeholder="neues Passwort" required="true"></label>
-            <label for="new2" class="form-group form-inline">Passwort bestätigen <input class="form-control inputPW" type="password" name="new2" value="" placeholder="Passwort bestätigen" required="true">
-            <button id="chpwButton" name="chpwButton" class="btn">Passwort ändern</button></label><br><br>
+            <label for="old" class="form-group form-inline">Altes Passwort </label><input class="form-control inputPW" type="password" name="old" value="" placeholder="altes Passwort" required="true">
+            <label for="new1" class="form-group form-inline">Neues Passwort </label><input class="form-control inputPW" type="password" name="new1" value="" placeholder="neues Passwort" required="true">
+            <label for="new2" class="form-group form-inline">Passwort bestätigen </label><input class="form-control inputPW" type="password" name="new2" value="" placeholder="Passwort bestätigen" required="true">
+            <button id="chpwButton" name="chpwButton" class="btn">Passwort ändern</button><br><br>
         </div>
         </form>
     </div>
