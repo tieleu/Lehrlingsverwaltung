@@ -158,7 +158,7 @@ echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form
 	?>
 		</div>
 	</table>
-	<div align="center" id="saveAndDelete">
+	<div align="center">
 		<table style="margin-bottom: 10px;">
 			<tr>
 				<th>Datum</th>
