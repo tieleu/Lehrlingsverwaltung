@@ -12,8 +12,8 @@
     	
     </head>
     <body>
-        <a href="../index.php?user=<?php echo $nameOfUser ?>">
-    
+    <a href="../index.php?user=<?php echo $nameOfUser ?>">home</a>
+
     <div id="userOptions">
     	
     </div>
