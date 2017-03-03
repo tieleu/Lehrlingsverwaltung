@@ -20,8 +20,8 @@
 }
 #createUserButton{
 	position: absolute;
-	left: 210px;
-	bottom: 5px;
+	right: 10px;
+	bottom: 10px;
 }
 #passwortChange{
 	position: relative;
