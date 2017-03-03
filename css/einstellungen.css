@@ -17,7 +17,7 @@
 #passwortChange{
 	position: relative;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	align-items: stretch;
 
 }
