@@ -4,7 +4,7 @@
 }
 .inputPW{
 	max-width: 50%;
-	align-content: flex-end;
+	align-items: flex-end;
 }
 #passwortChange{
 	display: flex;
