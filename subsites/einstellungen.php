@@ -34,7 +34,7 @@ $user = $_GET['user'];
         <label for="vorname" class="form-group form-inline labelforPW">Vorname <input class="form-control inputPW" type="text" name="vorname" value="" placeholder="Max" required="true"></label>
         <label for="nachname" class="form-group form-inline labelforPW">Nachname <input class="form-control inputPW" type="text" name="nachname" value="" placeholder="Muster" required="true"></label>
         <label for="benutzername" class="form-group form-inline labelforPW">Benutzername <input class="form-control inputPW" type="text" name="benutzername" value="" placeholder="tiemus" required="true"></label>
-        <div id="selectwrapper">
+        <div class="selectwrapper">
         <label for="status" class="form-group form-inline labelforPW">Status </label>
         <select  class="form-control labelforPW" name="status">
             <option selected>select Status</option>
@@ -54,8 +54,17 @@ $user = $_GET['user'];
     <form action="" method="post">
     <div id= createUebungWrapp>
         <h2 align="center">Übung erstellen</h2>
-        <label for="vorname" class="form-group form-inline labelforPW">Übungs Name <input class="form-control inputPW" type="text" name="vorname" value="" placeholder="Max" required="true"></label>
-        
+        <label for="vorname" class="form-group form-inline labelforPW">Übungs Name <input class="form-control inputPW" type="text" name="vorname" value="" placeholder="name" required="true"></label>
+        <div class="selectwrapper">
+        <label for="status" class="form-group form-inline labelforPW">Thema </label>
+        <select  class="form-control labelforPW" name="status">
+            <option selected>select Thema</option>
+            <option value="java">Java</option>
+            <option value="html">HTML</option>
+            <option value="php">PHP</option>
+            <option value="sonstiges">Sonstiges</option>
+        </select>
+        </div>
     </div>	
     </div>
     <!--<div id="userDelete">
