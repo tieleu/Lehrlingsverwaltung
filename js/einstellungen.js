@@ -1,4 +1,4 @@
-$(document).ready(function(){
+
 
 if(getCookie('createUser')===true){
 	alert("create User SUCCESSFUL!");
@@ -12,4 +12,3 @@ if(getCookie("chpwStatus")==="1"){
 }
 
 
-})
