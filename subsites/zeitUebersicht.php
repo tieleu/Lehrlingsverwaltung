@@ -190,8 +190,5 @@ echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form
 </div>
 
 
-
-
-				<script src="../js/zeitUebersicht.js"></script>
 			</body>
 			</html>
