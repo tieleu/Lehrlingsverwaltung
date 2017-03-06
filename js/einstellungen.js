@@ -1,23 +1,14 @@
 $(document).ready(function(){
-	function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
+
 if(getCookie('createUser')===true){
 	alert("create User SUCCESSFUL!");
 }else if (getCookie('createUser')==="error") {
 	alert("create User FAILED! \r\n ERROR!");
+}
+if(getCookie("chpwStatus")==="1"){
+    alert(getCookie("chpwMessage"));
+}else if(getCookie("chpwStatus")==="0"){
+    alert("ERROR\n Eines der eingegebenen Passwörtert ist nicht korrekt!");
 }
 
 

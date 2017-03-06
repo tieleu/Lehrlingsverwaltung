@@ -10,7 +10,13 @@ $getPWnow = mysql_query("SELECT passwort FROM User WHERE idUser=$idUser");
 $pwNow = mysql_fetch_object($getPWnow) -> passwort;
 if($oldpw===$pwNow){
 	mysql_query("UPDATE User SET passwort='$newpw' WHERE idUser=$idUser");
+	setcookie("chpwStatus", 1, time()+10, "/");
+	setcookie("chpwMessage", "Passwort wurde geändert!", time()+10, "/");
+}else{
+	setcookie("chpwStatus", 0, time()+10, "/");
 }
+}else{
+	setcookie("chpwStatus", 0, time()+10, "/");
 }
 header("Location: ../subsites/einstellungen.php?user=$user");
 ?>
