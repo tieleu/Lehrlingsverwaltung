@@ -41,6 +41,7 @@
 	padding: 10px;
 }
 #wrappfileinput{
+	display: flex;
 	position: relative;
 }
 
