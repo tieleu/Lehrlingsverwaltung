@@ -43,7 +43,7 @@ while ($row = mysql_fetch_object($ergebniss)) {
    </table>
  
    </div>
-   <div id="createUebung"></div>
+
 
     </body>
     </html> 
