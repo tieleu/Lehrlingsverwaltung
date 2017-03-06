@@ -179,7 +179,7 @@ echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form
 				<th></th>
 			</tr>
 			<tr>
-				<form action="../phpAction/deleteAction.php?user=>?php echo $user ?>" method="post">
+				<form action="../phpAction/deleteAction.php?user=<?php echo $user ?>" method="post">
 				<td><input id="delDate" class="form-control" type="date" name="deleteDate" value="<?php date('d.m.Y');?>" placeholder=""></td>
 				<td><button id="delEntry" class="inputandsubmitbtn btn" name="delEntry">DELETE</button><input type="number" name="id" value="<?php echo $userID;?>" placeholder="" hidden></td>
 				</form>
