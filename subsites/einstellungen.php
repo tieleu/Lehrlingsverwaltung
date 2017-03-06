@@ -45,32 +45,12 @@ $user = $_GET['user'];
         <label for="new1" class="form-group form-inline labelforPW">Neues Passwort <input class="form-control inputPW" type="password" name="new1" value="" placeholder="neues Passwort" required="true"></label>
             <label for="new2" class="form-group form-inline labelforPW">Passwort bestätigen <input class="form-control inputPW" type="password" name="new2" value="" placeholder="Passwort bestätigen" required="true"></label><br><br>
             </div>
-            <button id="createUserButton" name="creaUsrBtn" class="btn">Benutzer erstellen</button>
+            <button id="createUserButton" name="creaUsrBtn" class="btn">Benutze erstellen</button>
 
             </form>
     </div>
 
-	<div id="uebungCreate">
-    <form action="../phpAction/createUebung.php?user=<?php echo $user?>" method="post" enctype="multipart/form-data">
-    <div id= createUebungWrapp>
-        <h2 align="center">Übung erstellen</h2>
-        <label for="uebungsname" class="form-group form-inline labelforPW">Übungs Name <input class="form-control inputPW" type="text" name="uebungsname" value="" placeholder="name" required="true"></label>
-        <div class="selectwrapper">
-        <label for="thema" class="form-group form-inline labelforPW">Thema </label>
-        <select  class="form-control labelforPW" name="thema">
-            <option selected>select Thema</option>
-            <option value="java">Java</option>
-            <option value="html">HTML</option>
-            <option value="php">PHP</option>
-            <option value="sonstiges">Sonstiges</option>
-        </select>
-        </div>
-        <label for="voraussetzung" class="form-group form-inline labelforPW">Voraussetzung <input class="form-control inputPW" type="text" name="voraussetzung" value="" placeholder="name" required="true"></label>
-        <div id="wrappfileinput"><label for="fileToUpload" class="form-group labelforPW">File zur Übung </label><input class="form-control inputPW" type="file" name="fileToUpload" id="fileToUpload" required="true"></div>
-    </div>
-    <button id="createUebungButton" name="creaUebungBtn" class="btn">Übung erstellen</button>
-    </form>	
-    </div>
+
     <!--<div id="userDelete">
         
     </div>
