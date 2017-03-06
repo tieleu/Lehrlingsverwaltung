@@ -45,7 +45,7 @@ $user = $_GET['user'];
         <label for="new1" class="form-group form-inline labelforPW">Neues Passwort <input class="form-control inputPW" type="password" name="new1" value="" placeholder="neues Passwort" required="true"></label>
             <label for="new2" class="form-group form-inline labelforPW">Passwort bestätigen <input class="form-control inputPW" type="password" name="new2" value="" placeholder="Passwort bestätigen" required="true"></label><br><br>
             </div>
-            <button id="createUserButton" name="creaUsrBtn" class="btn">Benutzer erstellen</button>
+            <button id="createUserButton" name="creaUsrBtn" class="btn">Benutzer1 erstellen</button>
 
             </form>
     </div>
