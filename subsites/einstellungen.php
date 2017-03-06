@@ -51,13 +51,13 @@ $user = $_GET['user'];
     </div>
 
 	<div id="uebungCreate">
-    <form action="" method="post">
+    <form action="../phpAction/createUebung.php'user=<?php echo $user?>" method="post">
     <div id= createUebungWrapp>
         <h2 align="center">Übung erstellen</h2>
         <label for="uebungsname" class="form-group form-inline labelforPW">Übungs Name <input class="form-control inputPW" type="text" name="uebungsname" value="" placeholder="name" required="true"></label>
         <div class="selectwrapper">
-        <label for="status" class="form-group form-inline labelforPW">Thema </label>
-        <select  class="form-control labelforPW" name="status">
+        <label for="thema" class="form-group form-inline labelforPW">Thema </label>
+        <select  class="form-control labelforPW" name="thema">
             <option selected>select Thema</option>
             <option value="java">Java</option>
             <option value="html">HTML</option>
