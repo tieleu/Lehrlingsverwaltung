@@ -50,13 +50,13 @@ $user = $_GET['user'];
             </form>
     </div>
 
-    <!--<div id="userDelete">
-    	
-    </div>
-
 	<div id="uebungCreate">
     	
     </div>
+    <!--<div id="userDelete">
+        
+    </div>
+
 
 	<div id="uebungDelete">
     	
