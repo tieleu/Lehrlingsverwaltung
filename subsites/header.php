@@ -37,6 +37,7 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 		<script type="text/javascript" src="../js/keepalive.js"></script>
+		<script type="text/javascript" src="../js/mainfunctions.js"></script>
 
 	</head>
 	<body >

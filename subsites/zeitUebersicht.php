@@ -7,6 +7,7 @@ $user = $_GET['user'];
 <head>
 	<link rel="stylesheet" type="text/css" href="../css/zeitUebersicht.css">
 	<script type="text/javascript" href="../jquery/jquery-3.1.1.js"></script>
+	<script type="text/javascript" href="../js/zeitUebersicht.js"></script>
 	
 
 	<title>Lehrverwaltung - Zeit Übersicht</title>
