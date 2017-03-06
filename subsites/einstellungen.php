@@ -54,7 +54,7 @@ $user = $_GET['user'];
     <form action="" method="post">
     <div id= createUebungWrapp>
         <h2 align="center">Übung erstellen</h2>
-        <label for="vorname" class="form-group form-inline labelforPW">Übungs Name <input class="form-control inputPW" type="text" name="vorname" value="" placeholder="name" required="true"></label>
+        <label for="uebungsname" class="form-group form-inline labelforPW">Übungs Name <input class="form-control inputPW" type="text" name="uebungsname" value="" placeholder="name" required="true"></label>
         <div class="selectwrapper">
         <label for="status" class="form-group form-inline labelforPW">Thema </label>
         <select  class="form-control labelforPW" name="status">
@@ -65,6 +65,8 @@ $user = $_GET['user'];
             <option value="sonstiges">Sonstiges</option>
         </select>
         </div>
+        <label for="voraussetzung" class="form-group form-inline labelforPW">Voraussetzung <input class="form-control inputPW" type="text" name="voraussetzung" value="" placeholder="name" required="true"></label>
+        <label for="voraussetzung" class="form-group form-inline labelforPW">File zur Übung <input type="file" name="fileToUpload" id="fileToUpload" required="true"></label>
     </div>	
     </div>
     <!--<div id="userDelete">
