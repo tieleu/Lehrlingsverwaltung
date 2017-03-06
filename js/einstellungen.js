@@ -7,7 +7,7 @@ if(getCookie('createUser')===true){
 }
 if(getCookie("chpwStatus")==="1"){
     alert(getCookie("chpwMessage"));
-}else if(getCookie("chpwStatus")==="0"){
+}else if(getCookie("chpwStatus")===0){
     alert("ERROR\n Eines der eingegebenen Passwörtert ist nicht korrekt!");
 }
 
