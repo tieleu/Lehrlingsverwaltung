@@ -50,7 +50,7 @@ $user = $_GET['user'];
             </form>
     </div>
 
-	<div id="uebungCreate">
+	<!--<div id="uebungCreate">
     <form action="../phpAction/createUebung.php?user=<?php echo $user?>" method="post" enctype="multipart/form-data">
     <div id= createUebungWrapp>
         <h2 align="center">Übung erstellen</h2>
@@ -70,7 +70,7 @@ $user = $_GET['user'];
     </div>
     <button id="createUebungButton" name="creaUebungBtn" class="btn">Übung erstellen</button>
     </form>	
-    </div>
+    </div>-->
     <!--<div id="userDelete">
         
     </div>
