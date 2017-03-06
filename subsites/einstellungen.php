@@ -50,27 +50,7 @@ $user = $_GET['user'];
             </form>
     </div>
 
-	<!--<div id="uebungCreate">
-    <form action="../phpAction/createUebung.php?user=--><?php #echo $user?><!--" method="post" enctype="multipart/form-data">
-    <div id= createUebungWrapp>
-        <h2 align="center">Übung erstellen</h2>
-        <label for="uebungsname" class="form-group form-inline labelforPW">Übungs Name <input class="form-control inputPW" type="text" name="uebungsname" value="" placeholder="name" required="true"></label>
-        <div class="selectwrapper">
-        <label for="thema" class="form-group form-inline labelforPW">Thema </label>
-        <select  class="form-control labelforPW" name="thema">
-            <option selected>select Thema</option>
-            <option value="java">Java</option>
-            <option value="html">HTML</option>
-            <option value="php">PHP</option>
-            <option value="sonstiges">Sonstiges</option>
-        </select>
-        </div>
-        <label for="voraussetzung" class="form-group form-inline labelforPW">Voraussetzung <input class="form-control inputPW" type="text" name="voraussetzung" value="" placeholder="name" required="true"></label>
-        <div id="wrappfileinput"><label for="fileToUpload" class="form-group labelforPW">File zur Übung </label><input class="form-control inputPW" type="file" name="fileToUpload" id="fileToUpload" required="true"></div>
-    </div>
-    <button id="createUebungButton" name="creaUebungBtn" class="btn">Übung erstellen</button>
-    </form>	
-    </div>-->
+
     <!--<div id="userDelete">
         
     </div>
