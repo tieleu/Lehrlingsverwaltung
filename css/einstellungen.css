@@ -14,7 +14,7 @@
 	max-width: 100%;
 }
 
-#createUserButton, #chpwButton{
+#createUserButton, #chpwButton, #createUebungButton{
 	position: absolute;
 	right: 10px;
 	bottom: 10px;

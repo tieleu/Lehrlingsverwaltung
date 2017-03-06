@@ -66,8 +66,10 @@ $user = $_GET['user'];
         </select>
         </div>
         <label for="voraussetzung" class="form-group form-inline labelforPW">Voraussetzung <input class="form-control inputPW" type="text" name="voraussetzung" value="" placeholder="name" required="true"></label>
-        <div id="wrappfileinput"><label for="voraussetzung" class="form-group labelforPW">File zur Übung </label><input class="form-control inputPW" type="file" name="fileToUpload" id="fileToUpload" required="true"></div>
-    </div>	
+        <div id="wrappfileinput"><label for="fileToUpload" class="form-group labelforPW">File zur Übung </label><input class="form-control inputPW" type="file" name="fileToUpload" id="fileToUpload" required="true"></div>
+    </div>
+    <button id="createUebungButton" name="creaUebungBtn" class="btn">Übung erstellen</button>
+    </form>	
     </div>
     <!--<div id="userDelete">
         
