@@ -51,6 +51,9 @@ $user = $_GET['user'];
     </div>
 
 	<div id="uebungCreate">
+        <h2 align="center">Übung erstellen</h2>
+        <label for="vorname" class="form-group form-inline labelforPW">Übungs Name <input class="form-control inputPW" type="text" name="vorname" value="" placeholder="Max" required="true"></label>
+        
     	
     </div>
     <!--<div id="userDelete">
