@@ -51,7 +51,7 @@ $user = $_GET['user'];
     </div>
 
 	<div id="uebungCreate">
-    <form action="../phpAction/createUebung.php?user=<?php echo $user?>" method="post">
+    <form action="../phpAction/createUebung.php?user=<?php echo $user?>" method="post" enctype="multipart/form-data">
     <div id= createUebungWrapp>
         <h2 align="center">Übung erstellen</h2>
         <label for="uebungsname" class="form-group form-inline labelforPW">Übungs Name <input class="form-control inputPW" type="text" name="uebungsname" value="" placeholder="name" required="true"></label>
