@@ -9,7 +9,7 @@ function getCookie(cname) {
         }
         if (c.indexOf(name) == 0) {
             var result = c.substring(name.length, c.length);
-            return result.replace(/+/g , " ");
+            return result.replace(/\+/g , " ");
         }
     }
     return "";
