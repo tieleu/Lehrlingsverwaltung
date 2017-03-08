@@ -72,3 +72,6 @@
 	font: bold 1rem sans-serif;
 	font-size: 20px;
 }
+.selectwrapper{
+	display: flex;
+}
