@@ -7,7 +7,7 @@
    
   
      <link rel="stylesheet" type="text/css" href="../css/uebung.css">
-     <script type="text/javascript" href="../js/uebungen.js"></script>
+     <script type="text/javascript" src="../js/uebungen.js"></script>
 
     	<title>Lehrverwaltung - Übungen</title>
     	
