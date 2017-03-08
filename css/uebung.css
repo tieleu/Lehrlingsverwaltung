@@ -14,7 +14,6 @@
 	margin-left: 5%;
 	border-radius: 8px;
 	font-size: 20px;
-	width: 288px;
 }
 .form-control{
 	font-size: 20px;
@@ -83,4 +82,7 @@
 }
 .inputPW, #selectTopic{
 	float: right;
+}
+#selectTopic{
+	width: 288px;
 }
