@@ -14,7 +14,7 @@ $("#createUebung").draggable().resizable({
       maxHeight: 500,
       maxWidth: 1712,
       minHeight: 400,
-      minWidth: 320
+      minWidth: 450
     });
 });
 function openPopup () {
