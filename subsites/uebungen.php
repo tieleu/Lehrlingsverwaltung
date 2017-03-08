@@ -28,7 +28,7 @@
   </tr>
     <tr>
         <td><input type="text" class="form-control" value="Neue Übung erstellen" readonly></td>
-        <td><button class="btn" id="createUebungBtn">+</button></td>
+        <td><button class="btn" id="createNewUebungBtn">+</button></td>
         <td></td>
         <td></td>
     </tr>
