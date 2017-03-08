@@ -33,3 +33,40 @@
 	background-color: white;
 	margin: auto;
 }
+
+.overlay {
+	border-radius: 0 .5em .5em;
+	border: 1px solid;
+	padding: .5em;
+	margin: .5em;
+}
+
+.overlayHidden {
+	display: none;
+}
+
+.overlay {
+	width: 20em;
+	background: #fffbf0;
+	border: 1px solid #e7c157;
+	position: absolute;
+	top: 10%;
+	right: 30%;
+	margin: auto;
+	padding: 1em;
+}
+
+#close {
+	position: absolute;
+	margin: 0;
+	right: 0;
+	top: 0;
+	background: #c32e04;
+	color: white;
+	font: bold 0/0 sans-serif;
+}
+
+#close::before {
+	content: "X";
+	font: bold 1rem sans-serif;
+}

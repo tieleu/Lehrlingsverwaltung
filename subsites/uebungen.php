@@ -25,7 +25,7 @@
   </tr>
     <tr>
         <td><input type="text" class="form-control" value="Neue Übung erstellen" readonly></td>
-        <td><button class="btn">+</button></td>
+        <td><button class="btn" id="createUebungBtn">+</button></td>
         <td></td>
         <td></td>
     </tr>
@@ -47,6 +47,9 @@ while ($row = mysql_fetch_object($ergebniss)) {
 <?php } ?>
 
    </table>
+   <div id="createUebung" class="overlayHidden">
+       <button id="close">close</button>
+   </div>
  
    </div>
 
