@@ -53,14 +53,14 @@ while ($row = mysql_fetch_object($ergebniss)) {
         <h2 align="center">Übung erstellen</h2>
         <label for="uebungsname" class="form-group form-inline labelforPW">Übungsname <input class="form-control inputPW" type="text" name="uebungsname" value="" placeholder="name" required="true"></label>       
         <div class="selectwrapper">
-        <label for="thema" class="form-group form-inline labelforPW">Thema </label>
+        <label for="thema" class="form-group form-inline labelforPW">Thema 
         <select  class="form-control labelforPW" name="thema">
             <option selected>select Thema</option>
             <option value="java">Java</option>
             <option value="html">HTML</option>
             <option value="php">PHP</option>
             <option value="sonstiges">Sonstiges</option>
-        </select>
+        </select></label>
         </div>
         <label for="voraussetzung" class="form-group form-inline labelforPW">Voraussetzung <input class="form-control inputPW" type="text" name="voraussetzung" value="" placeholder="name" required="true"></label>
        <button id="close">close</button>
