@@ -23,14 +23,14 @@
     <th>Vorraussetzung:</th>
     <th>Link zur Übung:</th>
   </tr>
-<br>
+
 <?php
 $ausgabe = "select * from Uebung";
 $ergebniss = mysql_query($ausgabe);
 while ($row = mysql_fetch_object($ergebniss)) {
 ?>
-<div id= "zeile">
-<tr id="zeile">
+<div class="zeile">
+<tr class="zeile">
     <td><input type="text" class="form-control" placeholder="<?php  echo $row-> name?>" readonly></td>
     <td><input type="text" class="form-control" placeholder="<?php  echo $row-> Thema?>" readonly></td>
     <td><input type="text" class="form-control" placeholder="<?php  echo $row-> Vorraussetzung?>" readonly></td>
