@@ -29,10 +29,7 @@
         <td></td>
         <td></td>
     </tr>
-        <tr>
-        <td colspan="3"><input type="text" class="form-control" value="Neue Übung erstellen" readonly></td>
-        <td><button class="btn">+</button></td>
-    </tr>
+
 <?php
 $ausgabe = "select * from Uebung";
 $ergebniss = mysql_query($ausgabe);
