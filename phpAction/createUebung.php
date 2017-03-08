@@ -8,7 +8,7 @@ $thema = $_POST['thema'];
 $voraussetzung = $_POST['voraussetzung'];
 $pfad = $_POST['pfad'];
 
-mysql_query("INSERT INTO Uebung (name, Thema, Voraussetzung, Link) VALUES ('$uebungsname', '$thema', '$voraussetzung', '$pfad')")or die("ERROR");
+mysql_query("INSERT INTO Uebung (name, Thema, Voraussetzung, Link) VALUES ($uebungsname, $thema, $voraussetzung, $pfad)")or die("ERROR");
 
 setcookie("createUebung", true, time() + 3, "/");
 
