@@ -24,6 +24,12 @@
     <th>Link zur Übung:</th>
   </tr>
     <tr>
+        <td><input type="text" class="form-control" value="Neue Übung erstellen" readonly></td>
+        <td></td>
+        <td></td>
+        <td><button class="btn">+</button></td>
+    </tr>
+        <tr>
         <td colspan="3"><input type="text" class="form-control" value="Neue Übung erstellen" readonly></td>
         <td><button class="btn">+</button></td>
     </tr>
