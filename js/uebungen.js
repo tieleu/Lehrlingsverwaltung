@@ -4,7 +4,7 @@ if(getCookie("createUebung")){
 
 $(document).ready(function(){
 
-var createButton = document.getElementById("createUebungBtn"),
+var createButton = document.getElementById("createNewUebungBtn"),
 	closeButton = document.getElementById("close"),
 	popup = document.getElementById("createUebung");
 createButton.addEventListener("click", openPopup);
