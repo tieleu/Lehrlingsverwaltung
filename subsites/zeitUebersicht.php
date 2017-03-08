@@ -102,6 +102,7 @@ function minToTime($time){
 					}
 
 	$getdates = mysql_query("SELECT date_format(zeit, '%Y-%m-%d') as date FROM zeit WHERE user_id=$userID GROUP BY date_format(zeit, '%Y-%m-%d')");
+	$timetotalAll = 0;
 	while($rowgetdates = mysql_fetch_object($getdates)){
 
 		$date = $rowgetdates -> date;
@@ -136,25 +137,14 @@ function minToTime($time){
 	}
 	echo "</td><td><input class='form-control' type='text'  value='";
 		echo minToTime($timetotal)." h' readonly></td>";
+		$timetotalAll += $timetotal;
 		echo "<td><input class='form-control' type='text' value='08:20 h' readonly></td>";
 		echo "<td><input class='form-control' type='text' value='".minToTime($timetotal-500)." h' readonly></td></tr>";
 
 }
-$selectAll = mysql_query("SELECT id, user_id, date_format(zeit, '%H:%i') AS zeit, date_format(zeit, '%Y-%m-%d') AS datum FROM zeit WHERE user_id=$userID ORDER BY zeit");
-$timetotalAll = 0;
-$counterAll = 0;
-while ($row = mysql_fetch_object($selectAll)) {
-		$counterAll++;
-		$zeit = $row -> zeit;
-if(mysql_num_rows($selectAll)%2===0){
-		if($counterAll%2===0){
-			$timetotalAll+=zeitZuDez($zeit);
-		}else{
-			$timetotal-=zeitZuDez($zeit);
-		}}
-	}
 
-echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form-control' value='Total: ".minToTime($timetotalAll-mysql_num_rows($selectAll)*500)." h' readonly></td></tr>";
+
+echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form-control' value='Total: ".minToTime($timetotalAll-mysql_num_rows($getdates)*500)." h' readonly></td></tr>";
 
 	?>
 		</div>

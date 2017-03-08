@@ -108,10 +108,7 @@ function minToTime($time){
 
 }
 
-$selectAll = mysql_query("SELECT id, user_id, date_format(zeit, '%H:%i') AS zeit, date_format(zeit, '%Y-%m-%d') AS datum FROM zeit WHERE user_id=$idUser GROUP BY date_format(zeit, '%Y-%m-%d')");
-
-
-echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form-control' value='Total: ".minToTime($timetotalAll)." | ".minToTime($timetotalAll-mysql_num_rows($getdates)*500)." h' readonly></td></tr>";
+echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form-control' value='Total: ".minToTime($timetotalAll-mysql_num_rows($getdates)*500)." h' readonly></td></tr>";
 
 	?>
 		</div>
