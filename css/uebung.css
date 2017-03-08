@@ -65,10 +65,10 @@
 	background: #c32e04;
 	color: white;
 	font: bold 0/0 sans-serif;
-	font-size: 20px;
 }
 
 #close::before {
 	content: "X";
 	font: bold 1rem sans-serif;
+	font-size: 20px;
 }
