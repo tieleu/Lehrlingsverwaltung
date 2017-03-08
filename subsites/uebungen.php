@@ -52,6 +52,7 @@ while ($row = mysql_fetch_object($ergebniss)) {
    </table>
    <div id="createUebung" class="overlayHidden" align="center">
    <form action="../phpAction/createUebung.php?user=<?php echo $user ?>" method="post">
+   <div id="wrappCreateUebung">
         <h2 align="center">Übung erstellen</h2>
         <label for="uebungsname" class="form-group form-inline labelforPW">Übungsname <input class="form-control inputPW" type="text" name="uebungsname" value="" placeholder="name" required="true"></label>       
         <div class="selectwrapper" align="center">
@@ -67,6 +68,7 @@ while ($row = mysql_fetch_object($ergebniss)) {
         <label for="voraussetzung" class="form-group form-inline labelforPW">Voraussetzung <input class="form-control inputPW" type="text" name="voraussetzung" value="" placeholder="voraussetzung" required="true"></label><br>
         <label for="pfad" class="form-group form-inline labelforPW">Pfad zu Datei <input class="form-control inputPW" type="text" name="pfad" value="../uebung/" placeholder="pfad" required="true"></label>
         <button id="createUebungBtn" class="btn" name="createUebungBtn">Übung erstellen</button>
+        </div>
         </form>
        <button id="close">close</button>
 
