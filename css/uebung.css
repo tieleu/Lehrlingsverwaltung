@@ -79,6 +79,6 @@
 	width: 500px;
 
 }
-.inputPW{
+.inputPW, #selectTopic{
 	float: right;
 }

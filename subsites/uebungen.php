@@ -54,7 +54,7 @@ while ($row = mysql_fetch_object($ergebniss)) {
         <label for="uebungsname" class="form-group form-inline labelforPW">Übungsname <input class="form-control inputPW" type="text" name="uebungsname" value="" placeholder="name" required="true"></label>       
         <div class="selectwrapper">
         <label for="thema" class="form-group form-inline labelforPW">Thema 
-        <select  class="form-control labelforPW" name="thema">
+        <select  class="form-control labelforPW" name="thema" id="selectTopic">
             <option selected>select Thema</option>
             <option value="java">Java</option>
             <option value="html">HTML</option>
