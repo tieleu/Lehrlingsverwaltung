@@ -88,6 +88,7 @@ function minToTime($time){
 		$zeit = $row -> zeit;
 		#echo $id."|".$user_id."|".$datum."|".$zeit."<br>";
 		if(mysql_num_rows($select)%2===0){
+			$totalWhileTimerRun = 0;
 		if($counter%2===0){
 			$timetotal+=zeitZuDez($zeit);
 			$zeiten = $zeiten.$zeit;
@@ -98,7 +99,7 @@ function minToTime($time){
 			$zeiten = "";
 			$zeiten = $zeit." bis ";
 			echo "<input type='text' class='form-control inputzeiten' value='";
-		}}
+		}}else{$totalWhileTimerRun = 500;}
 	}
 	echo "</td><td><input class='form-control' type='text'  value='";
 		echo minToTime($timetotal)." h' readonly></td>";
@@ -108,7 +109,7 @@ function minToTime($time){
 
 }
 
-echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form-control' value='Total: ".minToTime($timetotalAll-mysql_num_rows($getdates)*500)." h' readonly></td></tr>";
+echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form-control' value='Total: ".minToTime($timetotalAll-mysql_num_rows($getdates)*500+$totalWhileTimerRun)." h' readonly></td></tr>";
 
 	?>
 		</div>
