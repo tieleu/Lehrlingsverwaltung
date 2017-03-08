@@ -23,7 +23,12 @@
     <th>Vorraussetzung:</th>
     <th>Link zur Übung:</th>
   </tr>
-
+    <tr>
+        <td><input type="text" class="form-control" value="Neue Übung erstellen" readonly></td>
+        <td></td>
+        <td></td>
+        <td><button class="btn">+</button></td>
+    </tr>
 <?php
 $ausgabe = "select * from Uebung";
 $ergebniss = mysql_query($ausgabe);
