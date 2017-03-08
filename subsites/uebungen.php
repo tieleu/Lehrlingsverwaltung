@@ -50,7 +50,10 @@ while ($row = mysql_fetch_object($ergebniss)) {
 
    </table>
    <div id="createUebung" class="overlayHidden">
+       <h2>Übung erstellen</h2>
+
        <button id="close">close</button>
+
    </div>
  
    </div>
