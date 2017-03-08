@@ -47,12 +47,12 @@
 }
 
 .overlay {
-	width: 20em;
+	width: 80%;
 	background: #fffbf0;
 	border: 1px solid #e7c157;
 	position: absolute;
 	top: 10%;
-	right: 0;
+	right: 10%;
 	margin: auto;
 	padding: 1em;
 }
