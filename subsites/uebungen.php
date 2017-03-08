@@ -52,7 +52,7 @@ while ($row = mysql_fetch_object($ergebniss)) {
    <div id="createUebung" class="overlayHidden">
         <h2 align="center">Übung erstellen</h2>
         <label for="uebungsname" class="form-group form-inline labelforPW">Übungsname <input class="form-control inputPW" type="text" name="uebungsname" value="" placeholder="name" required="true"></label>       
-
+        <label for="uebungsname" class="form-group form-inline labelforPW">Übungsname <input class="form-control inputPW" type="text" name="uebungsname" value="" placeholder="name" required="true"></label> 
        <button id="close">close</button>
 
    </div>
