@@ -5,8 +5,9 @@ var createButton = document.getElementById("createUebungBtn"),
 	popup = document.getElementById("createUebung");
 createButton.addEventListener("click", openPopup);
 closeButton.addEventListener("click", closePopup);
+$(function(){
 $("#createUebung").draggable();
-
+});
 function openPopup () {
 	popup.className = "overlay";
 }
