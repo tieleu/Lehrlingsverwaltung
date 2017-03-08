@@ -1,3 +1,5 @@
+$(document).ready(function(){
+
 var createButton = document.getElementById("createUebungBtn"),
 	closeButton = document.getElementById("close"),
 	popup = document.getElementById("createUebung");
@@ -10,3 +12,5 @@ function openPopup () {
 function closePopup() {
 	popup.className = "overlayHidden";
 }
+
+})
