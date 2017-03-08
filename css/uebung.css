@@ -74,6 +74,7 @@
 }
 .selectwrapper{
 	display: flex;
+	max-width: 500px;
 }
 .labelforPW{
 	width: 500px;
