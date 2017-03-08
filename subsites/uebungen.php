@@ -62,7 +62,7 @@ while ($row = mysql_fetch_object($ergebniss)) {
             <option value="sonstiges">Sonstiges</option>
         </select></label>
         </div>
-        <label for="voraussetzung" class="form-group form-inline labelforPW">Voraussetzung <input class="form-control inputPW" type="text" name="voraussetzung" value="" placeholder="name" required="true"></label>
+        <label for="voraussetzung" class="form-group form-inline labelforPW">Voraussetzung <input class="form-control inputPW" type="text" name="voraussetzung" value="" placeholder="name" required="true"></label><br>
         <label for="pfad" class="form-group form-inline labelforPW">Pfad zu Datei <input class="form-control inputPW" type="text" name="pfad" value="../uebung/" placeholder="pfad" required="true"></label>
        <button id="close">close</button>
 
