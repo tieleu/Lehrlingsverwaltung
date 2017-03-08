@@ -1,3 +1,7 @@
+if(getCookie("createUebung")){
+	alert("Übung wurde erstellt!");
+}
+
 $(document).ready(function(){
 
 var createButton = document.getElementById("createUebungBtn"),
