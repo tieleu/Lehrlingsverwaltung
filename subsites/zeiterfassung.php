@@ -114,7 +114,7 @@ function minToTime($time){
 }
 $totAllColor = "";
 if($timetotalAll-mysql_num_rows($getdates)*500+$totalWhileTimerRun<0){
-	$totAllColor = "#E53427"
+	$totAllColor = "#E53427";
 }else{$totAllColor="#3FB13F";}
 echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form-control' value='Total: ".minToTime($timetotalAll-mysql_num_rows($getdates)*500+$totalWhileTimerRun)." h' readonly style='background-color: ".$totAllColor.";'></td></tr>";
 
