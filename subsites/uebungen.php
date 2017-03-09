@@ -42,7 +42,7 @@ while ($row = mysql_fetch_object($ergebniss)) {
 <tr class="zeile">
     <td><input type="text" class="form-control" placeholder="<?php  echo $row-> name?>" readonly></td>
     <td><input type="text" class="form-control" placeholder="<?php  echo $row-> Thema?>" readonly></td>
-    <td><input type="text" class="form-control" placeholder="<?php  echo $row-> Vorraussetzung?>" readonly></td>
+    <td><input type="text" class="form-control" placeholder="<?php  echo $row-> Voraussetzung?>" readonly></td>
     <td><a href="<?php  echo $row-> Link ?>">zur Übung</a></td>
 </tr>
 </div>
