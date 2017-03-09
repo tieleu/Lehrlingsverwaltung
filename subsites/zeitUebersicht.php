@@ -139,13 +139,19 @@ function minToTime($time){
 	echo "</td><td><input class='form-control' type='text'  value='";
 		echo minToTime($timetotal)." h' readonly></td>";
 		$timetotalAll += $timetotal;
-		echo "<td><input class='form-control' type='text' value='08:20 h' readonly></td>";
-		echo "<td><input class='form-control' type='text' value='".minToTime($timetotal-500)." h' readonly></td></tr>";
+$totcolor = "";
+						if ($timetotal-500<0) {
+							$totcolor = "#E53427";
+						}else{$totcolor="#3FB13F";}
+						echo "<td><input class='form-control' type='text' value='08:20 h' readonly></td>";
+						echo "<td><input class='form-control' type='text' value='".minToTime($timetotal-500)." h' readonly style='border: solid 2px ".$totcolor.";'></td></tr>";
 
-}
-
-
-echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form-control' value='Total: ".minToTime($timetotalAll-mysql_num_rows($getdates)*500+$totalWhileTimerRun)." h' readonly></td></tr>";
+					}
+					$totAllColor = "";
+					if($timetotalAll-mysql_num_rows($getdates)*500+$totalWhileTimerRun<0){
+						$totAllColor = "#E53427";
+					}else{$totAllColor="#3FB13F";}
+					echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form-control' value='Total: ".minToTime($timetotalAll-mysql_num_rows($getdates)*500+$totalWhileTimerRun)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'></td></tr>";
 
 	?>
 		</div>
