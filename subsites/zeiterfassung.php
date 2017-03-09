@@ -104,8 +104,12 @@ function minToTime($time){
 	echo "</td><td><input class='form-control' type='text'  value='";
 		echo minToTime($timetotal)." h' readonly></td>";
 		$timetotalAll += $timetotal;
+		$totcolor = "";
+		if ($timetotal-500<0) {
+			$totcolor = "red";
+		}else{$totcolor="green";}
 		echo "<td><input class='form-control' type='text' value='08:20 h' readonly></td>";
-		echo "<td><input class='form-control' type='text' value='".minToTime($timetotal-500)." h' readonly></td></tr>";
+		echo "<td><input class='form-control' type='text' value='".minToTime($timetotal-500)." h' readonly style='background-color: ".$totcolor."'></td></tr>";
 
 }
 
