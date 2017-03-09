@@ -109,7 +109,7 @@ function minToTime($time){
 			$totcolor = "#E53427";
 		}else{$totcolor="#3FB13F";}
 		echo "<td><input class='form-control' type='text' value='08:20 h' readonly></td>";
-		echo "<td><input class='form-control' type='text' value='".minToTime($timetotal-500)." h' readonly style='border-color: ".$totcolor."; border: solid 2px ".$totcolor.";'></td></tr>";
+		echo "<td><input class='form-control' type='text' value='".minToTime($timetotal-500)." h' readonly style='border: solid 2px ".$totcolor.";'></td></tr>";
 
 }
 
