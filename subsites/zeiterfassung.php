@@ -66,7 +66,7 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 					return $hours . ":" . $rest;
 				}
 
-				$getdates = mysql_query("SELECT date_format(zeit, '%Y-%m-%d') as date FROM zeit WHERE user_id=$idUser GROUP BY date_format(zeit, '%Y-%m-%d') ORDER BY date_format(zeit, '%Y-%m-%d')");
+				$getdates = mysql_query("SELECT date_format(zeit, '%Y-%m-%d') as date FROM zeit WHERE user_id=$idUser GROUP BY date_format(zeit, '%Y-%m-%d') ORDER BY date_format(zeit, '%Y-%m-%d') DESC");
 				$timetotalAll = 0;
 				while($rowgetdates = mysql_fetch_object($getdates)){
 
