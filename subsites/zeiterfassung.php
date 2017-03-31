@@ -110,10 +110,10 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 
 					}
 					$totAllColor = "";
+					if(mysql_num_rows($select)%2===0){$totalWhileTimerRun=500;}
 					if($timetotalAll-mysql_num_rows($getdates)*500+$totalWhileTimerRun<0){
 						$totAllColor = "#E53427";
 					}else{$totAllColor="#3FB13F";}
-					if(mysql_num_rows($select)%2===0){$totalWhileTimerRun=500;}
 					echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form-control' value='Total: ".minToTime($timetotalAll-mysql_num_rows($getdates)*500+$totalWhileTimerRun)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'></td></tr>";
 
 					?>
