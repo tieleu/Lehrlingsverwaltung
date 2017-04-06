@@ -29,7 +29,7 @@
 .selectwrapper{
 	display: flex;
 }
-#userOptions, #userDelete, #uebungCreate, #uebungDelete, #createUser{
+#userOptions, #deleteUser, #uebungCreate, #uebungDelete, #createUser{
 	background-color: white;
 	position: relative;
 	min-width: 300px;
