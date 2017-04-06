@@ -87,11 +87,16 @@ $user = $_GET['user'];
 
                         </select>
                 </div>
-        
             </div>
-            <button id="createUserButton" name="creaUsrBtn" class="btn">Benutzer löschen</button>
-
+            <div id="commitDelete">
+                <h2>Soll der user <?php $_POST['select']?> wirklich gelöscht werden?</h2>
+                <button id="no" class="btn" name="no">NEIN</button>
+                <button id="ja" class="btn" name="no">Ja</button>
+            </div>
             </form>
+
+
+            <button id="createUserButton" name="creaUsrBtn" class="btn">Benutzer löschen</button>
     </div>
 
 	<!--<div id="uebungCreate">
