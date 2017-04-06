@@ -44,5 +44,27 @@
 	display: flex;
 }
 
+.overlay {
+	border-radius: 0 0 .5em;
+	border: 1px solid;
+	padding: .5em;
+	margin: .5em;
+}
+
+.overlayHidden {
+	display: none;
+}
+
+.overlay {
+	width: 80%;
+	height: 50%;
+	background: #fffbf0;
+	border: 1px solid black;
+	position: absolute;
+	bottom: 800px;
+	left: 0;
+	margin: auto;
+	padding: 1em;
+}
 
     	

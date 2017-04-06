@@ -88,15 +88,15 @@ $user = $_GET['user'];
                         </select>
                 </div>
             </div>
-            <div id="commitDelete">
+            <div id="commitDelete" class="overlayHidden">
                 <h2>Soll der user <?php $_POST['select']?> wirklich gelöscht werden?</h2>
-                <button id="no" class="btn" name="no">NEIN</button>
-                <button id="ja" class="btn" name="no">Ja</button>
+                <button id="no" class="btn" name="no">NO</button>
+                <button id="yes" class="btn" name="no">YES</button>
             </div>
             </form>
 
 
-            <button id="createUserButton" name="creaUsrBtn" class="btn">Benutzer löschen</button>
+            <button id="deleteUserButton" name="delUsrBtn" class="btn">Benutzer löschen</button>
     </div>
 
 	<!--<div id="uebungCreate">
