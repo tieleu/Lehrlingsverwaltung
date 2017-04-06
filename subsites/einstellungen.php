@@ -60,7 +60,6 @@ $user = $_GET['user'];
             $ausgabe = "SELECT vorname, username from User where status = 'lehrling' AND username!='$user'";
             $ergebniss = mysql_query($ausgabe);
             ?>
-            <form action="" method="post">
             <label for="select" class="form-group form-inline labelforPW">Vorname </label>
                 <select id="select" class="form-control labelforPW" name="select">
                     <option disabled hidden selected="selected">Auswahl</option>
@@ -87,11 +86,10 @@ $user = $_GET['user'];
                             <?php } ?>
 
                         </select>
-                    </form>
                 </div>
         
             </div>
-            <button id="createUserButton" name="creaUsrBtn" class="btn">Benutzer erstellen</button>
+            <button id="createUserButton" name="creaUsrBtn" class="btn">Benutzer löschen</button>
 
             </form>
     </div>
