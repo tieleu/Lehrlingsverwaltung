@@ -51,7 +51,8 @@ $user = $_GET['user'];
     </div>
 
     <?php 
-        if($user=="tiefri"){
+        $status = mysql_fetch_object(mysql_query("SELECT status FROM User WHERE username='$user'")) -> status;
+        if($status=="lehrmeister"){
     ?>
 
         <div id="deleteUser">
