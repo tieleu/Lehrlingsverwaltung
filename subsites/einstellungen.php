@@ -62,7 +62,7 @@ $user = $_GET['user'];
 
         <div class="selectwrapper">
             <?php
-            $ausgabe = "SELECT vorname, username from User where status = 'lehrling' AND username!='$user'";
+            $ausgabe = "SELECT vorname, username from User where username!='$user'";
             $ergebniss = mysql_query($ausgabe);
             ?>
             <label for="select" class="form-group form-inline labelforPW">Vorname </label>
