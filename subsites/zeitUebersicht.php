@@ -101,7 +101,7 @@ $user = $_GET['user'];
 								return $hours . ":" . $rest;
 							}
 
-							$getdates = mysql_query("SELECT date_format(zeit, '%Y-%m-%d') as date FROM zeit WHERE user_id=$userID GROUP BY date_format(zeit, '%Y-%m-%d')");
+							$getdates = mysql_query("SELECT date_format(zeit, '%Y-%m-%d') as date FROM zeit WHERE user_id=$userID GROUP BY date_format(zeit, '%Y-%m-%d') ORDER BY date_format(zeit, '%Y-%m-%d') DESC");
 							$timetotalAll = 0;
 							while($rowgetdates = mysql_fetch_object($getdates)){
 
@@ -145,6 +145,9 @@ $user = $_GET['user'];
 
 								}
 								$totAllColor = "";
+								if(mysql_num_rows($select)%2===0){$totalWhileTimerRun=500;}else{
+									$totalWhileTimerRun=0;
+								}
 								if($timetotalAll-mysql_num_rows($getdates)*500+$totalWhileTimerRun<0){
 									$totAllColor = "#E53427";
 								}else{$totAllColor="#3FB13F";}
