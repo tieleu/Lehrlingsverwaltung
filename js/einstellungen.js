@@ -10,6 +10,9 @@ if(getCookie("chpwStatus")==="1"){
 }else if(getCookie("chpwStatus")==="0"){
     alert("ERROR\n Eines der eingegebenen Passwörtert ist nicht korrekt!");
 }
+if(getCookie("delUser")){
+	alert("User wurde erfolgreich gelöscht!");
+}
 
 $(document).ready(function(){
 
