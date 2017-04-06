@@ -91,7 +91,7 @@ $user = $_GET['user'];
             <div id="commitDelete" class="overlayHidden">
                 <h2>Soll der user <?php $_POST['select']?> wirklich gelöscht werden?</h2>
                 <button id="no" class="btn" name="no">NO</button>
-                <button id="yes" class="btn" name="no">YES</button>
+                <button id="yes" class="btn" name="yes">YES</button>
             </div>
             </form>
 
