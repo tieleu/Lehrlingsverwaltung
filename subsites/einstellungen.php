@@ -62,7 +62,7 @@ $user = $_GET['user'];
             ?>
             <form action="" method="post">
             <label for="select" class="form-group form-inline labelforPW">Vorname </label>
-                <select id="select" class="form-control labelforPW" name="select" onchange="this.form.submit()">
+                <select id="select" class="form-control labelforPW" name="select">
                     <option disabled hidden selected="selected">Auswahl</option>
                     <?php
 
