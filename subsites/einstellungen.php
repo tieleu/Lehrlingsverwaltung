@@ -89,7 +89,7 @@ $user = $_GET['user'];
                 </div>
             </div>
             <div id="commitDelete" class="overlayHidden">
-                <h2>Soll der user <?php $_POST['select']?> und alle seine Daten wirklich gelöscht werden?</h2>
+                <h2>Soll der user <?php echo $_POST['select'];?> und alle seine Daten wirklich gelöscht werden?</h2>
                 <button id="no" class="btn" name="no">NO</button>
                 <button id="yes" class="btn" name="yes">YES</button>
             </div>
