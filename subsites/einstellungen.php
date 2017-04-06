@@ -61,6 +61,7 @@ $user = $_GET['user'];
             $ergebniss = mysql_query($ausgabe);
             ?>
             <form action="" method="post">
+            <label for="select" class="form-group form-inline labelforPW">Vorname </label>
                 <select id="select" name="select" onchange="this.form.submit()" style="width: 170px; height: 35px;">
                     <option disabled hidden selected="selected">Auswahl</option>
                     <?php
