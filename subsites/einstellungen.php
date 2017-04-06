@@ -57,7 +57,7 @@ $user = $_GET['user'];
 
         <div class="selectwrapper">
             <?php
-            $ausgabe = "SELECT vorname, username from User where status = 'lehrling'";
+            $ausgabe = "SELECT vorname, username from User where status = 'lehrling' AND username!='$user'";
             $ergebniss = mysql_query($ausgabe);
             ?>
             <form action="" method="post">
