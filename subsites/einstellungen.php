@@ -50,6 +50,10 @@ $user = $_GET['user'];
             </form>
     </div>
 
+    <?php 
+        if($user=="tiefri"){
+    ?>
+
         <div id="deleteUser">
     <form action="../phpAction/deleteUserAction.php?user=<?php echo $user ?>" method="post">
     <div id="deleteUserWrapper">
@@ -98,6 +102,9 @@ $user = $_GET['user'];
 
             <button id="deleteUserButton" name="delUsrBtn" class="btn">Benutzer löschen</button>
     </div>
+    <?php
+        }
+    ?>
 
 	<!--<div id="uebungCreate">
     <form action="../phpAction/createUebung.php?user=<?php echo $user?>" method="post" enctype="multipart/form-data">
