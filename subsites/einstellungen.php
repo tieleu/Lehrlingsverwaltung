@@ -55,7 +55,7 @@ $user = $_GET['user'];
     <div id="deleteUserWrapper">
         <h2 align="center">Benutzer löschen</h2>
 
-        <div class="selectWrapper">
+        <div class="selectwrapper">
             <?php
             $ausgabe = "SELECT vorname, username from User where status = 'lehrling'";
             $ergebniss = mysql_query($ausgabe);
