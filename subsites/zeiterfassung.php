@@ -127,6 +127,7 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 				</div>
 			</table>
 		</div>
+		<div id="placeholder"></div>
 		<div align="center" id="input_container">
 			<form action="../phpAction/zeitAction.php?user=<?php echo $user ?>" method="post"><button id="savetimestamp" name="timestamp" class="inputandsubmitbtn btn">TIMER</button></form>
 			<div id="timeTotalWrap"><?php echo "<input type='text' class='form-control' value='Total: ".minToTime($timetotalAll-mysql_num_rows($getdates)*500+$totalWhileTimerRun)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'>"

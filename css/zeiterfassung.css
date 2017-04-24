@@ -32,6 +32,12 @@ body{
 
 
 }
+#placeholder{
+  width: 80%;
+  background: #F5F5F5;
+  margin: auto;
+  
+}
 .inputandsubmitbtn{
     height: 34px;
     width: 100px;
