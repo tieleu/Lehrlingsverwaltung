@@ -26,6 +26,7 @@ body{
     margin: auto;
     margin-bottom: 200px;
     display: flex;
+    justify-content: space-around;
 
 
 }
@@ -110,5 +111,6 @@ fieldset[disabled] .inputandsubmitbtn.focus {
   margin-top: 10px;
 }
 #timeTotalWrap{
+  margin-top: 10px;
   display: inline-block;
 }
