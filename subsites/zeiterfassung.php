@@ -110,8 +110,8 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 
 					}
 					$totAllColor = "";
-					if(mysql_num_rows($select)%2===0){$totalWhileTimerRun=500;}else{
-						$totalWhileTimerRun=0;
+					if(mysql_num_rows($select)%2===0){$totalWhileTimerRun=0;}else{
+						$totalWhileTimerRun=500;
 					}
 					if($timetotalAll-mysql_num_rows($getdates)*500+$totalWhileTimerRun<0){
 						$totAllColor = "#E53427";
