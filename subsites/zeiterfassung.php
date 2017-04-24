@@ -110,7 +110,7 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 
 					}
 					$totAllColor = "";
-					if(mysql_num_rows($select)%2===0){$totalWhileTimerRun=0;}else{
+					if(mysql_num_rows($select)%2===0){$totalWhileTimerRun=0; echo mysql_num_rows($select);}else{
 						$totalWhileTimerRun=500;
 					}
 					if($timetotalAll-mysql_num_rows($getdates)*500+$totalWhileTimerRun<0){
