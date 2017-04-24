@@ -108,9 +108,3 @@ fieldset[disabled] .inputandsubmitbtn.focus {
 #savetimestamp{
   margin-top: 10px;
 }
-#timeTable{
-  display: flex;
-}
-#totalcell{
-  order: -1;
-}
