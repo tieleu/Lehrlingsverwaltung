@@ -25,7 +25,6 @@ body{
     right: 0;
     margin: auto;
     margin-bottom: 200px;
-    margin-top: 10px;
     display: flex;
     justify-content: space-around;
     box-shadow: 0 -5px 5px gray;
@@ -34,9 +33,10 @@ body{
 }
 #placeholder{
   width: 80%;
+  height: 8px;
   background: #F5F5F5;
   margin: auto;
-  
+
 }
 .inputandsubmitbtn{
     height: 34px;
