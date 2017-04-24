@@ -103,6 +103,7 @@ $user = $_GET['user'];
 
 							$getdates = mysql_query("SELECT date_format(zeit, '%Y-%m-%d') as date FROM zeit WHERE user_id=$userID GROUP BY date_format(zeit, '%Y-%m-%d') ORDER BY date_format(zeit, '%Y-%m-%d') DESC");
 							$timetotalAll = 0;
+							$numOfTimes = 0;
 							while($rowgetdates = mysql_fetch_object($getdates)){
 
 								$date = $rowgetdates -> date;
@@ -132,6 +133,7 @@ $user = $_GET['user'];
 											$zeiten = $zeit." bis ";
 											echo "<input type='text' class='form-control' value='";
 										}}else{$totalWhileTimerRun = 500;}
+										$numOfTimes +=1;
 									}
 									echo "</td><td><input class='form-control' type='text'  value='";
 									echo minToTime($timetotal)." h' readonly></td>";
@@ -145,7 +147,7 @@ $user = $_GET['user'];
 
 								}
 								$totAllColor = "";
-								if(mysql_num_rows($select)%2===0){$totalWhileTimerRun=0;}else{
+								if($numOfTimes%2===0){$totalWhileTimerRun=0;}else{
 									$totalWhileTimerRun=500;
 								}
 								if($timetotalAll-mysql_num_rows($getdates)*500+$totalWhileTimerRun<0){
