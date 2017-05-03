@@ -153,7 +153,32 @@ $user = $_GET['user'];
 								if($timetotalAll-mysql_num_rows($getdates)*500+$totalWhileTimerRun<0){
 									$totAllColor = "#E53427";
 								}else{$totAllColor="#3FB13F";}
-								echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form-control' value='Total: ".minToTime($timetotalAll-mysql_num_rows($getdates)*500+$totalWhileTimerRun)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'></td></tr>";
+
+					/*
+					*Rechnet die Sollzeit mit den Freitagen aus
+					*/
+					$all_ShortSollTime=0;
+					$ergebniss = mysql_query("SELECT zeit  FROM zeit WHERE user_id=$userID");
+					$rows=[];
+					while ($row = mysql_fetch_object($ergebniss)) {
+						$rows[]  = $row -> zeit;
+					}
+
+					$oneAccess = true;
+					$oneAccess1 = true;
+					for ($i = 0; $i < count($rows); $i++) {
+						if(strpos($rows[$i],'2017-04-24') !==false && $oneAccess ==true){
+							$all_ShortSollTime += 500- 250;
+								$oneAccess = false;
+						}else if(strpos($rows[$i],'2017-04-13') !==false && $oneAccess1 == true){
+                   			$all_ShortSollTime += 500-375;
+                   				$oneAccess1 = false;
+						}
+					}
+					echo $all_ShortSollTime;
+
+
+								echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form-control' value='Total: ".minToTime($timetotalAll-mysql_num_rows($getdates)*500+$all_ShortSollTime+$totalWhileTimerRun)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'></td></tr>";
 
 								?>
 							</div>
