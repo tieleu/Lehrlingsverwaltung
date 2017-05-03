@@ -110,21 +110,21 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 							$totcolor="#3FB13F";
 						}
 						if($date =="2017-04-24"){
-		                 echo "<td><input class='form-control' type='text' value='04:10 h' readonly></td>";
-		                    echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-250)." h' readonly style='border: solid 2px ".$totcolor.";'></td></tr>";
+							echo "<td><input class='form-control' type='text' value='04:10 h' readonly></td>";
+							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-250)." h' readonly style='border: solid 2px ".$totcolor.";'></td></tr>";
 						}else if($date =="2017-04-13"){
-		                echo "<td><input class='form-control' type='text' value='06:17 h' readonly></td>";
-		                   echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-375)." h' readonly style='border: solid 2px ".$totcolor.";'></td></tr>";
+							echo "<td><input class='form-control' type='text' value='06:17 h' readonly></td>";
+							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-375)." h' readonly style='border: solid 2px ".$totcolor.";'></td></tr>";
 						}else{
-						echo "<td><input class='form-control' type='text' value='08:20 h' readonly></td>";
-					   echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-$solltime)." h' readonly style='border: solid 2px ".$totcolor.";'></td></tr>";
+							echo "<td><input class='form-control' type='text' value='08:20 h' readonly></td>";
+							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-$solltime)." h' readonly style='border: solid 2px ".$totcolor.";'></td></tr>";
 						}					
-				}
-				
+					}
+
 					$totAllColor = "";
 					if($numOfTimes%2===0){
 						$totalWhileTimerRun=0;
-				    }
+					}
 					else{
 						$totalWhileTimerRun=$solltime;
 					}
@@ -132,17 +132,44 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 						$totAllColor = "#E53427";
 					}else{
 						$totAllColor="#3FB13F";
-				    }
+					}
 					#echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form-control' value='Total: ".minToTime($totalTimeAll-mysql_num_rows($getdates)*$solltime+$totalWhileTimerRun)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'></td></tr>";
+
+
+
+
+					/*
+					*Rechnet die Sollzeit mit den Freitagen aus
+					*/
+					$all_ShortSollTime=0;
+					$ergebniss = mysql_query("SELECT zeit  FROM zeit WHERE user_id=$idUser");
+					$rows=[];
+					while ($row = mysql_fetch_object($ergebniss)) {
+						$rows[]  = $row -> zeit;
+					}
+
+					$oneAccess = true;
+					$oneAccess1 = true;
+					for ($i = 0; $i < count($rows); $i++) {
+						if(strpos($rows[$i],'2017-04-24') !==false && $oneAccess ==true){
+							$all_ShortSollTime += $solltime- 250;
+								$oneAccess = false;
+						}else if(strpos($rows[$i],'2017-04-13') !==false && $oneAccess1 == true){
+                   			$all_ShortSollTime += $solltime-375;
+                   				$oneAccess1 = false;
+						}
+					}
 					?>
+
+
 				</div>
 			</table>
 		</div>
 		<div id="placeholder"></div>
 		<div align="center" id="input_container">
 			<form action="../phpAction/zeitAction.php?user=<?php echo $user ?>" method="post"><button id="savetimestamp" name="timestamp" class="inputandsubmitbtn btn">TIMER</button></form>
-			<div id="totalTimeWrap"><?php echo "<input type='text' class='form-control' value='Total: ".minToTime($totalTimeAll-mysql_num_rows($getdates)*$solltime+350+$totalWhileTimerRun)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'>"
-			?></div>
-		</div>
-	</body>
-	</html>
+			<div id="totalTimeWrap"><?php echo "<input type='text' class='form-control' value='Total: ".minToTime($totalTimeAll-mysql_num_rows($getdates)*$solltime+$all_ShortSollTime+$totalWhileTimerRun)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'>"
+				?></div>
+			</div>
+		</body>
+		</html>
