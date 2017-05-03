@@ -120,6 +120,7 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 					   echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-$solltime)." h' readonly style='border: solid 2px ".$totcolor.";'></td></tr>";
 						}					
 				}
+				
 					$totAllColor = "";
 					if($numOfTimes%2===0){
 						$totalWhileTimerRun=0;
@@ -133,7 +134,6 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 						$totAllColor="#3FB13F";
 				    }
 					#echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form-control' value='Total: ".minToTime($totalTimeAll-mysql_num_rows($getdates)*$solltime+$totalWhileTimerRun)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'></td></tr>";
-					echo $getdates; 
 					?>
 				</div>
 			</table>
