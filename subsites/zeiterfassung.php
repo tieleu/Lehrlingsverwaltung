@@ -2,6 +2,7 @@
 <html>
 <?php 
 include("header.php");
+$solltime = 500;
 $user = $_GET['user'];
 $date = date("Y-m-d");
 $dateplus = date('Y-m-d', strtotime($date . ' +1 day'));
@@ -19,7 +20,6 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 	<link rel="stylesheet" type="text/css" href="../css/zeiterfassung.css">
 	<script type="text/javascript" src="../js/zeiterfassung.js"></script>
 	<script type="text/javascript" href="../jquery/jquery-3.1.1.js"></script>
-	
 
 	<title>Lehrverwaltung - Lehrplan</title>
 </head>
@@ -67,7 +67,7 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 				}
 
 				$getdates = mysql_query("SELECT date_format(zeit, '%Y-%m-%d') as date FROM zeit WHERE user_id=$idUser GROUP BY date_format(zeit, '%Y-%m-%d') ORDER BY date_format(zeit, '%Y-%m-%d') DESC");
-				$timetotalAll = 0;
+				$totalTimeAll = 0;
 				$numOfTimes = 0;
 				while($rowgetdates = mysql_fetch_object($getdates)){
 
@@ -75,7 +75,7 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 					echo "<tr><td>"."<input class='form-control' type='text' name='date' value='$date' placeholder='date' readonly>"."</td><td style='display:flex;'>";
 					$dateplus = date('Y-m-d', strtotime($date . ' +1 day'));
 
-					$timetotal=0;
+					$totalTime=0;
 					$counter=0;
 					$select = mysql_query("SELECT id, user_id, date_format(zeit, '%H:%i') AS zeit, date_format(zeit, '%Y-%m-%d') AS datum FROM zeit WHERE zeit>='$date' AND zeit<'$dateplus' AND user_id=$idUser ORDER BY zeit");
 
@@ -88,38 +88,52 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 						if(mysql_num_rows($select)%2===0){
 							$totalWhileTimerRun = 0;
 							if($counter%2===0){
-								$timetotal+=zeitZuDez($zeit);
+								$totalTime+=zeitZuDez($zeit);
 								$zeiten = $zeiten.$zeit;
 								echo $zeiten."' readonly>";
-
 							}else{
-								$timetotal-=zeitZuDez($zeit);
+								$totalTime-=zeitZuDez($zeit);
 								$zeiten = "";
 								$zeiten = $zeit." bis ";
 								echo "<input type='text' class='form-control inputzeiten' value='";
-							}}else{$totalWhileTimerRun = 500;}
+							}}else{$totalWhileTimerRun = $solltime;}
 							$numOfTimes += 1;
+
 						}
 						echo "</td><td><input class='form-control' type='text'  value='";
-						echo minToTime($timetotal)." h' readonly></td>";
-						$timetotalAll += $timetotal;
+						echo minToTime($totalTime)." h' readonly></td>";
+						$totalTimeAll += $totalTime;
 						$totcolor = "";
-						if ($timetotal-500<0) {
+						if ($totalTime-$solltime<0) {
 							$totcolor = "#E53427";
-						}else{$totcolor="#3FB13F";}
+						}else{
+							$totcolor="#3FB13F";
+						}
+						if($date =="2017-04-24"){
+		                 echo "<td><input class='form-control' type='text' value='04:10 h' readonly></td>";
+		                    echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-250)." h' readonly style='border: solid 2px ".$totcolor.";'></td></tr>";
+						}else if($date =="2017-04-13"){
+		                echo "<td><input class='form-control' type='text' value='06:17 h' readonly></td>";
+		                   echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-375)." h' readonly style='border: solid 2px ".$totcolor.";'></td></tr>";
+						}else{
 						echo "<td><input class='form-control' type='text' value='08:20 h' readonly></td>";
-						echo "<td><input class='form-control' type='text' value='".minToTime($timetotal-500)." h' readonly style='border: solid 2px ".$totcolor.";'></td></tr>";
-
-					}
+					   echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-$solltime)." h' readonly style='border: solid 2px ".$totcolor.";'></td></tr>";
+						}					
+				}
 					$totAllColor = "";
-					if($numOfTimes%2===0){$totalWhileTimerRun=0;}else{
-						$totalWhileTimerRun=500;
+					if($numOfTimes%2===0){
+						$totalWhileTimerRun=0;
+				    }
+					else{
+						$totalWhileTimerRun=$solltime;
 					}
-					if($timetotalAll-mysql_num_rows($getdates)*500+$totalWhileTimerRun<0){
+					if($totalTimeAll-mysql_num_rows($getdates)*$solltime+350+$totalWhileTimerRun<0){
 						$totAllColor = "#E53427";
-					}else{$totAllColor="#3FB13F";}
-					#echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form-control' value='Total: ".minToTime($timetotalAll-mysql_num_rows($getdates)*500+$totalWhileTimerRun)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'></td></tr>";
-
+					}else{
+						$totAllColor="#3FB13F";
+				    }
+					#echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form-control' value='Total: ".minToTime($totalTimeAll-mysql_num_rows($getdates)*$solltime+$totalWhileTimerRun)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'></td></tr>";
+					echo $getdates; 
 					?>
 				</div>
 			</table>
@@ -127,10 +141,8 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 		<div id="placeholder"></div>
 		<div align="center" id="input_container">
 			<form action="../phpAction/zeitAction.php?user=<?php echo $user ?>" method="post"><button id="savetimestamp" name="timestamp" class="inputandsubmitbtn btn">TIMER</button></form>
-			<div id="timeTotalWrap"><?php echo "<input type='text' class='form-control' value='Total: ".minToTime($timetotalAll-mysql_num_rows($getdates)*500+$totalWhileTimerRun)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'>"
+			<div id="totalTimeWrap"><?php echo "<input type='text' class='form-control' value='Total: ".minToTime($totalTimeAll-mysql_num_rows($getdates)*$solltime+350+$totalWhileTimerRun)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'>"
 			?></div>
-
 		</div>
-
 	</body>
 	</html>
