@@ -67,7 +67,7 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 					return $hours . ":" . $rest;
 				}
 
-						function totalColor($exact_solltime){
+						function totalColor($exact_solltime, $totalTime){
 						$totcolor = "";
 						echo "totaltime = ".$totalTime;
 						//echo $totalTime." ,".$exact_solltime.",<br>";
@@ -122,7 +122,7 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 
 						if($date =="2017-04-24"){
 							$diff = $solltime-250;
-							$color = totalColor($diff);
+							$color = totalColor($diff, $totalTime);
 
 
 							echo "<td><input class='form-control' type='text' value='04:10 h' readonly></td>";
