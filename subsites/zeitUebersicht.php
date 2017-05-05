@@ -2,6 +2,7 @@
 <html>
 <?php 
 include("header.php");
+include("../phpAction/timeCalcFunction.php");
 $user = $_GET['user'];
 $feiertagMal500 = 0;
 const SOLLTIME = 500;
@@ -73,48 +74,8 @@ const SOLLTIME = 500;
 							}
 
 
-							function zeitZuDez($time){
-								$floatTime = str_replace(':', '.', $time);
-								$min = substr($floatTime, 3);
-								$stund = substr($floatTime, 0,2)*60;
-								$dezmin = 100/60*$min/100;
-								$dezZeit = $stund+$min;
-								return $dezZeit;
-							}
-							function minToTime($time){
-								$rest = $time%60;
-								$hours = ($time-$rest)/60;
-								if($hours<-9){
-									$hours = $hours/-1;
-								}else if($hours<0){
-									$hours = 0 . $hours/-1;
-								}else if($hours<10){
-									$hours = 0 . $hours;
-								}
-								if($rest<(-9)){
-									$rest = $rest/-1;
-									$hours = "-".$hours;
-								}else if($rest<0){
-									$rest = 0 . ($rest/(-1));
-									$hours = "-".$hours;
-								}else if($rest<10){
-									$rest = 0 . $rest;
-								}
-								return $hours . ":" . $rest;
-							}
-							function totalColor($exact_solltime, $totalTime){
-								$totcolor = "";
-								if ($totalTime-$exact_solltime<0) {
-									$totcolor = "#E53427";
-								}else{
-									$totcolor="#3FB13F";
-								}
-								return $totcolor;
-								
-							}
-
 							$getdates = mysql_query("SELECT date_format(zeit, '%Y-%m-%d') as date FROM zeit WHERE user_id=$userID GROUP BY date_format(zeit, '%Y-%m-%d') ORDER BY date_format(zeit, '%Y-%m-%d') DESC");
-							$timetotalAll = 0;
+							$totalTimeAll = 0;
 							$numOfTimes = 0;
 							while($rowgetdates = mysql_fetch_object($getdates)){
 
@@ -176,12 +137,12 @@ const SOLLTIME = 500;
 									$totalWhileTimerRun=SOLLTIME;
 								}
 								if($totalTimeAll-mysql_num_rows($getdates)*SOLLTIME+$feiertagMal500+$totalWhileTimerRun<0){
-						$totAllColor = "#E53427";
-					}else{
-						$totAllColor="#3FB13F";
-					}
+									$totAllColor = "#E53427";
+								}else{
+									$totAllColor="#3FB13F";
+								}
 
-					
+								
 
 
 								echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form-control' value='Total: ".minToTime($totalTimeAll-mysql_num_rows($getdates)*SOLLTIME+$totalWhileTimerRun+$feiertagMal500)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'></td></tr>";
