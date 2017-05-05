@@ -104,7 +104,7 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 						echo "</td><td><input class='form-control' type='text'  value='";
 						echo minToTime($totalTime)." h' readonly></td>";
 
-						/*public function totalColor($exact_solltime){
+						public function totalColor($exact_solltime){
 						$totcolor = "";
 						if ($totalTime-$exact_solltime<0) {
 							$totcolor = "#E53427";
@@ -113,24 +113,24 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 						}
 						return $totcolor;
 							
-						}*/
+						}
 
 						
 
 						if($date =="2017-04-24"){
 
 							echo "<td><input class='form-control' type='text' value='04:10 h' readonly></td>";
-							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-250)." h' readonly style='border: solid 2px ".";'></td></tr>";
+							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-250)." h' readonly style='border: solid 2px ".totalColor($solltime-250).";'></td></tr>";
 							$totalTimeAll += $totalTime-250;
 							$feiertagMal500 += 500;
 						}else if($date =="2017-04-13"){
 							echo "<td><input class='form-control' type='text' value='06:15 h' readonly></td>";
-							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-375)." h' readonly style='border: solid 2px ".";'></td></tr>";
+							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-375)." h' readonly style='border: solid 2px ".totalColor($solltime-125).";'></td></tr>";
 							$totalTimeAll += $totalTime-375;
 							$feiertagMal500 += 500;
 						}else{
 							echo "<td><input class='form-control' type='text' value='08:20 h' readonly></td>";
-							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-$solltime)." h' readonly style='border: solid 2px ".";'></td></tr>";
+							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-$solltime)." h' readonly style='border: solid 2px ".totalColor($solltime).";'></td></tr>";
 							$totalTimeAll += $totalTime;
 						}					
 					}
