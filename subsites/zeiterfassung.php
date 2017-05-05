@@ -113,7 +113,7 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-250)." h' readonly style='border: solid 2px ".$totcolor.";'></td></tr>";
 							$totalTimeAll += $totalTime-250;
 						}else if($date =="2017-04-13"){
-							echo "<td><input class='form-control' type='text' value='06:17 h' readonly></td>";
+							echo "<td><input class='form-control' type='text' value='06:15 h' readonly></td>";
 							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-375)." h' readonly style='border: solid 2px ".$totcolor.";'></td></tr>";
 							$totalTimeAll += $totalTime-375;
 						}else{
@@ -135,34 +135,8 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 					}else{
 						$totAllColor="#3FB13F";
 					}
-					#echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form-control' value='Total: ".minToTime($totalTimeAll-mysql_num_rows($getdates)*$solltime+$totalWhileTimerRun)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'></td></tr>";
 
-
-
-
-					/*
-					*Rechnet die Sollzeit mit den Freitagen aus
-					*/
-					$all_ShortSollTime=0;
-					$ergebniss = mysql_query("SELECT zeit  FROM zeit WHERE user_id=$idUser");
-					$rows=[];
-					while ($row = mysql_fetch_object($ergebniss)) {
-						$rows[]  = $row -> zeit;
-					}
-
-					$oneAccess = true;
-					$oneAccess1 = true;
-					for ($i = 0; $i < count($rows); $i++) {
-						if(strpos($rows[$i],'2017-04-24') !==false && $oneAccess ==true){
-							$all_ShortSollTime += $solltime- 250;
-								$oneAccess = false;
-						}else if(strpos($rows[$i],'2017-04-13') !==false && $oneAccess1 == true){
-                   			$all_ShortSollTime += $solltime-375;
-                   				$oneAccess1 = false;
-						}
-					}
 					?>
-
 
 				</div>
 			</table>
