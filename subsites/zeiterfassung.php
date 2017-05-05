@@ -102,7 +102,7 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 						}
 						echo "</td><td><input class='form-control' type='text'  value='";
 						echo minToTime($totalTime)." h' readonly></td>";
-						
+						$totalTimeAll += $totalTime;
 						$totcolor = "";
 						if ($totalTime-$solltime<0) {
 							$totcolor = "#E53427";
@@ -112,15 +112,14 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 						if($date =="2017-04-24"){
 							echo "<td><input class='form-control' type='text' value='04:10 h' readonly></td>";
 							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-250)." h' readonly style='border: solid 2px ".$totcolor.";'></td></tr>";
-							$totalTimeAll += $totalTime-250;
+							//$totalTimeAll += $totalTime-250;
 						}else if($date =="2017-04-13"){
 							echo "<td><input class='form-control' type='text' value='06:17 h' readonly></td>";
 							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-375)." h' readonly style='border: solid 2px ".$totcolor.";'></td></tr>";
-							$totalTimeAll += $totalTime-375;
+							//$totalTimeAll += $totalTime-375;
 						}else{
 							echo "<td><input class='form-control' type='text' value='08:20 h' readonly></td>";
 							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-$solltime)." h' readonly style='border: solid 2px ".$totcolor.";'></td></tr>";
-							$totalTimeAll += $totalTime;
 						}					
 					}
 
@@ -138,6 +137,30 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 					}
 					#echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form-control' value='Total: ".minToTime($totalTimeAll-mysql_num_rows($getdates)*$solltime+$totalWhileTimerRun)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'></td></tr>";
 
+
+
+
+					/*
+					*Rechnet die Sollzeit mit den Freitagen aus
+					*/
+					$all_ShortSollTime=0;
+					$ergebniss = mysql_query("SELECT zeit  FROM zeit WHERE user_id=$idUser");
+					$rows=[];
+					while ($row = mysql_fetch_object($ergebniss)) {
+						$rows[]  = $row -> zeit;
+					}
+
+					$oneAccess = true;
+					$oneAccess1 = true;
+					for ($i = 0; $i < count($rows); $i++) {
+						if(strpos($rows[$i],'2017-04-24') !==false && $oneAccess ==true){
+							$all_ShortSollTime += $solltime- 250;
+								$oneAccess = false;
+						}else if(strpos($rows[$i],'2017-04-13') !==false && $oneAccess1 == true){
+                   			$all_ShortSollTime += $solltime-375;
+                   				$oneAccess1 = false;
+						}
+					}
 					?>
 
 
@@ -147,7 +170,7 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 		<div id="placeholder"></div>
 		<div align="center" id="input_container">
 			<form action="../phpAction/zeitAction.php?user=<?php echo $user ?>" method="post"><button id="savetimestamp" name="timestamp" class="inputandsubmitbtn btn">TIMER</button></form>
-			<div id="totalTimeWrap"><?php echo "<input type='text' class='form-control' value='Total: ".minToTime($totalTimeAll-mysql_num_rows($getdates)*$solltime+/*$all_ShortSollTime+*/$totalWhileTimerRun+1000)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'>"
+			<div id="totalTimeWrap"><?php echo "<input type='text' class='form-control' value='Total: ".minToTime($totalTimeAll-mysql_num_rows($getdates)*$solltime+$all_ShortSollTime+$totalWhileTimerRun)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'>"
 				?></div>
 			</div>
 		</body>
