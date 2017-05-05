@@ -136,7 +136,7 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 					else{
 						$totalWhileTimerRun=$solltime;
 					}
-					if($totalTimeAll-mysql_num_rows($getdates)*$solltime+350+$totalWhileTimerRun<0){
+					if($totalTimeAll-mysql_num_rows($getdates)*$solltime+$feiertagMal500+$totalWhileTimerRun<0){
 						$totAllColor = "#E53427";
 					}else{
 						$totAllColor="#3FB13F";
