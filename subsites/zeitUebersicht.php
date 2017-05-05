@@ -152,21 +152,21 @@ const SOLLTIME = 500;
 
 
 									if($date =="2017-04-24"){
-										$color = totalColor($solltime-250, $totalTime);
+										$color = totalColor(SOLLTIME-250, $totalTime);
 										echo "<td><input class='form-control' type='text' value='04:10 h' readonly></td>";
 										echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-250)." h' readonly style='border: solid 2px ".$color.";'></td></tr>";
 										$totalTimeAll += $totalTime-250;
 										$feiertagMal500 += SOLLTIME;
 									}else if($date =="2017-04-13"){
-										$color = totalColor($solltime-375, $totalTime);
+										$color = totalColor(SOLLTIME-375, $totalTime);
 										echo "<td><input class='form-control' type='text' value='06:15 h' readonly></td>";
 										echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-375)." h' readonly style='border: solid 2px ".$color.";'></td></tr>";
 										$totalTimeAll += $totalTime-375;
 										$feiertagMal500 += SOLLTIME;
 									}else{
-										$color = totalColor($solltime, $totalTime);
+										$color = totalColor(SOLLTIME, $totalTime);
 										echo "<td><input class='form-control' type='text' value='08:20 h' readonly></td>";
-										echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-$solltime)." h' readonly style='border: solid 2px ".$color.";'></td></tr>";
+										echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-SOLLTIME)." h' readonly style='border: solid 2px ".$color.";'></td></tr>";
 										$totalTimeAll += $totalTime;
 									}	
 								}
@@ -175,7 +175,7 @@ const SOLLTIME = 500;
 								if($numOfTimes%2===0){$totalWhileTimerRun=0;}else{
 									$totalWhileTimerRun=SOLLTIME;
 								}
-								if($totalTimeAll-mysql_num_rows($getdates)*$solltime+$feiertagMal500+$totalWhileTimerRun<0){
+								if($totalTimeAll-mysql_num_rows($getdates)*SOLLTIME+$feiertagMal500+$totalWhileTimerRun<0){
 						$totAllColor = "#E53427";
 					}else{
 						$totAllColor="#3FB13F";
@@ -184,7 +184,7 @@ const SOLLTIME = 500;
 					
 
 
-								echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form-control' value='Total: ".minToTime($totalTimeAll-mysql_num_rows($getdates)*$solltime+$totalWhileTimerRun+$feiertagMal500)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'></td></tr>";
+								echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form-control' value='Total: ".minToTime($totalTimeAll-mysql_num_rows($getdates)*SOLLTIME+$totalWhileTimerRun+$feiertagMal500)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'></td></tr>";
 
 								?>
 							</div>
