@@ -3,6 +3,7 @@
 <?php 
 include("header.php");
 $solltime = 500;
+$feiertagMal500 = 0;
 $user = $_GET['user'];
 $date = date("Y-m-d");
 $dateplus = date('Y-m-d', strtotime($date . ' +1 day'));
@@ -108,14 +109,19 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 						}else{
 							$totcolor="#3FB13F";
 						}
+
+						
+
 						if($date =="2017-04-24"){
 							echo "<td><input class='form-control' type='text' value='04:10 h' readonly></td>";
 							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-250)." h' readonly style='border: solid 2px ".$totcolor.";'></td></tr>";
 							$totalTimeAll += $totalTime-250;
+							$feiertagMal500 += 500;
 						}else if($date =="2017-04-13"){
 							echo "<td><input class='form-control' type='text' value='06:15 h' readonly></td>";
 							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-375)." h' readonly style='border: solid 2px ".$totcolor.";'></td></tr>";
 							$totalTimeAll += $totalTime-375;
+							$feiertagMal500 += 500;
 						}else{
 							echo "<td><input class='form-control' type='text' value='08:20 h' readonly></td>";
 							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-$solltime)." h' readonly style='border: solid 2px ".$totcolor.";'></td></tr>";
@@ -144,7 +150,7 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 		<div id="placeholder"></div>
 		<div align="center" id="input_container">
 			<form action="../phpAction/zeitAction.php?user=<?php echo $user ?>" method="post"><button id="savetimestamp" name="timestamp" class="inputandsubmitbtn btn">TIMER</button></form>
-			<div id="totalTimeWrap"><?php echo "<input type='text' class='form-control' value='Total: ".minToTime($totalTimeAll-mysql_num_rows($getdates)*$solltime+$totalWhileTimerRun+1000)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'>"
+			<div id="totalTimeWrap"><?php echo "<input type='text' class='form-control' value='Total: ".minToTime($totalTimeAll-mysql_num_rows($getdates)*$solltime+$totalWhileTimerRun+$feiertagMal500)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'>"
 				?></div>
 			</div>
 		</body>
