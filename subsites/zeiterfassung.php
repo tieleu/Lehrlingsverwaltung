@@ -171,7 +171,7 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 		<div id="placeholder"></div>
 		<div align="center" id="input_container">
 			<form action="../phpAction/zeitAction.php?user=<?php echo $user ?>" method="post"><button id="savetimestamp" name="timestamp" class="inputandsubmitbtn btn">TIMER</button></form>
-			<div id="totalTimeWrap"><?php echo "<input type='text' class='form-control' value='Total: ".minToTime($totalTimeAll-mysql_num_rows($getdates)*$solltime+$all_ShortSollTime+$totalWhileTimerRun)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'>"
+			<div id="totalTimeWrap"><?php echo "<input type='text' class='form-control' value='Total: ".minToTime($totalTimeAll-mysql_num_rows($getdates)*$solltime+/*$all_ShortSollTime+*/$totalWhileTimerRun)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'>"
 				?></div>
 			</div>
 		</body>
