@@ -122,9 +122,9 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 
 						if($date =="2017-04-24"){
 							$diff = $solltime-250;
-							$color = totalColor($diff, $totalTime);
 
 
+							$color = totalColor($solltime-250, $totalTime);
 							echo "<td><input class='form-control' type='text' value='04:10 h' readonly></td>";
 							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-250)." h' readonly style='border: solid 2px ".$color.";'></td></tr>";
 							$totalTimeAll += $totalTime-250;
