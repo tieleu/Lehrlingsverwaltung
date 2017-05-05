@@ -122,7 +122,7 @@ const SOLLTIME = 500;
 								echo "<tr><td>"."<input class='form-control' type='text' name='date' value='$date' placeholder='date' readonly>"."</td><td style='display:flex;'>";
 								$dateplus = date('Y-m-d', strtotime($date . ' +1 day'));
 
-								$timetotal=0;
+								$totalTime=0;
 								$counter=0;
 								$select = mysql_query("SELECT id, user_id, date_format(zeit, '%H:%i') AS zeit, date_format(zeit, '%Y-%m-%d') AS datum FROM zeit WHERE zeit>='$date' AND zeit<'$dateplus' AND user_id=$userID ORDER BY zeit");
 
@@ -135,12 +135,12 @@ const SOLLTIME = 500;
 									if(mysql_num_rows($select)%2===0){
 										$totalWhileTimerRun = 0;
 										if($counter%2===0){
-											$timetotal+=zeitZuDez($zeit);
+											$totalTime+=zeitZuDez($zeit);
 											$zeiten = $zeiten.$zeit;
 											echo $zeiten."' readonly>";
 
 										}else{
-											$timetotal-=zeitZuDez($zeit);
+											$totalTime-=zeitZuDez($zeit);
 											$zeiten = "";
 											$zeiten = $zeit." bis ";
 											echo "<input type='text' class='form-control' value='";
@@ -148,7 +148,7 @@ const SOLLTIME = 500;
 										$numOfTimes +=1;
 									}
 									echo "</td><td><input class='form-control' type='text'  value='";
-									echo minToTime($timetotal)." h' readonly></td>";
+									echo minToTime($totalTime)." h' readonly></td>";
 
 
 									if($date =="2017-04-24"){
