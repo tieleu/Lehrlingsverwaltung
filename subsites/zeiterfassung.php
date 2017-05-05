@@ -123,7 +123,7 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 							$color = totalColor($solltime-250);
 							echo ",test".$totalTime." ,";
 
-							echo "<br>"
+							echo "<br>";
 							echo " solltime".$solltime-250;
 
 							echo "<td><input class='form-control' type='text' value='04:10 h' readonly></td>";
