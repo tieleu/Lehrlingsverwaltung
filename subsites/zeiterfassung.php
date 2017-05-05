@@ -69,7 +69,7 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 
 						function totalColor($exact_solltime){
 						$totcolor = "";
-						if ($exact_solltime-$totalTime<0) {
+						if ($totalTime-$exact_solltime<0) {
 							$totcolor = "#E53427";
 						}else{
 							$totcolor="#3FB13F";
