@@ -115,12 +115,13 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 							
 						}
 
+
 						
 
 						if($date =="2017-04-24"){
-
+							$color = totalColor($totalTime-250);
 							echo "<td><input class='form-control' type='text' value='04:10 h' readonly></td>";
-							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-250)." h' readonly style='border: solid 2px ".";'></td></tr>";
+							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-250)." h' readonly style='border: solid 2px ".$color.";'></td></tr>";
 							$totalTimeAll += $totalTime-250;
 							$feiertagMal500 += 500;
 						}else if($date =="2017-04-13"){
