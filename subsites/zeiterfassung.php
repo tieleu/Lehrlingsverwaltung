@@ -67,6 +67,16 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 					return $hours . ":" . $rest;
 				}
 
+						function totalColor($exact_solltime){
+						$totcolor = "";
+						if ($totalTime-$exact_solltime<0) {
+							$totcolor = "#E53427";
+						}else{
+							$totcolor="#3FB13F";
+						}
+						return $totcolor;
+							
+						}
 				$getdates = mysql_query("SELECT date_format(zeit, '%Y-%m-%d') as date FROM zeit WHERE user_id=$idUser GROUP BY date_format(zeit, '%Y-%m-%d') ORDER BY date_format(zeit, '%Y-%m-%d') DESC");
 				$totalTimeAll = 0;
 				$numOfTimes = 0;
@@ -103,16 +113,6 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 						}
 						echo "</td><td><input class='form-control' type='text'  value='";
 						echo minToTime($totalTime)." h' readonly></td>";
-						function totalColor($exact_solltime){
-						$totcolor = "";
-						if ($totalTime-$exact_solltime<0) {
-							$totcolor = "#E53427";
-						}else{
-							$totcolor="#3FB13F";
-						}
-						return $totcolor;
-							
-						}
 
 						
 
