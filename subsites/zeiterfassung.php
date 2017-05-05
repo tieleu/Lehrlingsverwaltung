@@ -102,7 +102,7 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 						}
 						echo "</td><td><input class='form-control' type='text'  value='";
 						echo minToTime($totalTime)." h' readonly></td>";
-						$totalTimeAll += $totalTime;
+						
 						$totcolor = "";
 						if ($totalTime-$solltime<0) {
 							$totcolor = "#E53427";
@@ -112,12 +112,15 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 						if($date =="2017-04-24"){
 							echo "<td><input class='form-control' type='text' value='04:10 h' readonly></td>";
 							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-250)." h' readonly style='border: solid 2px ".$totcolor.";'></td></tr>";
+							$totalTimeAll += $totalTime-250;
 						}else if($date =="2017-04-13"){
 							echo "<td><input class='form-control' type='text' value='06:17 h' readonly></td>";
 							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-375)." h' readonly style='border: solid 2px ".$totcolor.";'></td></tr>";
+							$totalTimeAll += $totalTime-375;
 						}else{
 							echo "<td><input class='form-control' type='text' value='08:20 h' readonly></td>";
 							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-$solltime)." h' readonly style='border: solid 2px ".$totcolor.";'></td></tr>";
+							$totalTimeAll += $totalTime;
 						}					
 					}
 
