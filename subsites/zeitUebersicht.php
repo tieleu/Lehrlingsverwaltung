@@ -20,7 +20,7 @@ const SOLLTIME = 500;
 		$status = mysql_query("SELECT status from User where username=\"$user\"");
 		$status = mysql_fetch_object($status) -> status;
 		if($status == 'lehrling'){
-			header("Location: zeiterfassung.php");
+			header("Location: zeiterfassung.php?user=$user");
 		}
 	?>
 
