@@ -16,6 +16,13 @@ const SOLLTIME = 500;
 	<title>Lehrverwaltung - Zeit Übersicht</title>
 </head>
 <body>
+	<?php
+		$status = mysql_query("SELECT status from User where username=\"$user\"");
+		$status = mysql_fetch_object($status) -> status;
+		if($status == 'lehrling'){
+			header("Location: zeiterfassung.php");
+		}
+	?>
 
 	<div class="panel panel-default" id="uebersicht_container">
 			<div class="panel-heading">
