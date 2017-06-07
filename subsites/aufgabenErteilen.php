@@ -22,13 +22,13 @@
 				<div class="form-group">
 					<?php
 					$ausgabe = "select vorname, idUser from User where status = 'lehrling'";
-					$ergebniss = mysql_query($ausgabe);
+					$ergebniss = mysqli_query($db, $ausgabe);
 					?>
 					<label for="exampleInputEmail1">Lehrling</label>
 					<select required="true" class="form-control" name="Lehrlinge">
 						<option value="" disabled selected hidden></option>
 						<?php
-						while ($row = mysql_fetch_object($ergebniss)) {
+						while ($row = mysqli_fetch_object($ergebniss)) {
 							?>
 							<div class="form-group">
 								<option><?php echo  $row-> vorname  ?>  </option>
@@ -56,14 +56,14 @@
 				</div>
 				<?php
 				$ausgabe = "select name, idUebung from Uebung";
-				$ergebniss = mysql_query($ausgabe);
+				$ergebniss = mysqli_query($db, $ausgabe);
 				?>
 				<label for="exampleInputEmail1">Übungen</label>
 				<select place class="form-control" name="uebungen">
 					<option value=" " disabled selected hidden></option>
 
 					<?php
-					while ($row = mysql_fetch_object($ergebniss)) {
+					while ($row = mysqli_fetch_object($ergebniss)) {
 						?>
 						<div class="form-group">
 							<option><?php echo  $row-> name  ?>  </option>

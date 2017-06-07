@@ -7,9 +7,9 @@ session_cache_limiter(3600);
 include("../db/db_connection.php");
 $nameOfUser = $_GET['user']; 	
 $sessionUser =$_SESSION['login_user'];
-$rowsuser = mysql_query("SELECT idUser FROM User WHERE username = '$nameOfUser'", $conn);
+$rowsuser = mysqli_query($db, "SELECT idUser FROM User WHERE username = '$nameOfUser'", $conn);
 $idUser = 0;
-while($row = mysql_fetch_object($rowsuser)){
+while($row = mysqli_fetch_object($rowsuser)){
 	$idUser = $row -> idUser;
 }
 

@@ -51,7 +51,7 @@ $user = $_GET['user'];
     </div>
 
     <?php 
-        $status = mysql_fetch_object(mysql_query("SELECT status FROM User WHERE username='$user'")) -> status;
+        $status = mysqli_fetch_object(mysqli_query($db, "SELECT status FROM User WHERE username='$user'")) -> status;
         if($status=="lehrmeister"){
     ?>
 
@@ -63,7 +63,7 @@ $user = $_GET['user'];
         <div class="selectwrapper">
             <?php
             $ausgabe = "SELECT vorname, username from User where username!='$user'";
-            $ergebniss = mysql_query($ausgabe);
+            $ergebniss = mysqli_query($db, $ausgabe);
             ?>
             <label for="select" class="form-group form-inline labelforPW">Vorname </label>
                 <select id="select" class="form-control labelforPW" name="select" required>
@@ -72,7 +72,7 @@ $user = $_GET['user'];
 
                     $selectOption = $_POST['select'];
                     
-                    while ($row = mysql_fetch_object($ergebniss)) {
+                    while ($row = mysqli_fetch_object($ergebniss)) {
                         $vorname = $row -> vorname;
                         
                         if($vorname == $selectOption){

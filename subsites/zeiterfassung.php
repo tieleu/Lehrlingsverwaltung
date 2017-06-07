@@ -8,9 +8,9 @@ $feiertagMal500 = 0;
 $user = $_GET['user'];
 $date = date("Y-m-d");
 $dateplus = date('Y-m-d', strtotime($date . ' +1 day'));
-$check = mysql_query("SELECT * FROM zeit WHERE zeit>='$date' AND zeit<'$dateplus' AND user_id=$idUser");
-if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
-	if(mysql_num_rows($check)%2===0){
+$check = mysqli_query($db, "SELECT * FROM zeit WHERE zeit>='$date' AND zeit<'$dateplus' AND user_id=$idUser");
+if(mysqli_num_rows($check)>0 && mysqli_num_rows($check)!=null){
+	if(mysqli_num_rows($check)%2===0){
 		setcookie("timer","green", time() + (3600*12 ), "/");
 	}else{
 		setcookie("timer", "red", time() + (3600*12), "/");
@@ -39,10 +39,10 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 				<?php
 
 
-				$getdates = mysql_query("SELECT date_format(zeit, '%Y-%m-%d') as date FROM zeit WHERE user_id=$idUser GROUP BY date_format(zeit, '%Y-%m-%d') ORDER BY date_format(zeit, '%Y-%m-%d') DESC");
+				$getdates = mysqli_query($db, "SELECT date_format(zeit, '%Y-%m-%d') as date FROM zeit WHERE user_id=$idUser GROUP BY date_format(zeit, '%Y-%m-%d') ORDER BY date_format(zeit, '%Y-%m-%d') DESC");
 				$totalTimeAll = 0;
 				$numOfTimes = 0;
-				while($rowgetdates = mysql_fetch_object($getdates)){
+				while($rowgetdates = mysqli_fetch_object($getdates)){
 
 					$date = $rowgetdates -> date;
 					echo "<tr><td>"."<input class='form-control' type='text' name='date' value='$date' placeholder='date' readonly>"."</td><td style='display:flex;'>";
@@ -50,15 +50,15 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 
 					$totalTime=0;
 					$counter=0;
-					$select = mysql_query("SELECT id, user_id, date_format(zeit, '%H:%i') AS zeit, date_format(zeit, '%Y-%m-%d') AS datum FROM zeit WHERE zeit>='$date' AND zeit<'$dateplus' AND user_id=$idUser ORDER BY zeit");
+					$select = mysqli_query($db, "SELECT id, user_id, date_format(zeit, '%H:%i') AS zeit, date_format(zeit, '%Y-%m-%d') AS datum FROM zeit WHERE zeit>='$date' AND zeit<'$dateplus' AND user_id=$idUser ORDER BY zeit");
 
-					while ($row = mysql_fetch_object($select)) {
+					while ($row = mysqli_fetch_object($select)) {
 						$counter++;
 						$id = $row -> id;
 						$user_id = $row -> user_id;
 						$datum = $row -> datum;
 						$zeit = $row -> zeit;
-						if(mysql_num_rows($select)%2===0){
+						if(mysqli_num_rows($select)%2===0){
 							$totalWhileTimerRun = 0;
 							if($counter%2===0){
 								$totalTime+=zeitZuDez($zeit);
@@ -103,7 +103,7 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 					else{
 						$totalWhileTimerRun=$solltime;
 					}
-					if($totalTimeAll-mysql_num_rows($getdates)*$solltime+$feiertagMal500+$totalWhileTimerRun<0){
+					if($totalTimeAll-mysqli_num_rows($getdates)*$solltime+$feiertagMal500+$totalWhileTimerRun<0){
 						$totAllColor = "#E53427";
 					}else{
 						$totAllColor="#3FB13F";
@@ -117,7 +117,7 @@ if(mysql_num_rows($check)>0 && mysql_num_rows($check)!=null){
 		<div id="placeholder"></div>
 		<div align="center" id="input_container">
 			<form action="../phpAction/zeitAction.php?user=<?= $user ?>" method="post"><button id="savetimestamp" name="timestamp" class="inputandsubmitbtn btn">TIMER</button></form>
-			<div id="totalTimeWrap"><?php echo "<input type='text' class='form-control' value='Total: ".minToTime($totalTimeAll-mysql_num_rows($getdates)*$solltime+$totalWhileTimerRun+$feiertagMal500)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'>"
+			<div id="totalTimeWrap"><?php echo "<input type='text' class='form-control' value='Total: ".minToTime($totalTimeAll-mysqli_num_rows($getdates)*$solltime+$totalWhileTimerRun+$feiertagMal500)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'>"
 				?></div>
 			</div>
 		</body>

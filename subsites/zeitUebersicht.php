@@ -17,8 +17,8 @@ const SOLLTIME = 500;
 </head>
 <body>
 	<?php
-		$status = mysql_query("SELECT status from User where username=\"$user\"");
-		$status = mysql_fetch_object($status) -> status;
+		$status = mysqli_query($db, "SELECT status from User where username=\"$user\"");
+		$status = mysqli_fetch_object($status) -> status;
 		if($status == 'lehrling'){
 			header("Location: zeiterfassung.php?user=$user");
 		}
@@ -28,7 +28,7 @@ const SOLLTIME = 500;
 			<div class="panel-heading">
 				<?php
 				$ausgabe = "SELECT vorname, username from User where status = 'lehrling'";
-				$ergebniss = mysql_query($ausgabe);
+				$ergebniss = mysqli_query($db, $ausgabe);
 				?>
 				<form action="" method="post">
 					<select id="select" name="select" onchange="this.form.submit()" style="width: 170px; height: 35px;">
@@ -37,7 +37,7 @@ const SOLLTIME = 500;
 	
 						$selectOption = $_POST['select'];
 						
-						while ($row = mysql_fetch_object($ergebniss)) {
+						while ($row = mysqli_fetch_object($ergebniss)) {
 							$vorname = $row -> vorname;
 							
 							if($vorname == $selectOption){
@@ -74,18 +74,18 @@ const SOLLTIME = 500;
 	
 	
 								$getUserID ="SELECT idUser from User where vorname='$selectOption'";
-								$ergebnisOfUserID = mysql_query($getUserID);	
+								$ergebnisOfUserID = mysqli_query($db, $getUserID);	
 	
 								$userID =0;
-								while($row = mysql_fetch_object($ergebnisOfUserID)){
+								while($row = mysqli_fetch_object($ergebnisOfUserID)){
 									$userID = $row -> idUser;
 								}
 	
 	
-								$getdates = mysql_query("SELECT date_format(zeit, '%Y-%m-%d') as date FROM zeit WHERE user_id=$userID GROUP BY date_format(zeit, '%Y-%m-%d') ORDER BY date_format(zeit, '%Y-%m-%d') DESC");
+								$getdates = mysqli_query($db, "SELECT date_format(zeit, '%Y-%m-%d') as date FROM zeit WHERE user_id=$userID GROUP BY date_format(zeit, '%Y-%m-%d') ORDER BY date_format(zeit, '%Y-%m-%d') DESC");
 								$totalTimeAll = 0;
 								$numOfTimes = 0;
-								while($rowgetdates = mysql_fetch_object($getdates)){
+								while($rowgetdates = mysqli_fetch_object($getdates)){
 	
 									$date = $rowgetdates -> date;
 									echo "<tr><td>"."<input class='form-control' type='text' name='date' value='$date' placeholder='date' readonly>"."</td><td style='display:flex;'>";
@@ -93,15 +93,15 @@ const SOLLTIME = 500;
 	
 									$totalTime=0;
 									$counter=0;
-									$select = mysql_query("SELECT id, user_id, date_format(zeit, '%H:%i') AS zeit, date_format(zeit, '%Y-%m-%d') AS datum FROM zeit WHERE zeit>='$date' AND zeit<'$dateplus' AND user_id=$userID ORDER BY zeit");
+									$select = mysqli_query($db, "SELECT id, user_id, date_format(zeit, '%H:%i') AS zeit, date_format(zeit, '%Y-%m-%d') AS datum FROM zeit WHERE zeit>='$date' AND zeit<'$dateplus' AND user_id=$userID ORDER BY zeit");
 	
-									while ($row = mysql_fetch_object($select)) {
+									while ($row = mysqli_fetch_object($select)) {
 										$counter++;
 										$id = $row -> id;
 										$user_id = $row -> user_id;
 										$datum = $row -> datum;
 										$zeit = $row -> zeit;
-										if(mysql_num_rows($select)%2===0){
+										if(mysqli_num_rows($select)%2===0){
 											$totalWhileTimerRun = 0;
 											if($counter%2===0){
 												$totalTime+=zeitZuDez($zeit);
@@ -144,7 +144,7 @@ const SOLLTIME = 500;
 									if($numOfTimes%2===0){$totalWhileTimerRun=0;}else{
 										$totalWhileTimerRun=SOLLTIME;
 									}
-									if($totalTimeAll-mysql_num_rows($getdates)*SOLLTIME+$feiertagMal500+$totalWhileTimerRun<0){
+									if($totalTimeAll-mysqli_num_rows($getdates)*SOLLTIME+$feiertagMal500+$totalWhileTimerRun<0){
 										$totAllColor = "#E53427";
 									}else{
 										$totAllColor="#3FB13F";
@@ -153,7 +153,7 @@ const SOLLTIME = 500;
 									
 	
 	
-									echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form-control' value='Total: ".minToTime($totalTimeAll-mysql_num_rows($getdates)*SOLLTIME+$totalWhileTimerRun+$feiertagMal500)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'></td></tr>";
+									echo "<tr><td></td><td></td><td></td><td></td><td><input type='text' class='form-control' value='Total: ".minToTime($totalTimeAll-mysqli_num_rows($getdates)*SOLLTIME+$totalWhileTimerRun+$feiertagMal500)." h' readonly style='background-color: ".$totAllColor."; font-weight: bold;'></td></tr>";
 	
 									?>
 								</div>

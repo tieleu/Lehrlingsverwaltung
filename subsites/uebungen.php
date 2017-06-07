@@ -35,8 +35,8 @@
 
 <?php
 $ausgabe = "select * from Uebung";
-$ergebniss = mysql_query($ausgabe);
-while ($row = mysql_fetch_object($ergebniss)) {
+$ergebniss = mysqli_query($db, $ausgabe);
+while ($row = mysqli_fetch_object($ergebniss)) {
 ?>
 <div class="zeile">
 <tr class="zeile">
