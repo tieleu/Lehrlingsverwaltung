@@ -15,7 +15,7 @@
 		<div class="panel-heading">
 			<?php
 			$ausgabe = "SELECT vorname, username from User where status = 'lehrling'";
-			$ergebniss = mysql_query($ausgabe);
+			$ergebniss = mysqli_query($db, $ausgabe);
 			?>
 			<form action="" method="post">
 				<select id="select" name="select" onchange="this.form.submit()" style="width: 170px; height: 35px;">
@@ -24,7 +24,7 @@
 
 					$selectOption = $_POST['select'];
 					
-					while ($row = mysql_fetch_object($ergebniss)) {
+					while ($row = mysqli_fetch_object($ergebniss)) {
 						$vorname = $row -> vorname;
 						
 						if($vorname == $selectOption){
@@ -56,16 +56,16 @@
 
 					<?php
 					$getUserID ="SELECT idUser from User where vorname='$selectOption'";
-					$ergebnisOfUserID = mysql_query($getUserID);	
+					$ergebnisOfUserID = mysqli_query($db, $getUserID);	
 
 					$userID =0;
-					while($row = mysql_fetch_object($ergebnisOfUserID)){
+					while($row = mysqli_fetch_object($ergebnisOfUserID)){
 						$userID = $row -> idUser;
 					}
 					$ausgabe = "SELECT * from Aufgaben where User_idUser=$userID";
-					$ergebniss = mysql_query($ausgabe);
+					$ergebniss = mysqli_query($db, $ausgabe);
 
-					while ($row = mysql_fetch_object($ergebniss)) {
+					while ($row = mysqli_fetch_object($ergebniss)) {
 						$prio = $row-> prioritaet;
 						$id = $row -> idAufgaben;
 						?>

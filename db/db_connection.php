@@ -3,10 +3,13 @@ $servername = "172.16.44.5";
 $username = "lehrling";
 $password = "";
 
-$conn =mysql_connect($servername, $username, $password)
-or die("Fehler im System");
+$db =mysqli_connect($servername, $username, $password);
+if(!$db)
+{
+  exit("Verbindungsfehler: ".mysqli_connect_error());
+}else{
 
-mysql_select_db("Lehrverwaltung");
-mysql_query("SET NAMES 'utf8'",$conn);
+mysqli_select_db($db,"lehrverwaltung");
+}
 
 ?>

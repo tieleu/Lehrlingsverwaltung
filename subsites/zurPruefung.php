@@ -25,8 +25,8 @@ include("header.php");
 <?php
 
 $ausgabe = "SELECT a.User_idUser,a.uebung,a.komentar,a.idAufgaben, u.vorname from Aufgaben a, User u where a.pruefen = 1 AND a.User_idUser = u.idUser";
-$ergebniss = mysql_query($ausgabe);
-while ($row = mysql_fetch_object($ergebniss)) {
+$ergebniss = mysqli_query($db, $ausgabe);
+while ($row = mysqli_fetch_object($ergebniss)) {
   $id = $row -> idAufgaben;
 ?>
 

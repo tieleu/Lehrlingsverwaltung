@@ -15,7 +15,7 @@ $user = $_GET['user'];
  	if(isset($_POST['erfüllt'])){
 
 	 $query = "DELETE FROM Aufgaben WHERE idAufgaben=$id";
-   	 $result = mysql_query($query);
+   	 $result = mysqli_query($db, $query);
 
 
 }
@@ -33,7 +33,7 @@ $user = $_GET['user'];
 	$id1 = $_GET['aufgaben'];
 
 	 $query1 = "UPDATE Aufgaben SET pruefen = 0 WHERE idAufgaben=$id1";
-   	 $result1 = mysql_query($query1);
+   	 $result1 = mysqli_query($db, $query1);
 
 
 }

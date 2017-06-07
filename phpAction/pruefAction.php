@@ -14,7 +14,7 @@ $user = $_GET['user'];
 	
 
 	 $query = "UPDATE Aufgaben SET pruefen = 1 WHERE idAufgaben=$aufgabenID";
-   	 $result = mysql_query($query);
+   	 $result = mysqli_query($db, $query);
 
 
 }

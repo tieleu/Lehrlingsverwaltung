@@ -19,19 +19,19 @@ $user = $_GET['user'];
 
 
 		$ausgabe = "SELECT idUser from User WHERE vorname='$lehrlinge'";
-		$ergebniss = mysql_query($ausgabe);
+		$ergebniss = mysqli_query($db, $ausgabe);
 		$idUser ="";
 
-		while($row = mysql_fetch_object($ergebniss)){
+		while($row = mysqli_fetch_object($ergebniss)){
 		$idUser = $row -> idUser;
 
 }
 
 		$ausgabe1 = "SELECT idUebung from Uebung WHERE name='$uebungen'";
-		$ergebniss = mysql_query($ausgabe1);
+		$ergebniss = mysqli_query($db, $ausgabe1);
 		$idUebung ="";
 
-		while($row = mysql_fetch_object($ergebniss)){
+		while($row = mysqli_fetch_object($ergebniss)){
 		$idUebung = $row -> idUebung;
 
 }
@@ -44,7 +44,7 @@ $user = $_GET['user'];
 
  		setcookie("erteilenStatus", "SUCCESSFUL:\nAufgabe erfolgereich erteilt!", time() + (86400 * 30), "/lehrlingsverwaltung");
 
-	$result=mysql_query($query);
+	$result=mysqli_query($db, $query);
  		}
  		 if($result){
  		echo "Successful";

@@ -118,7 +118,7 @@ fieldset[disabled] .inputandsubmitbtn.focus {
 #savetimestamp{
   margin-top: 10px;
 }
-#timeTotalWrap{
+#totalTimeWrap{
   margin-top: 10px;
   display: inline-block;
 }

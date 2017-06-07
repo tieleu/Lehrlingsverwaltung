@@ -6,8 +6,8 @@
 	$user = $_GET['user'];
 
 	$idUser;
-	$getId = mysql_query("SELECT idUser FROM User WHERE username = '$user'", $conn);
-	while($row = mysql_fetch_object($getId)){
+	$getId = mysqli_query($db, "SELECT idUser FROM User WHERE username = '$user'", $conn);
+	while($row = mysqli_fetch_object($getId)){
 		$idUser = $row -> idUser;
 	}
 	?>
@@ -24,7 +24,7 @@
 			if (isset($_POST['savenote'])) {
 				$auswahl = $_POST['schulfachselect'];
 				$note = $_POST['grade'];
-				mysql_query("INSERT INTO Noten (note,Schulfach_idSchulfach,User_idUser) VALUES ($note,$auswahl,$idUser)");
+				mysqli_query($db, "INSERT INTO Noten (note,Schulfach_idSchulfach,User_idUser) VALUES ($note,$auswahl,$idUser)");
 				}
 			?>
 	<div id="uebersicht">
@@ -44,22 +44,22 @@
 			<tbody>
 				<?php
 				#Die IDs der Fächer in denen ein bestimmter Nutzer noten gespeichert hat holen.
-					$getfaecher = mysql_query("SELECT * FROM Noten JOIN Schulfach ON Noten.Schulfach_idSchulfach=Schulfach.idSchulfach WHERE User_idUser=$idUser AND modulOderSchule='m' GROUP BY idSchulfach");
-					while($row = mysql_fetch_object($getfaecher)){
+					$getfaecher = mysqli_query($db, "SELECT * FROM Noten JOIN Schulfach ON Noten.Schulfach_idSchulfach=Schulfach.idSchulfach WHERE User_idUser=$idUser AND modulOderSchule='m' GROUP BY idSchulfach");
+					while($row = mysqli_fetch_object($getfaecher)){
 						$schulfachID = $row -> idSchulfach;
 						$fachname = $row -> Name;
 						echo "<tr><td><input class='fach-ausgabe' type='text' value='$fachname' readonly></td><td>";
 						#Die Schulnoten der einzelnen fächer holen
-						$getNoten = mysql_query("SELECT * FROM Noten JOIN Schulfach ON Noten.Schulfach_idSchulfach=Schulfach.idSchulfach WHERE User_idUser=$idUser AND idSchulfach=$schulfachID ORDER BY idSchulfach");
-						$numOfGrades = 100/mysql_num_rows($getNoten)-1 . "%";
+						$getNoten = mysqli_query($db, "SELECT * FROM Noten JOIN Schulfach ON Noten.Schulfach_idSchulfach=Schulfach.idSchulfach WHERE User_idUser=$idUser AND idSchulfach=$schulfachID ORDER BY idSchulfach");
+						$numOfGrades = 100/mysqli_num_rows($getNoten)-1 . "%";
 						$allGrades = 0;
-						while($row1 = mysql_fetch_object($getNoten)){
+						while($row1 = mysqli_fetch_object($getNoten)){
 							$note = $row1 -> note;
 							$allGrades += $note;
 							?><input class='noten-ausgabe' type='number' style='width: <?php echo $numOfGrades; ?>;' value='<?php echo $note; ?>' readonly><?php
 						}
 						#auf viertel runden
-						$notenSchnitt = round($allGrades/mysql_num_rows($getNoten), 2);
+						$notenSchnitt = round($allGrades/mysqli_num_rows($getNoten), 2);
 						$notenSchnitt = round($notenSchnitt/0.25);
 						$notenSchnitt = $notenSchnitt*0.25;
 
@@ -84,22 +84,22 @@
 			<tbody>
 				<?php
 				#Die IDs der Fächer in denen ein bestimmter Nutzer noten gespeichert hat holen.
-					$getschulfaecher = mysql_query("SELECT * FROM Noten JOIN Schulfach ON Noten.Schulfach_idSchulfach=Schulfach.idSchulfach WHERE User_idUser=$idUser AND modulOderSchule='s' GROUP BY idSchulfach");
-					while($row = mysql_fetch_object($getschulfaecher)){
+					$getschulfaecher = mysqli_query($db, "SELECT * FROM Noten JOIN Schulfach ON Noten.Schulfach_idSchulfach=Schulfach.idSchulfach WHERE User_idUser=$idUser AND modulOderSchule='s' GROUP BY idSchulfach");
+					while($row = mysqli_fetch_object($getschulfaecher)){
 						$schulfachID = $row -> idSchulfach;
 						$fachname = $row -> Name;
 						echo "<tr><td><input class='fach-ausgabe' type='text' value='$fachname' readonly></td><td>";
 						#Die Schulnoten der einzelnen fächer holen
-						$getschulNoten = mysql_query("SELECT * FROM Noten JOIN Schulfach ON Noten.Schulfach_idSchulfach=Schulfach.idSchulfach WHERE User_idUser=$idUser AND idSchulfach=$schulfachID ORDER BY idSchulfach");
-						$numOfGradesschool = 100/mysql_num_rows($getschulNoten)-1 . "%";
+						$getschulNoten = mysqli_query($db, "SELECT * FROM Noten JOIN Schulfach ON Noten.Schulfach_idSchulfach=Schulfach.idSchulfach WHERE User_idUser=$idUser AND idSchulfach=$schulfachID ORDER BY idSchulfach");
+						$numOfGradesschool = 100/mysqli_num_rows($getschulNoten)-1 . "%";
 						$allSGrades = 0;
-						while($row1 = mysql_fetch_object($getschulNoten)){
+						while($row1 = mysqli_fetch_object($getschulNoten)){
 							$noteschule = $row1 -> note;
 							$allSGrades += $noteschule;
 							?><input class='noten-ausgabe' type='number' style='width: <?php echo $numOfGradesschool; ?>;' value='<?php echo $noteschule; ?>' readonly><?php
 						}
 						#auf viertel runden
-						$notenSchnittS = round($allSGrades/mysql_num_rows($getschulNoten), 2);
+						$notenSchnittS = round($allSGrades/mysqli_num_rows($getschulNoten), 2);
 						$notenSchnittS = round($notenSchnittS/0.25);
 						$notenSchnittS = $notenSchnittS*0.25;
 						echo "</td><td><input class='noten-ausgabe' type='number' value='$notenSchnittS' readonly></td></tr>";
@@ -125,8 +125,8 @@
 						<td>
 							<select class="inputandsubmitbtn form-control" id="selectfach" name="schulfachselect">
 								<?php
-								$faecher = mysql_query("SELECT * FROM Schulfach");
-								while ($row = mysql_fetch_object($faecher)) {
+								$faecher = mysqli_query($db, "SELECT * FROM Schulfach");
+								while ($row = mysqli_fetch_object($faecher)) {
 								$fach = $row -> Name;
 								$id = $row -> idSchulfach;
 								?>
