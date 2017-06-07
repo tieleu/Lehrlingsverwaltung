@@ -1,7 +1,7 @@
 <?php  
 $servername = "172.16.44.5";
 $username = "lehrling";
-$password = "sec1.01";
+$password = "";
 
 $conn =mysql_connect($servername, $username, $password)
 or die("Fehler im System");
