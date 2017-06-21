@@ -82,7 +82,7 @@ if(mysqli_num_rows($check)>0 && mysqli_num_rows($check)!=null){
 							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-250)." h' readonly style='border: solid 2px ".$color.";'></td></tr>";
 							$totalTimeAll += $totalTime-250;
 							$feiertagMal500 += 500;
-						}else if($date =="2017-04-13" && $date == "2017-05-24"){
+						}else if($date =="2017-04-13"and $date == "2017-05-24"){
 							$color = totalColor($solltime-375, $totalTime);
 							echo "<td><input class='form-control' type='text' value='06:15 h' readonly></td>";
 							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-375)." h' readonly style='border: solid 2px ".$color.";'></td></tr>";
