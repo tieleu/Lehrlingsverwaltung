@@ -8,6 +8,7 @@ function zeitZuDez($time){
 	$dezZeit = $stund+$min;
 	return $dezZeit;
 }
+
 function minToTime($time){
 	$rest = $time%60;
 	$hours = ($time-$rest)/60;
