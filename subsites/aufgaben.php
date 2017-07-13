@@ -64,8 +64,7 @@
 					}
 					$ausgabe = "SELECT * from Aufgaben where User_idUser=$userID";
 					$ergebniss = mysqli_query($db, $ausgabe);
-
-					while ($row = mysqli_fetch_object($ergebniss)) {
+              	while ($row = mysqli_fetch_object($ergebniss)) {
 						$prio = $row-> prioritaet;
 						$id = $row -> idAufgaben;
 						?>
