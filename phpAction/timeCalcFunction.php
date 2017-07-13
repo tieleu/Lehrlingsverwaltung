@@ -43,31 +43,12 @@ function totalColor($exact_solltime, $totalTime){
 }
 
 function getCurrentDifference($workedTime){
-$servername = "172.16.44.5";
-$username = "lehrling";
-$password = "sec1.01";
-
-$db =mysqli_connect($servername, $username, $password);
-if(!$db)
-{
-  exit("Verbindungsfehler: ".mysqli_connect_error());
-}else{
-
-mysqli_select_db($db,"lehrverwaltung");
-}
-
-$nameOfUser = $_GET['user']; 	
-$sessionUser =$_SESSION['login_user'];
-$rowsuser = mysqli_query($db, "SELECT idUser FROM User WHERE username = '$nameOfUser'");
-$idUser = 0;
-while($row = mysqli_fetch_object($rowsuser)){
-	$idUser = $row -> idUser;
-}
-
+global $db;
+global $idUser;
 	if($workedTime==0){
 	$date = date("Y-m-d");
 		$dateplus = date('Y-m-d', strtotime($date . ' +1 day'));
-	$select = mysqli_query($db, "SELECT id, user_id, date_format(zeit, '%H:%i') AS zeit, date_format(zeit, '%Y-%m-%d') AS datum FROM zeit WHERE zeit>='$date' AND zeit<'$dateplus' AND user_id=$idUser ORDER BY zeit desc");
+	$select = mysqli_query($db, "SELECT id, user_id, date_format(zeit, '%H:%i') AS zeit, date_format(zeit, '%Y-%m-%d') AS datum FROM zeit WHERE zeit>='$date' AND zeit<'$dateplus' AND user_id= $idUser ORDER BY zeit desc");
 	$actualTime = date("H:i");
 		$timeTotal = 0;
 		$array = array();
