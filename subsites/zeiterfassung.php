@@ -37,8 +37,6 @@ if(mysqli_num_rows($check)>0 && mysqli_num_rows($check)!=null){
 			  </tr>
 			<div id="zeile">
 				<?php
-
-
 				$getdates = mysqli_query($db, "SELECT date_format(zeit, '%Y-%m-%d') as date FROM zeit WHERE user_id=$idUser GROUP BY date_format(zeit, '%Y-%m-%d') ORDER BY date_format(zeit, '%Y-%m-%d') DESC");
 				$totalTimeAll = 0;
 				$numOfTimes = 0;

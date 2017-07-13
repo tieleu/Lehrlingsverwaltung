@@ -45,6 +45,7 @@ function totalColor($exact_solltime, $totalTime){
 function getCurrentDifference($workedTime){
 global $db;
 global $idUser;
+
 	if($workedTime==0){
 	$date = date("Y-m-d");
 		$dateplus = date('Y-m-d', strtotime($date . ' +1 day'));
@@ -56,9 +57,7 @@ global $idUser;
 	$array[] = $actualTime;
 	while ($row1 = mysqli_fetch_object($select)) {
 		$array[] = $row1 -> zeit;
-
 	}
-		
 	for ($i=0; $i < count($array); $i++) { 
 		#echo $array[$i] ."====";
 		if($i%2==0){
@@ -68,8 +67,6 @@ global $idUser;
 		}
 	}
 	return $timeTotal;
-
-
 }else{
 	return $workedTime;
 }
