@@ -1,6 +1,5 @@
 <?php
 
-
 function zeitZuDez($time){
 	$floatTime = str_replace(':', '.', $time);
 	$min = substr($floatTime, 3);
@@ -59,7 +58,6 @@ global $idUser;
 		$array[] = $row1 -> zeit;
 	}
 	for ($i=0; $i < count($array); $i++) { 
-		#echo $array[$i] ."====";
 		if($i%2==0){
 			$timeTotal+=zeitZuDez($array[$i]);
 		}else{

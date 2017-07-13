@@ -35,7 +35,7 @@ echo $password;
 		$error = "Username or Password is invalid";
 		$_SESSION['eingeloggt'] = false;
 		setcookie("passwortCheck", "false");
-		//header("Location: login.html");
+		header("Location: login.html");
 	}
 }
 ?>
