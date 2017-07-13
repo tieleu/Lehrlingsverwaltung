@@ -54,9 +54,6 @@ if(mysqli_num_rows($check)>0 && mysqli_num_rows($check)!=null){
 
 					while ($row = mysqli_fetch_object($select)) {
 						$counter++;
-						$id = $row -> id;
-						$user_id = $row -> user_id;
-						$datum = $row -> datum;
 						$zeit = $row -> zeit;
 						if(mysqli_num_rows($select)%2===0){
 							$totalWhileTimerRun = 0;
@@ -69,30 +66,33 @@ if(mysqli_num_rows($check)>0 && mysqli_num_rows($check)!=null){
 								$zeiten = "";
 								$zeiten = $zeit." bis ";
 								echo "<input type='text' class='form-control inputzeiten' value='";
-							}}else{$totalWhileTimerRun = $solltime;}
+							}
+							}else{
+								$totalWhileTimerRun = $solltime;
+							}
 							$numOfTimes += 1;
 
 						}
 						echo "</td><td><input class='form-control' type='text'  value='";
-						echo minToTime($totalTime)." h' readonly></td>";
+						echo minToTime(getCurrentDifference($totalTime))." h' readonly></td>";
 
 						if($date =="2017-04-24"){
-							$color = totalColor($solltime-250, $totalTime);
+							$color = totalColor($solltime-250, getCurrentDifference($totalTime));
 							echo "<td><input class='form-control' type='text' value='04:10 h' readonly></td>";
-							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-250)." h' readonly style='border: solid 2px ".$color.";'></td></tr>";
-							$totalTimeAll += $totalTime-250;
+							echo "<td><input class='form-control' type='text' value='".minToTime(getCurrentDifference($totalTime)-250)." h' readonly style='border: solid 2px ".$color.";'></td></tr>";
+							$totalTimeAll += getCurrentDifference($totalTime)-250;
 							$feiertagMal500 += 500;
 						}else if($date =="2017-04-13" || $date == "2017-05-24"){
-							$color = totalColor($solltime-375, $totalTime);
+							$color = totalColor($solltime-375, getCurrentDifference($totalTime));
 							echo "<td><input class='form-control' type='text' value='06:15 h' readonly></td>";
-							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-375)." h' readonly style='border: solid 2px ".$color.";'></td></tr>";
-							$totalTimeAll += $totalTime-375;
+							echo "<td><input class='form-control' type='text' value='".minToTime(getCurrentDifference($totalTime)-375)." h' readonly style='border: solid 2px ".$color.";'></td></tr>";
+							$totalTimeAll += getCurrentDifference($totalTime)-375;
 							$feiertagMal500 += 500;
 						}else{
-							$color = totalColor($solltime, $totalTime);
+							$color = totalColor($solltime, getCurrentDifference($totalTime));
 							echo "<td><input class='form-control' type='text' value='08:20 h' readonly></td>";
-							echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-$solltime)." h' readonly style='border: solid 2px ".$color.";'></td></tr>";
-							$totalTimeAll += $totalTime;
+							echo "<td><input class='form-control' type='text' value='".minToTime(getCurrentDifference($totalTime)-$solltime)." h' readonly style='border: solid 2px ".$color.";'></td></tr>";
+							$totalTimeAll += getCurrentDifference($totalTime);
 						}					
 					}
 
