@@ -6,7 +6,7 @@
 	$user = $_GET['user'];
 
 	$idUser;
-	$getId = mysqli_query($db, "SELECT idUser FROM User WHERE username = '$user'", $conn);
+	$getId = mysqli_query($db, "SELECT idUser FROM User WHERE username = '$user'");
 	while($row = mysqli_fetch_object($getId)){
 		$idUser = $row -> idUser;
 	}
@@ -56,7 +56,9 @@
 						while($row1 = mysqli_fetch_object($getNoten)){
 							$note = $row1 -> note;
 							$allGrades += $note;
-							?><input class='noten-ausgabe' type='number' style='width: <?php echo $numOfGrades; ?>;' value='<?php echo $note; ?>' readonly><?php
+							?>
+							<input class='noten-ausgabe' type='number' style='width: <?php echo $numOfGrades; ?>;' value='<?php echo $note; ?>' readonly>
+							<?php
 						}
 						#auf viertel runden
 						$notenSchnitt = round($allGrades/mysqli_num_rows($getNoten), 2);

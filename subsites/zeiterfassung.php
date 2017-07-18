@@ -34,6 +34,7 @@ if(mysqli_num_rows($check)>0 && mysqli_num_rows($check)!=null){
 				<th>Sollzeit</th>
 				<th>Differenz</th>
 			  </tr>
+			
 			<div id="zeile">
 				<?php
 				$totalTimeAll = 0;
