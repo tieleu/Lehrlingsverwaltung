@@ -1,0 +1,10 @@
+.patternNav{
+  position: absolute;
+  top: 10em;
+  left: 10px;
+  .fix-nav & {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+  }
+}

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,WAAW;EACT,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,IAAI;EACT,IAAI,EAAE,IAAI;EACV,oBAAW;IACT,QAAQ,EAAE,KAAK;IACf,GAAG,EAAE,IAAI;IACT,IAAI,EAAE,IAAI",
+"sources": ["patterns.scss"],
+"names": [],
+"file": "scssPatterns.css"
+}

@@ -43,7 +43,6 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 	<body >
 		<div id="header">
 			<div class="indexlogo">
-
 				<img src="../image/tie-logo.png">
 			</div>
 
@@ -64,19 +63,18 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 						</li>
 						<li><a href="uebungen.php?user=<?php echo $nameOfUser ?>">Übungen</a></li>
 						<?php 
-						if($nameOfUser=="tiefri" || $nameOfUser=="tieroh"){
-							?>
-
-							<li><a href="zeitUebersicht.php?user=<?php echo $nameOfUser ?>">Zeiterfassung Übersicht</a></li>	
-							<?php
-						}else{
-							?>
-							
+							if($nameOfUser=="tiefri" || $nameOfUser=="tieroh"){
+						?>
+								<li><a href="zeitUebersicht.php?user=<?php echo $nameOfUser ?>">Zeiterfassung Übersicht</a></li>	
+						<?php
+							}else{
+						?>
 							<li><a href="zeiterfassung.php?user=<?php echo $nameOfUser ?>">Zeiterfassung</a></li>
-							<?php
-						}
+						<?php
+							}
 						?> 
 						<li><a href="notendossier.php?user=<?php echo $nameOfUser ?>">Notendossier</a></li>  
+						<li><a href="patterns.php?user=<?php echo $nameOfUser ?>">Java Patterns</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="einstellungen.php?user=<?php echo $nameOfUser ?>"><span class="glyphicon glyphicon-wrench"></span> Einstellungen</a></li>
@@ -93,18 +91,16 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 	<script type="text/javascript"> 
 		$(window).bind('beforeunload', function() { 
 			window.location="../logout.php?user=<?php echo $nameOfUser?>"; 
-		} 
-		);
+		});
 	</script>
 
-	<?php  
+<?php  
+	}else {	
+		echo "access denied! Please log in";
+		sleep(3);
+		header("Location:../login.html");
+		session_destroy();
 
-}else {	
-	echo "access denied! Please log in";
-	sleep(3);
-	header("Location:../login.html");
-	session_destroy();
-
-}
+	}
 ?>
 </html>

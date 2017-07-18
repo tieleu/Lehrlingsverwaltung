@@ -1,0 +1,50 @@
+#body{
+	position: relative;	
+}
+#wrappPatterns{
+	width: 80%;
+	height: auto;
+	background-color: #F5F5F5;
+	margin: auto;
+	margin-bottom: 6em;
+}
+h2{
+	text-align: center;
+}
+#wrappFactory, #wrappStrategy{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.wrappCode{
+	margin: auto;
+	margin-top: 0;
+	width: 45%;
+}
+
+.wrappCode > img {
+	width: 100%;
+}
+/*#codeFactory2 > img, #codeFactory1 > img {
+	width: 100%;
+}*/
+#patternNav{
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	top: 10em;
+	left: 10px;
+}
+#strategyUml{
+	cursor: pointer;
+}
+.zoom{
+	position: fixed;
+	left: 20px;
+	top: 20px;
+}
+hr{
+	border:solid 1px #BEBEBE;
+}
+
+
