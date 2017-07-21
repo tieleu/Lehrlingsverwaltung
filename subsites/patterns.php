@@ -17,6 +17,7 @@
 		<div id="patternNav">
 			<a href="#factoryPattern">Factory Pattern</a>
 			<a href="#strategyPattern">Strategy Pattern</a>
+			<a href="#builderPattern">Builder Pattern</a>
 			<br>
 			<a href="#header">nach oben <i class="fa fa-long-arrow-up" aria-hidden="true"></i></a>
 		</div>
@@ -100,6 +101,8 @@
 				</div>
 				
 			</div>
+
+			<hr>
 
 		</div>
 </body>
