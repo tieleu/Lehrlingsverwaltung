@@ -78,6 +78,7 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 								}
 								?> 
 								<li><a href="subsites/notendossier.php?user=<?php echo $nameOfUser ?>">Notendossier</a></li>  
+								<li><a href="subsites/patterns.php?user=<?php echo $nameOfUser ?>">Java Patterns</a></li>
 							</ul>
 							<ul class="nav navbar-nav navbar-right">
 								<li><a href="subsites/einstellungen.php?user=<?php echo $nameOfUser ?>"><span class="glyphicon glyphicon-wrench"></span> Einstellungen</a></li>
