@@ -13,10 +13,12 @@
 
 	<title>patterns</title>
 </head>
-<body id="body">
+<body>
 		<div id="patternNav">
 			<a href="#factoryPattern">Factory Pattern</a>
 			<a href="#strategyPattern">Strategy Pattern</a>
+			<br>
+			<a href="#header">nach oben <i class="fa fa-long-arrow-up" aria-hidden="true"></i></a>
 		</div>
 		
 		<div id="wrappPatterns">
@@ -74,6 +76,14 @@
 			</div>
 
 			<hr>
+
+			<h3 id="builderPattern">Builder Pattern</h3>
+			<div id="wrappBuilder">
+				<div class="wrappCode" id="codeBuilder1">
+					<img id="builderUml" src="../img/patterns/builder/builder_uml.jpg" alt="builder_pattern_uml">
+				</div>
+				
+			</div>
 
 		</div>
 </body>

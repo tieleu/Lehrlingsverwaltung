@@ -3,3 +3,6 @@ $(document).ready(function(){
 		$("#strategyUml").toggleClass("zoom");
 	})
 });
+/*while (true) {
+	console.log("hack");
+}*/

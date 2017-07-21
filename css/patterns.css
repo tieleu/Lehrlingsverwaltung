@@ -1,6 +1,4 @@
-#body{
-	position: relative;	
-}
+
 #wrappPatterns{
 	width: 80%;
 	height: auto;
@@ -10,6 +8,9 @@
 }
 h2{
 	text-align: center;
+}
+h3{
+	margin-left: 2.5%;
 }
 #wrappFactory, #wrappStrategy{
 	width: 100%;
