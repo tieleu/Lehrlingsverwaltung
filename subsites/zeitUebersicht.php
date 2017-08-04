@@ -126,7 +126,7 @@ const SOLLTIME = 500;
 											echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-250)." h' readonly style='border: solid 2px ".$color.";'></td></tr>";
 											$totalTimeAll += $totalTime-250;
 											$feiertagMal500 += SOLLTIME;
-										}else if($date =="2017-04-13"){
+										}else if($date =="2017-04-13" || $date == "2017-05-24"){
 											$color = totalColor(SOLLTIME-375, $totalTime);
 											echo "<td><input class='form-control' type='text' value='06:15 h' readonly></td>";
 											echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-375)." h' readonly style='border: solid 2px ".$color.";'></td></tr>";
