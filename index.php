@@ -65,7 +65,7 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 								</li>
 								<li><a href="subsites/uebungen.php?user=<?php echo $nameOfUser ?>">Übungen</a></li>
 								<?php 
-								if($nameOfUser=="tiefri"){
+								if($nameOfUser=="tiefri" || $nameOfUser=="tieroh"){
 									?>
 
 									<li><a href="subsites/zeitUebersicht.php?user=<?php echo $nameOfUser ?>">Zeiterfassung Übersicht</a></li>	
