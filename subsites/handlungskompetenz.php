@@ -8,6 +8,7 @@ $user = $_GET['user'];
 	<title>Handlungskompetenzen</title>
 </head>
 <body>
+	
 
 </body>
 </html>
