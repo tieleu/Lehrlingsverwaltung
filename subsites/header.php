@@ -75,7 +75,7 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 						?> 
 						<li><a href="notendossier.php?user=<?php echo $nameOfUser ?>">Notendossier</a></li>  
 						<li><a href="patterns.php?user=<?php echo $nameOfUser ?>">Java Patterns</a></li>
-						<li><a href="handlungskompetenz.php?user=<?php echo $nameOfUser ?>">Handlungskompetenzen</a></li>
+						<li><a href="handlungskompetenz.php?user=<?php echo $nameOfUser ?>&sem=all">Handlungskompetenzen</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="einstellungen.php?user=<?php echo $nameOfUser ?>"><span class="glyphicon glyphicon-wrench"></span> Einstellungen</a></li>
