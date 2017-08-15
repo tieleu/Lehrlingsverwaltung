@@ -5,7 +5,9 @@ include("header.php");
 $user = $_GET['user'];
 ?>
 <head>
+	<link rel="stylesheet" type="text/css" href="../css/handlungskompetenz.css">
 	<link rel="stylesheet" type="text/css" href="../css/hkSideNav.css" />
+	<script type="text/javascript" src="../js/viewHk.js"></script>
 	<script type="text/javascript" src="../js/hkSideNav.js"></script>
 
 	<title>viewHandlungskomptenz</title>
@@ -50,6 +52,7 @@ while ($row = mysqli_fetch_object($queryResultBerPraxis)) {
 	$temp = array();
 	$temp['ordnungszeichen'] = $row -> ordnungszeichen;
 	$temp['inhalt'] = $row -> inhalt;
+	$temp['id'] = $row -> bpraxis_ID;
 	$BerPraxis[] = $temp;
 }
 
@@ -71,31 +74,35 @@ while ($row = mysqli_fetch_object($queryResultUeK)) {
 	<table class="table table-bordered">
 		<thead>
 			<tr>
-				<th colspan="3"><?= $hk['titel']; ?></th>
+				<th colspan="4"><?= $hk['titel']; ?></th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
-				<td colspan="3"><?= $hk['beschreibung']; ?></td>
+				<td colspan="4"><?= $hk['beschreibung']; ?></td>
 			</tr>
 			<tr>
-				<th>Methodenkompetenz</th>
+				<th colspan="2">Methodenkompetenz</th>
 				<th>Sozialkompetenz</th>
 				<th>Selbstkompetenz</th>
 			</tr>
 			<tr>
-				<td><?= $hk['methodenkomp']; ?></td>
+				<td colspan="2"><?= $hk['methodenkomp']; ?></td>
 				<td><?= $hk['sozialkomp']; ?></td>
 				<td><?= $hk['selbstkomp']; ?></td>
 			</tr>
 			<tr>
 				<th>Berufliche Praxis</th>
+				<th><button class="btn" id="beurteilungBtn">Zur Selbstbeurteilung</button></th>
 				<th>Berufsfachschule</th>
 				<th>Überbetriebliche Kurse</th>
 			</tr>
 			<?php
-				for ($i=0; $i < count($BerPraxis) ; $i++) { 
+				for ($i=0; $i < count($BerPraxis) ; $i++) {
+					$querySelbstBeurt = mysqli_query($db, "SELECT sb_value FROM Selbstbeurteilung WHERE user_IDFK=$idUser AND bpraxis_IDFK=".$BerPraxis[$i]['id']);
+
 					echo "<tr><td>".$BerPraxis[$i]['ordnungszeichen'].": ".$BerPraxis[$i]['inhalt']."</td>";
+					echo "<td>".(mysqli_num_rows($querySelbstBeurt) == 1 ? mysqli_fetch_object($querySelbstBeurt) -> sb_value : '')."</td>";
 					echo "<td>".$Schule[$i]['ordnungszeichen'].": ".$Schule[$i]['inhalt']."</td>";
 					echo "<td>".$UeK[$i]['ordnungszeichen'].": ".$UeK[$i]['inhalt']."</td></tr>";
 				}
@@ -103,6 +110,10 @@ while ($row = mysqli_fetch_object($queryResultUeK)) {
 		</tbody>
 	</table>
 
+</div>
+
+<div id="selbstbeurteilung">
+	<button id="close">&#9587;</button>
 </div>
 
 </body>

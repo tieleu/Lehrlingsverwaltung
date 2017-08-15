@@ -6,8 +6,7 @@
             $user = $_GET['user'];
          ?>
    
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
      <script type="text/javascript" src="../js/uebungen.js"></script>
      <link rel="stylesheet" type="text/css" href="../css/uebung.css">
 

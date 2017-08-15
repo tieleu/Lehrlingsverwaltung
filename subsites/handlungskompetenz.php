@@ -80,7 +80,7 @@ $user = $_GET['user'];
 			<td>Aufbauen und Pflegen von Daten sowie von deren Strukturen</td>
 			<td><a href="viewHandlungskomp.php?user=<?php echo $user; ?>&hkid=10"><?= ($sem == 'all' || $sem == $hkompSem[10] ? $hkompTitel[10] : ''); ?></a></td>
 			<td><a href="viewHandlungskomp.php?user=<?php echo $user; ?>&hkid=11"><?= ($sem == 'all' || $sem == $hkompSem[11] ? $hkompTitel[11] : ''); ?></a></td>
-			<td><?= ($sem == 'all' || $sem == $hkompSem[12] ? $hkompTitel[12] : ''); ?></td>
+			<td><a href="viewHandlungskomp.php?user=<?php echo $user; ?>&hkid=12"><?= ($sem == 'all' || $sem == $hkompSem[12] ? $hkompTitel[12] : ''); ?></a></td>
 			<td></td>
 			<td></td>
 			<td></td>
@@ -88,7 +88,7 @@ $user = $_GET['user'];
 		<tr>
 			<td>D</td>
 			<td>Inbetriebnahme von ICT-Geräten</td>
-			<td><?= ($sem == 'all' || $sem == $hkompSem[13] ? $hkompTitel[13] : ''); ?></td>
+			<td><a href="viewHandlungskomp.php?user=<?php echo $user; ?>&hkid=13"><?= ($sem == 'all' || $sem == $hkompSem[13] ? $hkompTitel[13] : ''); ?></a></td>
 			<td></td>
 			<td></td>
 			<td></td>
@@ -98,9 +98,9 @@ $user = $_GET['user'];
 		<tr>
 			<td>E</td>
 			<td>Arbeiten in Projekten</td>
-			<td><?= ($sem == 'all' || $sem == $hkompSem[14] ? $hkompTitel[14] : ''); ?></td>
-			<td><?= ($sem == 'all' || $sem == $hkompSem[15] ? $hkompTitel[15] : ''); ?></td>
-			<td><?= ($sem == 'all' || $sem == $hkompSem[16] ? $hkompTitel[16] : ''); ?></td>
+			<td><a href="viewHandlungskomp.php?user=<?php echo $user; ?>&hkid=14"><?= ($sem == 'all' || $sem == $hkompSem[14] ? $hkompTitel[14] : ''); ?></a></td>
+			<td><a href="viewHandlungskomp.php?user=<?php echo $user; ?>&hkid=15"><?= ($sem == 'all' || $sem == $hkompSem[15] ? $hkompTitel[15] : ''); ?></a></td>
+			<td><a href="viewHandlungskomp.php?user=<?php echo $user; ?>&hkid=16"><?= ($sem == 'all' || $sem == $hkompSem[16] ? $hkompTitel[16] : ''); ?></a></td>
 			<td></td>
 			<td></td>
 			<td></td>

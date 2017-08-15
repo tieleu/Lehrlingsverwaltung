@@ -1,3 +1,22 @@
 #hkTable{
     min-height: 400px;
 }
+table{
+    font-size: 16px;
+}
+#selbstbeurteilung {
+    display: none;
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    width: 100em;
+    height: 50em;
+    background-color: white;
+}
+#close{
+    width: 2em;
+    height: 2em;
+    float: right;
+    color: red;
+    border: grey;
+}
