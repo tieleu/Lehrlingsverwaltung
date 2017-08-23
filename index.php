@@ -16,6 +16,8 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 		<meta name="description" content="Free Web tutorials">
 		<meta name="author" content="Hege Refsnes">
 		
+		<link rel="stylesheet" type="text/css" href="font/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="font/css/font-awesome.css">
 
 		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
 		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
@@ -40,7 +42,7 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 			<div class="content">
 				<div id="large-header" class="large-header">
 					<div class="indexlogo">
-						<img src="image/tie-logo.png">
+						<a href="https://www.tie.ch"><img src="image/tie-logo.png"></a>
 					</div>
 					<div  align="right" class="indexlogo">
 						<h3 id="leitspuch">LIFE IS A DIGITAL PROCESS</h3>
@@ -95,6 +97,7 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 				<script src="animation/js/EasePack.min.js"></script>
 				<script src="animation/js/rAF.js"></script>
 				<script src="animation/js/demo-1.js"></script>
+				<i class="fa fa-space-shuttle fa-rotate-270" id="space-shuttle" aria-hidden="true"></i>
 			</div>
 		</div>
 	</body>

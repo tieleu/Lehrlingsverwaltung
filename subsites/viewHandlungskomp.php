@@ -112,9 +112,53 @@ while ($row = mysqli_fetch_object($queryResultUeK)) {
 
 </div>
 
+<form method="post">
 <div id="selbstbeurteilung">
-	<button id="close">&#9587;</button>
+	
+	<div class="btn divButton" id="closeSb">&#9587;</div>
+	<h3>Selbstbeurteilung der Beruflichen Praxis zur Handlungskompetenz <?= substr($hk['titel'],0,2); ?></h3>
+	<table class="table table-border table-hover">
+		<thead>
+			<tr>
+				<th>Berufliche Praxis</th>
+				<th>++</th>
+				<th>+</th>
+				<th>-</th>
+				<th>--</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php
+				for ($i = 0; $i < count($BerPraxis); $i++) {
+					echo "<tr><td>".$BerPraxis[$i]['ordnungszeichen'].": ".$BerPraxis[$i]['inhalt']."</td>";
+					?>
+						<td>
+							<input type="radio" name="beurt<?= $i ?>" value="++" checked>
+						</td>
+						<td>
+							<input type="radio" name="beurt<?= $i ?>" value="+">
+						</td>
+						<td>
+							<input type="radio" name="beurt<?= $i ?>" value="-">
+						</td>
+						<td>
+							<input type="radio" name="beurt<?= $i ?>" value="--">
+						</td>
+					</tr>
+					<?php
+				}
+			?>
+		</tbody>
+	</table>
+	<div class="btn divButton" id="btnNext">Weiter</div>
 </div>
-
+<div id="projects">
+	<div class="btn divButton" id="closeProjects">&#9587;</div>
+	<h3>Projekte zur Handlungskompetenz <?= substr($hk['titel'],0,2); ?></h3>
+	<
+	<input type="submit" name="" value="submit">
+</div>
+</form>
+<?php var_dump($_POST); ?>
 </body>
 </html>

@@ -45,7 +45,7 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 	<body >
 		<div id="header">
 			<div class="indexlogo">
-				<img src="../image/tie-logo.png">
+				<a href="https://www.tie.ch"><img src="../image/tie-logo.png"></a>
 			</div>
 
 			<div align="right" class="indexlogo">
