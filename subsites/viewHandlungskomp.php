@@ -155,7 +155,7 @@ while ($row = mysqli_fetch_object($queryResultUeK)) {
 <div id="projects">
 	<div class="btn divButton" id="closeProjects">&#9587;</div>
 	<h3>Projekte zur Handlungskompetenz <?= substr($hk['titel'],0,2); ?></h3>
-	<
+	<input type="text" name="" value="" placeholder="">
 	<input type="submit" name="" value="submit">
 </div>
 </form>
