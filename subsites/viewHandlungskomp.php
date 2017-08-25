@@ -10,7 +10,7 @@ $user = $_GET['user'];
 	<script type="text/javascript" src="../js/viewHk.js"></script>
 	<script type="text/javascript" src="../js/hkSideNav.js"></script>
 
-	<title>viewHandlungskomptenz</title>
+	<title>viewHandlungskompetenz</title>
 </head>
 <body>
 
@@ -155,8 +155,12 @@ while ($row = mysqli_fetch_object($queryResultUeK)) {
 <div id="projects">
 	<div class="btn divButton" id="closeProjects">&#9587;</div>
 	<h3>Projekte zur Handlungskompetenz <?= substr($hk['titel'],0,2); ?></h3>
-	<input type="text" name="" value="" placeholder="">
-	<input type="submit" name="" value="submit">
+	<label>Titel <input class="pTitle" type="text" name="pTitle0" value="" placeholder=""></label><br>
+	<textarea class="pDescription" placeholder="Beschreibung" name="pDescription0"></textarea><br>
+	<?php 
+
+	?>
+	<input id="submit" type="submit" name="" value="submit">
 </div>
 </form>
 <?php var_dump($_POST); ?>

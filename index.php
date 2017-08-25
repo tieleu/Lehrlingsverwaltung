@@ -34,6 +34,7 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 		<script type="text/javascript" src="js/keepalive.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
 
 		<title>Lehrlingsverwaltung - Home</title>
 	</head>

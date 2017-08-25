@@ -40,3 +40,15 @@ table{
     background-color: #F1F1F1;
     color: red;
 }
+
+.pDescription{
+    width: 300px;
+    margin-left: 82px; 
+}
+.pTitle{
+    width: 300px;
+    margin-left: 50px;
+}
+#submit{
+    margin-left: 82px;
+}
