@@ -12,8 +12,9 @@ table{
     width: 100em;
     height: 50em;
     background-color: #9B9B9B;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    /*overflow-x: hidden;
+    overflow-y: hidden;*/
+    overflow: auto;
 }
 #projects {
     display: none;
@@ -51,4 +52,11 @@ table{
 }
 #submit{
     margin-left: 82px;
+}
+#addProjectBtn{
+    background-color: #DDDDDD;
+}
+
+#selbstbeurteilung::-webkit-scrollbar { 
+    display: none; 
 }

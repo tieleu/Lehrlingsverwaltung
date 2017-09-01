@@ -112,8 +112,8 @@ while ($row = mysqli_fetch_object($queryResultUeK)) {
 
 </div>
 
-<form method="post">
 <div id="selbstbeurteilung">
+<form method="post">
 	
 	<div class="btn divButton" id="closeSb">&#9587;</div>
 	<h3>Selbstbeurteilung der Beruflichen Praxis zur Handlungskompetenz <?= substr($hk['titel'],0,2); ?></h3>
@@ -150,19 +150,35 @@ while ($row = mysqli_fetch_object($queryResultUeK)) {
 			?>
 		</tbody>
 	</table>
-	<div class="btn divButton" id="btnNext">Weiter</div>
+	<button class="btn" id="btnNext" name="btnNext">Weiter</button>
+</form>
 </div>
 <div id="projects">
 	<div class="btn divButton" id="closeProjects">&#9587;</div>
 	<h3>Projekte zur Handlungskompetenz <?= substr($hk['titel'],0,2); ?></h3>
-	<label>Titel <input class="pTitle" type="text" name="pTitle0" value="" placeholder=""></label><br>
-	<textarea class="pDescription" placeholder="Beschreibung" name="pDescription0"></textarea><br>
+	<label>Titel <input class="pTitle" type="text" name="pTitle0" value="" placeholder="" required></label><br>
+	<textarea class="pDescription" placeholder="Beschreibung" name="pDescription0" required></textarea><br>
 	<?php 
-
+	
 	?>
-	<input id="submit" type="submit" name="" value="submit">
+	<input class="btn" id="submit" type="submit" name="" value="submit">
 </div>
-</form>
-<?php var_dump($_POST); ?>
+<?php
+	if (isset($_POST['btnNext'])) {
+		for ($i=0; $i < count($BerPraxis); $i++) { 
+			$sb_value = $_POST['beurt'.$i];
+			if (mysqli_num_rows(mysqli_query($db, "SELECT * FROM Selbstbeurteilung WHERE bpraxis_IDFK=".$BerPraxis[$i]['id']." AND user_IDFK=$idUser"))==0) {
+				mysqli_query($db, "INSERT INTO Selbstbeurteilung (sb_value,user_IDFK,bpraxis_IDFK) VALUES ('$sb_value',$idUser,".$BerPraxis[$i]['id'].")");
+				echo "insert";
+			}else{
+				mysqli_query($db, "UPDATE Selbstbeurteilung SET sb_value='$sb_value',user_IDFK=$idUser WHERE bpraxis_IDFK=".$BerPraxis[$i]['id']." AND user_IDFK=$idUser");
+				echo "update";
+			}
+		}
+	}
+
+
+
+ var_dump($_POST); ?>
 </body>
 </html>
