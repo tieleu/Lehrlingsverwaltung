@@ -181,6 +181,6 @@ while ($row = mysqli_fetch_object($queryResultUeK)) {
 
 
 
- var_dump($_POST); ?>
+ #var_dump($_POST); ?>
 </body>
 </html>
