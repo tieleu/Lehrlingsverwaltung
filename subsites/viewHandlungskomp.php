@@ -154,14 +154,16 @@ while ($row = mysqli_fetch_object($queryResultUeK)) {
 </form>
 </div>
 <div id="projects">
-	<div class="btn divButton" id="closeProjects">&#9587;</div>
-	<h3>Projekte zur Handlungskompetenz <?= substr($hk['titel'],0,2); ?></h3>
-	<label>Titel <input class="pTitle" type="text" name="pTitle0" value="" placeholder="" required></label><br>
-	<textarea class="pDescription" placeholder="Beschreibung" name="pDescription0" required></textarea><br>
-	<?php 
-	
-	?>
-	<input class="btn" id="submit" type="submit" name="" value="submit">
+	<form method="post">
+		<div class="btn divButton" id="closeProjects">&#9587;</div>
+		<h3>Projekte zur Handlungskompetenz <?= substr($hk['titel'],0,2); ?></h3>
+		<label>Titel <input class="pTitle" type="text" name="pTitle0" value="" placeholder="" required></label><br>
+		<textarea class="pDescription" placeholder="Beschreibung" name="pDescription0" required></textarea><br>
+		<?php 
+		
+		?>
+		<input class="btn" id="submit" type="submit" name="btnNext" value="submit">
+	</form>
 </div>
 <?php
 	if (isset($_POST['btnNext'])) {
