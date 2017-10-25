@@ -170,7 +170,7 @@ while ($row = mysqli_fetch_object($queryResultUeK)) {
 		for ($i=0; $i < count($BerPraxis); $i++) { 
 			$sb_value = $_POST['beurt'.$i];
 			if (mysqli_num_rows(mysqli_query($db, "SELECT * FROM Selbstbeurteilung WHERE bpraxis_IDFK=".$BerPraxis[$i]['id']." AND user_IDFK=$idUser"))==0) {
-				mysqli_query($db, "INSERT INTO Selbstbeurteilung (sb_value,user_IDFK,bpraxis_IDFK) VALUES ('$sb_value',$idUser,".$BerPraxis[$i]['id'].")");
+				mysqli_query($db, "INSERT INTO Selbstbeurteilung (sb_value,user_IDFK,bpraxis_IDFK) VALUES ('$sb_value',$idUser,".$BerPraxis[$i]['id'].")")or die("ERROR");
 				echo "insert";
 			}else{
 				mysqli_query($db, "UPDATE Selbstbeurteilung SET sb_value='$sb_value',user_IDFK=$idUser WHERE bpraxis_IDFK=".$BerPraxis[$i]['id']." AND user_IDFK=$idUser");
