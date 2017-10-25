@@ -162,11 +162,11 @@ while ($row = mysqli_fetch_object($queryResultUeK)) {
 		<?php 
 		
 		?>
-		<input class="btn" id="submit" type="submit" name="btnNext" value="submit">
+		<input class="btn" id="submit" type="submit" name="submit" value="submit">
 	</form>
 </div>
 <?php
-	if (isset($_POST['btnNext'])) {
+	if (isset($_POST['submit'])) {
 		for ($i=0; $i < count($BerPraxis); $i++) { 
 			$sb_value = $_POST['beurt'.$i];
 			if (mysqli_num_rows(mysqli_query($db, "SELECT * FROM Selbstbeurteilung WHERE bpraxis_IDFK=".$BerPraxis[$i]['id']." AND user_IDFK=$idUser"))==0) {
