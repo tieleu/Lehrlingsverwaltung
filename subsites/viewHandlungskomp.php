@@ -159,11 +159,17 @@ while ($row = mysqli_fetch_object($queryResultUeK)) {
 		<h3>Projekte zur Handlungskompetenz <?= substr($hk['titel'],0,2); ?></h3>
 		<label>Titel <input class="pTitle" type="text" name="pTitle0" value="" placeholder="" required></label><br>
 		<textarea class="pDescription" placeholder="Beschreibung" name="pDescription0" required></textarea><br>
-		<?php 
-		
-		?>
 		<input class="btn" id="submit" type="submit" name="submit" value="submit">
 	</form>
+</div>
+<div id="showProjects">
+	<?php
+		$projects = mysqli_query($db, "SELECT p_titel, p_inhalt FROM ProjektZuHK WHERE kompetenz_IDFK=$hkid AND user_IDFK=$idUser");
+		while ($row = mysqli_fetch_object($projects)) {
+			echo "<h4>".$row -> p_titel."</h4>";
+			echo "<p>".$row -> p_inhalt."</p>";
+		}
+	?>
 </div>
 <?php
 	if (isset($_POST['btnNext'])) {
@@ -171,12 +177,16 @@ while ($row = mysqli_fetch_object($queryResultUeK)) {
 			$sb_value = $_POST['beurt'.$i];
 			if (mysqli_num_rows(mysqli_query($db, "SELECT * FROM Selbstbeurteilung WHERE bpraxis_IDFK=".$BerPraxis[$i]['id']." AND user_IDFK=$idUser"))==0) {
 				mysqli_query($db, "INSERT INTO Selbstbeurteilung (sb_value,user_IDFK,bpraxis_IDFK) VALUES ('$sb_value',$idUser,".$BerPraxis[$i]['id'].")")or die("ERROR");
-				echo "insert";
 			}else{
 				mysqli_query($db, "UPDATE Selbstbeurteilung SET sb_value='$sb_value',user_IDFK=$idUser WHERE bpraxis_IDFK=".$BerPraxis[$i]['id']." AND user_IDFK=$idUser");
-				echo "update";
 			}
 		}
+	}
+
+	if (isset($_POST['submit'])) {
+		$title = $_POST['pTitle0'];
+		$desc = $_POST['pDescription0'];
+		mysqli_query($db, "INSERT INTO ProjektZuHK (p_titel,p_inhalt,user_IDFK,kompetenz_IDFK) VALUES ('$title','$desc',$idUser,$hkid)");
 	}
  ?>
 </body>
