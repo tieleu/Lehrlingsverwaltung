@@ -15,7 +15,7 @@ $(document).ready(function(){
 	});
 	$('#btnNext').click(function(){
 		var a = new Date();
-		a = new Date(a.getTime()+3000);
+		a = new Date(a.getTime()+5000);
 		document.cookie = "projects=true; expires="+a.toUTCString()+"; path=/";
 		$('#projects').show();
 
