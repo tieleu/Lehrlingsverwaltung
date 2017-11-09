@@ -5,8 +5,11 @@ $(document).ready(function(){
 		run3();
 		run4();
 		run5();
+		run6();
 		for (var i = 0; i < 10000; i++) {
-
+			if (i%1000==0) {
+				run6();
+			}
 		 
 			
 		space.animate({top: 200});
@@ -69,6 +72,20 @@ $(document).ready(function(){
 		space5.animate({top: 527});
 
 	}
+
+	}
+		function run6(){
+		var dotr = $('#dotr');
+		
+
+		dotr.animate({left: 100});
+		dotr.animate({top: 100});
+		dotr.animate({width : '240px'});
+		dotr.animate({height : '240px'});
+		dotr.animate({left: 1000}, "slow");
+		dotr.animate({top: -50});
+		dotr.animate({width : '20px'});
+		dotr.animate({height : '20px'});
 
 	}
 });

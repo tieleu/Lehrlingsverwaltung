@@ -103,6 +103,7 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 				<i class="fa fa-space-shuttle fa-spin" id="space-shuttle3" aria-hidden="true"></i>
 				<i class="fa fa-space-shuttle fa-spin" id="space-shuttle4" aria-hidden="true"></i>
 				<i class="fa fa-space-shuttle fa-spin" id="space-shuttle5" aria-hidden="true"></i>
+				<img src="image/tr.jpg" id="dotr" width="20" height="20">
 			</div>
 		</div>
 	</body>

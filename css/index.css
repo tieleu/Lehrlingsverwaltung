@@ -79,4 +79,10 @@ body{
 	z-index: 100;
 	color: purple;
 }
+#dotr{
+	position: absolute;
+	top: -50px;
+	left: -50px;
+	z-index: 100;
+}
 
