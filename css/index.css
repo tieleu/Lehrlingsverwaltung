@@ -51,3 +51,32 @@ body{
 	color: grey;
 }
 
+#space-shuttle2{
+	position: absolute;
+	top: 800px;
+	left: 600px;
+	z-index: 100;
+	color: lime;
+}
+#space-shuttle3{
+	position: absolute;
+	top: 800px;
+	left: 1600px;
+	z-index: 100;
+	color: red;
+}
+#space-shuttle4{
+	position: absolute;
+	top: 530px;
+	left: 1000px;
+	z-index: 100;
+	color: yellow;
+}
+#space-shuttle5{
+	position: absolute;
+	top: 527px;
+	left: 860px;
+	z-index: 100;
+	color: purple;
+}
+
