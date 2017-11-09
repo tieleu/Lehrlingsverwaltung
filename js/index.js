@@ -7,7 +7,7 @@ $(document).ready(function(){
 		run5();
 		run6();
 		for (var i = 0; i < 10000; i++) {
-						if (i%500==0) {
+						if (i%50==0) {
 				run6();
 			}
 		 
