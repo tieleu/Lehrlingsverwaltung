@@ -109,27 +109,27 @@
 				<div class="wrappCode" id="codeCommand1">
 					<h4>Step 1</h4>
 					<p>Create an Interface -> Command.java</p>
-					<img src="../image/patterns/command/command_1_1.jpg">
+					<img src="../image/patterns/command/command_1_1.JPG">
 					<h4>Step 2</h4>
 					<p>Create a Class and implement the Interface. The method has to print out "Do nothing." -> DoNothing.java</p>
-					<img src="../image/patterns/command/command_1_2.jpg">
+					<img src="../image/patterns/command/command_1_2.JPG">
 					<h4>Step 3</h4>
 					<p>Create a Class what you want to control with the Remote and create methods for the functions of your device <br>-> Tv.java</p>
-					<img src="../image/patterns/command/command_1_3.jpg">
+					<img src="../image/patterns/command/command_1_3.JPG">
 				</div>
 				<div class="wrappCode" id="codeCommand2">
 					<h4>Step 4</h4>
 					<p>Create seperate Classes for the On-function and Off-function and implement the Command interface on both Classes. -> TvIsOn.java, -> TvIsOff.java</p>
-					<img src="../image/patterns/command/command_2_1.jpg">
+					<img src="../image/patterns/command/command_2_1.JPG">
 					<br>
 					<br>
-					<img src="../image/patterns/command/command_2_2.jpg">
+					<img src="../image/patterns/command/command_2_2.JPG">
 					<h4>Step 5</h4>
 					<p>Create a Class to make the possibillity to set commands and the push buttons. -> Remote.java</p>
-					<img src="../image/patterns/command/command_2_3.jpg">
+					<img src="../image/patterns/command/command_2_3.JPG">
 					<h4>Step 6</h4>
 					<p>Create a Class to test the Remote. Execute it with the JUnit Test. -> RemoteTest.java</p>
-					<img src="../image/patterns/command/command_2_4.jpg">
+					<img src="../image/patterns/command/command_2_4.JPG">
 					<p>You can find the whole code example <a href="../data/patterns/CommandPatternBeispiel.zip">here</a></p>
 				</div>
 			</div>
