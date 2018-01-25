@@ -125,7 +125,7 @@
 					<br>
 					<img src="../image/patterns/command/command_2_2.jpg">
 					<h4>Step 5</h4>
-					<p>Create a Class to make the possibillity to set commands and to push buttons. -> Remote.java</p>
+					<p>Create a Class to make the possibillity to set commands and thes push buttons. -> Remote.java</p>
 					<img src="../image/patterns/command/command_2_3.jpg">
 					<h4>Step 6</h4>
 					<p>Create a Class to test the Remote. Execute it with the JUnit Test. -> RemoteTest.java</p>
