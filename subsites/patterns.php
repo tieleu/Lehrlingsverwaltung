@@ -95,15 +95,16 @@
 					<img src="../image/patterns/builder/builder_2_1.jpg">
 					<img src="../image/patterns/builder/builder_2_2.jpg">
 					<h4>Step 3</h4>
-					<p>Eine Main Klasse erstellen welche ein Builder Objekt macht und das Objekt mit dem Builder Vorbereitet. Danach die Build methode ausführt und ein Objekt bekommt.</p>
+					<p>Create a Main Class which makes a Builder Object, prepares the Object with the Builder, execute the method and gets an Object.</p>
 					<img src="../image/patterns/builder/builder_3.jpg">
-					<p>Ein Codebeispiel zur Implementierung gibt es <a href="../data/patterns/builderRoomBeispiel.zip">hier</a></p>
+					<p>You can find a code example for the implementation <a href="../data/patterns/builderRoomBeispiel.zip">here</a></p>
 				</div>
 				
 			</div>
 
 			<hr>
 
+			
 		</div>
 </body>
 </html>
