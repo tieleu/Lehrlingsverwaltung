@@ -97,7 +97,7 @@
 					<h4>Step 3</h4>
 					<p>Create a Main Class which makes a Builder Object, prepares the Object with the Builder, execute the method and gets an Object.</p>
 					<img src="../image/patterns/builder/builder_3.jpg">
-					<p>You c an find a code example for the implementation <a href="../data/patterns/builderRoomBeispiel.zip">here</a></p>
+					<p>You can find a code example for the implementation <a href="../data/patterns/builderRoomBeispiel.zip">here</a></p>
 				</div>
 				
 			</div>
