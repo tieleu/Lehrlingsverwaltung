@@ -12,7 +12,7 @@ h2{
 h3{
 	margin-left: 2.5%;
 }
-#wrappFactory, #wrappStrategy, #wrappBuilder{
+#wrappFactory, #wrappStrategy, #wrappBuilder, #wrappCommand{
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
@@ -47,5 +47,3 @@ h3{
 hr{
 	border:solid 1px #BEBEBE;
 }
-
-
