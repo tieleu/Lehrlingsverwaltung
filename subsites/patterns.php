@@ -125,7 +125,7 @@
 					<br>
 					<br>
 					<img src="../image/patterns/command/command_2_2.JPG">
-					<h4>Step 5</h4>
+					<h4>Step 5</h4>3
 					<p>Create a Class to make the possibillity to set commands and the push buttons. -> Remote.java</p>
 					<img src="../image/patterns/command/command_2_3.JPG">
 					<h4>Step 6</h4>
