@@ -110,7 +110,7 @@
 					<img src="../image/patterns/command/command_1_1.JPG">
 					<h4>Step 1</h4>
 					<p>Create an Interface -> Command.java</p>
-					<img src="../image/patterns/command/command_1_2.jpg">
+					<img src="../image/patterns/command/command_1_2.JPG">
 					<h4>Step 2</h4>
 					<p>Create a Class and implement the Interface. The method has to print out "Do nothing." -> DoNothing.java</p>
 					<img src="../image/patterns/command/command_1_3.JPG">
