@@ -107,15 +107,16 @@
 			<h3 id="commandPattern">Command Pattern</h3>
 			<div id="wrappCommand">
 				<div class="wrappCode" id="codeCommand1">
+					<img src="../image/patterns/command/command_1_1.JPG">
 					<h4>Step 1</h4>
 					<p>Create an Interface -> Command.java</p>
-					<img src="../image/patterns/command/command_1_1.JPG">
+					<img src="../image/patterns/command/command_1_2.jpg">
 					<h4>Step 2</h4>
 					<p>Create a Class and implement the Interface. The method has to print out "Do nothing." -> DoNothing.java</p>
-					<img src="../image/patterns/command/command_1_2.JPG">
+					<img src="../image/patterns/command/command_1_3.JPG">
 					<h4>Step 3</h4>
 					<p>Create a Class what you want to control with the Remote and create methods for the functions of your device <br>-> Tv.java</p>
-					<img src="../image/patterns/command/command_1_3.JPG">
+					<img src="../image/patterns/command/command_1_4.JPG">
 				</div>
 				<div class="wrappCode" id="codeCommand2">
 					<h4>Step 4</h4>
