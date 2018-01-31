@@ -6,6 +6,11 @@ $(document).ready(function(){
 	$('#builderUml').click(function(){
 		$('#builderUml').toggleClass('zoom');
 	});
+		$('#commandUml').click(function(){
+		$('#commandUml').toggleClass('zoom');
+		$('#commandUml').toggleClass('fixSize');
+
+});
 });
 /*while (true) {
 	console.log("hack");

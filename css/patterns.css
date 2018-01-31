@@ -44,6 +44,9 @@ h3{
 	left: 20px;
 	top: 20px;
 }
+.fixSize{
+	width: 1000px !important;
+}
 hr{
 	border:solid 1px #BEBEBE;
 }

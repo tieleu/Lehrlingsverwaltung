@@ -107,7 +107,7 @@
 			<h3 id="commandPattern">Command Pattern</h3>
 			<div id="wrappCommand">
 				<div class="wrappCode" id="codeCommand1">
-					<img src="../image/patterns/command/command_1_1.JPG">
+					<img id ="commandUml" class="umlCursor" src="../image/patterns/command/command_1_1.JPG">
 					<h4>Step 1</h4>
 					<p>Create an Interface -> Command.java</p>
 					<img src="../image/patterns/command/command_1_2.JPG">
