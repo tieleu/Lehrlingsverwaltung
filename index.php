@@ -56,19 +56,15 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 								<li class="dropdown">
 									<a class="dropdown-toggle" data-toggle="dropdown" href="#">Aufgaben<span class="caret"></span></a>
 									<ul class="dropdown-menu">
-
 										<li><a href="subsites/aufgaben.php?user=<?php echo $nameOfUser ?>">Übersicht</a></li>
-										
-
-
-
 										<li><a href="subsites/aufgabenErteilen.php?user=<?php echo $nameOfUser ?>">Erteilen</a></li>
 										<li><a href="subsites/zurPruefung.php?user=<?php echo $nameOfUser ?>">Prüfen</a></li> 
 									</ul>
 								</li>
 								<li><a href="subsites/uebungen.php?user=<?php echo $nameOfUser ?>">Übungen</a></li>
 								<?php 
-								if($nameOfUser=="tiefri" || $nameOfUser=="tieroh"){
+								$user = mysqli_query($db, "SELECT status FROM User WHERE username='$nameOfUser'");
+								if(mysqli_fetch_object($user) -> status === 'lehrmeister'){
 									?>
 
 									<li><a href="subsites/zeitUebersicht.php?user=<?php echo $nameOfUser ?>">Zeiterfassung Übersicht</a></li>	
