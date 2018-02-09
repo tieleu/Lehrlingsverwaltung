@@ -65,7 +65,8 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 						</li>
 						<li><a href="uebungen.php?user=<?php echo $nameOfUser ?>">Übungen</a></li>
 						<?php 
-							if($nameOfUser=="tiefri" || $nameOfUser=="tieroh"){
+							$user = mysqli_query($db, "SELECT status FROM User WHERE username='$nameOfUser'");
+							if(mysqli_fetch_object($user) -> status === 'lehrmeister'){
 						?>
 								<li><a href="zeitUebersicht.php?user=<?php echo $nameOfUser ?>">Zeiterfassung Übersicht</a></li>	
 						<?php
