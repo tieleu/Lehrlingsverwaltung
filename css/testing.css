@@ -1,0 +1,48 @@
+main {
+width: 60%;
+margin: auto;
+}
+
+tr {
+	background-color: white;
+}
+
+tr:hover {
+	background-color: #EEEEEE;
+}
+
+table {
+	width: 100%;
+}
+
+#title {
+	text-align: center;
+	margin-bottom: 4%;
+}
+
+td {
+	padding: 0.550em;
+	margin-top: 20%;
+
+}
+
+input {
+	width: 100%;
+	text-align: center;
+}
+
+.fileUpload {
+	margin-left: 25%;
+}
+
+.field {
+	border-radius: 0.250em;
+	background-color: #eee;
+	font-size: 1.250em;
+	color: black;
+	padding: 0.250em;
+}
+
+tr {
+	border-bottom: 0.063em solid #BEBEBE;
+}
