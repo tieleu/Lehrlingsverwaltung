@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <?php 
@@ -5,7 +6,6 @@ include("header.php");
 include("../phpAction/timeCalcFunction.php");
 $user = $_GET['user'];
 $date = date("Y-m-d");
-
 $dateplus = date('Y-m-d', strtotime($date . ' +1 day'));
 $check = mysqli_query($db, "SELECT * FROM zeit WHERE zeit>='$date' AND zeit<'$dateplus' AND user_id=$idUser");
 if(mysqli_num_rows($check)>0 && mysqli_num_rows($check)!=null){
@@ -15,7 +15,6 @@ if(mysqli_num_rows($check)>0 && mysqli_num_rows($check)!=null){
 		setcookie("timer", "red", time() + (3600*12), "/");
 	}
 }
-
 ?>
 <head>
 	<link rel="stylesheet" type="text/css" href="../css/zeiterfassung.css">
@@ -33,7 +32,7 @@ if(mysqli_num_rows($check)>0 && mysqli_num_rows($check)!=null){
 				<th>Erreichte Zeit</th>
 				<th>Sollzeit</th>
 				<th>Differenz</th>
-			  </tr>
+			</tr>
 			
 			<div id="zeile">
 				<?php
@@ -51,8 +50,6 @@ if(mysqli_num_rows($check)>0 && mysqli_num_rows($check)!=null){
 					$date = $rowgetdates -> date;
 					echo "<tr><td>"."<input class='form-control' type='text' name='date' value='$date' placeholder='date' readonly>"."</td><td style='display:flex;'>";
 					$dateplus = date('Y-m-d', strtotime($date . ' +1 day'));
-
-
 					$counter=0;
 					$select = mysqli_query($db, "SELECT id, user_id, date_format(zeit, '%H:%i') AS zeit, date_format(zeit, '%Y-%m-%d') AS datum FROM zeit WHERE zeit>='$date' AND zeit<'$dateplus' AND user_id=$idUser ORDER BY zeit");
 					while ($row = mysqli_fetch_object($select)) {
@@ -63,7 +60,6 @@ if(mysqli_num_rows($check)>0 && mysqli_num_rows($check)!=null){
 								$totalTime-=zeitZuDez($zeit);
 								$zeiten = "";
 								$zeiten = $zeit." bis ";
-
 								/*
 								*Uhrzeiten
 								*/
@@ -76,7 +72,6 @@ if(mysqli_num_rows($check)>0 && mysqli_num_rows($check)!=null){
 						}
 						$numOfTimes += 1;
 					}
-
 					/*
 					*erreichte Zeit
 					*/
@@ -103,7 +98,6 @@ if(mysqli_num_rows($check)>0 && mysqli_num_rows($check)!=null){
 						echo "<td><input class='form-control' type='text' value='08:20 h' readonly></td>";
 						echo "<td><input class='form-control' type='text' value='".minToTime($totalTime-$solltime)." h' readonly style='border: solid 2px ".$color.";'></td></tr>";
 						$totalTimeAll +=$totalTime;
-
 					}					
 				}
 				if($numOfTimes%2===0){
@@ -113,9 +107,7 @@ if(mysqli_num_rows($check)>0 && mysqli_num_rows($check)!=null){
 					$totalWhileTimerRun=$solltime;
 					$totalTimeAll -= getCurrentDifference(0);
 				}
-
 				$totalTimeAll = $totalTimeAll-mysqli_num_rows($getdates)*$solltime+$feiertagMal500+$totalWhileTimerRun;
-
 				if($totalTimeAll<0){
 					$totAllColor = "#E53427";
 				}else{

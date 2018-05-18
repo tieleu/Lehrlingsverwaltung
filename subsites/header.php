@@ -33,6 +33,7 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 		<link rel="stylesheet" type="text/css" href="../css/index.css">
 
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -64,7 +65,14 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 							</ul>
 						</li>
 						<li><a href="uebungen.php?user=<?php echo $nameOfUser ?>">Übungen</a></li>
-						<li><a href="testing.php?user=<?php echo $nameOfUser ?>">Testing</a></li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Testing<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="test-upload.php?user=<?php echo $nameOfUser ?>">Test hochladen</a></li>
+								<li><a href=".php?user=<?php echo $nameOfUser ?>">Übersicht</a></li>
+								<li><a href=".php?user=<?php echo $nameOfUser ?>">Leaderboard</a></li> 
+							</ul>
+						</li>
 						<?php 
 							$user = mysqli_query($db, "SELECT status FROM User WHERE username='$nameOfUser'");
 							if(mysqli_fetch_object($user) -> status === 'lehrmeister'){

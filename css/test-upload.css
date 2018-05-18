@@ -1,0 +1,20 @@
+main {
+	margin: auto;
+	width: 50%;
+}
+
+#title {
+	text-align: center;
+}
+
+hr {
+	margin-bottom: 6%;
+}
+
+#upload-file {
+	margin-bottom: 1%;
+}
+
+#save-button {
+	width: 42%;
+}
