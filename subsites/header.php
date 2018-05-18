@@ -66,7 +66,7 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 						</li>
 						<li><a href="uebungen.php?user=<?php echo $nameOfUser ?>">Übungen</a></li>
 						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown">Testing<span class="caret"></span></a>
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Testing<span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a href="test-upload.php?user=<?php echo $nameOfUser ?>">Test hochladen</a></li>
 								<li><a href=".php?user=<?php echo $nameOfUser ?>">Übersicht</a></li>
