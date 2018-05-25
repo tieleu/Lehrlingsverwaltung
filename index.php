@@ -66,8 +66,8 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 								<a class="dropdown-toggle" data-toggle="dropdown" href="#">Testing<span class="caret"></span></a>
 								<ul class="dropdown-menu">
 									<li><a href="subsites/test-upload.php?user=<?php echo $nameOfUser ?>">Test hochladen</a></li>
-									<li><a href=".php?user=<?php echo $nameOfUser ?>">Übersicht</a></li>
-									<li><a href=".php?user=<?php echo $nameOfUser ?>">Leaderboard</a></li> 
+									<li><a href="subsites/testing-uebersicht.php?user=<?php echo $nameOfUser ?>">Übersicht</a></li>
+									<li><a href="subsites/leaderboard.php?user=<?php echo $nameOfUser ?>">Leaderboard</a></li> 
 								</ul>
 							</li>
 								<?php 
