@@ -36,7 +36,9 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
      	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script type="text/javascript" src="../js/keepalive.js"></script>
-		<script type="text/javascript" src="../js/mainfunctions.js"></script>
+		<script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
+		<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../bootstrap/js/npm.js"></script>
 
 	</head>
 	<body >

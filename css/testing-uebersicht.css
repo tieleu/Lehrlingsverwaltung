@@ -1,0 +1,29 @@
+main {
+	width: 60%;
+	padding: 2%;
+	margin: 0 auto;
+	background-color: white;
+    box-shadow: 0.625em 0.625em 0.313em #888888;
+
+}
+
+#chooseTest {
+	margin-top: 2%;
+	height: 2.6em;
+	float: left;
+	margin-right: 2%;
+}
+
+#title {
+	text-align: center;
+}
+
+#buttonGesamtuebersicht {
+	margin-top: 2%;
+	margin-bottom: 5%;
+	width: 15%;
+}
+
+hr {
+	border: 0.05em solid #ddd;
+}
