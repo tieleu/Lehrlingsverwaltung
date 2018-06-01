@@ -23,10 +23,9 @@
 			$select = "SELECT * from test";
 			$testnames = mysqli_query($db, $select);
 			while ($row = mysqli_fetch_object($testnames)) {
-			 ?> 
-			<option><?php echo $row -> testname ?></option>
-			<?php } ?>
-		
+		 ?>
+		 	<option value=<?php echo $row -> id; ?>><?php echo $row -> testname; ?></option>
+		<?php } ?>
 		</select>
 		</div>
 

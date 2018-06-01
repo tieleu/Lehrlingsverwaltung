@@ -35,6 +35,10 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 
 		<script type="text/javascript" src="js/keepalive.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
+		<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../bootstrap/js/npm.js"></script>
+
 
 		<title>Lehrlingsverwaltung - Home</title>
 	</head>
