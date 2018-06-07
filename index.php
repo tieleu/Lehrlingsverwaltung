@@ -106,7 +106,7 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 				<script src="animation/js/EasePack.min.js"></script>
 				<script src="animation/js/rAF.js"></script>
 				<script src="animation/js/demo-1.js"></script>
-				<i class="fa fa-space-shuttle fa-spin" id="space-shuttle" aria-hidden="true"></i>
+				<a href="chat/ajax-chat.php"><i class="fa fa-space-shuttle fa-spin" id="space-shuttle" aria-hidden="true"></i></a>
 				<i class="fa fa-space-shuttle fa-spin" id="space-shuttle2" aria-hidden="true"></i>
 				<i class="fa fa-space-shuttle fa-spin" id="space-shuttle3" aria-hidden="true"></i>
 				<i class="fa fa-space-shuttle fa-spin" id="space-shuttle4" aria-hidden="true"></i>
