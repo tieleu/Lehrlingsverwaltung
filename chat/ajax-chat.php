@@ -40,13 +40,6 @@
     
 </div>
 
-<div id="footer">
-	<div class="tri"></div>
-	<h1>Making an AJAX Web Chat With PHP and jQuery</h1>
-    
-    <a class="tzine" href="http://tutorialzine.com/2010/10/ajax-web-chat-php-mysql/">Read &amp; Download on</a>
-</div>
-
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <script src="js/jScrollPane/jquery.mousewheel.js"></script>
 <script src="js/jScrollPane/jScrollPane.min.js"></script>
