@@ -7,6 +7,11 @@ session_cache_limiter(3600);
 include("db/db_connection.php");
 
 $nameOfUser = $_GET['user'];
+$firstnameOfUser = "";
+$firstnameQuery= mysqli_query($db, "SELECT vorname FROM User WHERE username='$nameOfUser'");
+while ($row = mysqli_fetch_object($firstnameQuery)) {
+	$firstnameOfUser= $row -> vorname;
+}
 $sessionUser =$_SESSION['login_user'];
 if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){ 
 	?>
@@ -100,7 +105,7 @@ if($_SESSION['eingeloggt']== true && $nameOfUser == $sessionUser){
 					</nav>
 
 					<canvas id="demo-canvas"></canvas>
-					<h1 class="main-title">Welcome <span class="thin"><?php echo $nameOfUser ?></span></h1>
+					<h1 class="main-title">Welcome <span class="thin"><?php echo $firstnameOfUser ?></span></h1>
 				</div>
 				<script src="animation/js/TweenLite.min.js"></script>
 				<script src="animation/js/EasePack.min.js"></script>

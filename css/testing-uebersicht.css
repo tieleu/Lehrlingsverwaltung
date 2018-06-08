@@ -1,29 +1,24 @@
 main {
-	width: 60%;
-	padding: 2%;
+	width: 80%;
 	margin: 0 auto;
 	background-color: white;
     box-shadow: 0.625em 0.625em 0.313em #888888;
 
 }
 
-#chooseTest {
-	margin-top: 2%;
+select {
+	border-radius: 0.500em;
 	height: 2.6em;
-	float: left;
-	margin-right: 2%;
 }
 
 #title {
 	text-align: center;
 }
 
-#buttonGesamtuebersicht {
-	margin-top: 2%;
-	margin-bottom: 5%;
-	width: 15%;
+.form-control {
+	font-size: 1.250em;
 }
 
-hr {
-	border: 0.05em solid #ddd;
+.table {
+	margin-bottom: 0px;
 }
