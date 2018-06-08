@@ -8,6 +8,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Making an AJAX Web Chat With PHP, MySQL and jQuery | Tutorialzine Demo</title>
 
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+
 <link rel="stylesheet" type="text/css" href="js/jScrollPane/jScrollPane.css" />
 <link rel="stylesheet" type="text/css" href="css/page.css" />
 <link rel="stylesheet" type="text/css" href="css/chat.css" />

@@ -131,10 +131,10 @@
 
 
 #chatBottomBar{
-	background:url('../img/solid_gray.jpg') repeat-x #d0d0d0;
+	background:/*url('../img/solid_gray.jpg') repeat-x #d0d0d0*/#0000FF;
 	position:relative;
 	padding:10px;
-	border:1px solid #fff;
+	/*border:1px solid #fff;*/
 }
 
 #chatBottomBar .tip{
