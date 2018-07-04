@@ -1,6 +1,6 @@
 <?php
 session_start();
-include ('../subsites/header.php');
+include('../subsites/header.php');
 $user = $_GET['user'];
 $oldpw = hash("sha256", $_POST['old']);
 $newpw = "";

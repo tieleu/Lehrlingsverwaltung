@@ -26,7 +26,7 @@ function getLeaderboard($db, $value) {
 				$counter++;
 				echo "<tr>";
 				echo "<td valign='top'><b>" . $row['vorname'] . ":</b></td>";
-				echo "<td class='result'><div class='progress'><div class='progress-bar' role='progressbar' aria-valuenow=$row[testresult] aria-valuemin='0' aria-valuemax='$highestResult' style='width:$widhOfProgressbar%'>" . $row['testresult'] . "</div></div></td>";
+				echo "<td class='result'><div class='progress'><div class='progress-bar' role='progressbar' aria-valuenow=$row[testresult] aria-valuemin='0' aria-valuemax='$highestResult' style='width:$widhOfProgressbar%'>" ."<b>" .$row['testresult'] . "</b>"  . "</div></div></td>";
 				echo "</tr>";
 			}
 		}

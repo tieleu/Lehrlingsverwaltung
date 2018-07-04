@@ -81,12 +81,6 @@ function getGesamtuebersicht($idUser, $db) {
 
 	$executeResults = mysqli_query($db, $selectResults);
 	if (mysqli_num_rows($executeResults)>0) {
-				"<tr>
-					<th>Testname:</th>
-					<th>Kommentar:</th>
-					<th>Testergebnis:</th>
-					<th>Link:</th>
-				</tr>";
 		while ($row = mysqli_fetch_array($executeResults)) {
 			echo "<tr>";
 			echo "<td><input type='label' class='form-control' placeholder='$row[testname]' readonly></td>";

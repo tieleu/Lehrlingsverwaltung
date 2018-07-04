@@ -28,7 +28,6 @@
                 <?php } ?>
             </select>
         </div>
-
         <div class="form-group">
             <label>Kommentar:</label>
             <input type="text" name="comment" class="form-control" placeholder="Kommentar eingeben">
@@ -40,6 +39,5 @@
         </div>
     </form>
 </main>
-
 </body>
 </html>
