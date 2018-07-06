@@ -100,9 +100,6 @@ function getGesamtuebersicht($db)
 
 if (!empty($value)) {
     switch ($value) {
-        case 'auswahl':
-            echo "Bitte einen Test auswählen";
-            break;
         case 'gesamtuebersicht':
             getGesamtuebersicht($db);
             break;
