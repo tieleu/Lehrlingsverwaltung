@@ -13,6 +13,7 @@
 <main>
 	<select  id="chooseTest" onchange="myFunction(this.value, '<?= $user ?>')">
 		<option value="auswahl">Auswahl</option>
+        <option value="gesamtuebersicht">Gesamtübersicht</option>
 		<optgroup></optgroup>
 		<?php 
 		$selectTests= "SELECT * FROM test";
