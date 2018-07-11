@@ -95,8 +95,8 @@ function getGesamtuebersicht($db)
         }
     }
     echo "</table></div>";
-
 }
+
 
 if (!empty($value)) {
     switch ($value) {

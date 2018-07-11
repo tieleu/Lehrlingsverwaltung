@@ -57,11 +57,13 @@ function getGesamtuebersicht($idUser, $db)
     $idOfTest = 0;
     $selectRowOfTests = mysqli_query($db, "SELECT id FROM test");
     $rowsOfTests = mysqli_num_rows($selectRowOfTests);
+    $platzierungArray = array();
     echo "<table class='table'>
 				<tr>
 					<th>Testname:</th>
 					<th>Kommentar:</th>
 					<th>Testergebnis:</th>
+					<th>Platzierung:</th>
 					<th>Link:</th>
 				</tr>";
 
@@ -73,13 +75,35 @@ function getGesamtuebersicht($idUser, $db)
         while ($row = mysqli_fetch_object($findId)) {
             $idOfTest = $row->id;
         }
+
+        $selectTestResults = "SELECT idUser, MAX(testresult) AS testresult FROM javafile
+  		inner JOIN testresult t on javafile.id = t.javafile_idfs
+  		INNER JOIN User U on javafile.user_idfs = U.idUser
+  		INNER JOIN status s on t.status_idfs = s.id
+  		WHERE test_idfs=$idOfTest
+		GROUP BY idUser
+		ORDER BY testresult DESC";
+
+        $executeTestResults = mysqli_query($db, $selectTestResults);
+        $platzierung = 0;
+
+        if (mysqli_num_rows($executeTestResults) > 0) {
+            while ($row = mysqli_fetch_object($executeTestResults)) {
+                $platzierung++;
+                if ($idUser === $row->idUser) {
+                    array_push($platzierungArray, $platzierung);
+                }
+            }
+        }
+
         $selectResults = "SELECT javafile.comment, javafile.path, testresult.testresult, test.testname, status.status FROM javafile
-	INNER JOIN test on test.id = javafile.test_idfs
-	INNER JOIN testresult on testresult.javafile_idfs = javafile.id
-	INNER JOIN status on status.id = testresult.status_idfs
-	WHERE test_idfs = $idOfTest and user_idfs = $idUser and status= 'passed' 
-	ORDER BY testresult DESC
-	LIMIT 1";
+	    INNER JOIN test on test.id = javafile.test_idfs
+	    INNER JOIN testresult on testresult.javafile_idfs = javafile.id
+	    INNER JOIN status on status.id = testresult.status_idfs
+	    WHERE test_idfs = $idOfTest and user_idfs = $idUser and status= 'passed' 
+	    ORDER BY testresult DESC
+	    LIMIT 1";
+
 
         $executeResults = mysqli_query($db, $selectResults);
         if (mysqli_num_rows($executeResults) > 0) {
@@ -88,6 +112,7 @@ function getGesamtuebersicht($idUser, $db)
                 echo "<td><input type='label' class='form-control' placeholder='$row[testname]' readonly></td>";
                 echo "<td><input type='label' class='form-control' placeholder='$row[comment]' readonly></td>";
                 echo "<td><input type='label' class='form-control' placeholder='$row[testresult]' readonly></td>";
+                echo "<td><input type='label' class='form-control' placeholder='$platzierungArray[$i]' readonly></td>";
                 echo "<td><a href='$row[path]'>" . "zum File" . "</a></td>";
                 echo "</tr>";
             }
