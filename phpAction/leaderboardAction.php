@@ -86,11 +86,17 @@ function getGesamtuebersicht($db)
     echo "<div class='leaderboardTable'><table align='center'>";
     $highestResult = reset($gesamtuebersichtArray);
     foreach ($gesamtuebersichtArray as $vorname => $punkte) {
+        $punkteString = "";
+        if ($punkte === 1) {
+            $punkteString = " Punkt";
+        } else {
+            $punkteString = " Punkte";
+        }
         $widthOfProgressbar = (100 / $highestResult) * $punkte;
         if ($punkte !== 0) {
             echo "<tr>";
             echo "<td valign='top'><b>" . $vorname . ":</b></td>";
-            echo "<td class='result'><div class='progress'><div class='progress-bar' role='progressbar' aria-valuenow=$punkte aria-valuemin='0' aria-valuemax='$highestResult' style='width:$widthOfProgressbar%'>" . "<b>" . $punkte . "</b>" . "</div></div></td>";
+            echo "<td class='result'><div class='progress'><div class='progress-bar' role='progressbar' aria-valuenow=$punkte aria-valuemin='0' aria-valuemax='$highestResult' style='width:$widthOfProgressbar%'>" . "<b>" . $punkte . $punkteString . "</b>" . "</div></div></td>";
             echo "<tr>";
         }
     }
