@@ -112,7 +112,7 @@ if (mysqli_num_rows($check) > 0 && mysqli_num_rows($check) != null) {
                 $totalTimeAll -= getCurrentDifference(0);
             }
             $totalTimeAll = $totalTimeAll - mysqli_num_rows($getdates) * $solltime + $feiertagMal500 + $totalWhileTimerRun;
-            if ($totalTimeAll < 0) {
+            if ($totalTimeAll <= 0) {
                 $totAllColor = "#E53427";
             } else {
                 $totAllColor = "#3FB13F";
