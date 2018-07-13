@@ -93,7 +93,7 @@ if (mysqli_num_rows($check) > 0 && mysqli_num_rows($check) != null) {
                     $totalTimeAll += $totalTime - 375;
                     $feiertagMal500 += 500;
                 } else if ($date == "2018-07-07") {
-                    $color = totalColor($solltime, $totalTime);
+                    $color = totalColor($solltime - 500, $totalTime);
                     echo "<td><input class='form-control' type='text' value='00:00 h' readonly></td>";
                     echo "<td><input class='form-control' type='text' value='" . minToTime($totalTime) . " h' readonly style='border: solid 2px " . $color . ";'></td></tr>";
                     $totalTimeAll += $totalTime;
@@ -112,7 +112,7 @@ if (mysqli_num_rows($check) > 0 && mysqli_num_rows($check) != null) {
                 $totalTimeAll -= getCurrentDifference(0);
             }
             $totalTimeAll = $totalTimeAll - mysqli_num_rows($getdates) * $solltime + $feiertagMal500 + $totalWhileTimerRun;
-            if ($totalTimeAll <= 0) {
+            if ($totalTimeAll < 0) {
                 $totAllColor = "#E53427";
             } else {
                 $totAllColor = "#3FB13F";
