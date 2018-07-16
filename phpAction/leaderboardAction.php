@@ -9,7 +9,7 @@ function getLeaderboard($db, $value)
   		inner JOIN testresult t on javafile.id = t.javafile_idfs
   		INNER JOIN User U on javafile.user_idfs = U.idUser
   		INNER JOIN status s on t.status_idfs = s.id
-  		WHERE test_idfs=$value
+  		WHERE test_idfs=$value and testresult > 0
 		GROUP BY vorname
 		ORDER BY testresult DESC";
 
@@ -19,7 +19,6 @@ function getLeaderboard($db, $value)
         $counter = 0;
         $highestResult = 0;
         while ($row = mysqli_fetch_array($executeTestresult)) {
-
             if ($counter == 0) {
                 $highestResult = $row['testresult'];
             }
@@ -63,7 +62,7 @@ function getGesamtuebersicht($db)
   		  INNER JOIN testresult t on javafile.id = t.javafile_idfs
   		  INNER JOIN User U on javafile.user_idfs = U.idUser
   		  INNER JOIN status s on t.status_idfs = s.id
-  		  WHERE test_idfs=$idOfTest
+  		  WHERE test_idfs=$idOfTest and testresult > 0
 		  GROUP BY vorname
 		  ORDER BY testresult DESC";
 

@@ -14,18 +14,18 @@ function minToTime($time)
 {
     $rest = $time % 60;
     $hours = ($time - $rest) / 60;
-    if ($hours < - 9) {
-        $hours = $hours / - 1;
+    if ($hours < -9) {
+        $hours = $hours / -1;
     } else if ($hours < 0) {
-        $hours = 0 . $hours / - 1;
+        $hours = 0 . $hours / -1;
     } else if ($hours < 10) {
         $hours = 0 . $hours;
     }
-    if ($rest < (- 9)) {
-        $rest = $rest / - 1;
+    if ($rest < (-9)) {
+        $rest = $rest / -1;
         $hours = "-" . $hours;
     } else if ($rest < 0) {
-        $rest = 0 . ($rest / (- 1));
+        $rest = 0 . ($rest / (-1));
         $hours = "-" . $hours;
     } else if ($rest < 10) {
         $rest = 0 . $rest;
@@ -48,7 +48,7 @@ function getCurrentDifference($workedTime)
 {
     global $db;
     global $idUser;
-    
+
     if ($workedTime == 0) {
         $date = date("Y-m-d");
         $dateplus = date('Y-m-d', strtotime($date . ' +1 day'));
@@ -56,12 +56,12 @@ function getCurrentDifference($workedTime)
         $actualTime = date("H:i");
         $timeTotal = 0;
         $array = array();
-        
+
         $array[] = $actualTime;
         while ($row1 = mysqli_fetch_object($select)) {
             $array[] = $row1->zeit;
         }
-        for ($i = 0; $i < count($array); $i ++) {
+        for ($i = 0; $i < count($array); $i++) {
             if ($i % 2 == 0) {
                 $timeTotal += zeitZuDez($array[$i]);
             } else {
@@ -73,4 +73,5 @@ function getCurrentDifference($workedTime)
         return $workedTime;
     }
 }
+
 ?>
