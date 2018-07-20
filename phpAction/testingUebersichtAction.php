@@ -10,11 +10,12 @@ while ($row = mysqli_fetch_object($rowsuser)) {
 
 function getSpecificTest($value, $idUser, $db)
 {
-    $select = "SELECT javafile.comment, javafile.path, testresult.testresult, status.status, test.id FROM javafile
+    $select = "SELECT javafile.comment, javafile.path, testresult.testresult, status.status, test.id, testresult.timestamp FROM javafile
 	INNER JOIN test on javafile.test_idfs= test.id
 	INNER JOIN testresult on testresult.javafile_idfs = javafile.id
 	INNER JOIN status on testresult.status_idfs = status.id
-	WHERE test.id =$value and user_idfs = $idUser";
+	WHERE test.id =$value and user_idfs = $idUser
+	order by timestamp desc";
 
     $executeResults = mysqli_query($db, $select);
     if (mysqli_num_rows($executeResults) > 0) {
